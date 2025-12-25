@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8756414461564722052}
   - component: {fileID: 6817113705822267505}
   - component: {fileID: -6596936900237129893}
+  - component: {fileID: -1652261113401643482}
   m_Layer: 0
   m_Name: ProjectScope
   m_TagString: Untagged
@@ -89,3 +90,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d216026e02469aa9dd89617e973081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1652261113401643482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245714807162874931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c16a2802804764827b558614c6e33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Trophy
