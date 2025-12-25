@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ea591e860342bcba1e7f1192b02f68, type: 3}
+  m_Name: BootstrapSettings
+  m_EditorClassIdentifier: 
+  _unityLoggerEnabled: 1
+  _clearEditorConsole: 0
+  _defaultSceneIndex: 0
+  _eventSystem: {fileID: 7970140839622666688, guid: 3ab4dba03d25e7e489061673123065ce, type: 3}
+  _dontDestroyEventSystem: 1
+  _projectBehaviour: {fileID: 2898191472812981501, guid: 5c0eb67bf0788ad40bd07c0fd5e8a3be, type: 3}
