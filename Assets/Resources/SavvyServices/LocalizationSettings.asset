@@ -15,6 +15,6 @@ MonoBehaviour:
   _debug: 0
   _prefsKey: LocalizationSettings
   _defaultSystemLanguage: 10
-  _defaultTextAsset: {fileID: 0}
+  _defaultTextAsset: {fileID: 4900000, guid: 833f85beec864544f9b4b939f292318c, type: 3}
   _translationsData: []
   _sheetId: 1ia45H4f4MwiF8bR23p52eoRq7oL0LbRLfdZpyLg7r7g
