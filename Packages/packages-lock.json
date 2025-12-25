@@ -9,6 +9,13 @@
       },
       "hash": "1f0e439040b9c4820867bff109ecf1f5403217aa"
     },
+    "com.savvy-labs.savvy-sdk": {
+      "version": "https://gitlab.com/savvy-labs/savvy-sdk.git#4.4.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "04a823635420038d4ecb624b328f16cf75eba2a5"
+    },
     "com.unity.addressables": {
       "version": "1.22.3",
       "depth": 1,
