@@ -15,6 +15,6 @@ MonoBehaviour:
   _unityLoggerEnabled: 1
   _clearEditorConsole: 0
   _defaultSceneIndex: 0
-  _eventSystem: {fileID: 0}
-  _dontDestroyEventSystem: 0
-  _projectBehaviour: {fileID: 0}
+  _eventSystem: {fileID: 7970140839622666688, guid: 3ab4dba03d25e7e489061673123065ce, type: 3}
+  _dontDestroyEventSystem: 1
+  _projectBehaviour: {fileID: 2898191472812981501, guid: 5c0eb67bf0788ad40bd07c0fd5e8a3be, type: 3}

@@ -33,10 +33,10 @@ MonoBehaviour:
   _identifier: 0
   _inAppPurchasing: 0
   _instanceFactory: 0
-  _localization: 0
-  _mediation: 0
+  _localization: 1
+  _mediation: 1
   _notification: 0
-  _numberFormat: 0
+  _numberFormat: 1
   _quality: 0
   _random: 0
   _saveLoad: 0
