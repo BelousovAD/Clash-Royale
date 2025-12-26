@@ -1,24 +1,19 @@
+using System.Collections.Generic;
+using Bootstrap;
+using Reflex.Attributes;
+using UnityEngine;
+
 namespace Audio
 {
-    using Bootstrap;
-    using Reflex.Attributes;using UnityEngine;
-
     internal class AudioLoader : MonoBehaviour, ILoadable
     {
-        private Audio _music;
-        private Audio _sound;
+        private List<Audio> _audios;
 
         [Inject]
-        private void Initialize(Music music, Sound sound)
-        {
-            _music = music;
-            _sound = sound;
-        }
-        
-        public void Load()
-        {
-            _music.Load();
-            _sound.Load();
-        }
+        private void Initialize(IEnumerable<Audio> audios) =>
+            _audios = new List<Audio>(audios);
+
+        public void Load() =>
+            _audios.ForEach(audioObject => audioObject.Load());
     }
 }

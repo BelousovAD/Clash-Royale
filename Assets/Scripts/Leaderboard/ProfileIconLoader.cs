@@ -1,16 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Networking;
+
 namespace Leaderboard
 {
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEngine.Networking;
-
     internal class ProfileIconLoader : MonoBehaviour
     {
+        private static readonly Dictionary<string, Texture2D> _textures = new ();
+
         [SerializeField] private LeaderboardItem _item;
         [SerializeField] private Sprite _default;
-        
-        private static readonly Dictionary<string, Texture2D> _textures = new();
 
         private void OnEnable()
         {
@@ -41,26 +41,27 @@ namespace Leaderboard
                 StartCoroutine(LoadTexture(url));
             }
         }
-        
+
         private void SetTexture(Texture2D texture)
         {
-            Rect rect = new(0, 0, texture.width, texture.height);
+            Rect rect = new (0, 0, texture.width, texture.height);
             _item.SetIcon(Sprite.Create(texture, rect, Vector2.zero));
         }
-        
+
         private IEnumerator LoadTexture(string url)
         {
             using UnityWebRequest webRequest = UnityWebRequestTexture.GetTexture(url);
-            
+
             yield return webRequest.SendWebRequest();
 
-            if (webRequest.result is UnityWebRequest.Result.ConnectionError or UnityWebRequest.Result.DataProcessingError)
+            if (webRequest.result is UnityWebRequest.Result.ConnectionError
+                or UnityWebRequest.Result.DataProcessingError)
             {
                 Debug.LogError(webRequest.error);
                 _item.SetIcon(_default);
                 yield break;
             }
-                
+
             DownloadHandlerTexture downloadHandler = webRequest.downloadHandler as DownloadHandlerTexture;
 
             if (!downloadHandler!.isDone)
@@ -68,7 +69,7 @@ namespace Leaderboard
                 _item.SetIcon(_default);
                 yield break;
             }
-                
+
             _textures.Add(url, downloadHandler.texture);
             SetTexture(downloadHandler.texture);
         }

@@ -1,9 +1,9 @@
+using Savvy.Bootstrap;
+using Savvy.Interfaces;
+using SavvyServices;
+
 namespace Bootstrap
 {
-    using Savvy.Bootstrap;
-    using Savvy.Interfaces;
-    using SavvyServices;
-
     internal class ProjectBehaviour : ProjectBehaviourBase
     {
         protected override void OnProjectBehaviourInitialized()

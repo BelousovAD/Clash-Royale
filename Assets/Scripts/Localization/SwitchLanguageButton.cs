@@ -1,12 +1,12 @@
+using System;
+using Bootstrap;
+using Common;
+using Reflex.Attributes;
+using Savvy.Interfaces;
+using UnityEngine;
+
 namespace Localization
 {
-    using System;
-    using Bootstrap;
-    using Common;
-    using Reflex.Attributes;
-    using Savvy.Interfaces;
-    using UnityEngine;
-
     internal class SwitchLanguageButton : AbstractButton
     {
         [SerializeField] private LocalizationSettings _settings;

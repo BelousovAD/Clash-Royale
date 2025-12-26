@@ -1,8 +1,8 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace Leaderboard
 {
-    using UnityEngine;
-    using UnityEngine.UI;
-
     internal class BackgroundView : MonoBehaviour
     {
         [SerializeField] private LeaderboardItem _item;

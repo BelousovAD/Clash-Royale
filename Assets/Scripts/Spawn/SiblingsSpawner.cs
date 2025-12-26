@@ -1,18 +1,21 @@
+using System;
+using UnityEngine;
+using UnityEngine.Pool;
+
 namespace Spawn
 {
-    using System;
-    using UnityEngine;
-    using UnityEngine.Pool;
-
     public class SiblingsSpawner : MonoBehaviour
     {
         [SerializeField] private PooledComponent _prefab;
         [SerializeField] private Transform _parent;
-        [SerializeField, Min(1)] private int _poolSize = 20;
+        [SerializeField][Min(1)] private int _poolSize = 20;
 
         private IObjectPool<PooledComponent> _pool;
-        
+
         public event Action<PooledComponent> ComponentReleased;
+
+        private static void DestroyPooledComponent(PooledComponent pooledComponent) =>
+            Destroy(pooledComponent.gameObject);
 
         private void Awake()
         {
@@ -53,8 +56,5 @@ namespace Spawn
 
             return pooledComponent;
         }
-
-        private static void DestroyPooledComponent(PooledComponent pooledComponent) =>
-            Destroy(pooledComponent.gameObject);
     }
 }

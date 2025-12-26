@@ -1,9 +1,9 @@
-namespace SavvyServices.MirraMediation
-{
-    using MirraGames.SDK;
-    using Savvy.Container;
-    using Savvy.Interfaces;
+using MirraGames.SDK;
+using Savvy.Container;
+using Savvy.Interfaces;
 
+namespace SavvyServices
+{
     internal class MirraAdapter : NetSavvy, IMediationNetwork
     {
         private readonly IEventBus _eventBus;
@@ -15,18 +15,18 @@ namespace SavvyServices.MirraMediation
         }
 
         public bool BannerAdIsReady => MirraSDK.Ads.IsBannerReady;
-        
+
         public bool InterstitialAdIsReady => MirraSDK.Ads.IsInterstitialReady;
-        
+
         public bool RewardedAdIsReady => MirraSDK.Ads.IsRewardedReady;
 
         public void Dispose()
         { }
 
-        public void ShowBannerAd() => 
+        public void ShowBannerAd() =>
             MirraSDK.Ads.InvokeBanner();
 
-        public void HideBannerAd() => 
+        public void HideBannerAd() =>
             MirraSDK.Ads.DisableBanner();
 
         public void ShowInterstitialAd(string placement) =>

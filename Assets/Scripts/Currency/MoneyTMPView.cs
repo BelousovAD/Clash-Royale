@@ -1,15 +1,15 @@
+using Reflex.Attributes;
+using Savvy.Extensions;
+using TMPro;
+using UnityEngine;
+
 namespace Currency
 {
-    using Reflex.Attributes;
-    using Savvy.Extensions;
-    using TMPro;
-    using UnityEngine;
-
     [RequireComponent(typeof(TMP_Text))]
     public class MoneyTMPView : MonoBehaviour
     {
         [SerializeField] private string _format = "{0}";
-        
+
         private TMP_Text _textField;
         private Money _money;
 

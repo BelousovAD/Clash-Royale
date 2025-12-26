@@ -1,10 +1,14 @@
+using System.Collections.Generic;
+using System.Linq;
+using Reflex.Attributes;
+using UnityEngine;
+
 namespace Audio
 {
-    using Reflex.Attributes;
-    using UnityEngine;
-
     internal class SoundPlayCaller : MonoBehaviour
     {
+        private const AudioType SoundType = AudioType.Sound;
+
         [SerializeField] private AudioClipKey _clipKey;
         [SerializeField] private bool _isOnEnable;
         [SerializeField] private bool _isOnDisable;
@@ -12,8 +16,8 @@ namespace Audio
         private Audio _audio;
 
         [Inject]
-        private void Initialize(Sound sound) =>
-            _audio = sound;
+        private void Initialize(IEnumerable<Audio> audios) =>
+            _audio = audios.FirstOrDefault(audioObject => audioObject.Type == SoundType);
 
         private void OnEnable()
         {

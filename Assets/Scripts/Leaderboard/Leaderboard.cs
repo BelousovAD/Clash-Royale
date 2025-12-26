@@ -1,9 +1,9 @@
+using System;
+using Currency;
+using MirraGames.SDK;
+
 namespace Leaderboard
 {
-    using System;
-    using Currency;
-    using MirraGames.SDK;
-
     internal class Leaderboard : IDisposable
     {
         private readonly string _id;

@@ -1,8 +1,8 @@
+using Common;
+using Reflex.Attributes;
+
 namespace Window
 {
-    using Common;
-    using Reflex.Attributes;
-
     internal class CloseWindowButton : AbstractButton
     {
         private IWindowService _windowService;

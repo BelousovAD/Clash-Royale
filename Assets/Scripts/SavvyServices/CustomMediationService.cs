@@ -1,14 +1,13 @@
+using System;
+using MirraGames.SDK;
+using Savvy.Constants;
+using Savvy.Container;
+using Savvy.Extensions;
+using Savvy.Interfaces;
+using UnityEngine;
+
 namespace SavvyServices
 {
-    using System;
-    using MirraGames.SDK;
-    using MirraMediation;
-    using Savvy.Constants;
-    using Savvy.Container;
-    using Savvy.Extensions;
-    using Savvy.Interfaces;
-    using UnityEngine;
-
     public class CustomMediationService : NetSavvyResources, IMediationService, IFixedTickable, IDisposable
     {
         private readonly string _settingsPath = $"{PathConstants.SavvyServicesDir}/{nameof(MediationSettings)}";
@@ -29,16 +28,16 @@ namespace SavvyServices
         private float _deltaTimer;
         private int _interstitialInterval;
         private GameObject _interstitialAdCountdown;
-        
+
         public event Action BannerAdLoaded;
         public event Action<bool> InterstitialAdLoaded;
         public event Action<bool> RewardedAdLoaded;
         public event Action<int> InterstitialAdTimerUpdate;
-        
+
         public bool BannerAdIsReady => _mediationNetwork.BannerAdIsReady;
-        
+
         public bool InterstitialAdIsReady => _mediationNetwork.InterstitialAdIsReady;
-        
+
         public bool RewardedAdIsReady => _mediationNetwork.RewardedAdIsReady;
 
         public void Inject()
@@ -52,7 +51,7 @@ namespace SavvyServices
         {
             _settings = LoadResources<MediationSettings>(_settingsPath);
             _mediationNetwork = new MirraAdapter(_settings);
-            
+
             MirraSDK.WaitForProviders(() =>
             {
                 _bannerAdCount = _preferences.LoadInt(GetBannerAdKey());
@@ -65,7 +64,7 @@ namespace SavvyServices
             {
                 Error("InterstitialAdCountdown prefab is not set");
             }
-            
+
             ResetInterstitialInterval();
             Subscribe();
         }
@@ -76,7 +75,7 @@ namespace SavvyServices
             _mediationNetwork.Dispose();
         }
 
-        public void FixedTick() => 
+        public void FixedTick() =>
             AutoInterstitialAdUpdate();
 
         public void EnableNoAds()
@@ -98,12 +97,12 @@ namespace SavvyServices
             if (_isNoAds)
             {
                 Debug("Show banner Ad cancelled. NoAds is enabled", _settings.Debug);
-                return;    
+                return;
             }
-            
+
             if (BannerAdIsReady)
             {
-                _mediationNetwork.ShowBannerAd();    
+                _mediationNetwork.ShowBannerAd();
                 Debug("Show banner Ad", _settings.Debug);
             }
             else
@@ -123,9 +122,9 @@ namespace SavvyServices
             if (_isNoAds)
             {
                 Debug("Show interstitial Ad cancelled. NoAds is enabled", _settings.Debug);
-                return;    
+                return;
             }
-            
+
             if (InterstitialAdIsReady)
             {
                 _interstitialAdClosed = onClosed;
@@ -226,7 +225,7 @@ namespace SavvyServices
             }
         }
 
-        private void HandleAdRevenue(AdRevenueData revenueData) => 
+        private void HandleAdRevenue(AdRevenueData revenueData) =>
             SendAdCount(revenueData.AdType.ToEnumOrDefault<AdType>());
 
         private void SendAdCount(AdType adType)
@@ -240,6 +239,7 @@ namespace SavvyServices
                         _preferences.SaveInt(GetBannerAdKey(), _bannerAdCount);
                         _eventBus.Invoke(new BannerAdData { Count = _bannerAdCount });
                     }
+
                     break;
                 case AdType.Interstitial:
                     if (_settings.SendInterstitialAdCount)
@@ -248,6 +248,7 @@ namespace SavvyServices
                         _preferences.SaveInt(GetInterstitialAdKey(), _interstitialAdCount);
                         _eventBus.Invoke(new InterstitialAdData { Count = _interstitialAdCount });
                     }
+
                     break;
                 case AdType.Rewarded:
                     if (_settings.SendRewardedAdCount)
@@ -256,6 +257,7 @@ namespace SavvyServices
                         _preferences.SaveInt(GetRewardedAdKey(), _rewardedAdCount);
                         _eventBus.Invoke(new RewardedAdData { Count = _rewardedAdCount });
                     }
+
                     break;
                 default:
                     adType.ToEnumUnknown();
@@ -269,7 +271,7 @@ namespace SavvyServices
             {
                 return;
             }
-            
+
             _deltaTimer += Time.fixedDeltaTime;
 
             if (_deltaTimer >= 1f)
@@ -281,7 +283,7 @@ namespace SavvyServices
                 {
                     _interstitialInterval += _settings.InterstitialAdCheckTimer;
                 }
-            
+
                 if (_interstitialInterval <= _settings.InterstitialAdCountdownTimer)
                 {
                     if (_interstitialAdCountdown is null)
@@ -290,7 +292,7 @@ namespace SavvyServices
                         _interstitialAdCountdown =
                             _gameObjectFactory.Instantiate(_settings.InterstitialAdCountdownPrefab);
                     }
-                    
+
                     InterstitialAdTimerUpdate?.Invoke(_interstitialInterval);
 
                     if (_interstitialInterval == 0)
@@ -303,19 +305,19 @@ namespace SavvyServices
             }
         }
 
-        private void ResetInterstitialInterval() => 
+        private void ResetInterstitialInterval() =>
             _interstitialInterval = _settings.InterstitialAdInterval;
 
-        private string GetBannerAdKey() => 
+        private string GetBannerAdKey() =>
             GetPrefsKey(nameof(_bannerAdCount));
 
-        private string GetInterstitialAdKey() => 
+        private string GetInterstitialAdKey() =>
             GetPrefsKey(nameof(_interstitialAdCount));
 
-        private string GetRewardedAdKey() => 
+        private string GetRewardedAdKey() =>
             GetPrefsKey(nameof(_rewardedAdCount));
 
-        private string GetNoAdsKey() => 
+        private string GetNoAdsKey() =>
             GetPrefsKey(nameof(_isNoAds));
 
         private string GetPrefsKey(string name) =>

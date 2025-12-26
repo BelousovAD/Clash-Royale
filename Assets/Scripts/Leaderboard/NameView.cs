@@ -1,13 +1,13 @@
+using TMPro;
+using UnityEngine;
+
 namespace Leaderboard
 {
-    using TMPro;
-    using UnityEngine;
-
     [RequireComponent(typeof(TMP_Text))]
     internal class NameView : MonoBehaviour
     {
         [SerializeField] private LeaderboardItem _item;
-        
+
         private TMP_Text _textField;
 
         private void Awake() =>

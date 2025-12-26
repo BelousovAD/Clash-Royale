@@ -1,14 +1,20 @@
+using System;
+using MirraGames.SDK;
+using UnityEngine;
+
 namespace Web
 {
-    using System;
-    using MirraGames.SDK;
-    using UnityEngine;
-
     public class GameplayStateSender : MonoBehaviour
     {
         [SerializeField] private GameState _state;
         [SerializeField] private bool _sendOnEnable;
         [SerializeField] private bool _sendOnDisable;
+
+        private enum GameState
+        {
+            Start = 0,
+            Stop = 1,
+        }
 
         private void OnEnable()
         {
@@ -17,7 +23,7 @@ namespace Web
                 SendState();
             }
         }
-        
+
         private void OnDisable()
         {
             if (_sendOnDisable)
@@ -39,12 +45,6 @@ namespace Web
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-        }
-
-        private enum GameState
-        {
-            Start = 0,
-            Stop
         }
     }
 }

@@ -1,20 +1,20 @@
+using System;
+using System.Collections.Generic;
+using MirraGames.SDK;
+using MirraGames.SDK.Common;
+using Spawn;
+using UnityEngine;
+
 namespace Leaderboard
 {
-    using System;
-    using System.Collections.Generic;
-    using MirraGames.SDK;
-    using MirraGames.SDK.Common;
-    using Spawn;
-    using UnityEngine;
-
     internal class LeaderboardSpawner : SiblingsSpawner
     {
-        [SerializeField] private string _id;
-        [SerializeField, Min(1)] private int _maxCount;
-        [SerializeField, Min(1)] private int _topCount;
-        [SerializeField] private GameObject _infoObject;
+        private readonly List<PooledComponent> _spawned = new ();
 
-        private readonly List<PooledComponent> _spawned = new();
+        [SerializeField] private string _id;
+        [SerializeField][Min(1)] private int _maxCount;
+        [SerializeField][Min(1)] private int _topCount;
+        [SerializeField] private GameObject _infoObject;
 
         private void OnEnable() =>
             UpdateLeaderboard();
@@ -32,14 +32,14 @@ namespace Leaderboard
                 Spawn(leaderboard);
             });
         }
-        
+
         private void Clear()
         {
             foreach (PooledComponent pooledComponent in _spawned)
             {
                 pooledComponent.Release();
             }
-            
+
             _spawned.Clear();
         }
 
@@ -49,21 +49,21 @@ namespace Leaderboard
             {
                 int currentPlayerIndex = -1;
                 string displayName = MirraSDK.Player.DisplayName;
-                    
+
                 for (int i = 0; i < leaderboard.players.Length; i++)
                 {
                     if (leaderboard.players[i].displayName != displayName)
                     {
                         continue;
                     }
-                        
+
                     currentPlayerIndex = i;
                     break;
                 }
-                    
+
                 if (currentPlayerIndex >= _maxCount)
                 {
-                    List<PlayerScore> players = new();
+                    List<PlayerScore> players = new ();
 
                     for (int i = 0; i < _topCount; i++)
                     {
@@ -85,15 +85,19 @@ namespace Leaderboard
                 }
             }
         }
-        
+
         private void Spawn(MirraGames.SDK.Common.Leaderboard leaderboard)
         {
             for (int i = 0; i < leaderboard.players.Length; i++)
             {
                 PlayerScore player = leaderboard.players[i];
                 PooledComponent pooledComponent = Spawn();
-                pooledComponent.GetComponent<LeaderboardItem>().Initialize(player.position,
-                    player.profilePictureUrl, player.displayName, player.score, i < _topCount,
+                pooledComponent.GetComponent<LeaderboardItem>().Initialize(
+                    player.position,
+                    player.profilePictureUrl,
+                    player.displayName,
+                    player.score,
+                    i < _topCount,
                     MirraSDK.Player.DisplayName == player.displayName);
                 _spawned.Add(pooledComponent);
             }

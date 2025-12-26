@@ -1,8 +1,8 @@
+using System;
+using Bootstrap;
+
 namespace Currency
 {
-    using System;
-    using Bootstrap;
-
     public class Money
     {
         private const int Min = 0;
@@ -55,11 +55,11 @@ namespace Currency
             {
                 return false;
             }
-            
+
             Value -= amount;
             return true;
         }
-        
+
         public void Load() =>
             Value = _services.Preferences.LoadInt(SaveKey, Min);
 

@@ -1,20 +1,24 @@
+using System.Collections.Generic;
+using System.Linq;
+using Common;
+using Reflex.Attributes;
+using UnityEngine;
+
 namespace Audio
 {
-    using Common;
-    using Reflex.Attributes;
-    using UnityEngine;
-
     internal class SoundPlayButton : AbstractButton
     {
+        private const AudioType SoundType = AudioType.Sound;
+
         [SerializeField] private AudioClipKey _clipKey;
-        
-        private Sound _sound;
+
+        private Audio _audio;
 
         [Inject]
-        private void Initialize(Sound sound) =>
-            _sound = sound;
-        
+        private void Initialize(IEnumerable<Audio> audios) =>
+            _audio = audios.FirstOrDefault(audioObject => audioObject.Type == SoundType);
+
         protected override void HandleClick() =>
-            _sound.Play(_clipKey);
+            _audio.Play(_clipKey);
     }
 }

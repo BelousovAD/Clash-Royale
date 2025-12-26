@@ -1,8 +1,8 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace Leaderboard
 {
-    using UnityEngine;
-    using UnityEngine.UI;
-
     [RequireComponent(typeof(Image))]
     internal class ProfileImageView : MonoBehaviour
     {

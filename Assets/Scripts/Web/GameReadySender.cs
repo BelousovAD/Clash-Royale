@@ -1,8 +1,8 @@
+using MirraGames.SDK;
+using UnityEngine;
+
 namespace Web
 {
-    using MirraGames.SDK;
-    using UnityEngine;
-
     public class GameReadySender : MonoBehaviour
     {
         private static GameReadySender _instance;

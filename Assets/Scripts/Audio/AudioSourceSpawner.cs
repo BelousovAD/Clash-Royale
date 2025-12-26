@@ -1,7 +1,7 @@
+using Spawn;
+
 namespace Audio
 {
-    using Spawn;
-
     public class AudioSourceSpawner : SiblingsSpawner
     {
         public new PooledAudioSource Spawn() =>

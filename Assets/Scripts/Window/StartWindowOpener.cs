@@ -1,8 +1,8 @@
+using Reflex.Attributes;
+using UnityEngine;
+
 namespace Window
 {
-    using Reflex.Attributes;
-    using UnityEngine;
-
     internal class StartWindowOpener : MonoBehaviour
     {
         [SerializeField] private string _windowId;

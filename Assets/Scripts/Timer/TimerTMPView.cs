@@ -1,14 +1,14 @@
+using Reflex.Attributes;
+using TMPro;
+using UnityEngine;
+
 namespace Timer
 {
-    using Reflex.Attributes;
-    using TMPro;
-    using UnityEngine;
-
     [RequireComponent(typeof(TMP_Text))]
     internal class TimerTMPView : MonoBehaviour
     {
         private const int Min2Sec = 60;
-        
+
         [SerializeField] private string _format = "{0:D2}:{1:D2}";
 
         private TMP_Text _textField;

@@ -1,8 +1,8 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace Tutorial
 {
-    using UnityEngine;
-    using UnityEngine.UI;
-
     [RequireComponent(typeof(Image))]
     public class IconView : MonoBehaviour
     {

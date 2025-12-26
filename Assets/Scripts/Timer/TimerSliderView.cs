@@ -1,15 +1,15 @@
+using System.Collections;
+using Reflex.Attributes;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace Timer
 {
-    using System.Collections;
-    using Reflex.Attributes;
-    using UnityEngine;
-    using UnityEngine.UI;
-
     [RequireComponent(typeof(Slider))]
     public class TimerSliderView : MonoBehaviour
     {
-        [SerializeField, Min(0)] private float _changingTime = 1;
-        
+        [SerializeField][Min(0)] private float _changingTime = 1;
+
         private Slider _slider;
         private CoroutineTimer _timer;
         private float _targetValue = 1;

@@ -1,10 +1,10 @@
+using System.Collections;
+using Spawn;
+using UnityEngine;
+using UnityEngine.Audio;
+
 namespace Audio
 {
-    using System.Collections;
-    using Spawn;
-    using UnityEngine;
-    using UnityEngine.Audio;
-
     [RequireComponent(typeof(AudioSource))]
     public class PooledAudioSource : PooledComponent
     {
@@ -29,7 +29,7 @@ namespace Audio
             _audioSource.Play();
 
             yield return _wait;
-            
+
             Release();
         }
     }

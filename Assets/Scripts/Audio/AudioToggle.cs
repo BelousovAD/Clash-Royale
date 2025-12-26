@@ -1,13 +1,20 @@
+using System.Collections.Generic;
+using System.Linq;
+using Common;
+using Reflex.Attributes;
+using UnityEngine;
+
 namespace Audio
 {
-    using Common;
-
     internal class AudioToggle : AbstractToggle
     {
+        [SerializeField] private AudioType _type;
+
         private Audio _audio;
 
-        protected void Initialize(Audio audioObject) =>
-            _audio = audioObject;
+        [Inject]
+        private void Initialize(IEnumerable<Audio> audios) =>
+            _audio = audios.FirstOrDefault(audioObject => audioObject.Type == _type);
 
         protected override void Awake()
         {

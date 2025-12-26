@@ -1,9 +1,9 @@
+using System;
+using UnityEngine;
+using UnityEngine.Audio;
+
 namespace Audio
 {
-    using System;
-    using UnityEngine;
-    using UnityEngine.Audio;
-
     internal class AudioMixerController : IDisposable
     {
         private const string MusicVolume = nameof(MusicVolume);
@@ -12,11 +12,11 @@ namespace Audio
         private const float MaxValue = 1f;
         private const float LogarithmBase = 2;
         private const float Multiplier = 20;
-        
+
         private readonly AudioMixer _audioMixer;
         private readonly Audio _music;
         private readonly Audio _sound;
-        
+
         public AudioMixerController(AudioMixer audioMixer, Audio music, Audio sound)
         {
             _audioMixer = audioMixer;
@@ -42,7 +42,7 @@ namespace Audio
             float value = _music.IsActive ? Mathf.Clamp(_music.Volume, MinValue, MaxValue) : MinValue;
             _audioMixer.SetFloat(MusicVolume, Mathf.Log(value, LogarithmBase) * Multiplier);
         }
-        
+
         private void UpdateSoundVolume()
         {
             float value = _sound.IsActive ? Mathf.Clamp(_sound.Volume, MinValue, MaxValue) : MinValue;

@@ -1,9 +1,9 @@
+using Bootstrap;
+using Reflex.Attributes;
+using UnityEngine;
+
 namespace Currency
 {
-    using Bootstrap;
-    using Reflex.Attributes;
-    using UnityEngine;
-
     internal class CurrencyLoader : MonoBehaviour, ILoadable
     {
         private Money _money;

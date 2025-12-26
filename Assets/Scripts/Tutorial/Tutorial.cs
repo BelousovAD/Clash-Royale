@@ -1,7 +1,7 @@
+using UnityEngine;
+
 namespace Tutorial
 {
-    using UnityEngine;
-
     internal class Tutorial : MonoBehaviour
     {
         private TutorialData _data;

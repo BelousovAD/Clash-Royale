@@ -1,8 +1,8 @@
+using System;
+using UnityEngine;
+
 namespace Audio
 {
-    using System;
-    using UnityEngine;
-
     [Serializable]
     public struct Track
     {

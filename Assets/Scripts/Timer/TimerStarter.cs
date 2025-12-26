@@ -1,12 +1,12 @@
+using Reflex.Attributes;
+using UnityEngine;
+
 namespace Timer
 {
-    using Reflex.Attributes;
-    using UnityEngine;
-
     internal class TimerStarter : MonoBehaviour
     {
-        [SerializeField, Min(1)] private int _startTime = 90;
-        
+        [SerializeField][Min(1)] private int _startTime = 90;
+
         private CoroutineTimer _timer;
 
         [Inject]

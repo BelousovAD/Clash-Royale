@@ -1,15 +1,15 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace Localization
 {
-    using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEngine.UI;
-
     [RequireComponent(typeof(Image))]
     public class LanguageButtonView : MonoBehaviour
     {
         [SerializeField] private SwitchLanguageButton _button;
-        [SerializeField] private List<Sprite> _flags = new();
-        
+        [SerializeField] private List<Sprite> _flags = new ();
+
         private Image _image;
 
         private void Awake() =>
