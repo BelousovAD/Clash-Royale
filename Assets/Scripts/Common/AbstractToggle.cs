@@ -1,8 +1,8 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace Common
 {
-    using UnityEngine;
-    using UnityEngine.UI;
-
     [RequireComponent(typeof(Toggle))]
     public abstract class AbstractToggle : MonoBehaviour
     {

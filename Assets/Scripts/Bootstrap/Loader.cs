@@ -1,17 +1,17 @@
+using System;
+using System.Collections.Generic;
+using MirraGames.SDK;
+using Savvy.Container;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
 namespace Bootstrap
 {
-    using System;
-    using System.Collections.Generic;
-    using MirraGames.SDK;
-    using Savvy.Container;
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
-
     internal class Loader : MonoSavvy
     {
         [SerializeField] private string _sceneToLoad;
-        [SerializeField] private List<MonoBehaviour> _loaders = new();
-        
+        [SerializeField] private List<MonoBehaviour> _loaders = new ();
+
         private void Start()
         {
             MirraSDK.WaitForProviders(() =>

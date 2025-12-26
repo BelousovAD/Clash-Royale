@@ -1,26 +1,25 @@
+using System.Globalization;
+using MirraGames.SDK;
+using Savvy.Constants;
+using Savvy.Container;
+using Savvy.Extensions;
+using Savvy.Interfaces;
+
 namespace SavvyServices
 {
-    using System.Globalization;
-    using MirraGames.SDK;
-    using Savvy.Constants;
-    using Savvy.Container;
-    using Savvy.Extensions;
-    using Savvy.Interfaces;
-    using UnityEngine;
-
     public class CustomPreferencesService : NetSavvyResources, IPreferencesService
     {
         private readonly string _settingsPath = $"{PathConstants.SavvyServicesDir}/{nameof(PreferencesSettings)}";
         private PreferencesSettings _settings;
-        
+
         public void Init() =>
             _settings = LoadResources<PreferencesSettings>(_settingsPath);
-        
+
         public bool HasKey(string key)
         {
             bool result = MirraSDK.Data.HasKey(key);
             Debug($"Prefs key '{key}' {(result ? "found" : "not found")}", _settings.Debug);
-            
+
             return result;
         }
 
@@ -30,7 +29,7 @@ namespace SavvyServices
             {
                 return;
             }
-            
+
             MirraSDK.Data.SetInt(key, value);
             MirraSDK.Data.Save();
             Debug($"Save int prefs. Key '{key}', value '{value}'", _settings.Debug);
@@ -42,7 +41,7 @@ namespace SavvyServices
             {
                 return;
             }
-            
+
             MirraSDK.Data.SetFloat(key, value);
             MirraSDK.Data.Save();
             Debug($"Save float prefs. Key '{key}', value '{value}'", _settings.Debug);
@@ -54,7 +53,7 @@ namespace SavvyServices
             {
                 return;
             }
-            
+
             MirraSDK.Data.SetString(key, value.ToString(CultureInfo.InvariantCulture));
             MirraSDK.Data.Save();
             Debug($"Save double prefs. Key '{key}', value '{value}'", _settings.Debug);
@@ -66,7 +65,7 @@ namespace SavvyServices
             {
                 return;
             }
-            
+
             MirraSDK.Data.SetString(key, value);
             MirraSDK.Data.Save();
             Debug($"Save string prefs. Key '{key}', value '{value}'", _settings.Debug);
@@ -78,7 +77,7 @@ namespace SavvyServices
             {
                 return;
             }
-            
+
             MirraSDK.Data.SetBool(key, value);
             MirraSDK.Data.Save();
             Debug($"Save bool prefs. Key '{key}', value '{value}'", _settings.Debug);
@@ -90,7 +89,7 @@ namespace SavvyServices
             {
                 return;
             }
-            
+
             string result = value.ToString();
             MirraSDK.Data.SetString(key, result);
             MirraSDK.Data.Save();
@@ -103,7 +102,7 @@ namespace SavvyServices
             {
                 return;
             }
-            
+
             string result = value.ToJson();
             MirraSDK.Data.SetString(key, result);
             MirraSDK.Data.Save();
@@ -114,7 +113,7 @@ namespace SavvyServices
         {
             int result = MirraSDK.Data.GetInt(key, defaultValue);
             Debug($"Load int prefs. Key '{key}', value '{result}'", _settings.Debug);
-            
+
             return result;
         }
 
@@ -122,7 +121,7 @@ namespace SavvyServices
         {
             float result = MirraSDK.Data.GetFloat(key, defaultValue);
             Debug($"Load float prefs. Key '{key}', value '{result}'", _settings.Debug);
-            
+
             return result;
         }
 
@@ -131,7 +130,7 @@ namespace SavvyServices
             string saved = MirraSDK.Data.GetString(key, defaultValue.ToString(CultureInfo.InvariantCulture));
             double result = double.Parse(saved, CultureInfo.InvariantCulture);
             Debug($"Load double prefs. Key '{key}', value '{result}'", _settings.Debug);
-            
+
             return result;
         }
 
@@ -139,7 +138,7 @@ namespace SavvyServices
         {
             string result = MirraSDK.Data.GetString(key, defaultValue);
             Debug($"Load string prefs. Key '{key}', value '{result}'", _settings.Debug);
-            
+
             return result;
         }
 
@@ -147,15 +146,16 @@ namespace SavvyServices
         {
             bool result = MirraSDK.Data.GetBool(key, defaultValue);
             Debug($"Load bool prefs. Key '{key}', value '{result}'", _settings.Debug);
-            
+
             return result;
         }
 
-        public TEnum LoadEnum<TEnum>(string key, TEnum defaultValue) where TEnum : struct
+        public TEnum LoadEnum<TEnum>(string key, TEnum defaultValue)
+            where TEnum : struct
         {
             TEnum result = MirraSDK.Data.GetString(key).ToEnumOrDefault(defaultValue);
             Debug($"Load enum prefs. Key '{key}', value '{result}'", _settings.Debug);
-            
+
             return result;
         }
 
@@ -163,7 +163,7 @@ namespace SavvyServices
         {
             TData result = MirraSDK.Data.GetString(key).FromJson<TData>();
             Debug($"Load json prefs. Key '{key}', value '{result}'", _settings.Debug);
-            
+
             return result;
         }
 
@@ -173,7 +173,7 @@ namespace SavvyServices
             {
                 return;
             }
-            
+
             MirraSDK.Data.DeleteKey(key);
             MirraSDK.Data.Save();
             Debug($"Delete prefs key '{key}'", _settings.Debug);

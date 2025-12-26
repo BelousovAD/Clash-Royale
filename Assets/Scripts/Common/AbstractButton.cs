@@ -1,8 +1,8 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace Common
 {
-    using UnityEngine;
-    using UnityEngine.UI;
-
     [RequireComponent(typeof(Button))]
     public abstract class AbstractButton : MonoBehaviour
     {

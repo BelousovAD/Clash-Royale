@@ -1,25 +1,25 @@
+using System;
+using System.Collections.Generic;
+using MirraGames.SDK;
+using MirraGames.SDK.Common;
+using Savvy.Constants;
+using Savvy.Container;
+using Savvy.Extensions;
+using Savvy.Interfaces;
+using UnityEngine;
+
 namespace SavvyServices
 {
-    using System;
-    using System.Collections.Generic;
-    using MirraGames.SDK;
-    using MirraGames.SDK.Common;
-    using Savvy.Constants;
-    using Savvy.Container;
-    using Savvy.Extensions;
-    using Savvy.Interfaces;
-    using UnityEngine;
-
     public class CustomLocalizationService : NetSavvyResources, ILocalizationService
     {
         private readonly string _settingsPath = $"{PathConstants.SavvyServicesDir}/{nameof(LocalizationSettings)}";
-        private readonly Dictionary<string, string> _dictionary = new();
+        private readonly Dictionary<string, string> _dictionary = new ();
         private LocalizationSettings _settings;
         private IPreferencesService _preferences;
-        
+
         public event Action LocalizationUpdated;
 
-        public void Inject() => 
+        public void Inject() =>
             _preferences = GetService<IPreferencesService>();
 
         public void Init()
@@ -35,17 +35,17 @@ namespace SavvyServices
         public SystemLanguage GetLanguage()
         {
             LanguageType language = MirraSDK.Language.Current;
-            
+
             return language.ToEnumOrDefault(SystemLanguage.English);
         }
 
-        public void SetLanguage(SystemLanguage language) => 
+        public void SetLanguage(SystemLanguage language) =>
             LoadTextAsset(GetTextAsset(language));
 
         public string GetTranslation(string key) =>
             _dictionary.ContainsKey(key) ? _dictionary[key] : $"{{{key}}}";
-        
-        public string GetTranslation(string key, params object[] args) => 
+
+        public string GetTranslation(string key, params object[] args) =>
             _dictionary.ContainsKey(key) ? string.Format(_dictionary[key], args) : $"{{{key}}}";
 
         private TextAsset GetTextAsset(SystemLanguage language)
@@ -66,12 +66,12 @@ namespace SavvyServices
             if (language is null)
             {
                 _preferences.SaveEnum(GetPrefsKey(), _settings.DefaultSystemLanguage);
-                
+
                 return _settings.DefaultTextAsset;
             }
 
             _preferences.SaveEnum(GetPrefsKey(), systemLanguage);
-            
+
             return language;
         }
 

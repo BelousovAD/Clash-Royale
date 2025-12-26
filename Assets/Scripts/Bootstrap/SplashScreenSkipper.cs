@@ -1,8 +1,8 @@
+using UnityEngine;
+using UnityEngine.Rendering;
+
 namespace Bootstrap
 {
-    using UnityEngine;
-    using UnityEngine.Rendering;
-
     internal sealed class SplashScreenSkipper
     {
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]

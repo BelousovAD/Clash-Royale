@@ -1,8 +1,8 @@
+using Savvy.Container;
+using Savvy.Interfaces;
+
 namespace Bootstrap
 {
-    using Savvy.Container;
-    using Savvy.Interfaces;
-
     public class SavvyServicesProvider : NetSavvy
     {
         private ICoroutineRunnerService _coroutineRunner;
@@ -12,7 +12,7 @@ namespace Bootstrap
 
         public ICoroutineRunnerService CoroutineRunner =>
             _coroutineRunner ??= GetService<ICoroutineRunnerService>();
-        
+
         public ILocalizationService Localisation =>
             _localization ??= GetService<ILocalizationService>();
 

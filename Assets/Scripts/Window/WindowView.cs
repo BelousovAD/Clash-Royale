@@ -1,19 +1,19 @@
+using System.Collections;
+using DG.Tweening;
+using UnityEngine;
+
 namespace Window
 {
-    using System.Collections;
-    using DG.Tweening;
-    using UnityEngine;
-
     [RequireComponent(typeof(CanvasGroup))]
     internal class WindowView : MonoBehaviour
     {
         private static readonly Vector3 MinScale = Vector3.zero;
         private static readonly Vector3 MaxScale = Vector3.one;
-        
+
         [SerializeField] private Window _window;
         [SerializeField] private RectTransform _content;
-        [SerializeField, Min(0f)] private float _animationDuration;
-        
+        [SerializeField][Min(0f)] private float _animationDuration;
+
         private CanvasGroup _canvasGroup;
         private Tweener _tweener;
         private Coroutine _changeActivity;
@@ -48,7 +48,7 @@ namespace Window
         private IEnumerator ChangeActivityRoutine()
         {
             _tweener.Kill(true);
-            
+
             if (_window.IsActive)
             {
                 _tweener = _content.DOScale(MaxScale, _animationDuration)
@@ -63,7 +63,7 @@ namespace Window
             }
 
             yield return _tweener.WaitForCompletion();
-            
+
             _changeActivity = null;
         }
 

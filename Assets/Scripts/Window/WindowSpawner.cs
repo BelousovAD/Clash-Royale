@@ -1,13 +1,13 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Window
 {
-    using System;
-    using System.Collections.Generic;
-    using UnityEngine;
-
     internal class WindowSpawner : MonoBehaviour, IWindowSpawner
     {
-        [SerializeField] private List<Window> _windowPrefabs = new();
-        
+        [SerializeField] private List<Window> _windowPrefabs = new ();
+
         public Window Spawn(string id)
         {
             Window window = _windowPrefabs.Find(window => window.Id == id);

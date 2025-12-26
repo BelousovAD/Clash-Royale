@@ -1,12 +1,12 @@
+using System;
+using UnityEngine;
+
 namespace Window
 {
-    using System;
-    using UnityEngine;
-
     internal class Window : MonoBehaviour
     {
         [SerializeField] private string _id;
-        
+
         private bool _isActive;
         private bool _isInteractable;
 
