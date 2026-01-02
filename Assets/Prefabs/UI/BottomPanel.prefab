@@ -630,13 +630,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1131945287746946595, guid: 3d77e1a1f41ae1441ad6297f016ec5dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8412681768690296530}
   m_SourcePrefab: {fileID: 100100000, guid: 3d77e1a1f41ae1441ad6297f016ec5dd, type: 3}
 --- !u!224 &1485585903414159890 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 243385699303434478, guid: 3d77e1a1f41ae1441ad6297f016ec5dd, type: 3}
   m_PrefabInstance: {fileID: 1728663739452883708}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1749658071453762783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1131945287746946595, guid: 3d77e1a1f41ae1441ad6297f016ec5dd, type: 3}
+  m_PrefabInstance: {fileID: 1728663739452883708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8412681768690296530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749658071453762783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6c6f5be3147be960f505d2052c20b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _windowId: Cards
+  _needCloseCurrent: 1
 --- !u!1001 &8369704814642108390
 PrefabInstance:
   m_ObjectHideFlags: 0
