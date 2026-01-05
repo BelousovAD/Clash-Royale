@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.8784314, b: 0, a: 1}
+  m_Color: {r: 0.05490196, g: 0.9098039, b: 0.05490196, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -929,7 +929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.8784314, b: 0, a: 1}
+  m_Color: {r: 0.05490196, g: 0.9098039, b: 0.05490196, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.8784314, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.8235294, b: 0.8784314, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1567,6 +1567,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1461060967313697505}
     m_Modifications:
+    - target: {fileID: 515531729377828611, guid: d3f1a4146bc1b42469aa9363a113d9e6, type: 3}
+      propertyPath: m_DrawShape
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 515531729377828611, guid: d3f1a4146bc1b42469aa9363a113d9e6, type: 3}
+      propertyPath: m_GradientEffect.m_Rotation
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 515531729377828611, guid: d3f1a4146bc1b42469aa9363a113d9e6, type: 3}
+      propertyPath: m_Rectangle.m_CornerRadius.w
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 515531729377828611, guid: d3f1a4146bc1b42469aa9363a113d9e6, type: 3}
+      propertyPath: m_Rectangle.m_CornerRadius.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 515531729377828611, guid: d3f1a4146bc1b42469aa9363a113d9e6, type: 3}
+      propertyPath: m_Rectangle.m_CornerRadius.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 515531729377828611, guid: d3f1a4146bc1b42469aa9363a113d9e6, type: 3}
+      propertyPath: m_Rectangle.m_CornerRadius.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 515531729377828611, guid: d3f1a4146bc1b42469aa9363a113d9e6, type: 3}
+      propertyPath: m_Rectangle.m_UniformCornerRadius
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 515531729377828611, guid: d3f1a4146bc1b42469aa9363a113d9e6, type: 3}
+      propertyPath: m_GradientEffect.m_Gradient.ctime1
+      value: 29491
+      objectReference: {fileID: 0}
     - target: {fileID: 829376773109513420, guid: d3f1a4146bc1b42469aa9363a113d9e6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2339,7 +2371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5045980672994605244, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
       propertyPath: m_Pivot.y
-      value: 1
+      value: 1.18
       objectReference: {fileID: 0}
     - target: {fileID: 5045980672994605244, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2399,7 +2431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5045980672994605244, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5045980672994605244, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
