@@ -151,7 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a883e55bcb4e1cbcefe4d3cc000b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _windowPrefabs: []
+  _windowPrefabs:
+  - {fileID: 3077419580505200742, guid: 7c4ed7d07e439dd42844e5086d559a68, type: 3}
+  - {fileID: 5462027991617231999, guid: 6289145106e22ae4791afa7c54d1ea02, type: 3}
 --- !u!4 &464003978
 Transform:
   m_ObjectHideFlags: 0
@@ -291,7 +293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _windowPrefabs:
-  - {fileID: 3077419580505200742, guid: 0517eda996f36ac4e88a4a3bc82f3d24, type: 3}
+  - {fileID: 3077419580505200742, guid: 005df79526abcd64ab5450a482db1101, type: 3}
+  - {fileID: 5462027991617231999, guid: 6b20b48ddda2ed640aa74dbbcea892fc, type: 3}
 --- !u!4 &912067482
 Transform:
   m_ObjectHideFlags: 0
