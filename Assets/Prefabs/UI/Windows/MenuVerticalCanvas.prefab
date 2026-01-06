@@ -1873,6 +1873,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5105232003765090115}
     m_Modifications:
+    - target: {fileID: 194287647041154951, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 549718578181263024, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_Name
       value: ChestSlot (3)
@@ -1975,7 +1979,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493857549562526011, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_fontSize
+      value: 71
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274485000602386679, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3567867e47b729c4faaa8c36694b6196, type: 3}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.19215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3567867e47b729c4faaa8c36694b6196, type: 3}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.054901965
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.909804
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.054901965
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1995,6 +2035,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1507513093283379539}
     m_Modifications:
+    - target: {fileID: 194287647041154951, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 549718578181263024, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_Name
       value: ChestSlot (0)
@@ -2097,7 +2141,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493857549562526011, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_fontSize
+      value: 71
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274485000602386679, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3567867e47b729c4faaa8c36694b6196, type: 3}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.19215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3567867e47b729c4faaa8c36694b6196, type: 3}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.054901965
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.909804
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.054901965
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2117,6 +2197,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1507513093283379539}
     m_Modifications:
+    - target: {fileID: 194287647041154951, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 549718578181263024, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_Name
       value: ChestSlot (1)
@@ -2219,7 +2303,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493857549562526011, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_fontSize
+      value: 71
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274485000602386679, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3567867e47b729c4faaa8c36694b6196, type: 3}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.19215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3567867e47b729c4faaa8c36694b6196, type: 3}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.054901965
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.909804
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.054901965
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2239,6 +2359,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5105232003765090115}
     m_Modifications:
+    - target: {fileID: 194287647041154951, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 549718578181263024, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_Name
       value: ChestSlot (2)
@@ -2341,7 +2465,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493857549562526011, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_fontSize
+      value: 71
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274485000602386679, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3567867e47b729c4faaa8c36694b6196, type: 3}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.19215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987768417501608621, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3567867e47b729c4faaa8c36694b6196, type: 3}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.054901965
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.909804
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046356626839410128, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.054901965
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
