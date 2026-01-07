@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Item
 {
-    internal abstract class ItemContainerData<T> : ScriptableObject
-        where T : Enum
+    internal class ItemContainerData : ScriptableObject
     {
-        [SerializeField] private List<ItemData<T>> _itemDatas = new ();
+        [SerializeField] private List<ItemData> _itemDatas = new ();
 
-        public IReadOnlyList<ItemData<T>> ItemDatas => _itemDatas;
+        public IReadOnlyList<ItemData> ItemDatas => _itemDatas;
     }
 }

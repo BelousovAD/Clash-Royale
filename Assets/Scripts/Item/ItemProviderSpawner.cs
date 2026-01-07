@@ -1,23 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Spawn;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Item
 {
-    internal abstract class ItemProviderSpawner<T> : SiblingsSpawner
-        where T : Enum
+    internal class ItemProviderSpawner : SiblingsSpawner
     {
         [SerializeField] private ToggleGroup _toggleGroup;
 
         private readonly List<PooledComponent> _spawnedItemProviders = new();
 
-        protected void Spawn(Item<T> item)
+        private void OnDestroy() =>
+            ReleaseAll();
+
+        protected void Spawn(Item item)
         {
             PooledComponent itemProvider = Spawn();
             itemProvider.GetComponent<Toggle>().group = _toggleGroup;
-            itemProvider.GetComponent<ItemProvider<T>>().Initialize(item);
+            itemProvider.GetComponent<ItemProvider>().Initialize(item);
             _spawnedItemProviders.Add(itemProvider);
         }
 

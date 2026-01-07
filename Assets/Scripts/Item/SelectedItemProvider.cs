@@ -1,13 +1,10 @@
-﻿using System;
-
-namespace Item
+﻿namespace Item
 {
-    internal abstract class SelectedItemProvider<T> : ItemProvider<T>
-        where T : Enum
+    internal abstract class SelectedItemProvider : ItemProvider
     {
-        private ItemContainer<T> _container;
+        private ItemContainer _container;
 
-        public void Initialize(ItemContainer<T> container) =>
+        public void Initialize(ItemContainer container) =>
             _container = container;
 
         private void OnEnable()

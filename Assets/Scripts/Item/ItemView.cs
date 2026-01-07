@@ -1,14 +1,12 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Item
 {
-    internal abstract class ItemView<T> : MonoBehaviour
-        where T : Enum
+    internal abstract class ItemView : MonoBehaviour
     {
-        [SerializeField] private ItemProvider<T> _itemProvider;
+        [SerializeField] private ItemProvider _itemProvider;
 
-        protected Item<T> Item => _itemProvider.Item;
+        protected Item Item => _itemProvider.Item;
 
         protected virtual void OnEnable()
         {

@@ -4,16 +4,15 @@ using UnityEngine;
 
 namespace Item
 {
-    internal abstract class ItemContainer<T> : IDisposable
-        where T : Enum
+    internal class ItemContainer : IDisposable
     {
         private const int MinIndex = -1;
         
-        private readonly List<Item<T>> _items;
+        private readonly List<Item> _items;
         private int _index = MinIndex;
 
         public ItemContainer(int capacity = 0) =>
-            _items = new List<Item<T>>(capacity);
+            _items = new List<Item>(capacity);
 
         public event Action ContentChanged;
 
@@ -21,9 +20,9 @@ namespace Item
 
         public int Capacity => _items.Capacity;
 
-        public Item<T> Selected => Index > MinIndex ? Items[Index] : null;
+        public Item Selected => Index > MinIndex ? Items[Index] : null;
 
-        public IReadOnlyList<Item<T>> Items => _items;
+        public IReadOnlyList<Item> Items => _items;
 
         private int Index
         {
@@ -49,7 +48,7 @@ namespace Item
         public virtual void Dispose() =>
             Clear();
 
-        public void Add(Item<T> item)
+        public void Add(Item item)
         {
             if (_items.Count < Capacity)
             {
@@ -61,7 +60,7 @@ namespace Item
 
         public void Clear()
         {
-            foreach (Item<T> item in Items)
+            foreach (Item item in Items)
             {
                 item.Selected -= SelectById;
             }
@@ -73,7 +72,7 @@ namespace Item
         
         public void RemoveSelected()
         {
-            Item<T> item = Selected;
+            Item item = Selected;
 
             if (item is not null)
             {
@@ -82,7 +81,7 @@ namespace Item
             }
         }
         
-        private void Remove(Item<T> item)
+        private void Remove(Item item)
         {
             item.Selected -= SelectById;
             _items.Remove(item);

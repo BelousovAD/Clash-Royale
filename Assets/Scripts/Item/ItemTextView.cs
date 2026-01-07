@@ -1,12 +1,10 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace Item
 {
     [RequireComponent(typeof(TMP_Text))]
-    internal abstract class ItemTextView<T> : ItemView<T>
-        where T : Enum
+    internal abstract class ItemTextView : ItemView
     {
         [SerializeField] private string _format = "{0}";
         

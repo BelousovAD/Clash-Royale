@@ -3,14 +3,13 @@ using UnityEngine;
 
 namespace Item
 {
-    internal class ItemProvider<T> : MonoBehaviour
-        where T : Enum
+    internal class ItemProvider : MonoBehaviour
     {
-        private Item<T> _item;
+        private Item _item;
         
         public event Action Changed;
 
-        public Item<T> Item
+        public Item Item
         {
             get
             {
@@ -24,7 +23,7 @@ namespace Item
             }
         }
 
-        public void Initialize(Item<T> item) =>
+        public void Initialize(Item item) =>
             Item = item;
     }
 }

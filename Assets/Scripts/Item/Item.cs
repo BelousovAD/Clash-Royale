@@ -3,14 +3,13 @@ using UnityEngine;
 
 namespace Item
 {
-    internal abstract class Item<T> : IEquatable<Item<T>>
-        where T : Enum
+    public class Item : IEquatable<Item>
     {
         private static int s_id;
 
         private readonly int _id;
         
-        public Item(ItemData<T> data)
+        public Item(ItemData data)
         {
             _id = s_id++;
             Data = data;
@@ -18,19 +17,19 @@ namespace Item
         
         public event Action<string> Selected;
 
-        public T Type => Data.Type;
+        public string Type => Data.Type;
 
-        public string Id => Type.ToString() + _id;
+        public string Id => Type + _id;
 
         public Sprite Icon => Data.Icon;
         
-        protected ItemData<T> Data { get; }
+        protected ItemData Data { get; }
 
-        public bool Equals(Item<T> other) =>
+        public bool Equals(Item other) =>
             other is not null && other.GetType() == GetType() && Type.Equals(other.Type);
 
         public override bool Equals(object obj) =>
-            Equals(obj as Item<T>);
+            Equals(obj as Item);
 
         public override int GetHashCode() =>
             Id.GetHashCode();

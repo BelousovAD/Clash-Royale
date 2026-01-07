@@ -1,16 +1,14 @@
-﻿using System;
+﻿using UnityEngine;
 
 namespace Item
 {
-    using UnityEngine;
-
-    internal abstract class ItemData<T> : ScriptableObject
-        where T : Enum
+    [CreateAssetMenu(fileName = nameof(ItemData), menuName = nameof(Item) + nameof(ItemData))]
+    public class ItemData : ScriptableObject
     {
-        [SerializeField] private T _type;
+        [SerializeField] private string _type;
         [SerializeField] private Sprite _icon;
 
-        public T Type => _type;
+        public string Type => _type;
         
         public Sprite Icon => _icon;
     }
