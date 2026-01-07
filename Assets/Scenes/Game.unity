@@ -151,7 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a883e55bcb4e1cbcefe4d3cc000b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _windowPrefabs: []
+  _windowPrefabs:
+  - {fileID: 3077419580505200742, guid: 23bd69b6dd4f1b040b01b3668c8de605, type: 3}
 --- !u!4 &464003978
 Transform:
   m_ObjectHideFlags: 0
@@ -290,7 +291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a883e55bcb4e1cbcefe4d3cc000b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _windowPrefabs: []
+  _windowPrefabs:
+  - {fileID: 3077419580505200742, guid: 9b1edbdb8729dfc49aa396fc6ca7cb14, type: 3}
 --- !u!4 &912067482
 Transform:
   m_ObjectHideFlags: 0

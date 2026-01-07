@@ -152,8 +152,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _windowPrefabs:
-  - {fileID: 3077419580505200742, guid: 7c4ed7d07e439dd42844e5086d559a68, type: 3}
   - {fileID: 3077419580505200742, guid: 8020e535bf8519c47a5065dba4a15a93, type: 3}
+  - {fileID: 5462027991617231999, guid: 6289145106e22ae4791afa7c54d1ea02, type: 3}
+  - {fileID: 3077419580505200742, guid: 7c4ed7d07e439dd42844e5086d559a68, type: 3}
+  - {fileID: 2314499209354299357, guid: 36f28b6746d9c244393e573e13f1dbc9, type: 3}
 --- !u!4 &464003978
 Transform:
   m_ObjectHideFlags: 0
@@ -293,8 +295,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _windowPrefabs:
-  - {fileID: 3077419580505200742, guid: 005df79526abcd64ab5450a482db1101, type: 3}
   - {fileID: 3077419580505200742, guid: f55d1d69bb79896428188eff5ecf6583, type: 3}
+  - {fileID: 5462027991617231999, guid: 6b20b48ddda2ed640aa74dbbcea892fc, type: 3}
+  - {fileID: 3077419580505200742, guid: 005df79526abcd64ab5450a482db1101, type: 3}
+  - {fileID: 2314499209354299357, guid: 36f28b6746d9c244393e573e13f1dbc9, type: 3}
 --- !u!4 &912067482
 Transform:
   m_ObjectHideFlags: 0
