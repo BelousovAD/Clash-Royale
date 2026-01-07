@@ -17,16 +17,21 @@ namespace Item
         
         public event Action<string> Selected;
 
-        public string Type => Data.Type;
+        public ItemType Type => Data.Type;
 
-        public string Id => Type + _id;
+        public string Subtype => Data.Subtype;
+
+        public string Id => Type + Subtype + _id;
 
         public Sprite Icon => Data.Icon;
         
         protected ItemData Data { get; }
 
         public bool Equals(Item other) =>
-            other is not null && other.GetType() == GetType() && Type.Equals(other.Type);
+            other is not null &&
+            other.GetType() == GetType() &&
+            Type.Equals(other.Type) &&
+            Subtype.Equals(other.Subtype);
 
         public override bool Equals(object obj) =>
             Equals(obj as Item);

@@ -11,12 +11,17 @@ namespace Item
         private readonly List<Item> _items;
         private int _index = MinIndex;
 
-        public ItemContainer(int capacity = 0) =>
+        public ItemContainer(ItemType type, int capacity = 0)
+        {
+            Type = type;
             _items = new List<Item>(capacity);
+        }
 
         public event Action ContentChanged;
 
         public event Action SelectChanged;
+        
+        public ItemType Type { get; }
 
         public int Capacity => _items.Capacity;
 
@@ -50,12 +55,21 @@ namespace Item
 
         public void Add(Item item)
         {
-            if (_items.Count < Capacity)
+            if (item.Type.Equals(Type) == false)
             {
-                item.Selected += SelectById;
-                _items.Add(item);
-                ContentChanged?.Invoke();
+                Debug.LogError($"Can not add item:{item.Id}. Require type:{Type}");
+                return;
             }
+            
+            if (_items.Count >= Capacity)
+            {
+                Debug.LogError($"Can not add item:{item.Id}. Item list is full");
+                return;
+            }
+            
+            item.Selected += SelectById;
+            _items.Add(item);
+            ContentChanged?.Invoke();
         }
 
         public void Clear()
