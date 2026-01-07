@@ -2,7 +2,7 @@
 
 namespace Item
 {
-    [CreateAssetMenu(fileName = nameof(ItemData), menuName = nameof(Item) + nameof(ItemData))]
+    [CreateAssetMenu(fileName = nameof(ItemData), menuName = nameof(Item) + "/" + nameof(ItemData))]
     public class ItemData : ScriptableObject
     {
         [SerializeField] private string _type;
