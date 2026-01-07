@@ -2583,7 +2583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _window: {fileID: 2314499209354299357}
   _content: {fileID: 768688998069557341}
-  _animationDuration: 0.5
+  _animationDuration: 0.25
 --- !u!114 &5226866412851328107
 MonoBehaviour:
   m_ObjectHideFlags: 0
