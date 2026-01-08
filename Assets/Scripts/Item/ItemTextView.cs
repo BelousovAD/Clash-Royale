@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Item
 {
     [RequireComponent(typeof(TMP_Text))]
-    internal abstract class ItemTextView : ItemView
+    public abstract class ItemTextView : ItemView
     {
         [SerializeField] private string _format = "{0}";
         

@@ -1,31 +1,55 @@
 ﻿using System.Collections.Generic;
+using Reflex.Attributes;
 using Spawn;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Item
 {
-    internal class ItemProviderSpawner : SiblingsSpawner
+    public class ItemProviderSpawner : SiblingsSpawner
     {
-        [SerializeField] private ToggleGroup _toggleGroup;
-
+        [SerializeField] private ContainerType _type;
+        
         private readonly List<PooledComponent> _spawnedItemProviders = new();
-
-        private void OnDestroy() =>
-            ReleaseAll();
-
-        protected void Spawn(Item item)
+        private Container _container;
+        
+        [Inject]
+        private void Initialize(IEnumerable<Container> containers)
         {
-            PooledComponent itemProvider = Spawn();
-            itemProvider.GetComponent<Toggle>().group = _toggleGroup;
-            itemProvider.GetComponent<ItemProvider>().Initialize(item);
-            _spawnedItemProviders.Add(itemProvider);
+            foreach (Container container in containers)
+            {
+                if (container.Type == _type)
+                {
+                    _container = container;
+                    break;
+                }
+            }
+        }
+        
+        private void Start()
+        {
+            foreach (Item item in _container.Items)
+            {
+                InitializeProvider(Spawn(item));
+            }
         }
 
-        protected void ReleaseAll()
+        private void OnDestroy()
         {
             _spawnedItemProviders.ForEach(itemProvider => itemProvider.Release());
             _spawnedItemProviders.Clear();
         }
+
+        private ItemProvider Spawn(Item item)
+        {
+            PooledComponent pooledComponent = Spawn();
+            _spawnedItemProviders.Add(pooledComponent);
+            ItemProvider itemProvider = pooledComponent.GetComponent<ItemProvider>();
+            itemProvider.Initialize(item);
+
+            return itemProvider;
+        }
+
+        protected virtual void InitializeProvider(ItemProvider itemProvider)
+        { }
     }
 }

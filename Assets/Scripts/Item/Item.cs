@@ -1,4 +1,5 @@
 ﻿using System;
+using Bootstrap;
 using UnityEngine;
 
 namespace Item
@@ -26,6 +27,11 @@ namespace Item
         public Sprite Icon => Data.Icon;
         
         protected ItemData Data { get; }
+        
+        protected SavvyServicesProvider Services { get; private set; }
+
+        public void Initialize(SavvyServicesProvider servicesProvider) =>
+            Services = servicesProvider;
 
         public bool Equals(Item other) =>
             other is not null &&
@@ -38,8 +44,14 @@ namespace Item
 
         public override int GetHashCode() =>
             Id.GetHashCode();
+
+        public virtual void Load()
+        { }
         
         public void Select() =>
             Selected?.Invoke(Id);
+        
+        protected virtual void Save()
+        { }
     }
 }

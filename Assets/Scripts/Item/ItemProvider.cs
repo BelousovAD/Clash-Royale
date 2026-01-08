@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Item
 {
-    internal class ItemProvider : MonoBehaviour
+    public class ItemProvider : MonoBehaviour
     {
         private Item _item;
         

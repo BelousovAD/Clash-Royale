@@ -1,11 +1,27 @@
-﻿namespace Item
-{
-    internal abstract class SelectedItemProvider : ItemProvider
-    {
-        private ItemContainer _container;
+﻿using System.Collections.Generic;
+using Reflex.Attributes;
+using UnityEngine;
 
-        public void Initialize(ItemContainer container) =>
-            _container = container;
+namespace Item
+{
+    public abstract class SelectedItemProvider : ItemProvider
+    {
+        [SerializeField] private ContainerType _type;
+        
+        private Container _container;
+
+        [Inject]
+        private void Initialize(IEnumerable<Container> containers)
+        {
+            foreach (Container container in containers)
+            {
+                if (container.Type == _type)
+                {
+                    _container = container;
+                    break;
+                }
+            }
+        }
 
         private void OnEnable()
         {

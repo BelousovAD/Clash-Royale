@@ -2,7 +2,7 @@
 
 namespace Item
 {
-    internal abstract class ItemView : MonoBehaviour
+    public abstract class ItemView : MonoBehaviour
     {
         [SerializeField] private ItemProvider _itemProvider;
 
@@ -10,13 +10,16 @@ namespace Item
 
         protected virtual void OnEnable()
         {
-            _itemProvider.Changed += UpdateView;
-            UpdateView();
+            _itemProvider.Changed += UpdateSubscriptions;
+            UpdateSubscriptions();
         }
 
         protected virtual void OnDisable() =>
-            _itemProvider.Changed -= UpdateView;
+            _itemProvider.Changed -= UpdateSubscriptions;
 
         public abstract void UpdateView();
+
+        protected virtual void UpdateSubscriptions() =>
+            UpdateView();
     }
 }

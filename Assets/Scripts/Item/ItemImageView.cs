@@ -4,7 +4,7 @@ using UnityEngine.UI;
 namespace Item
 {
     [RequireComponent(typeof(Image))]
-    internal abstract class ItemImageView : ItemView
+    public abstract class ItemImageView : ItemView
     {
         [SerializeField] private Sprite _defaultSprite;
         
