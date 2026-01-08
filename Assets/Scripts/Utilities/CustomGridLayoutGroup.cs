@@ -141,10 +141,10 @@ namespace Utilities
             int cellsPerMainAxis = StartAxis == AxisType.Horizontal ? cellCount.x : cellCount.y;
             int childrenToMove = 0;
             
-            if (childrenCount > _constraintCount &&
-                Mathf.CeilToInt((float)childrenCount / cellsPerMainAxis) < _constraintCount)
+            if (childrenCount > ConstraintCount &&
+                Mathf.CeilToInt((float)childrenCount / cellsPerMainAxis) < ConstraintCount)
             {
-                childrenToMove = _constraintCount - Mathf.CeilToInt((float)childrenCount / cellsPerMainAxis);
+                childrenToMove = ConstraintCount - Mathf.CeilToInt((float)childrenCount / cellsPerMainAxis);
                 childrenToMove += Mathf.FloorToInt((float)childrenToMove / (cellsPerMainAxis - 1));
 
                 if (childrenCount % cellsPerMainAxis == 1)
