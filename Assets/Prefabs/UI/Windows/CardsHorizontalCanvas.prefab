@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41729ec186bb4096a4439b3cf7485afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 4820756879466482375, guid: cf875fbd98ca5934e911a49b099b8963, type: 3}
   _parent: {fileID: 8916794232073896267}
   _poolSize: 20
   _type: 1
@@ -727,7 +727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6ff41be57e41aab962f4e78b3a3562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 4485258299826012788, guid: de7b4c81764da9a47898b4465a10664b, type: 3}
   _parent: {fileID: 8785398612164690924}
   _poolSize: 8
   _type: 0
