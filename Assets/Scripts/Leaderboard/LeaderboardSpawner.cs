@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using MirraGames.SDK;
 using MirraGames.SDK.Common;
@@ -28,8 +27,7 @@ namespace Leaderboard
             MirraSDK.Achievements.GetLeaderboard(_id, leaderboard =>
             {
                 _infoObject.SetActive(leaderboard.players.Length == 0);
-                Cut(leaderboard);
-                Spawn(leaderboard);
+                Spawn(Cut(leaderboard));
             });
         }
 
@@ -43,7 +41,7 @@ namespace Leaderboard
             _spawned.Clear();
         }
 
-        private void Cut(MirraGames.SDK.Common.Leaderboard leaderboard)
+        private PlayerScore[] Cut(MirraGames.SDK.Common.Leaderboard leaderboard)
         {
             if (leaderboard.players.Length > _maxCount)
             {
@@ -77,20 +75,18 @@ namespace Leaderboard
                         players.Add(leaderboard.players[i]);
                     }
 
-                    leaderboard.players = players.ToArray();
-                }
-                else
-                {
-                    Array.Resize(ref leaderboard.players, _maxCount);
+                    return players.ToArray();
                 }
             }
+
+            return leaderboard.players;
         }
 
-        private void Spawn(MirraGames.SDK.Common.Leaderboard leaderboard)
+        private void Spawn(PlayerScore[] playerScores)
         {
-            for (int i = 0; i < leaderboard.players.Length; i++)
+            for (int i = 0; i < playerScores.Length; i++)
             {
-                PlayerScore player = leaderboard.players[i];
+                PlayerScore player = playerScores[i];
                 PooledComponent pooledComponent = Spawn();
                 pooledComponent.GetComponent<LeaderboardItem>().Initialize(
                     player.position,
