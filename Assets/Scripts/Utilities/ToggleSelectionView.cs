@@ -10,6 +10,9 @@ namespace Utilities
         private void Awake() =>
             _toggle.onValueChanged.AddListener(UpdateView);
 
+        private void OnEnable() =>
+            UpdateView(_toggle.isOn);
+
         private void OnDestroy() =>
             _toggle.onValueChanged.RemoveListener(UpdateView);
 
