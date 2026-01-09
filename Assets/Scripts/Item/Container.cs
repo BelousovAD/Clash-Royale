@@ -116,6 +116,9 @@ namespace Item
             Subscribe();
         }
 
+        public void Deselect() =>
+            Index = MinIndex;
+
         protected virtual Item CreateItem(ItemData data) =>
             new (data);
         
