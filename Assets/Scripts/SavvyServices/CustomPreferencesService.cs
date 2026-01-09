@@ -161,7 +161,8 @@ namespace SavvyServices
 
         public TData LoadJson<TData>(string key, TData defaultValue)
         {
-            TData result = MirraSDK.Data.GetString(key).FromJson<TData>();
+            string data = MirraSDK.Data.GetString(key).Trim();
+            TData result = string.IsNullOrEmpty(data) ? defaultValue : data.FromJson<TData>();
             Debug($"Load json prefs. Key '{key}', value '{result}'", _settings.Debug);
 
             return result;
