@@ -2,6 +2,7 @@ using Bootstrap;
 using Item;
 using Reflex.Core;
 using UnityEngine;
+using Container = Item.Container;
 
 namespace Card
 {
@@ -10,8 +11,8 @@ namespace Card
         [SerializeField] private ContainerData _cardContainerData;
         [SerializeField] private ContainerData _equippedCardContainerData;
         
-        private Item.Container _cardContainer;
-        private Item.Container _equippedCardContainer;
+        private Container _cardContainer;
+        private Container _equippedCardContainer;
         private ContainerBuilder _builder;
 
         public void InstallBindings(ContainerBuilder builder)
@@ -21,8 +22,8 @@ namespace Card
             _equippedCardContainer = new CardContainer(_equippedCardContainerData);
 
             _builder
-                .AddSingleton(_cardContainer)
-                .AddSingleton(_equippedCardContainer);
+                .AddSingleton(_cardContainer, typeof(Container))
+                .AddSingleton(_equippedCardContainer, typeof(Container));
 
             _builder.OnContainerBuilt += Initialize;
         }
