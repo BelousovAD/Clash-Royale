@@ -7,7 +7,7 @@ namespace Item
 {
     public class ItemProviderSpawner : SiblingsSpawner
     {
-        [SerializeField] private ContainerType _type;
+        [SerializeField] private ContainerType _containerType;
         
         private readonly List<PooledComponent> _spawnedItemProviders = new();
         private Container _container;
@@ -17,7 +17,7 @@ namespace Item
         {
             foreach (Container container in containers)
             {
-                if (container.Type == _type)
+                if (container.Type == _containerType)
                 {
                     _container = container;
                     break;

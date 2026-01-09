@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace Item
 {
-    public abstract class SelectedItemProvider : ItemProvider
+    internal class SelectedItemProvider : ItemProvider
     {
-        [SerializeField] private ContainerType _type;
+        [SerializeField] private ContainerType _containerType;
         
         private Container _container;
 
@@ -15,7 +15,7 @@ namespace Item
         {
             foreach (Container container in containers)
             {
-                if (container.Type == _type)
+                if (container.Type == _containerType)
                 {
                     _container = container;
                     break;
