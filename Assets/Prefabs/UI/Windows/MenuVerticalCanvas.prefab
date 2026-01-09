@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: 1511670997935928209}
   - component: {fileID: 8091793984075693027}
   - component: {fileID: 5713947549675606638}
-  - component: {fileID: 5396045795450887317}
+  - component: {fileID: 8269779092869004808}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &5396045795450887317
+--- !u!114 &8269779092869004808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1035,10 +1035,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5039808115999251514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b6a1c4ba1074e329c86983d59e31797, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bb6c6f5be3147be960f505d2052c20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneToLoad: Game
+  _windowId: Searching
+  _needCloseCurrent: 1
 --- !u!1 &5615028675257291188
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,7 +2059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493857549562526011, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_fontSize
-      value: 71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6274485000602386679, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_IsActive
@@ -2220,7 +2221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493857549562526011, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_fontSize
-      value: 71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6274485000602386679, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_IsActive
@@ -2382,7 +2383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493857549562526011, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_fontSize
-      value: 71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6274485000602386679, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_IsActive
@@ -2544,7 +2545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493857549562526011, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_fontSize
-      value: 71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6274485000602386679, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_IsActive
