@@ -977,7 +977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _windowId: Searching
-  _needCloseCurrent: 0
+  _needCloseCurrent: 1
 --- !u!1 &5615028675257291188
 GameObject:
   m_ObjectHideFlags: 0
