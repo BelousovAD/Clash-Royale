@@ -6,7 +6,7 @@ using UnityEngine;
 namespace CardReplacement
 {
     [RequireComponent(typeof(CanvasGroup))]
-    public class ReplacementCardView : MonoBehaviour
+    internal class ReplacementCardView : MonoBehaviour
     {
         [SerializeField] private ContainerType _containerTypeToObserve;
         

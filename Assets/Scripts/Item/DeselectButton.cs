@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Item
 {
-    public class DeselectButton : AbstractButton
+    internal class DeselectButton : AbstractButton
     {
         [SerializeField] private ContainerType _containerType;
         

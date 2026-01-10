@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CardReplacement
 {
-    public class SelectedCardSwapper : MonoBehaviour
+    internal class SelectedCardSwapper : MonoBehaviour
     {
         [SerializeField] private ContainerType _firstContainerType;
         [SerializeField] private ContainerType _secondContainerType;
