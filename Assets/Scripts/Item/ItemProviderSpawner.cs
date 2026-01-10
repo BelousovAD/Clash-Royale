@@ -7,7 +7,7 @@ namespace Item
 {
     public class ItemProviderSpawner : SiblingsSpawner
     {
-        [SerializeField] private ContainerType _type;
+        [SerializeField] private ContainerType _containerType;
         
         private readonly List<PooledComponent> _spawnedItemProviders = new();
         private Container _container;
@@ -17,26 +17,40 @@ namespace Item
         {
             foreach (Container container in containers)
             {
-                if (container.Type == _type)
+                if (container.Type == _containerType)
                 {
                     _container = container;
                     break;
                 }
             }
         }
-        
-        private void Start()
+
+        private void OnEnable()
         {
+            _container.ContentChanged += Respawn;
+            Respawn();
+        }
+
+        private void OnDisable()
+        {
+            _container.ContentChanged -= Respawn;
+            ReleaseAll();
+        }
+
+        private void ReleaseAll()
+        {
+            _spawnedItemProviders.ForEach(itemProvider => itemProvider.Release());
+            _spawnedItemProviders.Clear();
+        }
+
+        private void Respawn()
+        {
+            ReleaseAll();
+            
             foreach (Item item in _container.Items)
             {
                 InitializeProvider(Spawn(item));
             }
-        }
-
-        private void OnDestroy()
-        {
-            _spawnedItemProviders.ForEach(itemProvider => itemProvider.Release());
-            _spawnedItemProviders.Clear();
         }
 
         private ItemProvider Spawn(Item item)

@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using Common;
 using Reflex.Attributes;
 using UnityEngine;
 
 namespace Item
 {
-    internal class SelectedItemProvider : ItemProvider
+    internal class DeselectButton : AbstractButton
     {
         [SerializeField] private ContainerType _containerType;
         
@@ -22,21 +23,8 @@ namespace Item
                 }
             }
         }
-
-        private void OnEnable()
-        {
-            _container.SelectChanged += UpdateItem;
-            _container.ContentChanged += UpdateItem;
-            UpdateItem();
-        }
-
-        private void OnDisable()
-        {
-            _container.SelectChanged -= UpdateItem;
-            _container.ContentChanged -= UpdateItem;
-        }
-
-        private void UpdateItem() =>
-            Initialize(_container.Selected);
+        
+        protected override void HandleClick() =>
+            _container.Deselect();
     }
 }

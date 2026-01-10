@@ -74,17 +74,9 @@ namespace Item
             Save();
             ContentChanged?.Invoke();
         }
-        
-        public void RemoveSelected()
-        {
-            Item item = Selected;
 
-            if (item is not null)
-            {
-                Index -= 1;
-                Remove(item);
-            }
-        }
+        public void Deselect() =>
+            Index = MinIndex;
 
         public void Load()
         {
@@ -114,6 +106,31 @@ namespace Item
             }
             
             Subscribe();
+        }
+
+        public void ReplaceSelected(Item newItem)
+        {
+            Item item = Selected;
+            
+            if (item is null)
+            {
+                Debug.LogError($"Can not replace. Selected item is null");
+                return;
+            }
+
+            if (newItem.Type.Equals(_data.ItemType) == false)
+            {
+                Debug.LogError(
+                    $"Can not replace selected item with a new item:{newItem.Id}. Require type:{_data.ItemType}");
+                return;
+            }
+
+            item.Selected -= SelectById;
+            _items.Remove(item);
+            newItem.Selected += SelectById;
+            _items.Insert(Index, newItem);
+            Save();
+            ContentChanged?.Invoke();
         }
 
         protected virtual Item CreateItem(ItemData data) =>

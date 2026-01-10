@@ -559,6 +559,7 @@ GameObject:
   - component: {fileID: 5020428111324085525}
   - component: {fileID: 4485258299826012788}
   - component: {fileID: 2778493225397199459}
+  - component: {fileID: 6864076832589929082}
   m_Layer: 5
   m_Name: BaseCard
   m_TagString: Untagged
@@ -610,3 +611,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd99c711e9874a96b45004b4a30659ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6864076832589929082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982913114352740504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20620ae30fdd0164c9bb5bdc717d3ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _injectionStrategy: 2
