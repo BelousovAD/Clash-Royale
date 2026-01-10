@@ -2,7 +2,7 @@ using Item;
 
 namespace Card
 {
-    public class CardContainer : Container
+    internal class CardContainer : Container
     {
         public CardContainer(ContainerData data)
             : base(data)
