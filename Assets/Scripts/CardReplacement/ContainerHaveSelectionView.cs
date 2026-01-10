@@ -3,7 +3,7 @@ using Item;
 using Reflex.Attributes;
 using UnityEngine;
 
-namespace Card
+namespace CardReplacement
 {
     internal class ContainerHaveSelectionView : MonoBehaviour
     {
