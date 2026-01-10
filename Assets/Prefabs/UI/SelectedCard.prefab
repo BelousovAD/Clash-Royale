@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: _itemProvider
       value: 
       objectReference: {fileID: 7621812101043692095}
+    - target: {fileID: 2619591840386254509, guid: de7b4c81764da9a47898b4465a10664b, type: 3}
+      propertyPath: _itemProvider
+      value: 
+      objectReference: {fileID: 7621812101043692095}
     - target: {fileID: 5020428111324085525, guid: de7b4c81764da9a47898b4465a10664b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

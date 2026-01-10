@@ -5,14 +5,16 @@ using UnityEngine;
 namespace Rarity
 {
     [CreateAssetMenu(fileName = nameof(RarityData), menuName = nameof(Rarity) + "/" + nameof(RarityData))]
-    internal class RarityData : ScriptableObject
+    public class RarityData : ScriptableObject
     {
+        public static readonly Color DefaultColor = Color.white;
+        
         [SerializeField] private List<RarityColorPair> _rarities;
 
         public Color GetColor(RarityType rarityType)
         {
-            Color result = Color.white;
-            int index = _rarities.FindIndex(rare => rare.Type == rarityType);
+            Color result = DefaultColor;
+            int index = _rarities.FindIndex(rarity => rarity.Type == rarityType);
 
             if (index != -1)
             {
