@@ -24,19 +24,33 @@ namespace Item
                 }
             }
         }
-        
-        private void Start()
+
+        private void OnEnable()
         {
+            _container.ContentChanged += Respawn;
+            Respawn();
+        }
+
+        private void OnDisable()
+        {
+            _container.ContentChanged -= Respawn;
+            ReleaseAll();
+        }
+
+        private void ReleaseAll()
+        {
+            _spawnedItemProviders.ForEach(itemProvider => itemProvider.Release());
+            _spawnedItemProviders.Clear();
+        }
+
+        private void Respawn()
+        {
+            ReleaseAll();
+            
             foreach (Item item in _container.Items)
             {
                 InitializeProvider(Spawn(item));
             }
-        }
-
-        private void OnDestroy()
-        {
-            _spawnedItemProviders.ForEach(itemProvider => itemProvider.Release());
-            _spawnedItemProviders.Clear();
         }
 
         private ItemProvider Spawn(Item item)
