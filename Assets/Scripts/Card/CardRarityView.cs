@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Card
 {
-    public class CardRarityView : ItemImageView
+    internal class CardRarityView : ItemImageView
     {
         [SerializeField] private RarityData _rarityData;
 
