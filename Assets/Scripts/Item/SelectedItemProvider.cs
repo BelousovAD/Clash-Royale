@@ -26,11 +26,15 @@ namespace Item
         private void OnEnable()
         {
             _container.SelectChanged += UpdateItem;
+            _container.ContentChanged += UpdateItem;
             UpdateItem();
         }
 
-        private void OnDisable() =>
+        private void OnDisable()
+        {
             _container.SelectChanged -= UpdateItem;
+            _container.ContentChanged -= UpdateItem;
+        }
 
         private void UpdateItem() =>
             Initialize(_container.Selected);
