@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2310a3246fcefb84ca7ccdf0aa803a53
+guid: 48c70b9935161144fb5121057ff10c61
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,33 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: DefaultMaterial.002
+    second: {fileID: 2100000, guid: 52f8a797374b75f4c9f86ea9e876910a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Treasure Chest.002
-    second: {fileID: 2100000, guid: 9bbe4e13c3a1b964497d58550a5b2a4f, type: 2}
+    second: {fileID: 2100000, guid: e9910c7859ab15c4aa7ce14f4b982da7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Treasure Chest_4_1.001
-    second: {fileID: 2100000, guid: 046120f0d15dd3d4daed2b6d8161fbae, type: 2}
+      name: Treasure Chest_1_1
+    second: {fileID: 2100000, guid: 48f512f301a32a446bec05a55aea01c8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Treasure Chest_4_2.001
-    second: {fileID: 2100000, guid: 8f185dbbdfb3cec4a815cd9bb0b9b549, type: 2}
+      name: Treasure Chest_1_2
+    second: {fileID: 2100000, guid: 5d02c2057aac19e418036c760ca20364, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Treasure Chest_4_3.001
-    second: {fileID: 2100000, guid: 86b3735b037d2aa46930cdac8aef2fbe, type: 2}
+      name: Treasure Chest_1_3
+    second: {fileID: 2100000, guid: e0ed090fe221dce41be2a8366378d1ef, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Treasure Chest_4_4.001
-    second: {fileID: 2100000, guid: 52d9e08cc00776a41a26600a1d2fda45, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Treasure Chest_5_1.001
-    second: {fileID: 2100000, guid: 2cf1c1687ec442b40aeedd013ebcfe3f, type: 2}
+      name: Treasure Chest_1_4
+    second: {fileID: 2100000, guid: a2a65567037be4347a2c90a261d7e236, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -108,7 +108,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -127,7 +127,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
