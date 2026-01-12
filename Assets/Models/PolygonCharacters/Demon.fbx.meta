@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a98838412b2d7984e996f5fe7722c6b7
+guid: 73fc1b7f261920e41bb2fbb727bcbc08
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,38 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: DefaultMaterial
-    second: {fileID: 2100000, guid: 3d680b2303e7d2745b2f8636557da7af, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Treasure Chest
-    second: {fileID: 2100000, guid: f9ca5de553f2d234fa1e88d7c63d0f3a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Treasure Chest_2_1
-    second: {fileID: 2100000, guid: b6762187011a05e4eb4a180b2299145c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Treasure Chest_2_2
-    second: {fileID: 2100000, guid: bbb7727275cc4e54380680f9ca2c6187, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Treasure Chest_2_3
-    second: {fileID: 2100000, guid: 261529f15578e52428014799dfdf8b96, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Treasure Chest_2_4
-    second: {fileID: 2100000, guid: 1840c1477ed0d444c9c73f99fbdc27be, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Treasure Chest_3_2
-    second: {fileID: 2100000, guid: 039918bfc1775e047a5ade204ae47b27, type: 2}
+      name: lambert15
+    second: {fileID: 2100000, guid: 7b3a3b2a488061f4db63c66c58cf428e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -70,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -125,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 100
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

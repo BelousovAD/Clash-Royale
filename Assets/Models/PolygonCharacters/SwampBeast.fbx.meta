@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a9c5cbeeedaa3f74eb65e418a08fd7ba
+guid: 9d7b308a8b329344a81acc1ef3a2d903
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,33 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Treasure Chest.001
-    second: {fileID: 2100000, guid: 9bbe4e13c3a1b964497d58550a5b2a4f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Treasure Chest_4_1.001
-    second: {fileID: 2100000, guid: 046120f0d15dd3d4daed2b6d8161fbae, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Treasure Chest_4_2.001
-    second: {fileID: 2100000, guid: 8f185dbbdfb3cec4a815cd9bb0b9b549, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Treasure Chest_4_3.001
-    second: {fileID: 2100000, guid: 86b3735b037d2aa46930cdac8aef2fbe, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Treasure Chest_4_4.001
-    second: {fileID: 2100000, guid: 52d9e08cc00776a41a26600a1d2fda45, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Treasure Chest_5_1.001
-    second: {fileID: 2100000, guid: 2cf1c1687ec442b40aeedd013ebcfe3f, type: 2}
+      name: lambert21
+    second: {fileID: 2100000, guid: 32a88d6b77fb85344a926ccac97e14d6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -65,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -120,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 100
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
