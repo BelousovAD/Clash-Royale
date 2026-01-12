@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using Rarity;
 using UnityEngine;
@@ -12,7 +13,9 @@ namespace Chest
 
         public Chest(ChestData data)
             : base(data) =>
-            _totalChance = Data.Chances.Sum(chance => chance.Percent);
+            _totalChance = Chances.Sum(chance => chance.Percent);
+
+        public IReadOnlyList<Chance> Chances => Data.Chances;
 
         public GameObject Prefab => Data.Prefab;
 
@@ -23,7 +26,7 @@ namespace Chest
             float take = Random.Range(MinRandomValue, _totalChance);
             float chanceSum = 0f;
 
-            foreach (Chance chance in Data.Chances)
+            foreach (Chance chance in Chances)
             {
                 chanceSum += chance.Percent;
 
