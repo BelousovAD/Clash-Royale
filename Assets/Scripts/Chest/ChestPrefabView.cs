@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Chest
 {
-    public class ChestPrefabView : ItemView
+    internal class ChestPrefabView : ItemView
     {
         [SerializeField] private Transform _parent;
 

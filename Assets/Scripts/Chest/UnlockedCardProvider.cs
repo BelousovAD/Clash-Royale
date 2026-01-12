@@ -3,7 +3,7 @@ using Reflex.Attributes;
 
 namespace Chest
 {
-    public class UnlockedCardProvider : ItemProvider
+    internal class UnlockedCardProvider : ItemProvider
     {
         private CardUnlocker _cardUnlocker;
 

@@ -3,7 +3,7 @@ using Reflex.Attributes;
 
 namespace Chest
 {
-    public class UnlockCardButton : AbstractButton
+    internal class UnlockCardButton : AbstractButton
     {
         private CardUnlocker _cardUnlocker;
 

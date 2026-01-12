@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Chest
 {
     [RequireComponent(typeof(TMP_Text))]
-    public class CardCountPerRarityTextView : MonoBehaviour
+    internal class CardCountPerRarityTextView : MonoBehaviour
     {
         private const ItemType CardType = ItemType.Card;
         

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Chest
 {
-    public class ChanceTextView : ItemTextView
+    internal class ChanceTextView : ItemTextView
     {
         private const string FloatFormat = "F2";
         

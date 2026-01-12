@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Chest
 {
-    public class UnlockedCardView : MonoBehaviour
+    internal class UnlockedCardView : MonoBehaviour
     {
         private readonly Vector3 _minScale = Vector3.zero;
         private readonly Vector3 _maxScale = Vector3.one;
