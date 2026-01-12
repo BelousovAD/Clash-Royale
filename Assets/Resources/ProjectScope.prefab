@@ -146,3 +146,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chestContainerData: {fileID: 11400000, guid: bb5337f4c15c54144b808c2af36eb3a4, type: 2}
+  _fullCardList: {fileID: 11400000, guid: 8c8d897767a823148ab79e761b34c83a, type: 2}
