@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a9c5cbeeedaa3f74eb65e418a08fd7ba
+guid: 2310a3246fcefb84ca7ccdf0aa803a53
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Treasure Chest.001
+      name: Treasure Chest.002
     second: {fileID: 2100000, guid: 9bbe4e13c3a1b964497d58550a5b2a4f, type: 2}
   - first:
       type: UnityEngine:Material
