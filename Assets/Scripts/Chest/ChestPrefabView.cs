@@ -17,7 +17,9 @@ namespace Chest
             
             if (Item is not null)
             {
-                _prefabInstance = Instantiate(Item.Prefab, Vector3.zero, Quaternion.identity, _parent);
+                _prefabInstance = Instantiate(Item.Prefab, _parent);
+                _prefabInstance.transform.localPosition = Vector3.zero;
+                _prefabInstance.transform.localRotation = Quaternion.identity;
             }
         }
     }
