@@ -594,13 +594,15 @@ GameObject:
   - component: {fileID: 3174564039783842279}
   - component: {fileID: 9046356626839410128}
   - component: {fileID: 5902832260238848972}
+  - component: {fileID: 7220336349636106155}
+  - component: {fileID: 8724125844780591420}
   m_Layer: 5
   m_Name: OpenButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1119522020393681291
 RectTransform:
   m_ObjectHideFlags: 0
@@ -703,6 +705,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7220336349636106155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274485000602386679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc7be6f7ad64205bb6285a2560ad403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemProvider: {fileID: 2032259935929064569}
+--- !u!114 &8724125844780591420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274485000602386679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6c6f5be3147be960f505d2052c20b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _windowId: Chest
+  _needCloseCurrent: 1
 --- !u!1 &6801226026742319502
 GameObject:
   m_ObjectHideFlags: 0
