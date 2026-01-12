@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4726a50aa31e9e046b3b32a3c6326812
+guid: b5b28de887003a8479884607e40d279b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,12 +7,12 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: DefaultMaterial.001
+      name: DefaultMaterial
     second: {fileID: 2100000, guid: 3d680b2303e7d2745b2f8636557da7af, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Treasure Chest.001
+      name: Treasure Chest
     second: {fileID: 2100000, guid: f9ca5de553f2d234fa1e88d7c63d0f3a, type: 2}
   - first:
       type: UnityEngine:Material
@@ -113,7 +113,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -132,7 +132,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
