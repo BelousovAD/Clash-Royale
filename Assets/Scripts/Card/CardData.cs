@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Card
 {
     [CreateAssetMenu(fileName = nameof(CardData), menuName = nameof(Card) + "/" + nameof(CardData))]
-    internal class CardData : ItemData
+    public class CardData : ItemData
     {
         [SerializeField] private RarityType _rarity;
         [SerializeField][Min(0)] private int _price;
