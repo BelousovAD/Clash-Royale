@@ -1,12 +1,10 @@
+using System.Linq;
 using Rarity;
+using UnityEngine;
 
 namespace Chest
 {
-    using System.Linq;
-    using Item;
-    using UnityEngine;
-
-    internal class Chest : Item
+    internal class Chest : Item.Item
     {
         private const float MinRandomValue = 0f;
         
@@ -15,6 +13,8 @@ namespace Chest
         public Chest(ChestData data)
             : base(data) =>
             _totalChance = Data.Chances.Sum(chance => chance.Percent);
+
+        public GameObject Prefab => Data.Prefab;
 
         private new ChestData Data => base.Data as ChestData;
 
