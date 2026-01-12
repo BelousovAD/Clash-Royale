@@ -15,7 +15,7 @@ MonoBehaviour:
   _type: 1
   _subtype: Legendary
   _icon: {fileID: 21300000, guid: 7a09fa2a6de299f40b5e2c408e302b82, type: 3}
-  _prefab: {fileID: 7940564129284114041, guid: 6cca735523e704e429429238067dce73, type: 3}
+  _prefab: {fileID: 3867750451406819677, guid: d1b072672da91e04abd83f56cc49a801, type: 3}
   _chances:
   - Percent: 14
     Rarity: 0
