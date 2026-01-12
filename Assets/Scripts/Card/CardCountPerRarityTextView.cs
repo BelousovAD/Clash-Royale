@@ -1,11 +1,10 @@
 using System.Linq;
-using Card;
 using Item;
 using Rarity;
 using TMPro;
 using UnityEngine;
 
-namespace Chest
+namespace Card
 {
     [RequireComponent(typeof(TMP_Text))]
     internal class CardCountPerRarityTextView : MonoBehaviour

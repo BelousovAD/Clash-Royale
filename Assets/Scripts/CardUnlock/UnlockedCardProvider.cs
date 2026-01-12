@@ -1,7 +1,7 @@
 using Item;
 using Reflex.Attributes;
 
-namespace Chest
+namespace CardUnlock
 {
     internal class UnlockedCardProvider : ItemProvider
     {

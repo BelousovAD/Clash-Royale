@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Chest
 {
-    internal class Chest : Item.Item
+    public class Chest : Item.Item
     {
         private const float MinRandomValue = 0f;
         

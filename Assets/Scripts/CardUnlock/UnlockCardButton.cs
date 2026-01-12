@@ -1,7 +1,7 @@
 using Common;
 using Reflex.Attributes;
 
-namespace Chest
+namespace CardUnlock
 {
     internal class UnlockCardButton : AbstractButton
     {

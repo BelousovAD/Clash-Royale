@@ -7,7 +7,7 @@ using Rarity;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Chest
+namespace CardUnlock
 {
     internal class CardUnlocker
     {
@@ -51,7 +51,7 @@ namespace Chest
                 Debug.LogError($"Can not get card rarity. Selected chest is null");
             }
             
-            RarityType cardRarity = (_chestContainer.Selected as Chest)!.GetRandomRarity();
+            RarityType cardRarity = (_chestContainer.Selected as Chest.Chest)!.GetRandomRarity();
             Card.Card card = GetRandomCard(cardRarity);
             card.Unlock();
             CardUnlocked?.Invoke(card);

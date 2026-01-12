@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Chest
 {
     [CreateAssetMenu(fileName = nameof(ChestData), menuName = nameof(Chest) + "/" + nameof(ChestData))]
-    internal class ChestData : ItemData
+    public class ChestData : ItemData
     {
         [SerializeField] private GameObject _prefab;
         [SerializeField] private List<Chance> _chances;

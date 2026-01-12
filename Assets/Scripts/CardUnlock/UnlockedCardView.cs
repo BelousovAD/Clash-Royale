@@ -2,7 +2,7 @@ using DG.Tweening;
 using Reflex.Attributes;
 using UnityEngine;
 
-namespace Chest
+namespace CardUnlock
 {
     internal class UnlockedCardView : MonoBehaviour
     {
@@ -12,7 +12,7 @@ namespace Chest
         [SerializeField] private CanvasGroup _windowCanvasGroup;
         [SerializeField] private CanvasGroup _cardCanvasGroup;
         [SerializeField][Min(0f)] private float _animationDelay;
-        [SerializeField][Min(0F)] private float _animationDuration;
+        [SerializeField][Min(0f)] private float _animationDuration;
         
         private CardUnlocker _cardUnlocker;
 

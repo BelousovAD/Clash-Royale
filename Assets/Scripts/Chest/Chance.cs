@@ -4,7 +4,7 @@ using Rarity;
 namespace Chest
 {
     [Serializable]
-    internal struct Chance
+    public struct Chance
     {
         public float Percent;
         public RarityType Rarity;

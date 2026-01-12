@@ -2,7 +2,7 @@ using DG.Tweening;
 using Reflex.Attributes;
 using UnityEngine;
 
-namespace Chest
+namespace CardUnlock
 {
     internal class ChestAnimator : MonoBehaviour
     {
