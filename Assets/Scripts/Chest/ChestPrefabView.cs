@@ -1,0 +1,26 @@
+using Item;
+using UnityEngine;
+
+namespace Chest
+{
+    internal class ChestPrefabView : ItemView
+    {
+        [SerializeField] private Transform _parent;
+
+        private GameObject _prefabInstance;
+
+        private new Chest Item => base.Item as Chest;
+        
+        public override void UpdateView()
+        {
+            Destroy(_prefabInstance);
+            
+            if (Item is not null)
+            {
+                _prefabInstance = Instantiate(Item.Prefab, _parent);
+                _prefabInstance.transform.localPosition = Vector3.zero;
+                _prefabInstance.transform.localRotation = Quaternion.identity;
+            }
+        }
+    }
+}

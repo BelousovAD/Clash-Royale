@@ -6,7 +6,7 @@ using Container = Item.Container;
 
 namespace Card
 {
-    public class CardContainerInstaller : MonoBehaviour, IInstaller
+    internal class CardContainerInstaller : MonoBehaviour, IInstaller
     {
         [SerializeField] private ContainerData _cardContainerData;
         [SerializeField] private ContainerData _equippedCardContainerData;

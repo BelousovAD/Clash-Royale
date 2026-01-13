@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: -1652261113401643482}
   - component: {fileID: -4686413813558934109}
   - component: {fileID: 3721230923250366916}
+  - component: {fileID: 2227905300368908300}
+  - component: {fileID: 7647653424732101368}
   m_Layer: 0
   m_Name: ProjectScope
   m_TagString: Untagged
@@ -132,3 +134,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardContainerData: {fileID: 11400000, guid: ac00d45824a37164d832a25b8debc15f, type: 2}
   _equippedCardContainerData: {fileID: 11400000, guid: 938928e285e3b4941abca378b3881bcd, type: 2}
+--- !u!114 &2227905300368908300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245714807162874931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d28a667e0e7845de94e3d96fcba897d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chestContainerData: {fileID: 11400000, guid: bb5337f4c15c54144b808c2af36eb3a4, type: 2}
+--- !u!114 &7647653424732101368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245714807162874931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f336413aed78447c9dbd7ee7a8594033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fullCardList: {fileID: 11400000, guid: 8c8d897767a823148ab79e761b34c83a, type: 2}

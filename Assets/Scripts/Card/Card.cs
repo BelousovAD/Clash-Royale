@@ -3,7 +3,7 @@ using Rarity;
 
 namespace Card
 {
-    internal class Card : Item.Item
+    public class Card : Item.Item
     {
         private bool _isLocked = true;
         
@@ -35,7 +35,7 @@ namespace Card
 
         public RarityType Rarity => Data.Rarity;
 
-        protected new CardData Data => base.Data as CardData;
+        private new CardData Data => base.Data as CardData;
 
         public void Unlock() =>
             IsLocked = false;

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Item
 {
     [CreateAssetMenu(fileName = nameof(ItemDataList), menuName = nameof(Item) + "/" + nameof(ItemDataList))]
-    internal class ItemDataList : ScriptableObject
+    public class ItemDataList : ScriptableObject
     {
         [SerializeField] private ItemType _type;
         [SerializeField] private List<ItemData> _itemDatas = new ();
