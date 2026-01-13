@@ -8,7 +8,7 @@ namespace Chest
 {
     internal class ChanceTextView : ItemTextView
     {
-        private const string FloatFormat = "F2";
+        private const string FloatFormat = "F0";
         
         [SerializeField] private RarityType _rarityType;
         
