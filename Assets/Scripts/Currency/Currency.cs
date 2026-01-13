@@ -1,17 +1,21 @@
 using System;
-using Bootstrap;
+using UnityEngine;
 
 namespace Currency
 {
     public class Currency
     {
-        private const int Min = 0;
-
+        protected const int Min = 0;
+        
+        private readonly int _max;
+        
         private int _value;
-        private SavvyServicesProvider _services;
 
-        public Currency(CurrencyType type) =>
+        public Currency(CurrencyType type, int max = int.MaxValue)
+        {
             Type = type;
+            _max = max;
+        }
 
         public event Action Changed;
 
@@ -28,15 +32,11 @@ namespace Currency
             {
                 if (value != _value)
                 {
-                    _value = value < Min ? Min : value;
-                    Save();
+                    _value = Mathf.Clamp(value, Min, _max);
                     Changed?.Invoke();
                 }
             }
         }
-
-        public void Initialize(SavvyServicesProvider servicesProvider) =>
-            _services = servicesProvider;
 
         public void Earn(int amount)
         {
@@ -63,11 +63,5 @@ namespace Currency
             Value -= amount;
             return true;
         }
-
-        public void Load() =>
-            Value = _services.Preferences.LoadInt(nameof(Type), Min);
-
-        private void Save() =>
-            _services.Preferences.SaveInt(nameof(Type), Value);
     }
 }

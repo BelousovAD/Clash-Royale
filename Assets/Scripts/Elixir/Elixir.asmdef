@@ -1,0 +1,16 @@
+{
+    "name": "Elixir",
+    "rootNamespace": "",
+    "references": [
+        "GUID:008f65d56f5918d4ca958a2f25c52a7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
