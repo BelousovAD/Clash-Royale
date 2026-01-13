@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Timer;
 using Window;
 
@@ -34,7 +35,16 @@ namespace Gameplay
             _timer.TimeIsUp -= FinishGame;
         }
 
-        public void FinishGame() =>
-            _windowService.Open(_endgameWindowId, false);
+        public void FinishGame()
+        {
+            if (IsAnyCounterFull() || _timer.IsTimeUp)
+            {
+                _windowService.Open(_endgameWindowId, false);
+                Dispose();
+            }
+        }
+
+        private bool IsAnyCounterFull() =>
+            _crownCounters.Any(counter => counter.Count == CrownCounter.Max);
     }
 }

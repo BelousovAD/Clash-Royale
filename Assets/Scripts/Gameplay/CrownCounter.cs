@@ -5,10 +5,10 @@ namespace Gameplay
 {
     internal class CrownCounter
     {
-        private const int MinCount = 0;
-        private const int MaxCount = 3;
+        public const int Max = 3;
+        private const int Min = 0;
         
-        private int _count = MaxCount;
+        private int _count;
 
         public CrownCounter(CrownType type) =>
             Type = type;
@@ -26,7 +26,7 @@ namespace Gameplay
             {
                 if (value != _count)
                 {
-                    _count = Mathf.Clamp(value, MinCount, MaxCount);
+                    _count = Mathf.Clamp(value, Min, Max);
                     CountChanged?.Invoke();
                 }
             }
@@ -34,7 +34,7 @@ namespace Gameplay
         
         public CrownType Type { get; }
 
-        public void CountDown() =>
-            Count--;
+        public void CountUp() =>
+            Count++;
     }
 }

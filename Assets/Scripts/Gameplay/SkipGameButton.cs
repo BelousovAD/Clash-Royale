@@ -41,11 +41,11 @@ namespace Gameplay
         {
             if (_win)
             {
-                _enemyCrownCounter.CountDown();
+                _playerCrownCounter.CountUp();
             }
             else
             {
-                _playerCrownCounter.CountDown();
+                _enemyCrownCounter.CountUp();
             }
             
             _gameplay.FinishGame();
