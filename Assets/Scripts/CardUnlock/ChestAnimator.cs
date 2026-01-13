@@ -11,6 +11,7 @@ namespace CardUnlock
         [SerializeField] private Transform _lidTransform;
         [SerializeField][Range(0, 180)] private float _openingAngle = 120f;
         [SerializeField][Min(0)] private float _animationDuration;
+        [SerializeField][Min(0)] private float _delay = 0.55f;
 
         private Tweener _tweener;
         private CardUnlocker _cardUnlocker;
@@ -31,6 +32,7 @@ namespace CardUnlock
         private void OpenChest(Card.Card card) =>
             _tweener = _lidTransform
                 .DOLocalRotate(new Vector3(_openingAngle, 0, 0), _animationDuration)
-                .SetEase(EaseType);
+                .SetEase(EaseType)
+                .SetDelay(_delay);
     }
 }

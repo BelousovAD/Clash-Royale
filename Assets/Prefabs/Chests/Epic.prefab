@@ -47,6 +47,7 @@ MonoBehaviour:
   _lidTransform: {fileID: 2084895465898504173}
   _openingAngle: 120
   _animationDuration: 1
+  _delay: 0.55
 --- !u!1001 &534824009983051314
 PrefabInstance:
   m_ObjectHideFlags: 0
