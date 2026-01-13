@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using Savvy.Extensions;
 
 namespace Leaderboard
 {
@@ -7,6 +8,7 @@ namespace Leaderboard
     internal class ScoreView : MonoBehaviour
     {
         [SerializeField] private LeaderboardItem _item;
+        [SerializeField] private string _format = "{0}";
 
         private TMP_Text _textField;
 
@@ -23,6 +25,6 @@ namespace Leaderboard
             _item.Initialized -= UpdateView;
 
         private void UpdateView() =>
-            _textField.text = _item.Score.ToString();
+            _textField.text = string.Format(_format, _item.Score.ToNumsFormat());
     }
 }

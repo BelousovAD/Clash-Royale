@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Currency
 {
     [RequireComponent(typeof(TMP_Text))]
-    public class CurrencyTMPView : MonoBehaviour
+    internal class CurrencyTMPView : MonoBehaviour
     {
         [SerializeField] private string _format = "{0}";
         [SerializeField] private CurrencyType _currencyType;

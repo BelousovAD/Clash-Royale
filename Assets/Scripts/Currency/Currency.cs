@@ -24,7 +24,7 @@ namespace Currency
                 return _value;
             }
 
-            set
+            private set
             {
                 if (value != _value)
                 {
