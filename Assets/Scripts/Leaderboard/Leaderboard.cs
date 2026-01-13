@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Currency;
 using MirraGames.SDK;
 
@@ -6,22 +7,32 @@ namespace Leaderboard
 {
     internal class Leaderboard : IDisposable
     {
+        private const CurrencyType TrophyCurrency = CurrencyType.Trophy;
+
         private readonly string _id;
-        private Money _money;
+        private Currency.Currency _currency;
 
         public Leaderboard(string id) =>
             _id = id;
 
-        public void Initialize(Money money)
+        public void Initialize(IEnumerable<Currency.Currency> currencies)
         {
-            _money = money;
-            _money.Changed += SaveScore;
+            foreach (Currency.Currency currency in currencies)
+            {
+                if (currency.Type == TrophyCurrency)
+                {
+                    _currency = currency;
+                    break;
+                }
+            }
+            
+            _currency.Changed += SaveScore;
         }
 
         public void Dispose() =>
-            _money.Changed -= SaveScore;
+            _currency.Changed -= SaveScore;
 
         private void SaveScore() =>
-            MirraSDK.Achievements.SetScore(_id, _money.Value);
+            MirraSDK.Achievements.SetScore(_id, _currency.Value);
     }
 }
