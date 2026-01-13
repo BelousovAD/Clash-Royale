@@ -153,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _windowPrefabs:
   - {fileID: 3077419580505200742, guid: 23bd69b6dd4f1b040b01b3668c8de605, type: 3}
+  - {fileID: 3077419580505200742, guid: 664670379c1cf6b49b65368a0aa1fe0a, type: 3}
 --- !u!4 &464003978
 Transform:
   m_ObjectHideFlags: 0
@@ -338,6 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _windowPrefabs:
   - {fileID: 3077419580505200742, guid: 9b1edbdb8729dfc49aa396fc6ca7cb14, type: 3}
+  - {fileID: 3077419580505200742, guid: ad6eabb29a293f84bb92bd70a38bc19b, type: 3}
 --- !u!4 &912067482
 Transform:
   m_ObjectHideFlags: 0

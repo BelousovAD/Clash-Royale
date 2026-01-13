@@ -10,7 +10,7 @@ namespace Gameplay
     internal class SkipGameButton : AbstractButton
     {
         private const CrownType EnemyCrown = CrownType.Enemy;
-        private const CrownType PlayerCrown = CrownType.Enemy;
+        private const CrownType PlayerCrown = CrownType.Player;
         
         [SerializeField] private bool _win;
 
@@ -23,16 +23,16 @@ namespace Gameplay
         {
             _gameplay = gameplay;
 
-            foreach (CrownCounter crownCounter in crownCounters)
+            foreach (CrownCounter counter in crownCounters)
             {
-                if (crownCounter.Type == EnemyCrown)
+                if (counter.Type == EnemyCrown)
                 {
-                    _enemyCrownCounter = crownCounter;
+                    _enemyCrownCounter = counter;
                 }
 
-                if (crownCounter.Type == PlayerCrown)
+                if (counter.Type == PlayerCrown)
                 {
-                    _playerCrownCounter = crownCounter;
+                    _playerCrownCounter = counter;
                 }
             }
         }
@@ -41,11 +41,17 @@ namespace Gameplay
         {
             if (_win)
             {
-                _playerCrownCounter.CountUp();
+                for (int i = 0; i < CrownCounter.Max; i++)
+                {
+                    _playerCrownCounter.CountUp();
+                }
             }
             else
             {
-                _enemyCrownCounter.CountUp();
+                for (int i = 0; i < CrownCounter.Max; i++)
+                {
+                    _enemyCrownCounter.CountUp();
+                }
             }
             
             _gameplay.FinishGame();
