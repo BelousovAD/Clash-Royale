@@ -1,4 +1,4 @@
-using Currency;
+using System.Collections.Generic;
 using Reflex.Core;
 using UnityEngine;
 
@@ -25,7 +25,7 @@ namespace Leaderboard
         {
             _builder.OnContainerBuilt -= Initialize;
 
-            _leaderboard.Initialize(container.Resolve<Money>());
+            _leaderboard.Initialize(container.Resolve<IEnumerable<Currency.Currency>>());
         }
     }
 }

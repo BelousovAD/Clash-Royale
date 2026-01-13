@@ -3,16 +3,20 @@ using Bootstrap;
 
 namespace Currency
 {
-    public class Money
+    public class Currency
     {
         private const int Min = 0;
-        private const string SaveKey = nameof(Money);
 
         private int _value;
         private SavvyServicesProvider _services;
 
+        public Currency(CurrencyType type) =>
+            Type = type;
+
         public event Action Changed;
 
+        public CurrencyType Type { get; }
+        
         public int Value
         {
             get
@@ -61,9 +65,9 @@ namespace Currency
         }
 
         public void Load() =>
-            Value = _services.Preferences.LoadInt(SaveKey, Min);
+            Value = _services.Preferences.LoadInt(nameof(Type), Min);
 
         private void Save() =>
-            _services.Preferences.SaveInt(SaveKey, Value);
+            _services.Preferences.SaveInt(nameof(Type), Value);
     }
 }

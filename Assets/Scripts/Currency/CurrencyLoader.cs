@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Bootstrap;
 using Reflex.Attributes;
 using UnityEngine;
@@ -6,13 +7,13 @@ namespace Currency
 {
     internal class CurrencyLoader : MonoBehaviour, ILoadable
     {
-        private Money _money;
+        private List<Currency> _currencies;
 
         [Inject]
-        private void Initialize(Money money) =>
-            _money = money;
+        private void Initialize(IEnumerable<Currency> currencies) =>
+            _currencies = new List<Currency>(currencies);
 
         public void Load() =>
-            _money.Load();
+            _currencies.ForEach(currency => currency.Load());
     }
 }
