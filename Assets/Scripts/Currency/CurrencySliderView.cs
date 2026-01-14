@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace Currency
 {
     [RequireComponent(typeof(Slider))]
-    public class CurrencySliderView : MonoBehaviour
+    internal class CurrencySliderView : MonoBehaviour
     {
         [SerializeField] private CurrencyType _currencyType;
         [SerializeField][Min(0)] private float _changingTime = 2;
