@@ -3,24 +3,25 @@ using UnityEngine;
 
 namespace Currency
 {
-    public class Currency
+    public abstract class Currency
     {
         protected const int Min = 0;
-        
-        private readonly int _max;
-        
+
         private int _value;
 
-        public Currency(CurrencyType type, int max = int.MaxValue)
+        public Currency(CurrencyType type, int defaultValue = Min, int max = int.MaxValue)
         {
             Type = type;
-            _max = max;
+            Max = max;
+            _value = defaultValue;
         }
 
         public event Action Changed;
 
         public CurrencyType Type { get; }
-        
+
+        public int Max { get; }
+
         public int Value
         {
             get
@@ -32,11 +33,15 @@ namespace Currency
             {
                 if (value != _value)
                 {
-                    _value = Mathf.Clamp(value, Min, _max);
+                    _value = Mathf.Clamp(value, Min, Max);
                     Changed?.Invoke();
                 }
             }
         }
+
+        public virtual void StartEarning() { }
+        
+        public virtual void StopEarning() { }
 
         public void Earn(int amount)
         {
