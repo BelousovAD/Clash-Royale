@@ -9,7 +9,7 @@ namespace Currency
     [RequireComponent(typeof(Slider))]
     public class CurrencySliderView : MonoBehaviour
     {
-        [SerializeField] private CurrencyType _currencyType = CurrencyType.Elixir;
+        [SerializeField] private CurrencyType _currencyType;
         [SerializeField][Min(0)] private float _changingTime = 2;
         [SerializeField] private int _valueOffset = 1; 
 
