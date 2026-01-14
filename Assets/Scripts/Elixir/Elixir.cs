@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Bootstrap;
 using Currency;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 namespace Elixir
 {
-    internal class Elixir : Currency.Currency
+    internal class Elixir : Currency.Currency, IDisposable
     {
         private readonly float _timeToEarn;
         private readonly int _elixirToEarn;
@@ -20,23 +21,24 @@ namespace Elixir
         {
             _timeToEarn = timeToEarn;
             _elixirToEarn = elixirToEarn;
+            _wait = new WaitForSecondsRealtime(_timeToEarn);
+            _isEnable = true;
+        }
+        
+        public void Dispose()
+        {
+            _isEnable = false;
+            StopEarning();
         }
 
         public void Initialize(SavvyServicesProvider servicesProvider) =>
             _services = servicesProvider;
 
-        public void StartEarning()
-        {
-            _wait = new WaitForSecondsRealtime(_timeToEarn);
-            _isEnable = true;
+        public void StartEarning() =>
             _coroutine = _services.CoroutineRunner.StartCoroutine(EarnRoutine());
-        }
 
-        public void StopEarning()
-        {
-            _isEnable = false;
+        private void StopEarning() =>
             _services.CoroutineRunner.StopCoroutine(_coroutine);
-        }
 
         private IEnumerator EarnRoutine()
         {
