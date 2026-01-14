@@ -412,7 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4996837576926142511}
   - component: {fileID: 7134751165948962822}
-  - component: {fileID: 1171859268811940904}
+  - component: {fileID: 4350537708061076299}
   m_Layer: 5
   m_Name: ElixirSlider
   m_TagString: Untagged
@@ -492,6 +492,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4350537708061076299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573566457258113052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868e7d79716c4f9da31a2753fd88c8cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currencyType: 2
+  _changingTime: 2
+  _valueOffset: 1
 --- !u!1 &1845622406195459465
 GameObject:
   m_ObjectHideFlags: 0

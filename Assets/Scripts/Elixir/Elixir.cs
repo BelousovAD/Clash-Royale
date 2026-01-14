@@ -8,20 +8,18 @@ namespace Elixir
 {
     internal class Elixir : Currency.Currency, IDisposable
     {
-        private readonly float _timeToEarn;
-        private readonly int _elixirToEarn;
+        private readonly int _earnAmount;
+        private readonly WaitForSecondsRealtime _wait;
         
         private SavvyServicesProvider _services;
         private Coroutine _coroutine;
-        private WaitForSecondsRealtime _wait;
         private bool _isEnable;
 
-        public Elixir(CurrencyType type, int defaultValue, int max, float timeToEarn, int elixirToEarn)
+        public Elixir(CurrencyType type, int defaultValue, int max, float earningTime, int earnAmount)
             : base(type, defaultValue, max)
         {
-            _timeToEarn = timeToEarn;
-            _elixirToEarn = elixirToEarn;
-            _wait = new WaitForSecondsRealtime(_timeToEarn);
+            _earnAmount = earnAmount;
+            _wait = new WaitForSecondsRealtime(earningTime);
             _isEnable = true;
         }
         
@@ -44,7 +42,7 @@ namespace Elixir
         {
             while (_isEnable)
             {
-                Earn(_elixirToEarn);
+                Earn(_earnAmount);
 
                 yield return _wait;
             }
