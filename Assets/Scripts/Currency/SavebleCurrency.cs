@@ -1,8 +1,9 @@
+using System;
 using Bootstrap;
 
 namespace Currency
 {
-    public class SavebleCurrency : Currency
+    public class SavebleCurrency : Currency, IDisposable
     {
         private SavvyServicesProvider _services;
 

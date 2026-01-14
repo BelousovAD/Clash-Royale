@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Elixir
 {
-    public class ElixirInstaller : MonoBehaviour, IInstaller
+    internal class ElixirInstaller : MonoBehaviour, IInstaller
     {
         [SerializeField][Min(0)] private float _elixirTimeToEarn = 2;
         [SerializeField][Min(0)] private int _elixirValueToEarn = 1;

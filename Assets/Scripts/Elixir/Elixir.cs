@@ -9,12 +9,13 @@ namespace Elixir
     {
         private readonly float _timeToEarn;
         private readonly int _elixirToEarn;
-
-        private float _time;
+        
         private SavvyServicesProvider _services;
         private Coroutine _coroutine;
+        private WaitForSecondsRealtime _wait;
+        private bool _isEnable;
 
-        public Elixir(CurrencyType type, int defaultValue, int max, float timeToEarn, int elixirToEarn) 
+        public Elixir(CurrencyType type, int defaultValue, int max, float timeToEarn, int elixirToEarn)
             : base(type, defaultValue, max)
         {
             _timeToEarn = timeToEarn;
@@ -24,19 +25,26 @@ namespace Elixir
         public void Initialize(SavvyServicesProvider servicesProvider) =>
             _services = servicesProvider;
 
-        public void StartEarning() =>
-            _coroutine = _services.CoroutineRunner.StartCoroutine(ElixirEarnPerSeconds());
-
-        public void StopEarning() =>
-            _services.CoroutineRunner.StopCoroutine(_coroutine);
-
-        private IEnumerator ElixirEarnPerSeconds()
+        public void StartEarning()
         {
-            while (true)
+            _wait = new WaitForSecondsRealtime(_timeToEarn);
+            _isEnable = true;
+            _coroutine = _services.CoroutineRunner.StartCoroutine(EarnRoutine());
+        }
+
+        public void StopEarning()
+        {
+            _isEnable = false;
+            _services.CoroutineRunner.StopCoroutine(_coroutine);
+        }
+
+        private IEnumerator EarnRoutine()
+        {
+            while (_isEnable)
             {
                 Earn(_elixirToEarn);
 
-                yield return new WaitForSeconds(_timeToEarn);
+                yield return _wait;
             }
         }
     }
