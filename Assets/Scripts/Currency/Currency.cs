@@ -13,7 +13,7 @@ namespace Currency
         {
             Type = type;
             Max = max;
-            _value = defaultValue;
+            Value = defaultValue;
         }
 
         public event Action Changed;
@@ -38,11 +38,7 @@ namespace Currency
                 }
             }
         }
-
-        public virtual void StartEarning() { }
         
-        public virtual void StopEarning() { }
-
         public void Earn(int amount)
         {
             if (amount < 0)

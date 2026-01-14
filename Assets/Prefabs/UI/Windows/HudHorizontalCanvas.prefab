@@ -411,6 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4996837576926142511}
   - component: {fileID: 7134751165948962822}
+  - component: {fileID: 8893165941477168375}
   m_Layer: 5
   m_Name: ElixirSlider
   m_TagString: Untagged
@@ -490,6 +491,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8893165941477168375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573566457258113052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868e7d79716c4f9da31a2753fd88c8cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currencyType: 2
+  _changingTime: 2
+  _valueOffset: 1
 --- !u!1 &1967741949995230999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1802,6 +1818,7 @@ GameObject:
   - component: {fileID: 1573315946702755056}
   - component: {fileID: 6817948299783732666}
   - component: {fileID: 3471808736929582599}
+  - component: {fileID: 2439623085852928797}
   m_Layer: 5
   m_Name: CurrentElixir (TMP)
   m_TagString: Untagged
@@ -1925,6 +1942,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2439623085852928797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9134782641326423724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b940d37ad87646a697afd0c1b90c1aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _format: '{0}'
+  _currencyType: 2
 --- !u!1001 &1929091573504124214
 PrefabInstance:
   m_ObjectHideFlags: 0

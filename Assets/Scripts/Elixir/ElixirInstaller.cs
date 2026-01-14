@@ -7,10 +7,10 @@ namespace Elixir
 {
     public class ElixirInstaller : MonoBehaviour, IInstaller
     {
-        [SerializeField] private float _elixirTimeToEarn = 2;
-        [SerializeField] private int _elixirValueToEarn = 1;
-        [SerializeField] private int _defaultValue = 5;
-        [SerializeField] private int _maxValue = 10;
+        [SerializeField][Min(0)] private float _elixirTimeToEarn = 2;
+        [SerializeField][Min(0)] private int _elixirValueToEarn = 1;
+        [SerializeField][Min(0)] private int _defaultValue = 5;
+        [SerializeField][Min(0)] private int _maxValue = 10;
         
         private Elixir _elixir;
         private ContainerBuilder _builder;
