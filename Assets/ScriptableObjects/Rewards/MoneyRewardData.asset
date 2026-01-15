@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89e0e18b613a4593b31e5e4dc0d6d6e6, type: 3}
-  m_Name: ChestDataList
+  m_Script: {fileID: 11500000, guid: ed95e517b40c4f37b85a8d7c29adc8aa, type: 3}
+  m_Name: MoneyRewardData
   m_EditorClassIdentifier: 
   _type: 1
-  _itemDatas: []
+  _icon: {fileID: 21300000, guid: 3d284a568019942cd99750b31b079454, type: 3}
+  _winAmount: 10
+  _loseAmount: 0

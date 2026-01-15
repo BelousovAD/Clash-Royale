@@ -7,8 +7,8 @@ namespace Elixir
 {
     internal class ElixirInstaller : MonoBehaviour, IInstaller
     {
-        [SerializeField][Min(0)] private float _elixirTimeToEarn = 2;
-        [SerializeField][Min(0)] private int _elixirValueToEarn = 1;
+        [SerializeField][Min(0)] private float _earningTime = 2;
+        [SerializeField][Min(0)] private int _earnAmount = 1;
         [SerializeField][Min(0)] private int _defaultValue = 5;
         [SerializeField][Min(0)] private int _maxValue = 10;
         
@@ -18,7 +18,7 @@ namespace Elixir
         public void InstallBindings(ContainerBuilder builder)
         {
             _builder = builder;
-            _elixir = new Elixir(CurrencyType.Elixir, _defaultValue, _maxValue, _elixirTimeToEarn, _elixirValueToEarn);
+            _elixir = new Elixir(CurrencyType.Elixir, _defaultValue, _maxValue, _earningTime, _earnAmount);
 
             _builder.AddSingleton(_elixir, typeof(Currency.Currency));
             

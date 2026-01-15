@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89e0e18b613a4593b31e5e4dc0d6d6e6, type: 3}
-  m_Name: ChestDataList
+  m_Script: {fileID: 11500000, guid: ed95e517b40c4f37b85a8d7c29adc8aa, type: 3}
+  m_Name: TrophyRewardData
   m_EditorClassIdentifier: 
-  _type: 1
-  _itemDatas: []
+  _type: 2
+  _icon: {fileID: 21300000, guid: 308df972c0027475d9254b887cef6268, type: 3}
+  _winAmount: 25
+  _loseAmount: 10
