@@ -9,7 +9,7 @@ namespace Elixir
     internal class Elixir : Currency.Currency, IDisposable
     {
         private readonly int _earnAmount;
-        private readonly WaitForSecondsRealtime _wait;
+        private readonly WaitForSeconds _wait;
         
         private SavvyServicesProvider _services;
         private Coroutine _coroutine;
@@ -19,7 +19,7 @@ namespace Elixir
             : base(type, defaultValue, max)
         {
             _earnAmount = earnAmount;
-            _wait = new WaitForSecondsRealtime(earningTime);
+            _wait = new WaitForSeconds(earningTime);
             _isEnable = true;
         }
         
