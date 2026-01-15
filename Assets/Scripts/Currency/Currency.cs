@@ -49,20 +49,14 @@ namespace Currency
             Value += amount;
         }
 
-        public bool TrySpend(int amount)
+        public void Spend(int amount)
         {
             if (amount < 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Can not be negative");
             }
 
-            if (Value < amount)
-            {
-                return false;
-            }
-
             Value -= amount;
-            return true;
         }
     }
 }
