@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Gameplay
 {
-    internal class CrownCounter
+    public class CrownCounter
     {
         public const int Max = 3;
         private const int Min = 0;

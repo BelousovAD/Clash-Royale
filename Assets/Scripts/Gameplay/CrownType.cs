@@ -1,6 +1,6 @@
 namespace Gameplay
 {
-    internal enum CrownType
+    public enum CrownType
     {
         Player = 0,
         Enemy = 1,
