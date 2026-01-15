@@ -16,15 +16,14 @@ namespace Chest
         
         public override void UpdateView()
         {
-            string percent = string.Empty;
-            
-            if (Item is not null)
+            if (Item is null)
             {
-                percent = Item.Chances
-                    .First(chance => chance.Rarity == _rarityType).Percent
-                    .ToString(FloatFormat, CultureInfo.InvariantCulture);
+                return;
             }
 
+            string percent = Item.Chances
+                .First(chance => chance.Rarity == _rarityType).Percent
+                .ToString(FloatFormat, CultureInfo.InvariantCulture);
             TextField.text = string.Format(Format, percent);
         }
     }

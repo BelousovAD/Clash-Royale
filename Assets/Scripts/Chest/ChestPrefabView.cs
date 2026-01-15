@@ -13,14 +13,15 @@ namespace Chest
         
         public override void UpdateView()
         {
-            Destroy(_prefabInstance);
-            
-            if (Item is not null)
+            if (Item is null)
             {
-                _prefabInstance = Instantiate(Item.Prefab, _parent);
-                _prefabInstance.transform.localPosition = Vector3.zero;
-                _prefabInstance.transform.localRotation = Quaternion.identity;
+                return;
             }
+            
+            Destroy(_prefabInstance);
+            _prefabInstance = Instantiate(Item.Prefab, _parent);
+            _prefabInstance.transform.localPosition = Vector3.zero;
+            _prefabInstance.transform.localRotation = Quaternion.identity;
         }
     }
 }
