@@ -493,6 +493,7 @@ GameObject:
   - component: {fileID: 1357795363}
   - component: {fileID: 1357795366}
   - component: {fileID: 1357795367}
+  - component: {fileID: 1357795368}
   m_Layer: 0
   m_Name: SceneScope
   m_TagString: Untagged
@@ -566,10 +567,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5a3e81b015da34baa9f13e90b06142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _elixirTimeToEarn: 2
-  _elixirValueToEarn: 1
+  _earningTime: 2
+  _earnAmount: 1
   _defaultValue: 5
   _maxValue: 10
+--- !u!114 &1357795368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357795362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d962f5986b4da892f7d997e9d4be54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chestChanceData: {fileID: 11400000, guid: 5a418163bbad808419cf4c80e8960d9e, type: 2}
+  _fullChestList: {fileID: 11400000, guid: 6dfdae1539aa56d4c906c270accde5ad, type: 2}
+  _rewardDatas:
+  - {fileID: 11400000, guid: 24cc4c062199aac4eae2645a32ca57c4, type: 2}
+  - {fileID: 11400000, guid: b185b558f9d15b94898447a1007e80a7, type: 2}
+  - {fileID: 11400000, guid: 9943c8437d3cf0f48a48496ead76129b, type: 2}
 --- !u!1 &1864114388
 GameObject:
   m_ObjectHideFlags: 0
