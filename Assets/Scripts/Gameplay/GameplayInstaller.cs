@@ -11,14 +11,14 @@ namespace Gameplay
         [SerializeField] private string _endgameWindowId;
 
         private ContainerBuilder _builder;
-        private Gameplay _gameplay;
+        private Judge _judge;
 
         public void InstallBindings(ContainerBuilder builder)
         {
             _builder = builder;
-            _gameplay = new Gameplay(_endgameWindowId);
+            _judge = new Judge(_endgameWindowId);
 
-            _builder.AddSingleton(_gameplay);
+            _builder.AddSingleton(_judge);
             _builder.AddSingleton(new CrownCounter(CrownType.Enemy));
             _builder.AddSingleton(new CrownCounter(CrownType.Player));
 
@@ -29,7 +29,7 @@ namespace Gameplay
         {
             _builder.OnContainerBuilt -= Initialize;
 
-            _gameplay.Initialize(
+            _judge.Initialize(
                 container.Resolve<IEnumerable<CrownCounter>>(),
                 container.Resolve<CoroutineTimer>(),
                 container.Resolve<IWindowService>());

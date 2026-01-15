@@ -26,9 +26,9 @@ namespace Reward
             _totalChance = _chestChances.Sum(chance => chance.Percent);
         }
         
-        public void Initialize(Gameplay.Gameplay gameplay, IEnumerable<Container> containers)
+        public void Initialize(Gameplay.Judge judge, IEnumerable<Container> containers)
         {
-            Initialize(gameplay);
+            Initialize(judge);
             
             foreach (Container container in containers)
             {

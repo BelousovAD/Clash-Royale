@@ -5,7 +5,7 @@ using Window;
 
 namespace Gameplay
 {
-    public class Gameplay : IDisposable
+    public class Judge : IDisposable
     {
         private const CrownType EnemyCrown = CrownType.Enemy;
         private const CrownType PlayerCrown = CrownType.Player;
@@ -17,7 +17,7 @@ namespace Gameplay
         private CrownCounter _playerCrownCounter;
         private bool? _isVictory;
 
-        public Gameplay(string endgameWindowId) =>
+        public Judge(string endgameWindowId) =>
             _endgameWindowId = endgameWindowId;
 
         public event Action VictoryStatusChanged;

@@ -12,9 +12,9 @@ namespace Reward
             : base(data) =>
             _currencyType = currencyType;
 
-        public void Initialize(Gameplay.Gameplay gameplay, IEnumerable<Currency.Currency> currencies)
+        public void Initialize(Gameplay.Judge judge, IEnumerable<Currency.Currency> currencies)
         {
-            Initialize(gameplay);
+            Initialize(judge);
             
             foreach (Currency.Currency currency in currencies)
             {

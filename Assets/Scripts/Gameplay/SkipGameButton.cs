@@ -14,14 +14,14 @@ namespace Gameplay
         
         [SerializeField] private bool _win;
 
-        private Gameplay _gameplay;
+        private Judge _judge;
         private CrownCounter _enemyCrownCounter;
         private CrownCounter _playerCrownCounter;
 
         [Inject]
-        private void Initialize(Gameplay gameplay, IEnumerable<CrownCounter> crownCounters)
+        private void Initialize(Judge judge, IEnumerable<CrownCounter> crownCounters)
         {
-            _gameplay = gameplay;
+            _judge = judge;
 
             foreach (CrownCounter counter in crownCounters)
             {
@@ -54,7 +54,7 @@ namespace Gameplay
                 }
             }
             
-            _gameplay.FinishGame();
+            _judge.FinishGame();
         }
     }
 }

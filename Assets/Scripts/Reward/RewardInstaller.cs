@@ -45,10 +45,10 @@ namespace Reward
             _builder.OnContainerBuilt -= Initialize;
 
             _chestRewarder.Initialize(
-                container.Resolve<Gameplay.Gameplay>(),
+                container.Resolve<Gameplay.Judge>(),
                 container.Resolve<IEnumerable<Container>>());
             _currencyRewarders.ForEach(rewarder => rewarder.Initialize(
-                container.Resolve<Gameplay.Gameplay>(),
+                container.Resolve<Gameplay.Judge>(),
                 container.Resolve<IEnumerable<Currency.Currency>>()));
         }
         

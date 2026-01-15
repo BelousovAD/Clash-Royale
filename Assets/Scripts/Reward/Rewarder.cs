@@ -6,7 +6,7 @@ namespace Reward
     internal abstract class Rewarder : IDisposable
     {
         private readonly RewardData _data;
-        private Gameplay.Gameplay _gameplay;
+        private Gameplay.Judge _judge;
 
         public Rewarder(RewardData data)
         {
@@ -18,7 +18,7 @@ namespace Reward
 
         public Sprite Icon { get; private set; }
 
-        public bool IsVictory => _gameplay.IsVictory != null && (bool)_gameplay.IsVictory;
+        public bool IsVictory => _judge.IsVictory != null && (bool)_judge.IsVictory;
 
         public int LoseAmount => _data.LoseAmount;
 
@@ -26,21 +26,21 @@ namespace Reward
         
         public int WinAmount => _data.WinAmount;
 
-        public void Initialize(Gameplay.Gameplay gameplay)
+        public void Initialize(Gameplay.Judge judge)
         {
-            _gameplay = gameplay;
-            _gameplay.VictoryStatusChanged += StartRewarding;
+            _judge = judge;
+            _judge.VictoryStatusChanged += StartRewarding;
         }
 
         public void Dispose() =>
-            _gameplay.VictoryStatusChanged -= StartRewarding;
+            _judge.VictoryStatusChanged -= StartRewarding;
 
         public void UpdateIcon(Sprite sprite) =>
             Icon = sprite;
 
         private void StartRewarding()
         {
-            _gameplay.VictoryStatusChanged -= StartRewarding;
+            _judge.VictoryStatusChanged -= StartRewarding;
             
             if (IsVictory)
             {
