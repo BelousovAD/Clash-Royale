@@ -1,20 +1,43 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Timer;
 using Window;
 
 namespace Gameplay
 {
-    internal class Gameplay : IDisposable
+    public class Gameplay : IDisposable
     {
+        private const CrownType EnemyCrown = CrownType.Enemy;
+        private const CrownType PlayerCrown = CrownType.Player;
+        
         private readonly string _endgameWindowId;
         private CoroutineTimer _timer;
         private IWindowService _windowService;
-        private List<CrownCounter> _crownCounters;
+        private CrownCounter _enemyCrownCounter;
+        private CrownCounter _playerCrownCounter;
+        private bool? _isVictory;
 
         public Gameplay(string endgameWindowId) =>
             _endgameWindowId = endgameWindowId;
+
+        public event Action VictoryStatusChanged;
+
+        public bool? IsVictory
+        {
+            get
+            {
+                return _isVictory;
+            }
+
+            private set
+            {
+                if (value != _isVictory)
+                {
+                    _isVictory = value;
+                    VictoryStatusChanged?.Invoke();
+                }
+            }
+        }
 
         public void Initialize(
             IEnumerable<CrownCounter> crownCounters,
@@ -23,15 +46,31 @@ namespace Gameplay
         {
             _timer = timer;
             _windowService = windowService;
-            _crownCounters = new List<CrownCounter>(crownCounters);
 
-            _crownCounters.ForEach(counter => counter.CountChanged += FinishGame);
+            foreach (CrownCounter counter in crownCounters)
+            {
+                switch (counter.Type)
+                {
+                    case EnemyCrown:
+                        _enemyCrownCounter = counter;
+                        break;
+                    case PlayerCrown:
+                        _playerCrownCounter = counter;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+
+            _enemyCrownCounter.CountChanged += FinishGame;
+            _playerCrownCounter.CountChanged += FinishGame;
             _timer.TimeIsUp += FinishGame;
         }
 
         public void Dispose()
         {
-            _crownCounters.ForEach(counter => counter.CountChanged -= FinishGame);
+            _enemyCrownCounter.CountChanged -= FinishGame;
+            _playerCrownCounter.CountChanged -= FinishGame;
             _timer.TimeIsUp -= FinishGame;
         }
 
@@ -39,12 +78,13 @@ namespace Gameplay
         {
             if (IsAnyCounterFull() || _timer.IsTimeUp)
             {
+                IsVictory = _playerCrownCounter.Count > _enemyCrownCounter.Count;
                 _windowService.Open(_endgameWindowId, false);
                 Dispose();
             }
         }
 
         private bool IsAnyCounterFull() =>
-            _crownCounters.Any(counter => counter.Count == CrownCounter.Max);
+            _enemyCrownCounter.Count == CrownCounter.Max || _playerCrownCounter.Count == CrownCounter.Max;
     }
 }
