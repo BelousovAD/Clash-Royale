@@ -1705,6 +1705,7 @@ GameObject:
   - component: {fileID: 6798192646417123871}
   - component: {fileID: 5849544762444038154}
   - component: {fileID: 89749132898706710}
+  - component: {fileID: 6881844930255031699}
   m_Layer: 5
   m_Name: EnemyName (TMP)
   m_TagString: Untagged
@@ -1768,8 +1769,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288236004
-  m_fontColor: {r: 0.8941177, g: 0.28627452, b: 0.6, a: 1}
+    rgba: 4278214911
+  m_fontColor: {r: 1, g: 0.3764706, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1786,11 +1787,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 57.6
+  m_fontSize: 80
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 45
+  m_fontSizeMin: 80
   m_fontSizeMax: 100
   m_fontStyle: 0
   m_HorizontalAlignment: 4
@@ -1828,6 +1829,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6881844930255031699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111718515730997510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ed39db33b14f92a42c5eb319ad67bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _format: '{0}'
+  _type: 0
 --- !u!1 &6432474187826539104
 GameObject:
   m_ObjectHideFlags: 0
