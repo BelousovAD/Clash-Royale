@@ -1496,7 +1496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _format: '{0}'
-  _defaultNameLocalizationKey: Player
+  _type: 1
 --- !u!1001 &5388727307780371373
 PrefabInstance:
   m_ObjectHideFlags: 0
