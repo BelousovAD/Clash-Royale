@@ -14,13 +14,11 @@ namespace Gameplay
         {
             _judge = judge;
             _judge.VictoryStatusChanged += UpdateView;
+            UpdateView();
         }
 
         private void OnDestroy() =>
             _judge.VictoryStatusChanged -= UpdateView;
-
-        private void OnEnable() =>
-            UpdateView();
 
         private void UpdateView() =>
             gameObject.SetActive((_judge.IsVictory ^ _isPlayer) == false);
