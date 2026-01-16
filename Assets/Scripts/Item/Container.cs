@@ -133,16 +133,16 @@ namespace Item
             ContentChanged?.Invoke();
         }
 
-        protected virtual Item CreateItem(ItemData data) =>
-            new (data);
-        
-        private void Remove(Item item)
+        public void Remove(Item item)
         {
             item.Selected -= SelectById;
             _items.Remove(item);
             Save();
             ContentChanged?.Invoke();
         }
+
+        protected virtual Item CreateItem(ItemData data) =>
+            new (data);
 
         private void Save()
         {

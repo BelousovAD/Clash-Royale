@@ -46,14 +46,18 @@ namespace CardUnlock
 
         public void UnlockCard()
         {
-            if (_chestContainer.Selected is null)
+            Chest.Chest chest = _chestContainer.Selected as Chest.Chest;
+            
+            if (chest is null)
             {
                 Debug.LogError($"Can not get card rarity. Selected chest is null");
             }
-            
-            RarityType cardRarity = (_chestContainer.Selected as Chest.Chest)!.GetRandomRarity();
+
+            RarityType cardRarity = chest!.GetRandomRarity();
             Card.Card card = GetRandomCard(cardRarity);
             card.Unlock();
+            _chestContainer.Deselect();
+            _chestContainer.Remove(chest);
             CardUnlocked?.Invoke(card);
         }
         
