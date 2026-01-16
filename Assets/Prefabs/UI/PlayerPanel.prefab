@@ -158,12 +158,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
+  m_fontSize: 80
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
-  m_fontSizeMax: 100
+  m_fontSizeMax: 80
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultIcon: {fileID: 21300000, guid: eb35c623ee116274a8b2a13357325957, type: 3}
-  _activeIcon: {fileID: 21300000, guid: 8cb75074034ca44e6824de73d483b203, type: 3}
+  _activeIcon: {fileID: 21300000, guid: 9cf85e14b980b3e4280f7778d1a1436c, type: 3}
   _type: 0
   _number: 2
 --- !u!1 &5538644046624758949
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultIcon: {fileID: 21300000, guid: eb35c623ee116274a8b2a13357325957, type: 3}
-  _activeIcon: {fileID: 21300000, guid: 8cb75074034ca44e6824de73d483b203, type: 3}
+  _activeIcon: {fileID: 21300000, guid: 9cf85e14b980b3e4280f7778d1a1436c, type: 3}
   _type: 0
   _number: 1
 --- !u!1 &5836494756121945100
@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultIcon: {fileID: 21300000, guid: eb35c623ee116274a8b2a13357325957, type: 3}
-  _activeIcon: {fileID: 21300000, guid: 8cb75074034ca44e6824de73d483b203, type: 3}
+  _activeIcon: {fileID: 21300000, guid: 9cf85e14b980b3e4280f7778d1a1436c, type: 3}
   _type: 0
   _number: 3
 --- !u!1 &6841551430056411163
@@ -698,12 +698,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
+  m_fontSize: 80
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
-  m_fontSizeMax: 100
+  m_fontSizeMax: 80
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
