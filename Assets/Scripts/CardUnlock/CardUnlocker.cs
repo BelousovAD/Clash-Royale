@@ -53,11 +53,12 @@ namespace CardUnlock
                 Debug.LogError($"Can not get card rarity. Selected chest is null");
             }
 
+            int index = _chestContainer.Index;
             RarityType cardRarity = chest!.GetRandomRarity();
             Card.Card card = GetRandomCard(cardRarity);
             card.Unlock();
             _chestContainer.Deselect();
-            _chestContainer.Remove(chest);
+            _chestContainer.RemoveAt(index);
             CardUnlocked?.Invoke(card);
         }
         

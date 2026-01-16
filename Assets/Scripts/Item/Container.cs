@@ -28,14 +28,14 @@ namespace Item
 
         public IReadOnlyList<Item> Items => _items;
 
-        private int Index
+        public int Index
         {
             get
             {
                 return _index;
             }
             
-            set
+            private set
             {
                 if (_items.Count == 0)
                 {
@@ -133,10 +133,16 @@ namespace Item
             ContentChanged?.Invoke();
         }
 
-        public void Remove(Item item)
+        public void RemoveAt(int index)
         {
+            if (index < 0 || index >= _items.Count)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            Item item = _items[index];
             item.Selected -= SelectById;
-            _items.Remove(item);
+            _items.RemoveAt(index);
             Save();
             ContentChanged?.Invoke();
         }
