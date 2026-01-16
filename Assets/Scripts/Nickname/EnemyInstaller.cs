@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Reflex.Core;
 using UnityEngine;
 
@@ -6,12 +5,12 @@ namespace Nickname
 {
     internal class EnemyInstaller : MonoBehaviour, IInstaller
     {
-        [SerializeField] private List<string> _nicknames = new ();
+        [SerializeField] private NicknameList _nicknameList;
         
         public void InstallBindings(ContainerBuilder builder)
         {
             Opponent enemy = new (OpponentType.Enemy);
-            enemy.Rename(_nicknames[Random.Range(0, _nicknames.Count)]);
+            enemy.Rename(_nicknameList.Datas[Random.Range(0, _nicknameList.Datas.Count)]);
 
             builder.AddSingleton(enemy);
         }
