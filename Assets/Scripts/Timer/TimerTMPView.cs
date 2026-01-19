@@ -1,11 +1,10 @@
-using Reflex.Attributes;
 using TMPro;
 using UnityEngine;
 
 namespace Timer
 {
     [RequireComponent(typeof(TMP_Text))]
-    internal class TimerTMPView : MonoBehaviour
+    public class TimerTMPView : MonoBehaviour
     {
         private const int Min2Sec = 60;
 
@@ -14,21 +13,41 @@ namespace Timer
         private TMP_Text _textField;
         private CoroutineTimer _timer;
 
-        [Inject]
-        private void Initialize(CoroutineTimer timer) =>
+        public void Initialize(CoroutineTimer timer)
+        {
+            Unsubscribe();
             _timer = timer;
+            Subscribe();
+            UpdateView();
+        }
 
         private void Awake() =>
             _textField = GetComponent<TMP_Text>();
 
         private void OnEnable()
         {
-            _timer.TimeChanged += UpdateView;
+            Subscribe();
             UpdateView();
         }
 
         private void OnDisable() =>
-            _timer.TimeChanged -= UpdateView;
+            Unsubscribe();
+
+        private void Subscribe()
+        {
+            if (_timer is not null)
+            {
+                _timer.TimeChanged += UpdateView;
+            }
+        }
+
+        private void Unsubscribe()
+        {
+            if (_timer is not null)
+            {
+                _timer.TimeChanged -= UpdateView;
+            }
+        }
 
         private void UpdateView()
         {
