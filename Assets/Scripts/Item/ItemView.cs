@@ -14,8 +14,11 @@ namespace Item
             UpdateSubscriptions();
         }
 
-        protected virtual void OnDisable() =>
+        protected virtual void OnDisable()
+        {
             _itemProvider.Changed -= UpdateSubscriptions;
+            UpdateSubscriptions();
+        }
 
         public abstract void UpdateView();
 
