@@ -8,9 +8,9 @@ namespace Timer
     {
         private const int Min2Sec = 60;
 
+        [SerializeField] private TMP_Text _textField;
         [SerializeField] private string _format = "{0:D2}:{1:D2}";
 
-        private TMP_Text _textField;
         private CoroutineTimer _timer;
 
         public void Initialize(CoroutineTimer timer)
@@ -20,9 +20,6 @@ namespace Timer
             Subscribe();
             UpdateView();
         }
-
-        private void Awake() =>
-            _textField = GetComponent<TMP_Text>();
 
         private void OnEnable()
         {
@@ -51,9 +48,16 @@ namespace Timer
 
         private void UpdateView()
         {
-            int minutes = _timer.Time / Min2Sec;
-            int seconds = _timer.Time % Min2Sec;
-            _textField.text = string.Format(_format, minutes, seconds);
+            if (_timer is null)
+            {
+                _textField.text = string.Empty;
+            }
+            else
+            {
+                int minutes = _timer.Time / Min2Sec;
+                int seconds = _timer.Time % Min2Sec;
+                _textField.text = string.Format(_format, minutes, seconds);
+            }
         }
     }
 }
