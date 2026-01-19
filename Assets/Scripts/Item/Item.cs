@@ -4,25 +4,23 @@ using UnityEngine;
 
 namespace Item
 {
-    public class Item : IEquatable<Item>
+    public class Item : IDisposable
     {
-        private static int s_id;
-
-        private readonly int _id;
+        protected const int DefaultId = -1;
         
-        public Item(ItemData data)
+        public Item(ItemData data, int id = DefaultId)
         {
-            _id = s_id++;
             Data = data;
+            Id = id;
         }
-        
-        public event Action<string> Selected;
+
+        public event Action<int> Selected;
 
         public ItemType Type => Data.Type;
 
         public string Subtype => Data.Subtype;
 
-        public string Id => Type + Subtype + _id;
+        public int Id { get; private set; }
 
         public Sprite Icon => Data.Icon;
         
@@ -30,27 +28,33 @@ namespace Item
         
         protected SavvyServicesProvider Services { get; private set; }
 
-        public void Initialize(SavvyServicesProvider servicesProvider) =>
+        public virtual void Initialize(SavvyServicesProvider servicesProvider) =>
             Services = servicesProvider;
-
-        public bool Equals(Item other) =>
-            other is not null &&
-            other.GetType() == GetType() &&
-            Type.Equals(other.Type) &&
-            Subtype.Equals(other.Subtype);
-
-        public override bool Equals(object obj) =>
-            Equals(obj as Item);
-
-        public override int GetHashCode() =>
-            Id.GetHashCode();
 
         public virtual void Load()
         { }
+
+        public void UpdateId(int id = DefaultId)
+        {
+            if (id < DefaultId)
+            {
+                throw new ArgumentOutOfRangeException(nameof(id), $"Can not be less than {DefaultId}");
+            }
+            
+            DeleteSaves();
+            Id = id;
+            Save();
+        }
         
         public void Select() =>
             Selected?.Invoke(Id);
-        
+
+        public virtual void Dispose()
+        { }
+
+        protected virtual void DeleteSaves()
+        { }
+
         protected virtual void Save()
         { }
     }

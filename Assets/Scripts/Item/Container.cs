@@ -49,9 +49,14 @@ namespace Item
             }
         }
         
-        public virtual void Dispose() =>
+        public virtual void Dispose()
+        {
+            Deselect();
             Unsubscribe();
-        
+            _items.ForEach(item => item.Dispose());
+            _items.Clear();
+        }
+
         public void Initialize(SavvyServicesProvider servicesProvider) =>
             _services = servicesProvider;
 
@@ -59,17 +64,18 @@ namespace Item
         {
             if (item.Type.Equals(_data.ItemType) == false)
             {
-                Debug.LogError($"Can not add item:{item.Id}. Require type:{_data.ItemType}");
+                Debug.LogError($"Can not add item. Require type:{_data.ItemType}");
                 return;
             }
             
             if (_items.Count >= _items.Capacity)
             {
-                Debug.LogError($"Can not add item:{item.Id}. Item list is full");
+                Debug.LogError($"Can not add item. Item list is full");
                 return;
             }
             
             item.Selected += SelectById;
+            item.UpdateId(_items.Count);
             _items.Add(item);
             Save();
             ContentChanged?.Invoke();
@@ -89,22 +95,24 @@ namespace Item
             });
             _items.Capacity = saveData.Capacity;
 
-            foreach (string itemSubtype in saveData.ItemSubtypes)
+            for (int i = 0; i < saveData.ItemSubtypes.Count; i++)
             {
+                string itemSubtype = saveData.ItemSubtypes[i];
                 ItemData data = _data.AllDatas.FirstOrDefault(itemData => itemData.Subtype == itemSubtype);
 
                 if (data is null)
                 {
-                    Debug.LogError($"Item:{itemSubtype} not found in {nameof(_data.AllDatas)} of container:{_data.Type}");
+                    Debug.LogError(
+                        $"Item:{itemSubtype} not found in {nameof(_data.AllDatas)} of container:{_data.Type}");
                     return;
                 }
 
-                Item item = CreateItem(data);
+                Item item = CreateItem(data, i);
                 item.Initialize(_services);
                 _items.Add(item);
                 item.Load();
             }
-            
+
             Subscribe();
         }
 
@@ -120,8 +128,7 @@ namespace Item
 
             if (newItem.Type.Equals(_data.ItemType) == false)
             {
-                Debug.LogError(
-                    $"Can not replace selected item with a new item:{newItem.Id}. Require type:{_data.ItemType}");
+                Debug.LogError($"Can not replace selected item with a new item. Require type:{_data.ItemType}");
                 return;
             }
 
@@ -129,6 +136,7 @@ namespace Item
             _items.Remove(item);
             newItem.Selected += SelectById;
             _items.Insert(Index, newItem);
+            newItem.UpdateId(Index);
             Save();
             ContentChanged?.Invoke();
         }
@@ -143,12 +151,18 @@ namespace Item
             Item item = _items[index];
             item.Selected -= SelectById;
             _items.RemoveAt(index);
+
+            for (int i = index; i < _items.Count; i++)
+            {
+                _items[i].UpdateId(i);
+            }
+            
             Save();
             ContentChanged?.Invoke();
         }
 
-        protected virtual Item CreateItem(ItemData data) =>
-            new (data);
+        protected virtual Item CreateItem(ItemData data, int id) =>
+            new (data, id);
 
         private void Save()
         {
@@ -161,13 +175,11 @@ namespace Item
             _services.Preferences.SaveJson(_data.Type + nameof(_items), saveData);
         }
 
-        private void SelectById(string id)
+        private void SelectById(int id)
         {
-            int index = _items.FindIndex(item => item.Id == id);
-
-            if (index > MinIndex)
+            if (id > MinIndex)
             {
-                Index = index;
+                Index = id;
             }
             else
             {
