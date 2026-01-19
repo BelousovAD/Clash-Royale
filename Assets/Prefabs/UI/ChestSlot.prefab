@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1297233498198818667}
   - component: {fileID: 8987768417501608621}
   - component: {fileID: 3762553348238391898}
+  - component: {fileID: 7535335404078827076}
   m_Layer: 5
   m_Name: UnlockButton
   m_TagString: Untagged
@@ -122,6 +123,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7535335404078827076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194287647041154951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d4daad0aaa4449acbd41864f3fbae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemProvider: {fileID: 2032259935929064569}
 --- !u!1 &549718578181263024
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +279,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 0
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -423,7 +437,7 @@ GameObject:
   - component: {fileID: 1214059271663537641}
   - component: {fileID: 5691779782884314523}
   - component: {fileID: 5493857549562526011}
-  - component: {fileID: 7304921387951643562}
+  - component: {fileID: 5856563681299888189}
   m_Layer: 5
   m_Name: UnlockStatus (TMP)
   m_TagString: Untagged
@@ -505,7 +519,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 0.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -547,7 +561,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &7304921387951643562
+--- !u!114 &5856563681299888189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -556,9 +570,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5465872861380863848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d1e3d4f0ffd4f2cbf6f5e34c354ed7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e6902aa5ef842329eb527436bc9d36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _itemProvider: {fileID: 2032259935929064569}
   _format: '{0:D2}:{1:D2}'
 --- !u!1 &5763500666707799494
 GameObject:
@@ -835,7 +850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemProvider: {fileID: 2032259935929064569}
-  _timerTMPView: {fileID: 7304921387951643562}
+  _timerTMPView: {fileID: 8124815135725409179}
 --- !u!1 &6801226026742319502
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +952,7 @@ GameObject:
   - component: {fileID: 181365811635099059}
   - component: {fileID: 3679477495821135332}
   - component: {fileID: 714913815892798032}
-  - component: {fileID: 6622336927219850124}
+  - component: {fileID: 8124815135725409179}
   m_Layer: 5
   m_Name: UnlockingStatus (TMP)
   m_TagString: Untagged
@@ -1019,7 +1034,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 0.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1061,7 +1076,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &6622336927219850124
+--- !u!114 &8124815135725409179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1070,10 +1085,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6953385909485010553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf54b7a5708eafb42b1b4b8994a96486, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d1e3d4f0ffd4f2cbf6f5e34c354ed7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: Unlocked
+  _textField: {fileID: 714913815892798032}
+  _format: '{0:D2}:{1:D2}'
 --- !u!1 &7267980430664353809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,7 +1183,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 0.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1370,7 +1386,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 0
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
