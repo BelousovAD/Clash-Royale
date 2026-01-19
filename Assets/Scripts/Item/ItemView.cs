@@ -2,11 +2,12 @@
 
 namespace Item
 {
-    public abstract class ItemView : MonoBehaviour
+    public abstract class ItemView<T> : MonoBehaviour
+        where T : Item
     {
         [SerializeField] private ItemProvider _itemProvider;
 
-        protected Item Item => _itemProvider.Item;
+        protected T Item { get; private set; }
 
         protected virtual void OnEnable()
         {
@@ -17,12 +18,36 @@ namespace Item
         protected virtual void OnDisable()
         {
             _itemProvider.Changed -= UpdateSubscriptions;
-            UpdateSubscriptions();
+
+            if (Item is not null)
+            {
+                Unsubscribe();
+            }
         }
+        
+        protected virtual void Subscribe()
+        { }
+        
+        protected virtual void Unsubscribe()
+        { }
 
-        public abstract void UpdateView();
+        protected abstract void UpdateView();
 
-        protected virtual void UpdateSubscriptions() =>
+        private void UpdateSubscriptions()
+        {
+            if (Item is not null)
+            {
+                Unsubscribe();
+            }
+            
+            Item = _itemProvider.Item as T;
+
+            if (Item is not null)
+            {
+                Subscribe();
+            }
+            
             UpdateView();
+        }
     }
 }

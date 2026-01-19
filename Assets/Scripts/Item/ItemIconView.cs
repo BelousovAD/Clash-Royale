@@ -1,8 +1,8 @@
 namespace Item
 {
-    internal class ItemIconView : ItemImageView
+    internal class ItemIconView : ItemImageView<Item>
     {
-        public override void UpdateView() =>
+        protected override void UpdateView() =>
             Image.sprite = Item is null ? DefaultSprite : Item.Icon;
     }
 }

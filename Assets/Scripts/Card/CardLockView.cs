@@ -5,7 +5,7 @@ using UnityEngine.UI;
 namespace Card
 {
     [RequireComponent(typeof(CanvasGroup))]
-    internal class CardLockView : ItemView
+    internal class CardLockView : ItemView<Card>
     {
         private const float MinAlpha = 0f;
         private const float MaxAlpha = 1f;
@@ -14,12 +14,16 @@ namespace Card
         
         private CanvasGroup _canvasGroup;
 
-        protected new Card Item { get; private set; }
-
         private void Awake() =>
             _canvasGroup = GetComponent<CanvasGroup>();
 
-        public override void UpdateView()
+        protected override void Subscribe() =>
+            Item.LockStatusChanged += UpdateView;
+
+        protected override void Unsubscribe() =>
+            Item.LockStatusChanged -= UpdateView;
+
+        protected override void UpdateView()
         {
             if (Item is not null && Item.IsLocked == false)
             {
@@ -34,30 +38,6 @@ namespace Card
                 _canvasGroup.alpha = MaxAlpha;
                 _canvasGroup.blocksRaycasts = true;
                 _canvasGroup.interactable = true;
-            }
-        }
-
-        protected override void UpdateSubscriptions()
-        {
-            Unsubscribe();
-            Item = base.Item as Card;
-            Subscribe();
-            base.UpdateSubscriptions();
-        }
-
-        private void Subscribe()
-        {
-            if (Item is not null)
-            {
-                Item.LockStatusChanged += UpdateView;
-            }
-        }
-
-        private void Unsubscribe()
-        {
-            if (Item is not null)
-            {
-                Item.LockStatusChanged -= UpdateView;
             }
         }
     }

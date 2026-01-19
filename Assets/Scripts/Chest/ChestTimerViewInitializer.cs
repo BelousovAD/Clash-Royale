@@ -4,13 +4,11 @@ using UnityEngine;
 
 namespace Chest
 {
-    internal class ChestTimerViewInitializer : ItemView
+    internal class ChestTimerViewInitializer : ItemView<Chest>
     {
         [SerializeField] private TimerTMPView _timerTMPView;
-        
-        private new Chest Item => base.Item as Chest;
-        
-        public override void UpdateView() =>
-            _timerTMPView.Initialize(Item.Timer);
+
+        protected override void UpdateView() =>
+            _timerTMPView.Initialize(Item?.Timer);
     }
 }

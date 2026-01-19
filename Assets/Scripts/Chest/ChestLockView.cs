@@ -4,15 +4,25 @@ using UnityEngine;
 
 namespace Chest
 {
-    internal class ChestLockView : ItemView
+    internal class ChestLockView : ItemView<Chest>
     {
         [SerializeField] private List<GameObject> _lockObjects = new ();
         [SerializeField] private List<GameObject> _unlockingObjects = new ();
         [SerializeField] private List<GameObject> _unlockObjects = new ();
-        
-        protected new Chest Item { get; private set; }
-        
-        public override void UpdateView()
+
+        protected override void Subscribe()
+        {
+            Item.LockStatusChanged += UpdateView;
+            Item.UnlockingStatusChanged += UpdateView;
+        }
+
+        protected override void Unsubscribe()
+        {
+            Item.LockStatusChanged -= UpdateView;
+            Item.UnlockingStatusChanged -= UpdateView;
+        }
+
+        protected override void UpdateView()
         {
             _lockObjects.ForEach(gameObj =>
                 gameObj.SetActive(Item is not null && Item.IsLocked && Item.IsUnlocking == false));
@@ -20,32 +30,6 @@ namespace Chest
                 gameObj.SetActive(Item is not null && Item.IsLocked && Item.IsUnlocking));
             _unlockObjects.ForEach(gameObj =>
                 gameObj.SetActive(Item is not null && Item.IsLocked == false && Item.IsUnlocking == false));
-        }
-        
-        protected override void UpdateSubscriptions()
-        {
-            Unsubscribe();
-            Item = base.Item as Chest;
-            Subscribe();
-            base.UpdateSubscriptions();
-        }
-
-        private void Subscribe()
-        {
-            if (Item is not null)
-            {
-                Item.LockStatusChanged += UpdateView;
-                Item.UnlockingStatusChanged += UpdateView;
-            }
-        }
-
-        private void Unsubscribe()
-        {
-            if (Item is not null)
-            {
-                Item.LockStatusChanged -= UpdateView;
-                Item.UnlockingStatusChanged -= UpdateView;
-            }
         }
     }
 }

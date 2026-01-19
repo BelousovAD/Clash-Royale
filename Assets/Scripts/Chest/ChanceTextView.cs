@@ -6,15 +6,13 @@ using UnityEngine;
 
 namespace Chest
 {
-    internal class ChanceTextView : ItemTextView
+    internal class ChanceTextView : ItemTextView<Chest>
     {
         private const string FloatFormat = "F0";
         
         [SerializeField] private RarityType _rarityType;
-        
-        private new Chest Item => base.Item as Chest;
-        
-        public override void UpdateView()
+
+        protected override void UpdateView()
         {
             if (Item is null)
             {
