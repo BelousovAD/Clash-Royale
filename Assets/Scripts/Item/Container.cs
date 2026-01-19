@@ -75,6 +75,7 @@ namespace Item
             }
             
             item.Selected += SelectById;
+            item.Initialize(_services);
             item.UpdateId(_items.Count);
             _items.Add(item);
             Save();
