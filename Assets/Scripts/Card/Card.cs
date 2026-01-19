@@ -7,8 +7,8 @@ namespace Card
     {
         private bool _isLocked = true;
         
-        public Card(CardData data)
-            : base(data)
+        public Card(CardData data, int id = DefaultId)
+            : base(data, id)
         { }
 
         public event Action LockStatusChanged;
@@ -43,12 +43,18 @@ namespace Card
         public override void Load()
         {
             base.Load();
-            IsLocked = Services.Preferences.LoadBool(Data.Type + Data.Subtype, Data.IsLocked);
+            _isLocked = Services.Preferences.LoadBool(Type + Subtype + Id, Data.IsLocked);
+        }
+
+        protected override void DeleteSaves()
+        {
+            base.DeleteSaves();
+            Services.Preferences.DeleteKey(Type + Subtype + Id);
         }
 
         protected override void Save()
         {
-            Services.Preferences.SaveBool(Data.Type + Data.Subtype, IsLocked);
+            Services.Preferences.SaveBool(Type + Subtype + Id, IsLocked);
             base.Save();
         }
     }
