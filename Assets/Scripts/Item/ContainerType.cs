@@ -5,6 +5,7 @@ namespace Item
         EquippedCard = 0,
         Card = 1,
         Chest = 2,
-        HandCard = 3,
+        Character = 3,
+        HandCard = 4,
     }
 }
