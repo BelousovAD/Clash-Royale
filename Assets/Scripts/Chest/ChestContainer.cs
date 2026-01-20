@@ -2,7 +2,7 @@ using Item;
 
 namespace Chest
 {
-    internal class ChestContainer : Container
+    internal class ChestContainer : SaveableContainer
     {
         public ChestContainer(ContainerData data)
             : base(data)

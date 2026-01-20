@@ -13,7 +13,6 @@ namespace Item
         private readonly ContainerData _data;
         private readonly List<Item> _items = new ();
         private int _index = MinIndex;
-        private SavvyServicesProvider _services;
 
         public Container(ContainerData data) =>
             _data = data;
@@ -48,7 +47,11 @@ namespace Item
                 SelectChanged?.Invoke();
             }
         }
-        
+
+        protected int Capacity => _items.Capacity;
+
+        protected SavvyServicesProvider Services { get; private set; }
+
         public virtual void Dispose()
         {
             Deselect();
@@ -58,7 +61,7 @@ namespace Item
         }
 
         public void Initialize(SavvyServicesProvider servicesProvider) =>
-            _services = servicesProvider;
+            Services = servicesProvider;
 
         public void Add(Item item)
         {
@@ -75,30 +78,24 @@ namespace Item
             }
             
             item.Selected += SelectById;
-            item.Initialize(_services);
+            item.Initialize(Services);
             item.UpdateId(_items.Count);
             _items.Add(item);
-            Save();
             ContentChanged?.Invoke();
         }
 
         public void Deselect() =>
             Index = MinIndex;
-
+        
         public void Load()
         {
-            Unsubscribe();
-            _items.Clear();
-            SaveData saveData = _services.Preferences.LoadJson(_data.Type + nameof(_items), new SaveData
-            {
-                Capacity = _data.DefaultCapacity,
-                ItemSubtypes = _data.DefaultDatas.Select(itemData => itemData.Subtype).ToList()
-            });
-            _items.Capacity = saveData.Capacity;
+            Dispose();
+            SerializableData serializableData = GetSerializableData();
+            _items.Capacity = serializableData.Capacity;
 
-            for (int i = 0; i < saveData.ItemSubtypes.Count; i++)
+            for (int i = 0; i < serializableData.ItemSubtypes.Count; i++)
             {
-                string itemSubtype = saveData.ItemSubtypes[i];
+                string itemSubtype = serializableData.ItemSubtypes[i];
                 ItemData data = _data.AllDatas.FirstOrDefault(itemData => itemData.Subtype == itemSubtype);
 
                 if (data is null)
@@ -109,7 +106,7 @@ namespace Item
                 }
 
                 Item item = CreateItem(data, i);
-                item.Initialize(_services);
+                item.Initialize(Services);
                 _items.Add(item);
                 item.Load();
             }
@@ -138,7 +135,6 @@ namespace Item
             newItem.Selected += SelectById;
             _items.Insert(Index, newItem);
             newItem.UpdateId(Index);
-            Save();
             ContentChanged?.Invoke();
         }
 
@@ -158,22 +154,19 @@ namespace Item
                 _items[i].UpdateId(i);
             }
             
-            Save();
             ContentChanged?.Invoke();
         }
 
         protected virtual Item CreateItem(ItemData data, int id) =>
             new (data, id);
 
-        private void Save()
+        protected virtual SerializableData GetSerializableData()
         {
-            SaveData saveData = new ()
+            return new SerializableData
             {
-                Capacity = _items.Capacity,
-                ItemSubtypes = _items.Select(item => item.Subtype).ToList()
+                Capacity = _data.DefaultCapacity,
+                ItemSubtypes = _data.DefaultDatas.Select(itemData => itemData.Subtype).ToList(),
             };
-            
-            _services.Preferences.SaveJson(_data.Type + nameof(_items), saveData);
         }
 
         private void SelectById(int id)
@@ -205,7 +198,7 @@ namespace Item
         }
 
         [Serializable]
-        private struct SaveData
+        protected struct SerializableData
         {
             public int Capacity;
             public List<string> ItemSubtypes;

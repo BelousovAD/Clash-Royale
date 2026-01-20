@@ -6,15 +6,15 @@ namespace Currency
 {
     internal class CurrencyInstaller : MonoBehaviour, IInstaller
     {
-        private SavebleCurrency _money;
-        private SavebleCurrency _trophy;
+        private SaveableCurrency _money;
+        private SaveableCurrency _trophy;
         private ContainerBuilder _builder;
 
         public void InstallBindings(ContainerBuilder builder)
         {
             _builder = builder;
-            _money = new SavebleCurrency(CurrencyType.Money);
-            _trophy = new SavebleCurrency(CurrencyType.Trophy);
+            _money = new SaveableCurrency(CurrencyType.Money);
+            _trophy = new SaveableCurrency(CurrencyType.Trophy);
 
             _builder.AddSingleton(_money, typeof(Currency));
             _builder.AddSingleton(_trophy, typeof(Currency));
