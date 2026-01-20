@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Character
 {
-    [CreateAssetMenu(fileName = nameof(CharacterData), menuName = nameof(global::Character.Character) + "/" + nameof(CharacterData))]
+    [CreateAssetMenu(fileName = nameof(CharacterData), menuName = nameof(Character) + "/" + nameof(CharacterData))]
     internal class CharacterData : ItemData
     {
         [SerializeField] private GameObject _prefab;

@@ -9,6 +9,6 @@ namespace Character
         { }
         
         protected override Item.Item CreateItem(ItemData data, int id) =>
-            new global::Character.Character(data as CharacterData, id);
+            new Character(data as CharacterData, id);
     }
 }
