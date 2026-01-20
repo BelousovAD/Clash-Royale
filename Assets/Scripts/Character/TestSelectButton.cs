@@ -1,7 +1,7 @@
 using Common;
 using UnityEngine;
 
-namespace Characters
+namespace Character
 {
     public class TestSelectButton : AbstractButton
     {

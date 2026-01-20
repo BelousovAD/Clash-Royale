@@ -1,10 +1,10 @@
 using Item;
 using UnityEngine;
 
-namespace Characters
+namespace Character
 {
-    [CreateAssetMenu(fileName = nameof(CharacterData), menuName = nameof(Character) + "/" + nameof(CharacterData))]
-    public class CharacterData : ItemData
+    [CreateAssetMenu(fileName = nameof(CharacterData), menuName = nameof(global::Character.Character) + "/" + nameof(CharacterData))]
+    internal class CharacterData : ItemData
     {
         [SerializeField] private GameObject _prefab;
         [SerializeField][Min(0)] private int _damage;
@@ -13,9 +13,13 @@ namespace Characters
         [SerializeField][Min(0)] private int _moveSpeed;
 
         public int Damage => _damage;
+        
         public int Health => _health;
+        
         public int AttackSpeed => _attackSpeed;
+        
         public int MoveSpeed => _moveSpeed;
+        
         public GameObject Prefab => _prefab;
     }
 }

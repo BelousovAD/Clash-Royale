@@ -4,9 +4,9 @@ using Reflex.Core;
 using UnityEngine;
 using Container = Item.Container;
 
-namespace Characters
+namespace Character
 {
-    public class CharacterContainerInstaller : MonoBehaviour, IInstaller
+    internal class CharacterContainerInstaller : MonoBehaviour, IInstaller
     {
         private const ContainerType CharacterContainerType = ContainerType.Character;
         

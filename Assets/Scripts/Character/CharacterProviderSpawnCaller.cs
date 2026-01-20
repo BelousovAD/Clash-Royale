@@ -3,12 +3,13 @@ using Item;
 using Reflex.Attributes;
 using UnityEngine;
 
-namespace Characters
+namespace Character
 {
-    public class CharacterProviderSpawnCaller : MonoBehaviour
+    internal class CharacterProviderSpawnCaller : MonoBehaviour
     {
-        [SerializeField] private ContainerType _characterContainerType;
-        [SerializeField] private ContainerType _equippedCardContainerType;
+        private const ContainerType CharacterContainerType = ContainerType.Character;
+        private const ContainerType EquippedCardContainerType = ContainerType.EquippedCard;
+
         [SerializeField] private SingleItemProviderSpawner _providerSpawner;
 
         private Container _characterContainer;
@@ -19,29 +20,23 @@ namespace Characters
         {
             foreach (Container container in containers)
             {
-                if (container.Type == _characterContainerType)
+                switch (container.Type)
                 {
-                    _characterContainer = container;
-                    break;
-                }
-            }
-
-            foreach (Container container in containers)
-            {
-                if (container.Type == _equippedCardContainerType)
-                {
-                    _equippedCardContainer = container;
-                    _equippedCardContainer.SelectChanged += CallSpawn;
-                    break;
+                    case CharacterContainerType:
+                        _characterContainer = container;
+                        break;
+                    case EquippedCardContainerType:
+                        _equippedCardContainer = container;
+                        _equippedCardContainer.SelectChanged += CallSpawn;
+                        break;
                 }
             }
         }
 
-        private void OnDisable()
-        {
+        private void OnDisable() =>
             _equippedCardContainer.SelectChanged -= CallSpawn;
-        }
 
+        //УДАЛИТЬ ПОСЛЕ ТЕСТОВ
         public void CallSpawn(string subtype)
         {
             foreach (Item.Item item in _characterContainer.Items)

@@ -1,14 +1,14 @@
 using Item;
 
-namespace Characters
+namespace Character
 {
-    public class CharacterContainer : Container
+    internal class CharacterContainer : Container
     {
         public CharacterContainer(ContainerData data) 
             : base(data)
         { }
         
         protected override Item.Item CreateItem(ItemData data, int id) =>
-            new Character(data as CharacterData, id);
+            new global::Character.Character(data as CharacterData, id);
     }
 }

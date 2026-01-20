@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Spawn;
-using UnityEngine;
 
 namespace Item
 {
@@ -8,10 +7,8 @@ namespace Item
     {
         private readonly List<PooledComponent> _spawnedItemProviders = new ();
 
-        private void OnDisable()
-        {
+        private void OnDisable() =>
             ReleaseAll();
-        }
 
         public void Spawn(Item item)
         {

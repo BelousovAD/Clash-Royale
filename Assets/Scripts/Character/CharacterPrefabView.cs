@@ -1,8 +1,8 @@
 using Item;
 
-namespace Characters
+namespace Character
 {
-    public class CharacterPrefabView : ItemView<Character>
+    internal class CharacterPrefabView : ItemView<Character>
     {
         protected override void UpdateView()
         {

@@ -23,9 +23,7 @@ namespace Item
             }
         }
 
-        public void Initialize(Item item)
-        {
+        public void Initialize(Item item) =>
             Item = item;
-        }
     }
 }
