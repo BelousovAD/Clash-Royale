@@ -1,0 +1,21 @@
+{
+    "name": "Characters",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4cefadf2890e8e84b8e28d80883e7dcf",
+        "GUID:008975ced862fd745991829fc3aea4ac",
+        "GUID:1530a967b84cfb44dbdd5e8a1989764f",
+        "GUID:d5ff5e78780277246aa32f920c0a35ef",
+        "GUID:7feba99b55daccd44956965a1df32e31",
+        "Common"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
