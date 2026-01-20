@@ -4,5 +4,6 @@ namespace Item
     {
         Card = 0,
         Chest = 1,
+        Character = 2,
     }
 }
