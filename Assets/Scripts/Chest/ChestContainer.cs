@@ -8,7 +8,7 @@ namespace Chest
             : base(data)
         { }
 
-        protected override Item.Item CreateItem(ItemData data) =>
-            new Chest(data as ChestData);
+        protected override Item.Item CreateItem(ItemData data, int id) =>
+            new Chest(data as ChestData, id);
     }
 }

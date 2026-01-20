@@ -3,15 +3,13 @@ using UnityEngine;
 
 namespace Chest
 {
-    internal class ChestPrefabView : ItemView
+    internal class ChestPrefabView : ItemView<Chest>
     {
         [SerializeField] private Transform _parent;
 
         private GameObject _prefabInstance;
 
-        private new Chest Item => base.Item as Chest;
-        
-        public override void UpdateView()
+        protected override void UpdateView()
         {
             if (Item is null)
             {

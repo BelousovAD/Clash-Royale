@@ -8,7 +8,7 @@ namespace Card
             : base(data)
         { }
 
-        protected override Item.Item CreateItem(ItemData data) =>
-            new Card(data as CardData);
+        protected override Item.Item CreateItem(ItemData data, int id) =>
+            new Card(data as CardData, id);
     }
 }
