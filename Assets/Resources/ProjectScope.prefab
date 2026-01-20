@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardContainerData: {fileID: 11400000, guid: ac00d45824a37164d832a25b8debc15f, type: 2}
   _equippedCardContainerData: {fileID: 11400000, guid: 938928e285e3b4941abca378b3881bcd, type: 2}
+  _handCardContainerData: {fileID: 11400000, guid: 48f19594bd4677f40899d40e2cae4887, type: 2}
 --- !u!114 &2227905300368908300
 MonoBehaviour:
   m_ObjectHideFlags: 0
