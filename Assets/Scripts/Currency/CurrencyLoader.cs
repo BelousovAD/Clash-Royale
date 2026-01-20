@@ -8,12 +8,12 @@ namespace Currency
 {
     internal class CurrencyLoader : MonoBehaviour, ILoadable
     {
-        private List<SavebleCurrency> _currencies;
+        private List<SaveableCurrency> _currencies;
 
         [Inject]
         private void Initialize(IEnumerable<Currency> currencies) =>
-            _currencies = new List<SavebleCurrency>(
-                currencies.Select(currency => currency as SavebleCurrency)
+            _currencies = new List<SaveableCurrency>(
+                currencies.Select(currency => currency as SaveableCurrency)
                 .Where(currency => currency != null));
 
         public void Load() =>

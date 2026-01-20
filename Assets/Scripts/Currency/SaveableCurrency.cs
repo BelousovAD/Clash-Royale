@@ -3,11 +3,11 @@ using Bootstrap;
 
 namespace Currency
 {
-    public class SavebleCurrency : Currency, IDisposable
+    public class SaveableCurrency : Currency, IDisposable
     {
         private SavvyServicesProvider _services;
 
-        public SavebleCurrency(CurrencyType type, int defaultValue = Min, int max = int.MaxValue)
+        public SaveableCurrency(CurrencyType type, int defaultValue = Min, int max = int.MaxValue)
             : base(type, defaultValue, max) =>
             Changed += Save;
 
