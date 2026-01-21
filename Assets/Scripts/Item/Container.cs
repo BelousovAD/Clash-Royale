@@ -22,6 +22,8 @@ namespace Item
 
         public event Action SelectChanged;
 
+        public int Capacity => _items.Capacity;
+        
         public ContainerType Type => _data.Type;
 
         public Item Selected => Index > MinIndex ? Items[Index] : null;
@@ -48,8 +50,6 @@ namespace Item
                 SelectChanged?.Invoke();
             }
         }
-
-        protected int Capacity => _items.Capacity;
 
         protected SavvyServicesProvider Services { get; private set; }
 
