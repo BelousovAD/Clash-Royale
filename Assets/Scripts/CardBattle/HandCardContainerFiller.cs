@@ -36,20 +36,25 @@ namespace CardBattle
                 }
             }
 
-            _equippedCardContainer.SelectChanged += FillUp;
+            _handCardContainer.ContentChanged += FillUp;
             _itemSelector.Select(_handCardContainer.Items.Select(item => item.Subtype));
+            FillUp();
         }
 
         public void Dispose() =>
-            _equippedCardContainer.SelectChanged -= FillUp;
+            _handCardContainer.ContentChanged -= FillUp;
 
         private void FillUp()
         {
-            if (_handCardContainer.Items.Count < _handCardContainer.Capacity)
+            _handCardContainer.ContentChanged -= FillUp;
+            
+            while (_handCardContainer.Items.Count < _handCardContainer.Capacity)
             {
                 _itemCopier.Copy();
                 _itemSelector.Select(_handCardContainer.Items.Select(item => item.Subtype));
             }
+            
+            _handCardContainer.ContentChanged += FillUp;
         }
     }
 }
