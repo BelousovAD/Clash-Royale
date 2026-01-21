@@ -80,7 +80,7 @@ namespace Item
             
             item.Initialize(Services);
             _items.Add(item);
-            item.UpdateId(_items.Count);
+            item.UpdateId(_items.Count - 1);
             item.Selected += SelectById;
             ContentChanged?.Invoke();
         }
