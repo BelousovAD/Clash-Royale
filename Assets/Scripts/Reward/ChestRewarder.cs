@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Chest;
+using Gameplay;
 using Item;
 using Rarity;
-using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Reward
@@ -26,7 +26,7 @@ namespace Reward
             _totalChance = _chestChances.Sum(chance => chance.Percent);
         }
         
-        public void Initialize(Gameplay.Judge judge, IEnumerable<Container> containers)
+        public void Initialize(Judge judge, IEnumerable<Container> containers)
         {
             Initialize(judge);
             
@@ -48,7 +48,7 @@ namespace Reward
             RarityType rarity = GetRandomRarity();
             ChestData chestData = _chestDatas
                 .First(chestData => chestData!.Rarity == rarity);
-            _container.Add(new Chest.Chest(chestData));
+            _container.Add(_container.CreateItem(chestData));
             UpdateIcon(chestData.Icon);
         }
 
