@@ -15,6 +15,6 @@ MonoBehaviour:
   _type: 0
   _subtype: Woodcutter
   _icon: {fileID: 21300000, guid: 0a9eb6f4017a5404795f4f1eb1e71240, type: 3}
-  _rarity: 2
+  _rarity: 0
   _price: 2
-  _isLocked: 1
+  _isLocked: 0

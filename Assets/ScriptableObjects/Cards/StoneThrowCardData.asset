@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a60920a461d3cdf489f5f4cf34335390, type: 3}
-  m_Name: SamuraiCardData
+  m_Name: StoneThrowCardData
   m_EditorClassIdentifier: 
   _type: 0
-  _subtype: Samurai
-  _icon: {fileID: 21300000, guid: 52ac961be51872a4e934d3d41f6c351c, type: 3}
+  _subtype: StoneThrow
+  _icon: {fileID: 21300000, guid: 1b61a2eeeca3c594e9dc5af294d17b40, type: 3}
   _rarity: 0
-  _price: 5
-  _isLocked: 1
+  _price: 7
+  _isLocked: 0

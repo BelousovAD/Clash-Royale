@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a60920a461d3cdf489f5f4cf34335390, type: 3}
-  m_Name: CardboardManCardData
+  m_Name: BlessingCardData
   m_EditorClassIdentifier: 
   _type: 0
-  _subtype: CardboardMan
-  _icon: {fileID: 21300000, guid: e41fa327c8ccc674aa347e92c460745b, type: 3}
-  _rarity: 2
-  _price: 8
-  _isLocked: 0
+  _subtype: Blessing
+  _icon: {fileID: 21300000, guid: a4619205b8f73e04fb7e244cc9dd634e, type: 3}
+  _rarity: 0
+  _price: 5
+  _isLocked: 1

@@ -15,6 +15,6 @@ MonoBehaviour:
   _type: 0
   _subtype: Eye
   _icon: {fileID: 21300000, guid: 883a5679e1f07a64f8dccfdc2b512a7f, type: 3}
-  _rarity: 1
+  _rarity: 0
   _price: 2
-  _isLocked: 1
+  _isLocked: 0

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a60920a461d3cdf489f5f4cf34335390, type: 3}
-  m_Name: SamuraiCardData
+  m_Name: FireballCardData
   m_EditorClassIdentifier: 
   _type: 0
-  _subtype: Samurai
-  _icon: {fileID: 21300000, guid: 52ac961be51872a4e934d3d41f6c351c, type: 3}
-  _rarity: 0
-  _price: 5
+  _subtype: Fireball
+  _icon: {fileID: 21300000, guid: 2b1af0c184b19f44ea384e3070eff613, type: 3}
+  _rarity: 1
+  _price: 7
   _isLocked: 1

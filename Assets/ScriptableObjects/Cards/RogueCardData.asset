@@ -15,6 +15,6 @@ MonoBehaviour:
   _type: 0
   _subtype: Rogue
   _icon: {fileID: 21300000, guid: 031af0b15fc804649a0c7111c4e863ba, type: 3}
-  _rarity: 1
+  _rarity: 0
   _price: 5
-  _isLocked: 1
+  _isLocked: 0
