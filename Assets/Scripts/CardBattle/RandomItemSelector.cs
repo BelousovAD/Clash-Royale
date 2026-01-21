@@ -1,10 +1,11 @@
+using System;
 using System.Collections.Generic;
 using Item;
-using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace CardBattle
 {
-    internal class RandomItemSelector
+    internal class RandomItemSelector : IDisposable
     {
         private readonly ContainerType _type;
         private Container _container;
@@ -23,6 +24,9 @@ namespace CardBattle
                 }
             }
         }
+
+        public void Dispose() =>
+            _container.Deselect();
 
         public void Select(IEnumerable<string> excludeSubtypes = null)
         {
