@@ -28,7 +28,6 @@ namespace CardBattle
             _imageAspectRatioFitter.enabled = false;
             _rectTransform.SetParent(_canvas.transform);
             _rectTransform.SetAsLastSibling();
-            _itemProvider.Item.Select();
         }
 
         public void OnDrag(PointerEventData eventData) =>
@@ -45,6 +44,7 @@ namespace CardBattle
             
             if (raycast.gameObject.TryGetComponent(out DropItemArea dropArea))
             {
+                _itemProvider.Item.Select();
                 dropArea.Receive();
             }
         }
