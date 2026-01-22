@@ -42,7 +42,7 @@ namespace CardBattle
             
             RaycastResult raycast = eventData.pointerCurrentRaycast;
             
-            if (raycast.gameObject.TryGetComponent(out DropItemArea dropArea))
+            if (raycast.gameObject.TryGetComponent(out DropCardArea dropArea))
             {
                 _itemProvider.Item.Select();
                 dropArea.Receive();
