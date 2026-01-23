@@ -1,4 +1,3 @@
-using Bootstrap;
 using Currency;
 using Reflex.Core;
 using UnityEngine;
@@ -7,29 +6,16 @@ namespace Elixir
 {
     internal class ElixirInstaller : MonoBehaviour, IInstaller
     {
-        [SerializeField][Min(0)] private float _earningTime = 2;
-        [SerializeField][Min(0)] private int _earnAmount = 1;
         [SerializeField][Min(0)] private int _defaultValue = 5;
         [SerializeField][Min(0)] private int _maxValue = 10;
         
-        private Elixir _elixir;
-        private ContainerBuilder _builder;
+        private Currency.Currency _currency;
         
         public void InstallBindings(ContainerBuilder builder)
         {
-            _builder = builder;
-            _elixir = new Elixir(CurrencyType.Elixir, _defaultValue, _maxValue, _earningTime, _earnAmount);
+            _currency = new Currency.Currency(CurrencyType.Elixir, _defaultValue, _maxValue);
 
-            _builder.AddSingleton(_elixir, typeof(Currency.Currency));
-            
-            _builder.OnContainerBuilt += Initialize;
-        }
-        
-        private void Initialize(Container container)
-        {
-            _builder.OnContainerBuilt -= Initialize;
-
-            _elixir.Initialize(container.Resolve<SavvyServicesProvider>());
+            builder.AddSingleton(_currency);
         }
     }
 }

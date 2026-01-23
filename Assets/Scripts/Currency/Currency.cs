@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Currency
 {
-    public abstract class Currency
+    public class Currency
     {
         protected const int Min = 0;
 
