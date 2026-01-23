@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Item
 {
-    public class Item : IDisposable
+    public class Item : Component, IDisposable
     {
         public Item(ItemData data, int id)
         {

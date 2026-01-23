@@ -1,0 +1,19 @@
+{
+    "name": "FSM",
+    "rootNamespace": "",
+    "references": [
+        "GUID:81f2beccfd620c547b8f8246a7216c30",
+        "GUID:1c364b3336ff58842b4ae7b0404ebff2",
+        "GUID:4cefadf2890e8e84b8e28d80883e7dcf",
+        "GUID:1530a967b84cfb44dbdd5e8a1989764f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
