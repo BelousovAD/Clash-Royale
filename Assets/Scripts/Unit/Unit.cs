@@ -17,7 +17,7 @@ namespace Unit
 
         public IStateSwitcher StateSwitcher => _stateMachine;
 
-        protected virtual void OnEnable() =>
+        private void OnEnable() =>
             Health.Changed += Die;
 
         private void OnDisable() =>
@@ -32,10 +32,10 @@ namespace Unit
         private void FixedUpdate() =>
             _stateMachine?.FixedUpdate(Time.fixedTime);
 
-        public void Initialize(StateMachine stateMachine, float dieDelay)
+        public void Initialize(StateMachine stateMachine, float releaseDelay)
         {
             _stateMachine = stateMachine;
-            _wait = new WaitForSeconds(dieDelay);
+            _wait = new WaitForSeconds(releaseDelay);
             Initialized?.Invoke();
         }
 
