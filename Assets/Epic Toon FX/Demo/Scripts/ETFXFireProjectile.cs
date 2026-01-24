@@ -26,30 +26,30 @@ namespace EpicToonFX
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (UnityEngine.Input.GetKeyDown(KeyCode.RightArrow))
             {
                 nextEffect();
             }
 
-            if (Input.GetKeyDown(KeyCode.D))
+            if (UnityEngine.Input.GetKeyDown(KeyCode.D))
             {
                 nextEffect();
             }
 
-            if (Input.GetKeyDown(KeyCode.A))
+            if (UnityEngine.Input.GetKeyDown(KeyCode.A))
             {
                 previousEffect();
             }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            else if (UnityEngine.Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 previousEffect();
             }
 
-            if (Input.GetKeyDown(KeyCode.Mouse0)) //On left mouse down-click
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Mouse0)) //On left mouse down-click
             {
                 if (!EventSystem.current.IsPointerOverGameObject()) //Checks if the mouse is not over a UI part
                 {
-                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f)) //Finds the point where you click with the mouse
+                    if (Physics.Raycast(Camera.main.ScreenPointToRay(UnityEngine.Input.mousePosition), out hit, 100f)) //Finds the point where you click with the mouse
                     {
                         GameObject projectile = Instantiate(projectiles[currentProjectile], spawnPosition.position, Quaternion.identity) as GameObject; //Spawns the selected projectile
                         projectile.transform.LookAt(hit.point); //Sets the projectiles rotation to look at the point clicked
@@ -57,7 +57,7 @@ namespace EpicToonFX
                     }
                 }
             }
-            Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction * 100, Color.yellow);
+            Debug.DrawRay(Camera.main.ScreenPointToRay(UnityEngine.Input.mousePosition).origin, Camera.main.ScreenPointToRay(UnityEngine.Input.mousePosition).direction * 100, Color.yellow);
         }
 
         public void nextEffect() //Changes the selected projectile to the next. Used by UI

@@ -27,16 +27,16 @@ public class UICanvasManager : MonoBehaviour {
 		// Mouse Click - Check if mouse over button to prevent spawning particle effects while hovering or using UI buttons.
 		if (!MouseOverButton) {
 			// Left Button Click
-			if (Input.GetMouseButtonUp (0)) {
+			if (UnityEngine.Input.GetMouseButtonUp (0)) {
 				// Spawn Currently Selected Particle System
 				SpawnCurrentParticleEffect();
 			}
 		}
 
-		if (Input.GetKeyUp (KeyCode.A)) {
+		if (UnityEngine.Input.GetKeyUp (KeyCode.A)) {
 			SelectPreviousPE ();
 		}
-		if (Input.GetKeyUp (KeyCode.D)) {
+		if (UnityEngine.Input.GetKeyUp (KeyCode.D)) {
 			SelectNextPE ();
 		}
 	}
@@ -73,7 +73,7 @@ public class UICanvasManager : MonoBehaviour {
 	private RaycastHit rayHit;
 	private void SpawnCurrentParticleEffect() {
 		// Spawn Particle Effect
-		Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+		Ray mouseRay = Camera.main.ScreenPointToRay(UnityEngine.Input.mousePosition);
 		if (Physics.Raycast (mouseRay, out rayHit)) {
 			ParticleEffectsLibrary.GlobalAccess.SpawnParticleEffect (rayHit.point);
 		}
