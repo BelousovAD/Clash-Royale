@@ -7,8 +7,8 @@ namespace FSM
         public event Action StateSwitching;
         public event Action StateSwitched;
 		
-        public AbstractState CurrentState { get; }
+        public State CurrentState { get; }
 		
-        public void SwitchStateTo(AbstractState nextState);
+        public void SwitchStateTo(State nextState);
     }
 }

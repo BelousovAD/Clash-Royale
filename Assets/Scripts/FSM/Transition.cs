@@ -1,14 +1,14 @@
 using System;
-using Common;
+using Behaviour;
 
 namespace FSM
 {
     public class Transition : IDisposable
     {
         private readonly Func<bool> _condition;
-        private readonly IChangeableValue _parameterToCheck;
+        private readonly IChangeable _parameterToCheck;
 
-        public Transition(IChangeableValue parameterToCheck, Func<bool> condition, AbstractState nextState)
+        public Transition(IChangeable parameterToCheck, Func<bool> condition, State nextState)
         {
             _parameterToCheck = parameterToCheck;
             _condition = condition;
@@ -18,7 +18,7 @@ namespace FSM
 
         public event Action<Transition> ConditionMet;
         
-        public AbstractState NextState { get; }
+        public State NextState { get; }
 
         public void Dispose() =>
             _parameterToCheck.Changed -= CheckCondition;

@@ -1,20 +1,20 @@
 using System;
 using System.Collections.Generic;
-using Common;
+using Behaviour;
 
 namespace FSM
 {
     public class StateMachine : IStateSwitcher, IFixedUpdatable, ILateUpdatable, IUpdatable, IDisposable
     {
-        private readonly List<AbstractState> _states;
+        private readonly List<State> _states;
 
-        public StateMachine(IEnumerable<AbstractState> states) =>
-            _states = new List<AbstractState>(states);
+        public StateMachine(IEnumerable<State> states) =>
+            _states = new List<State>(states);
 
         public event Action StateSwitching;
         public event Action StateSwitched;
 
-        public AbstractState CurrentState { get; private set; }
+        public State CurrentState { get; private set; }
 
         public void Update(float deltaTime)
         {
@@ -40,7 +40,7 @@ namespace FSM
             }
         }
 
-        public void SwitchStateTo(AbstractState nextState)
+        public void SwitchStateTo(State nextState)
         {
             if (_states.Contains(nextState) == false)
             {
