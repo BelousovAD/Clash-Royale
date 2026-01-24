@@ -1,4 +1,3 @@
-using Common;
 using Item;
 using UnityEngine;
 
@@ -8,7 +7,7 @@ namespace Character
     public class CharacterData : ItemData
     {
         [SerializeField] private GameObject _prefab;
-        [SerializeField][Min(0)] private Health _health;
+        [SerializeField][Min(0)] private int _health;
         [SerializeField][Min(0)] private int _damage;
         [SerializeField][Min(0)] private int _attackSpeed;
         [SerializeField][Min(0)] private int _moveSpeed;
@@ -16,7 +15,7 @@ namespace Character
 
         public int Damage => _damage;
         
-        public Health Health => _health;
+        public int Health => _health;
         
         public int AttackSpeed => _attackSpeed;
         

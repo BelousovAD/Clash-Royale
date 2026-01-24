@@ -1,5 +1,4 @@
 using UnityEngine;
-using Common;
 
 namespace Character
 {
@@ -15,7 +14,7 @@ namespace Character
         
         public int AttackSpeed => Data.AttackSpeed;
         
-        public Health Health => Data.Health;
+        public int Health => Data.Health;
         
         public int AttackRange => Data.AttackRange;
 
