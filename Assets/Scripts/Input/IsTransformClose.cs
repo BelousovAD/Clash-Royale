@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Input
 {
-    internal class IsTransformCloseEnough : ChangeableValue<bool>, IEnable, IDisable, IUpdatable
+    internal class IsTransformClose : ChangeableValue<bool>, IEnable, IDisable, IUpdatable
     {
         private Transform _transformFrom;
         private Transform _transformTo;

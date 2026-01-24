@@ -10,8 +10,11 @@ namespace Input
         public ChangeableValue<bool> AttackInput { get; private set; }
         public ChangeableValue<bool> MoveInput { get; private set; }
 
-        private void Awake() =>
-            AttackInput = _enemyApproachObserver.IsCloseEnough;
+        private void Awake()
+        {
+            AttackInput = _enemyApproachObserver.IsClose;
+            MoveInput = _enemyApproachObserver.IsFar;
+        }
 
         private void OnEnable() =>
             Enable();
