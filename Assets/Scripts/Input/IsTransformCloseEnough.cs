@@ -1,7 +1,8 @@
-using Common;
+using Behaviour;
+using ChangeableValue;
 using UnityEngine;
 
-namespace Inputs
+namespace Input
 {
     internal class IsTransformCloseEnough : ChangeableValue<bool>, IEnable, IDisable, IUpdatable
     {
@@ -11,13 +12,15 @@ namespace Inputs
         private bool _isInitialized;
         private bool _isActive;
 
-        public void Initialize(Transform from, Transform to, float closeDistance)
+        public void Initialize(Transform from, float closeDistance)
         {
             _transformFrom = from;
-            _transformTo = to;
             _sqrCloseDistance = closeDistance * closeDistance;
             _isInitialized = true;
         }
+
+        public void SetDestination(Transform to) =>
+            _transformTo = to;
 
         public void Enable()
         {
@@ -33,7 +36,7 @@ namespace Inputs
 
         public void Update(float deltaTime)
         {
-            if (_isInitialized && _isActive)
+            if (_isInitialized && _isActive && _transformTo is not null)
             {
                 Value = Vector3.SqrMagnitude(_transformTo.position - _transformFrom.position) <= _sqrCloseDistance;
             }
