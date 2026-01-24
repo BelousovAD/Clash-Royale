@@ -9,7 +9,7 @@ namespace Unit
     {
         [SerializeField] private Unit _unit;
         [SerializeField] private MonoBehaviour _inputReader;
-        [SerializeField] [Min(0f)] private float _deathAnimationDuration;
+        [SerializeField][Min(0f)] private float _deathAnimationDuration;
         
         private UnitStateMachineBuilder _stateMachineBuilder;
         private StateMachine _stateMachine;
@@ -18,7 +18,7 @@ namespace Unit
         {
             _stateMachineBuilder = new UnitStateMachineBuilder(_unit, _inputReader as IInputReader);
             _stateMachine = _stateMachineBuilder.Build();
-            _unit.Initialize(_stateMachine, _deathAnimationDuration);
+            _unit.Initialize(_stateMachine, _deathAnimationDuration, Item.Health);
         }
 
         private void OnValidate()

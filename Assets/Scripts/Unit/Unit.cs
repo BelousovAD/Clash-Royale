@@ -32,10 +32,11 @@ namespace Unit
         private void FixedUpdate() =>
             _stateMachine?.FixedUpdate(Time.fixedTime);
 
-        public void Initialize(StateMachine stateMachine, float releaseDelay)
+        public void Initialize(StateMachine stateMachine, float releaseDelay, int health)
         {
             _stateMachine = stateMachine;
             _wait = new WaitForSeconds(releaseDelay);
+            Health = new Health(health);
             Initialized?.Invoke();
         }
 
