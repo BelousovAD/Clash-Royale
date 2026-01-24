@@ -10,6 +10,7 @@ namespace Unit
         [SerializeField] private Unit _unit;
         [SerializeField] private MonoBehaviour _inputReader;
         [SerializeField][Min(0f)] private float _deathAnimationDuration;
+        [SerializeField] private Animator _animator;
         
         private UnitStateMachineBuilder _stateMachineBuilder;
         private StateMachine _stateMachine;
@@ -17,6 +18,8 @@ namespace Unit
         protected override void UpdateView()
         {
             _stateMachineBuilder = new UnitStateMachineBuilder(_unit, _inputReader as IInputReader);
+            _animator.runtimeAnimatorController = Item.AnimatorController;
+            _animator.avatar = Item.Avatar;
             _stateMachine = _stateMachineBuilder.Build();
             _unit.Initialize(_stateMachine, _deathAnimationDuration, Item.Health);
         }
