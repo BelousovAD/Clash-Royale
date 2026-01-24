@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62660bb07f8f4aa3b647fbc4c6abdb3d, type: 3}
+  m_Name: RogueData
+  m_EditorClassIdentifier: 
+  _type: 2
+  _subtype: Rogue
+  _icon: {fileID: 0}
+  _prefab: {fileID: 334887453662932304, guid: 4e090304a73d0e7459d4b70da1c9c170, type: 3}
+  _animatorController: {fileID: 9100000, guid: 2ea2db527dae2464f9a47ae6a43f56e6, type: 2}
+  _avatar: {fileID: 9000000, guid: c304954bfaba96a479aec7910489c8e8, type: 3}
+  _health: 12
+  _damage: 2
+  _attackSpeed: 21
+  _moveSpeed: 25
+  _attackRange: 0

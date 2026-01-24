@@ -7,7 +7,14 @@ namespace Unit
     internal class UnitAnimationCaller : MonoBehaviour
     {
         [SerializeField] private Unit _unit;
-        [SerializeField] private UnitAnimator _unitAnimator;
+        
+        private UnitAnimator _unitAnimator;
+
+        public void Initialize(UnitAnimator unitAnimator)
+        {
+            _unitAnimator = unitAnimator;
+            CallAnimation();
+        }
 
         private void OnEnable()
         {
@@ -40,6 +47,11 @@ namespace Unit
 
         private void CallAnimation()
         {
+            if (_unitAnimator is null)
+            {
+                return;
+            }
+            
             switch (_unit.StateSwitcher.CurrentState.Type)
             {
                 case StateType.Idle:

@@ -6,6 +6,7 @@ namespace Unit
     internal class UnitPrefabView : ItemView<Character.Character>
     {
         [SerializeField] private Transform _parent;
+        [SerializeField] private UnitAnimationCaller _animationCaller;
 
         private GameObject _prefabInstance;
 
@@ -20,6 +21,7 @@ namespace Unit
             _prefabInstance = Instantiate(Item.Prefab, _parent);
             _prefabInstance.transform.localPosition = Vector3.zero;
             _prefabInstance.transform.localRotation = Quaternion.identity;
+            _animationCaller.Initialize(_prefabInstance.GetComponent<UnitAnimator>());
         }
     }
 }
