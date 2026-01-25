@@ -1,5 +1,5 @@
+using EnemyObserve;
 using FSM;
-using Input;
 using Item;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ namespace Unit
     {
         [SerializeField] private Unit _unit;
         [SerializeField] private UnitReleaser _releaser;
-        [SerializeField] private MonoBehaviour _inputReader;
+        [SerializeField] private EnemyApproachObserver _enemyApproachObserver;
         [SerializeField][Min(0f)] private float _deathAnimationDuration;
         
         private UnitStateMachineBuilder _stateMachineBuilder;
@@ -20,19 +20,10 @@ namespace Unit
             if (Item is not null)
             {
                 _unit.Initialize(Item.Health);
-                _stateMachineBuilder = new UnitStateMachineBuilder(_unit, _inputReader as IInputReader);
+                _stateMachineBuilder = new UnitStateMachineBuilder(_unit, _enemyApproachObserver);
                 _stateMachine = _stateMachineBuilder.Build();
                 _unit.Initialize(_stateMachine);
                 _releaser.Initialize(_deathAnimationDuration);
-            }
-        }
-
-        private void OnValidate()
-        {
-            if (_inputReader is not null && _inputReader is not IInputReader)
-            {
-                Debug.LogError($"{nameof(_inputReader)} must inherit {nameof(IInputReader)}");
-                _inputReader = null;
             }
         }
     }

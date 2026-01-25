@@ -1,18 +1,18 @@
 using System.Collections.Generic;
+using EnemyObserve;
 using FSM;
-using Input;
 
 namespace Unit
 {
     internal class UnitStateMachineBuilder : AbstractStateMachineBuilder
     {
         private readonly Unit _unit;
-        private readonly IInputReader _inputReader;
+        private readonly EnemyApproachObserver _enemyApproachObserver;
 
-        public UnitStateMachineBuilder(Unit unit, IInputReader inputReader)
+        public UnitStateMachineBuilder(Unit unit, EnemyApproachObserver enemyApproachObserver)
         {
             _unit = unit;
-            _inputReader = inputReader;
+            _enemyApproachObserver = enemyApproachObserver;
         }
 
         public override StateMachine Build()
@@ -39,12 +39,12 @@ namespace Unit
             States[StateType.Idle].AddTransitionRange(new []
             {
                 new Transition(
-                    _inputReader.MoveInput,
-                    () => _inputReader.MoveInput.Value,
+                    _enemyApproachObserver.IsClose,
+                    () => _enemyApproachObserver.IsClose.Value == false,
                     States[StateType.Move]),
                 new Transition(
-                    _inputReader.AttackInput,
-                    () => _inputReader.AttackInput.Value,
+                    _enemyApproachObserver.IsClose,
+                    () => _enemyApproachObserver.IsClose.Value == true,
                     States[StateType.Attack]),
                 new Transition(
                     _unit.Health,
@@ -54,12 +54,12 @@ namespace Unit
             States[StateType.Attack].AddTransitionRange(new []
             {
                 new Transition(
-                    _inputReader.MoveInput,
-                    () => _inputReader.MoveInput.Value,
+                    _enemyApproachObserver.IsClose,
+                    () => _enemyApproachObserver.IsClose.Value == false,
                     States[StateType.Move]),
                 new Transition(
-                    _inputReader.AttackInput,
-                    () => _inputReader.AttackInput.Value == false,
+                    _enemyApproachObserver.IsClose,
+                    () => _enemyApproachObserver.IsClose.Value == null,
                     States[StateType.Idle]),
                 new Transition(
                     _unit.Health,
@@ -69,12 +69,12 @@ namespace Unit
             States[StateType.Move].AddTransitionRange(new []
             {
                 new Transition(
-                    _inputReader.AttackInput,
-                    () => _inputReader.AttackInput.Value,
+                    _enemyApproachObserver.IsClose,
+                    () => _enemyApproachObserver.IsClose.Value == true,
                     States[StateType.Attack]),
                 new Transition(
-                    _inputReader.MoveInput,
-                    () => _inputReader.MoveInput.Value == false,
+                    _enemyApproachObserver.IsClose,
+                    () => _enemyApproachObserver.IsClose.Value == null,
                     States[StateType.Idle]),
                 new Transition(
                     _unit.Health,

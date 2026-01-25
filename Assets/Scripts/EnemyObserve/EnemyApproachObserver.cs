@@ -2,7 +2,7 @@ using Behaviour;
 using ChangeableValue;
 using UnityEngine;
 
-namespace Input
+namespace EnemyObserve
 {
     public class EnemyApproachObserver : MonoBehaviour, IEnable, IDisable
     {
@@ -11,22 +11,15 @@ namespace Input
         [SerializeField] private Transform _enemy;
 
         private readonly IsTransformClose _isClose = new();
-        private readonly IsTransformFar _isFar = new();
 
-        public ChangeableValue<bool> IsClose => _isClose;
+        public ChangeableValue<bool?> IsClose => _isClose;
 
-        public ChangeableValue<bool> IsFar => _isFar;
-
-        public void SetEnemy(Transform enemy)
-        {
+        public void SetEnemy(Transform enemy) =>
             _isClose.SetDestination(enemy);
-            _isFar.SetDestination(enemy);
-        }
 
         private void Awake()
         {
             _isClose.Initialize(_transformFrom, _closeDistance);
-            _isFar.Initialize(_transformFrom, _closeDistance);
 
             if (_enemy is not null)
             {
@@ -34,22 +27,13 @@ namespace Input
             }
         }
 
-        private void Update()
-        {
+        private void Update() =>
             _isClose.Update(Time.deltaTime);
-            _isFar.Update(Time.deltaTime);
-        }
 
-        public void Enable()
-        {
+        public void Enable() =>
             _isClose.Enable();
-            _isFar.Enable();
-        }
 
-        public void Disable()
-        {
+        public void Disable() =>
             _isClose.Disable();
-            _isFar.Disable();
-        }
     }
 }

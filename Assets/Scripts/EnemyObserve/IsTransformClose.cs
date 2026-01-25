@@ -2,9 +2,9 @@ using Behaviour;
 using ChangeableValue;
 using UnityEngine;
 
-namespace Input
+namespace EnemyObserve
 {
-    internal class IsTransformClose : ChangeableValue<bool>, IEnable, IDisable, IUpdatable
+    internal class IsTransformClose : ChangeableValue<bool?>, IEnable, IDisable, IUpdatable
     {
         private Transform _transformFrom;
         private Transform _transformTo;
@@ -24,19 +24,28 @@ namespace Input
 
         public void Enable()
         {
-            Value = false;
+            Value = null;
             _isActive = true;
         }
 
         public void Disable()
         {
             _isActive = false;
-            Value = false;
+            Value = null;
         }
 
         public void Update(float deltaTime)
         {
-            if (_isInitialized && _isActive && _transformTo is not null)
+            if (!_isInitialized || !_isActive)
+            {
+                return;
+            }
+            
+            if (_transformTo is null)
+            {
+                Value = null;
+            }
+            else
             {
                 Value = Vector3.SqrMagnitude(_transformTo.position - _transformFrom.position) <= _sqrCloseDistance;
             }
