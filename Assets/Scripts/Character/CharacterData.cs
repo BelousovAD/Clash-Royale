@@ -7,6 +7,7 @@ namespace Character
     public class CharacterData : ItemData
     {
         [SerializeField] private GameObject _prefab;
+        [SerializeField][Min(0f)] private float _radius;
         [SerializeField][Min(0)] private int _health;
         [SerializeField][Min(0)] private int _damage;
         [SerializeField][Min(0)] private int _attackSpeed;
@@ -24,5 +25,7 @@ namespace Character
         public int AttackRange => _attackRange;
         
         public GameObject Prefab => _prefab;
+        
+        public float Radius => _radius;
     }
 }

@@ -19,6 +19,8 @@ namespace Character
         public int AttackRange => Data.AttackRange;
 
         public GameObject Prefab => Data.Prefab;
+
+        public float Radius => Data.Radius;
         
         private new CharacterData Data => base.Data as CharacterData;
     }
