@@ -108,7 +108,7 @@ public class ETFXSceneManager : MonoBehaviour
 	void Update ()
 	 {
  
-     if(UnityEngine.Input.GetKeyDown(KeyCode.L))
+     if(Input.GetKeyDown(KeyCode.L))
 	 {
          GUIHide = !GUIHide;
      
@@ -121,7 +121,7 @@ public class ETFXSceneManager : MonoBehaviour
              GameObject.Find("CanvasSceneSelect").GetComponent<Canvas> ().enabled = true;
          }
      }
-	      if(UnityEngine.Input.GetKeyDown(KeyCode.J))
+	      if(Input.GetKeyDown(KeyCode.J))
 	 {
          GUIHide2 = !GUIHide2;
      
@@ -134,7 +134,7 @@ public class ETFXSceneManager : MonoBehaviour
              GameObject.Find("Canvas").GetComponent<Canvas> ().enabled = true;
          }
      }
-		if(UnityEngine.Input.GetKeyDown(KeyCode.H))
+		if(Input.GetKeyDown(KeyCode.H))
 	 {
          GUIHide3 = !GUIHide3;
      
@@ -147,7 +147,7 @@ public class ETFXSceneManager : MonoBehaviour
              GameObject.Find("ParticleSysDisplayCanvas").GetComponent<Canvas> ().enabled = true;
          }
      }
-	 	if(UnityEngine.Input.GetKeyDown(KeyCode.K))
+	 	if(Input.GetKeyDown(KeyCode.K))
 	 {
          GUIHide4 = !GUIHide4;
      
