@@ -10,13 +10,13 @@ namespace Character
 
         public int Damage => Data.Damage;
         
-        public int MoveSpeed => Data.MoveSpeed;
+        public float MoveSpeed => Data.MoveSpeed;
         
-        public int AttackSpeed => Data.AttackSpeed;
+        public float AttackFactor => Data.AttackFactor;
         
         public int Health => Data.Health;
         
-        public int AttackRange => Data.AttackRange;
+        public float AttackRange => Data.AttackRange;
 
         public GameObject Prefab => Data.Prefab;
 

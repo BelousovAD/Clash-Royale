@@ -10,19 +10,19 @@ namespace Character
         [SerializeField][Min(0f)] private float _radius;
         [SerializeField][Min(0)] private int _health;
         [SerializeField][Min(0)] private int _damage;
-        [SerializeField][Min(0)] private int _attackSpeed;
-        [SerializeField][Min(0)] private int _moveSpeed;
-        [SerializeField][Min(1)] private int _attackRange;
+        [SerializeField][Min(0f)] private float _attackFactor;
+        [SerializeField][Min(0f)] private float _moveSpeed;
+        [SerializeField][Min(1f)] private float _attackRange;
 
         public int Damage => _damage;
         
         public int Health => _health;
         
-        public int AttackSpeed => _attackSpeed;
+        public float AttackFactor => _attackFactor;
         
-        public int MoveSpeed => _moveSpeed;
+        public float MoveSpeed => _moveSpeed;
 
-        public int AttackRange => _attackRange;
+        public float AttackRange => _attackRange;
         
         public GameObject Prefab => _prefab;
         

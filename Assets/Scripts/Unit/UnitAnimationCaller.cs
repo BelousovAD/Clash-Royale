@@ -9,11 +9,19 @@ namespace Unit
         [SerializeField] private Unit _unit;
         
         private UnitAnimator _unitAnimator;
+        private float _attackFactor = 1f;
 
         public void Initialize(UnitAnimator unitAnimator)
         {
             _unitAnimator = unitAnimator;
+            _unitAnimator.SetAttackFactor(_attackFactor);
             CallAnimation();
+        }
+
+        public void Initialize(float attackFactor)
+        {
+            _attackFactor = attackFactor;
+            _unitAnimator?.SetAttackFactor(_attackFactor);
         }
 
         private void OnEnable()

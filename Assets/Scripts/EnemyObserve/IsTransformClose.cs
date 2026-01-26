@@ -13,9 +13,11 @@ namespace EnemyObserve
         private bool _isInitialized;
         private bool _isActive;
 
-        public void Initialize(Transform from, float closeDistance)
-        {
+        public void Initialize(Transform from) =>
             _transformFrom = from;
+
+        public void Initialize(float closeDistance)
+        {
             _closeDistance = closeDistance;
             _isInitialized = true;
         }

@@ -19,15 +19,8 @@ namespace Unit
 
         public float Radius
         {
-            get
-            {
-                return _radius;
-            }
-
-            private set
-            {
-                _radius = value < MinRadius ? MinRadius : value;
-            }
+            get => _radius;
+            private set => _radius = value < MinRadius ? MinRadius : value;
         }
 
         public IStateSwitcher StateSwitcher => _stateMachine;

@@ -46,8 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemProvider: {fileID: 6259286500928002049}
   _unit: {fileID: 8705153733819637257}
+  _agent: {fileID: 8480114400005859288}
   _releaser: {fileID: 2491734908850403181}
   _enemyApproachObserver: {fileID: 3321928578019469276}
+  _animationCaller: {fileID: 5206093519342839710}
   _deathAnimationDuration: 1
 --- !u!1 &2363062008015094338
 GameObject:
@@ -201,7 +203,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 5
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 2
 --- !u!1 &3318236138961567321
 GameObject:
@@ -248,7 +250,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transformFrom: {fileID: 7691014875186428266}
-  _closeDistance: 2
 --- !u!1 &4311445021751212852
 GameObject:
   m_ObjectHideFlags: 0

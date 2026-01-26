@@ -6,6 +6,8 @@ namespace Unit
     [RequireComponent(typeof(Animator))]
     internal class UnitAnimator : MonoBehaviour
     {
+        private static readonly int AttackFactor = Animator.StringToHash(nameof(AttackFactor));
+
         private Animator _animator;
         private Dictionary<AnimationKey, int> _parameters;
 
@@ -41,6 +43,8 @@ namespace Unit
                 _animator.SetBool(parameterId, true);
             }
         }
-    }
 
+        public void SetAttackFactor(float speed) =>
+            _animator.SetFloat(AttackFactor, speed);
+    }
 }
