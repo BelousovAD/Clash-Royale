@@ -7,20 +7,24 @@ namespace EnemyObserve
     internal class IsTransformClose : ChangeableValue<bool?>, IEnable, IDisable, IUpdatable
     {
         private Transform _transformFrom;
-        private Transform _transformTo;
-        private float _sqrCloseDistance;
+        private Transform _transformTarget;
+        private float _targetRadius;
+        private float _closeDistance;
         private bool _isInitialized;
         private bool _isActive;
 
         public void Initialize(Transform from, float closeDistance)
         {
             _transformFrom = from;
-            _sqrCloseDistance = closeDistance * closeDistance;
+            _closeDistance = closeDistance;
             _isInitialized = true;
         }
 
-        public void SetDestination(Transform to) =>
-            _transformTo = to;
+        public void SetTarget(Transform target, float targetRadius)
+        {
+            _transformTarget = target;
+            _targetRadius = targetRadius;
+        }
 
         public void Enable()
         {
@@ -41,13 +45,14 @@ namespace EnemyObserve
                 return;
             }
             
-            if (_transformTo is null)
+            if (_transformTarget is null)
             {
                 Value = null;
             }
             else
             {
-                Value = Vector3.SqrMagnitude(_transformTo.position - _transformFrom.position) <= _sqrCloseDistance;
+                Value = Vector3.Magnitude(_transformTarget.position - _transformFrom.position)
+                        - _targetRadius <= _closeDistance;
             }
         }
     }

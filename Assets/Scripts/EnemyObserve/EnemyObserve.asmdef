@@ -2,8 +2,8 @@
     "name": "EnemyObserve",
     "rootNamespace": "",
     "references": [
-        "Behaviour",
-        "ChangeableValue"
+        "GUID:1099e208d164e904d8575abf34a74829",
+        "GUID:9486b756c36397c4f9f5689c48f9d195"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
