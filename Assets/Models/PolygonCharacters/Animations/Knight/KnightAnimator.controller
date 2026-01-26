@@ -199,8 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fffe14307132d4d9c7bf707d54401b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundMark: 0
   _key: 13
-  _needDelay: 0
 --- !u!1101 &-2749325678768169604
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -363,8 +363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fffe14307132d4d9c7bf707d54401b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundMark: 0.5
   _key: 10
-  _needDelay: 1
 --- !u!1101 &6010229250694113714
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

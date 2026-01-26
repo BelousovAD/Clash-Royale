@@ -1,4 +1,5 @@
 using Item;
+using Reflex.Attributes;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -10,19 +11,22 @@ namespace CardBattle
         [SerializeField] private ItemProvider _itemProvider;
         [SerializeField] private Image _imageToDrag;
         [SerializeField] private AspectRatioFitter _imageAspectRatioFitter;
-        [SerializeField] private PointerIndicator _indicator;
 
+        private PointerIndicator _indicator;
         private Canvas _canvas;
         private RectTransform _rectTransform;
         private Transform _defaultParent;
         private CanvasGroup _group;
+
+        [Inject]
+        private void Initialize(PointerIndicator indicator) =>
+            _indicator = indicator;
 
         private void Awake()
         {
             _canvas = GetComponentInParent<Canvas>();
             _rectTransform = _imageToDrag.GetComponent<RectTransform>();
             _defaultParent = _rectTransform.parent;
-            _indicator = FindAnyObjectByType<PointerIndicator>();
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -33,13 +37,13 @@ namespace CardBattle
             _imageAspectRatioFitter.enabled = false;
             _rectTransform.SetParent(_canvas.transform);
             _rectTransform.SetAsLastSibling();
-            _indicator.OnBeginDrag();
+            _indicator.BeginDrag();
         }
 
         public void OnDrag(PointerEventData eventData)
         {
             _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
-            _indicator.OnDrag();
+            _indicator.Drag();
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -51,7 +55,7 @@ namespace CardBattle
             _imageToDrag.raycastTarget = true;
             
             RaycastResult raycast = eventData.pointerCurrentRaycast;
-            _indicator.OnEndDrag();
+            _indicator.EndDrag();
             
             if (raycast.gameObject.TryGetComponent(out DropCardArea dropArea))
             {

@@ -1,67 +1,59 @@
 using Character;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.UI;
 
 namespace CardBattle
 {
-    public class PointerIndicator : MonoBehaviour
+    public class PointerIndicator
     {
-        [SerializeField] private Camera _camera;
-        [SerializeField] private Indicator _indicatorPrefab;
-        [SerializeField] private LayerMask _layerMask;
+        private static readonly Vector3 DefaultPosition = new Vector3(0, -5, 0);
+
+        private readonly LayerMask _layerMask;
+        private readonly Indicator _indicatorPrefab;
+        private readonly Camera _camera;
 
         private RawImage _rawImage;
         private Ray _ray;
-        private Indicator _prefab;
 
-        private void Start()
+        public PointerIndicator(LayerMask layerMask, Indicator indicator, Camera camera)
         {
-            _rawImage = FindFirstObjectByType<RawImage>();
+            _layerMask = layerMask;
+            _indicatorPrefab = indicator;
+            _camera = camera;
         }
 
-        public void OnBeginDrag()
-        {
-            _ray = GetRayFromUI();
-            
-            if (Physics.Raycast(_ray, out RaycastHit hitInfo, Mathf.Infinity, _layerMask))
-            {
-                if (hitInfo.collider.TryGetComponent<Ground>(out Ground basket))
-                {
-                    _prefab = Instantiate(_indicatorPrefab);
-                }
-            }
-        }
+        public void Initialize(RawImage image) =>
+            _rawImage = image;
 
-        public void OnDrag()
+        public void BeginDrag() =>
+            _indicatorPrefab.gameObject.SetActive(true);
+
+        public void Drag()
         {
             _ray = GetRayFromUI();
 
-            if (Physics.Raycast(_ray, out RaycastHit hitInfo, Mathf.Infinity, _layerMask))
+            if (Physics.Raycast(_ray, out RaycastHit hitInfo, Mathf.Infinity, _layerMask)
+                && hitInfo.collider.TryGetComponent<Ground>(out Ground basket))
             {
-                if (hitInfo.collider.TryGetComponent<Ground>(out Ground basket))
-                {
-                    Vector3 newMovePosition = new Vector3(hitInfo.point.x, hitInfo.point.y, hitInfo.point.z);
-                    _prefab.transform.position = newMovePosition;
-                }
+                _indicatorPrefab.transform.position = hitInfo.point;
             }
         }
 
-        public void OnEndDrag()
+        public void EndDrag()
         {
-            Destroy(_prefab.gameObject);
+            _indicatorPrefab.gameObject.SetActive(false);
+            _indicatorPrefab.transform.position = DefaultPosition;
         }
 
         private Ray GetRayFromUI()
         {
             RectTransform rectTransform = _rawImage.rectTransform;
 
-            Vector2 localPoint;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 rectTransform,
                 Input.mousePosition,
                 null,
-                out localPoint);
+                out Vector2 localPoint);
 
             Rect rect = rectTransform.rect;
 
