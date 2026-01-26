@@ -2,5 +2,6 @@ using UnityEngine;
 
 namespace Character
 {
-    public class Indicator : MonoBehaviour{ }
+    public class Indicator : MonoBehaviour
+    { }
 }

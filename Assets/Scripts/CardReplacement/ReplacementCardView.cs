@@ -9,13 +9,15 @@ namespace CardReplacement
     [RequireComponent(typeof(CanvasGroup))]
     internal class ReplacementCardView : MonoBehaviour
     {
+        private const float Duration = 0.5f;
+        private const float AnimationAngle = 4f;
+        private const int InfiniteLoops = -1;
+        
         [SerializeField] private ContainerType _containerTypeToObserve;
         
         private CanvasGroup _canvasGroup;
         private Container _container;
         private Sequence _sequence;
-        private float _duration = 0.5f;
-        private float _animationAngle = 4f;
         private RectTransform _rectTransform;
         private Tweener _tweener;
 
@@ -53,15 +55,15 @@ namespace CardReplacement
             {
                 _sequence = DOTween.Sequence();
 
-                _sequence.Append(_rectTransform.DORotate(new Vector3(0, 0, _animationAngle), _duration));
-                _sequence.Append(_rectTransform.DORotate(new Vector3(0, 0, -_animationAngle), _duration));
-                _sequence.SetLoops(-1, LoopType.Yoyo);
+                _sequence.Append(_rectTransform.DORotate(new Vector3(0, 0, AnimationAngle), Duration));
+                _sequence.Append(_rectTransform.DORotate(new Vector3(0, 0, -AnimationAngle), Duration));
+                _sequence.SetLoops(InfiniteLoops, LoopType.Yoyo);
                 _sequence.SetEase(Ease.InOutSine);
             }
             else if (_container.Selected is null && _sequence != null)
             {
                 _sequence.Kill();
-                _tweener = _rectTransform.DORotate(new Vector3(0, 0, 0), _duration, RotateMode.Fast);
+                _tweener = _rectTransform.DORotate(new Vector3(0, 0, 0), Duration, RotateMode.Fast);
                 _sequence = null;
             }
             
