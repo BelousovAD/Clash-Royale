@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using EnemyObserve;
 using Reflex.Attributes;
+using UnitMovement;
 using UnityEngine;
 
 namespace EnemyFind
@@ -10,6 +11,7 @@ namespace EnemyFind
         [SerializeField] private Unit.Unit _root;
         [SerializeField] private UnitType _typeToFind;
         [SerializeField] private EnemyApproachObserver _enemyApproachObserver;
+        [SerializeField] private UnitMover _mover;
         
         private ClosestUnitFinder _unitFinder;
 
@@ -33,10 +35,12 @@ namespace EnemyFind
             if (closest is not null)
             {
                 _enemyApproachObserver.SetEnemy(closest.transform, closest.Radius);
+                _mover.SetEnemy(closest.transform, closest.Radius);
             }
             else
             {
                 _enemyApproachObserver.SetEnemy(null, 0f);
+                _mover.SetEnemy(null, 0f);
             }
         }
     }
