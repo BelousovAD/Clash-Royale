@@ -42,8 +42,8 @@ namespace EnemyFind
             }
             else
             {
-                _enemyApproachObserver.SetEnemy(null, 0f);
-                _mover.SetEnemy(null, 0f);
+                _enemyApproachObserver.SetEnemy(null, Unit.Unit.MinRadius);
+                _mover.SetEnemy(null, Unit.Unit.MinRadius);
                 _rotator.SetEnemy(null);
             }
         }

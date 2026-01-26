@@ -6,7 +6,7 @@ namespace Unit
 {
     public class Unit : MonoBehaviour
     {
-        private const float MinRadius = 0f;
+        public const float MinRadius = 0f;
         
         [Header("Only for towers")]
         [SerializeField][Min(MinRadius)] private float _radius;
