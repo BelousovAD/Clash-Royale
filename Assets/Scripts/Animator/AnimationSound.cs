@@ -6,24 +6,23 @@ namespace Animator
 {
     internal class AnimationSound : StateMachineBehaviour
     {
-        [SerializeField] private AudioClipKey _key;
-        [SerializeField] private bool _needDelay;
 
-        private float _delay;
+        [SerializeField][Range(0, 1)] private float _soundMark;
+        [SerializeField] private AudioClipKey _key;
+
         private CharacterSound _characterSound;
+        private float _delay;
         private float _time;
         private bool _isAudioStart;
 
         public override void OnStateEnter(UnityEngine.Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            _characterSound = animator.GetComponent<CharacterSound>();
+            _characterSound ??= animator.GetComponent<CharacterSound>();
+
             _time = 0;
             _isAudioStart = false;
 
-            if (_needDelay)
-            {
-                _delay = stateInfo.length / 2;
-            }
+            _delay = stateInfo.length * _soundMark;
         }
 
         public override void OnStateUpdate(UnityEngine.Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -32,7 +31,7 @@ namespace Animator
             {
                 _time += Time.deltaTime;
 
-                if (_time > _delay)
+                if (_time >= _delay)
                 {
                     _characterSound.PlayTrack(_key);
                     _isAudioStart = true;

@@ -4,16 +4,15 @@ using UnityEngine;
 
 namespace Character
 {
+    [RequireComponent(typeof(AudioSource))]
     public class CharacterSound : MonoBehaviour
     {
         [SerializeField] private List<Track> _tracks;
         
         private AudioSource _source;
 
-        private void OnEnable()
-        {
+        private void Awake() =>
             _source = GetComponent<AudioSource>();
-        }
 
         public void PlayTrack(AudioClipKey key)
         {
