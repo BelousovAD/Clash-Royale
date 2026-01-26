@@ -21,6 +21,12 @@ namespace Audio
         private void Initialize(IEnumerable<Audio> audios) =>
             _audio = audios.FirstOrDefault(audioObject => audioObject.Type == SoundType);
 
+        protected override void Awake()
+        {
+            base.Awake();
+            _wait = new WaitForSeconds(_delay);
+        }
+
         protected override void HandleClick()
         {
             if (_delay == 0)
@@ -29,11 +35,10 @@ namespace Audio
             }
             else
             {
-                _wait = new WaitForSeconds(_delay);
                 StartCoroutine(PlayAfterDelay());
             }
         }
-        
+
         private IEnumerator PlayAfterDelay()
         {
             yield return _wait;
