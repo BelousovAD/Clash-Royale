@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Unit
 {
-    internal class Health : ChangeableValue.ChangeableValue<float>
+    public class Health : ChangeableValue.ChangeableValue<float>
     {
         private const float MinValue = 0;
 

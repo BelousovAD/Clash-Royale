@@ -19,7 +19,7 @@ namespace Unit
         {
             if (Item is not null)
             {
-                _unit.Initialize(Item.Health);
+                _unit.Initialize(Item.Health, Item.Radius);
                 _stateMachineBuilder = new UnitStateMachineBuilder(_unit, _enemyApproachObserver);
                 _stateMachine = _stateMachineBuilder.Build();
                 _unit.Initialize(_stateMachine);
