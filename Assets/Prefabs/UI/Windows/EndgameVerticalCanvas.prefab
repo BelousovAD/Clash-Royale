@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 3574772983007633225}
   - component: {fileID: 5974112195231076063}
   - component: {fileID: 9200954582003016756}
+  - component: {fileID: 716405645804162426}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -450,6 +451,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneToLoad: Menu
+--- !u!114 &716405645804162426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4288334181437702978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983575eefcc3403fb827fe02b3f66591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clipKey: 0
+  _delay: 0
 --- !u!1 &5395789088400418572
 GameObject:
   m_ObjectHideFlags: 0
