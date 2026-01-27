@@ -1,6 +1,6 @@
-namespace EnemyFind
+namespace Unit
 {
-    internal enum UnitType
+    public enum UnitType
     {
         Enemy = 0,
         Player = 1,

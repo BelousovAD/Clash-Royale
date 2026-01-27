@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using Item;
 using Spawn;
+using UnityEngine;
 
 namespace Unit
 {
     public class UnitSpawner : SingleItemProviderSpawner
     {
+        [SerializeField] private UnitType _type;
+        
         private readonly List<Unit> _spawnedUnits = new ();
 
         public IReadOnlyList<Unit> SpawnedUnits => _spawnedUnits;
@@ -13,7 +16,9 @@ namespace Unit
         protected override void Initialize(PooledComponent pooledComponent)
         {
             base.Initialize(pooledComponent);
-            _spawnedUnits.Add(pooledComponent.GetComponent<Unit>());
+            Unit unit = pooledComponent.GetComponent<Unit>();
+            unit.SetType(_type);
+            _spawnedUnits.Add(unit);
         }
 
         protected override void ReleaseAll()
