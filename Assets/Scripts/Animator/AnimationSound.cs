@@ -11,31 +11,46 @@ namespace Animator
 
         private CharacterSound _characterSound;
         private float _delay;
+        private float _timeToEnd;
         private float _time;
-        private bool _isAudioStart;
+        private bool _isAudioPlayed;
 
         public override void OnStateEnter(UnityEngine.Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             _characterSound ??= animator.GetComponent<CharacterSound>();
 
             _time = 0;
-            _isAudioStart = false;
-
+            _isAudioPlayed = false;
             _delay = stateInfo.length * _soundMark;
+            _timeToEnd = stateInfo.length - _delay;
         }
 
         public override void OnStateUpdate(UnityEngine.Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (_isAudioStart == false)
-            {
-                _time += Time.deltaTime;
+            _time += Time.deltaTime;
 
-                if (_time >= _delay)
+            if (_isAudioPlayed == true)
+            {
+                if (_time >= _timeToEnd)
                 {
-                    _characterSound.PlayTrack(_key);
-                    _isAudioStart = true;
+                    _time = 0;
+                    _isAudioPlayed = false;
                 }
             }
+            else
+            {
+                if (_time >= _delay && _characterSound.Source.isPlaying == false)
+                {
+                    _characterSound.PlayTrack(_key);
+                    _time = 0;
+                    _isAudioPlayed = true;
+                }
+            }
+        }
+
+        public override void OnStateExit(UnityEngine.Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            _characterSound.Source.Stop();
         }
     }
 }

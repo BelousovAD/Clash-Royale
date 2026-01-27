@@ -12,6 +12,8 @@ namespace Character
         private readonly Dictionary<AudioClipKey, AudioClip> _audioClips = new ();  
         private AudioSource _source;
 
+        public AudioSource Source => _source;
+
         private void Awake()
         {
             _source = GetComponent<AudioSource>();
