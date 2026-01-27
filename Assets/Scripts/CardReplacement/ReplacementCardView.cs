@@ -54,7 +54,6 @@ namespace CardReplacement
             if (_container.Selected is not null && _sequence == null)
             {
                 _sequence = DOTween.Sequence();
-
                 _sequence.Append(_rectTransform.DORotate(new Vector3(0, 0, AnimationAngle), Duration));
                 _sequence.Append(_rectTransform.DORotate(new Vector3(0, 0, -AnimationAngle), Duration));
                 _sequence.SetLoops(InfiniteLoops, LoopType.Yoyo);
@@ -63,7 +62,7 @@ namespace CardReplacement
             else if (_container.Selected is null && _sequence != null)
             {
                 _sequence.Kill();
-                _tweener = _rectTransform.DORotate(new Vector3(0, 0, 0), Duration, RotateMode.Fast);
+                _tweener = _rectTransform.DORotate(Vector3.zero, Duration);
                 _sequence = null;
             }
             

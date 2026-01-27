@@ -12,7 +12,7 @@ namespace CardReplacement
         
         private Container _firstContainer;
         private Container _secondContainer;
-        
+
         [Inject]
         private void Initialize(IEnumerable<Container> containers)
         {
