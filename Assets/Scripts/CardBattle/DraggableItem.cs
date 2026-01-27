@@ -45,13 +45,7 @@ namespace CardBattle
 
         public void OnDrag(PointerEventData eventData)
         {
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                _rectTransform.parent as RectTransform,
-                eventData.position,
-                eventData.pressEventCamera,
-                out Vector2 mousePos);
-            
-            _rectTransform.anchoredPosition = mousePos;
+            _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
             _indicator.Drag(eventData);
         }
 
