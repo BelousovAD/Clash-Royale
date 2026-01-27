@@ -2,6 +2,6 @@ using UnityEngine;
 
 namespace SpawnPointIndicator
 {
-    public class Ground : MonoBehaviour
+    internal class Ground : MonoBehaviour
     { }
 }
