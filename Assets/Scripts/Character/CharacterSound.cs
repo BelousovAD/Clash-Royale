@@ -8,22 +8,23 @@ namespace Character
     public class CharacterSound : MonoBehaviour
     {
         [SerializeField] private List<Track> _tracks;
-        
+
+        private readonly Dictionary<AudioClipKey, AudioClip> _audioClips = new ();  
         private AudioSource _source;
 
-        private void Awake() =>
+        private void Awake()
+        {
             _source = GetComponent<AudioSource>();
+
+            foreach (Track track in _tracks)
+            {
+                _audioClips.Add(track.Key, track.Clip);
+            }
+        }
 
         public void PlayTrack(AudioClipKey key)
         {
-            foreach (Track track in _tracks)
-            {
-                if (track.Key == key)
-                {
-                    _source.clip = track.Clip;
-                }
-            }
-            
+            _source.clip = _audioClips[key];
             _source.Play();
         }
     }
