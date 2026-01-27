@@ -2,14 +2,14 @@ using Reflex.Attributes;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CardBattle
+namespace SpawnPointIndicator
 {
-    internal class PointerIndicatorInitializer : MonoBehaviour
+    internal class SpawnPointIndicatorInitializer : MonoBehaviour
     {
         [SerializeField] private RawImage _rawImage;
 
         [Inject]
-        private void Initialize(PointerIndicator indicator) =>
+        private void Initialize(SpawnPointIndicator indicator) =>
             indicator.Initialize(_rawImage);
     }
 }

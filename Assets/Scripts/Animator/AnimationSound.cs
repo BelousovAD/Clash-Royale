@@ -6,8 +6,7 @@ namespace Animator
 {
     internal class AnimationSound : StateMachineBehaviour
     {
-
-        [SerializeField][Range(0, 1)] private float _soundMark;
+        [SerializeField][Range(0f, 1f)] private float _soundMark;
         [SerializeField] private AudioClipKey _key;
 
         private CharacterSound _characterSound;

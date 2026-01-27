@@ -8,31 +8,34 @@ namespace CardBattle
 {
     internal class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
+        private const float MinAlpha = 0.1f;
+        private const float MaxAlpha = 1f;
+        
         [SerializeField] private ItemProvider _itemProvider;
         [SerializeField] private Image _imageToDrag;
         [SerializeField] private AspectRatioFitter _imageAspectRatioFitter;
 
-        private PointerIndicator _indicator;
+        private SpawnPointIndicator.SpawnPointIndicator _indicator;
         private Canvas _canvas;
         private RectTransform _rectTransform;
         private Transform _defaultParent;
         private CanvasGroup _group;
 
         [Inject]
-        private void Initialize(PointerIndicator indicator) =>
+        private void Initialize(SpawnPointIndicator.SpawnPointIndicator indicator) =>
             _indicator = indicator;
 
         private void Awake()
         {
             _canvas = GetComponentInParent<Canvas>();
             _rectTransform = _imageToDrag.GetComponent<RectTransform>();
+            _group = _imageToDrag.GetComponent<CanvasGroup>();
             _defaultParent = _rectTransform.parent;
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            _group = _imageToDrag.gameObject.GetComponent<CanvasGroup>();
-            SwitchImagesAlfa(0.1f);
+            _group.alpha = MinAlpha;
             _imageToDrag.raycastTarget = false;
             _imageAspectRatioFitter.enabled = false;
             _rectTransform.SetParent(_canvas.transform);
@@ -43,12 +46,12 @@ namespace CardBattle
         public void OnDrag(PointerEventData eventData)
         {
             _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
-            _indicator.Drag();
+            _indicator.Drag(eventData);
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            SwitchImagesAlfa(1f);
+            _group.alpha = MaxAlpha;
             _rectTransform.SetParent(_defaultParent);
             _rectTransform.anchoredPosition = Vector2.zero;
             _imageAspectRatioFitter.enabled = true;
@@ -57,16 +60,12 @@ namespace CardBattle
             RaycastResult raycast = eventData.pointerCurrentRaycast;
             _indicator.EndDrag();
             
-            if (raycast.gameObject.TryGetComponent(out DropCardArea dropArea))
+            if (raycast.gameObject is not null
+                && raycast.gameObject.TryGetComponent(out DropCardArea dropArea))
             {
                 _itemProvider.Item.Select();
                 dropArea.Receive();
             }
-        }
-
-        private void SwitchImagesAlfa(float number)
-        {
-            _group.alpha = number;
         }
     }
 }

@@ -1,24 +1,24 @@
-using Character;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace CardBattle
+namespace SpawnPointIndicator
 {
-    public class PointerIndicator
+    public class SpawnPointIndicator
     {
-        private static readonly Vector3 DefaultPosition = new Vector3(0, -5, 0);
+        private static readonly Vector3 DefaultPosition = new (0, -5, 0);
 
         private readonly LayerMask _layerMask;
-        private readonly Indicator _indicatorPrefab;
+        private readonly Indicator _indicatorInstance;
         private readonly Camera _camera;
 
         private RawImage _rawImage;
         private Ray _ray;
 
-        public PointerIndicator(LayerMask layerMask, Indicator indicator, Camera camera)
+        public SpawnPointIndicator(LayerMask layerMask, Indicator indicator, Camera camera)
         {
             _layerMask = layerMask;
-            _indicatorPrefab = indicator;
+            _indicatorInstance = indicator;
             _camera = camera;
         }
 
@@ -26,32 +26,32 @@ namespace CardBattle
             _rawImage = image;
 
         public void BeginDrag() =>
-            _indicatorPrefab.gameObject.SetActive(true);
+            _indicatorInstance.gameObject.SetActive(true);
 
-        public void Drag()
+        public void Drag(PointerEventData eventData)
         {
-            _ray = GetRayFromUI();
+            _ray = GetRayFromUI(eventData);
 
             if (Physics.Raycast(_ray, out RaycastHit hitInfo, Mathf.Infinity, _layerMask)
-                && hitInfo.collider.TryGetComponent<Ground>(out Ground basket))
+                && hitInfo.collider.TryGetComponent(out Ground _))
             {
-                _indicatorPrefab.transform.position = hitInfo.point;
+                _indicatorInstance.transform.position = hitInfo.point;
             }
         }
 
         public void EndDrag()
         {
-            _indicatorPrefab.gameObject.SetActive(false);
-            _indicatorPrefab.transform.position = DefaultPosition;
+            _indicatorInstance.gameObject.SetActive(false);
+            _indicatorInstance.transform.position = DefaultPosition;
         }
 
-        private Ray GetRayFromUI()
+        private Ray GetRayFromUI(PointerEventData eventData)
         {
             RectTransform rectTransform = _rawImage.rectTransform;
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 rectTransform,
-                Input.mousePosition,
+                eventData.position,
                 null,
                 out Vector2 localPoint);
 

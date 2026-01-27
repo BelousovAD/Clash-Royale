@@ -1,9 +1,7 @@
 using System.Collections.Generic;
-using Character;
 using Item;
 using Reflex.Core;
 using UnityEngine;
-using UnityEngine.UI;
 using Container = Item.Container;
 
 namespace CardBattle
@@ -13,12 +11,7 @@ namespace CardBattle
         private const ItemType CardItemType = ItemType.Card;
 
         [SerializeField] private ItemDataList _fullCardList;
-        [SerializeField] private Indicator _indicatorInstance;
-        [SerializeField] private Camera _indicatorCamera;
-        [SerializeField] private LayerMask _layerMask;
         
-
-        private PointerIndicator _pointerIndicator;
         private RandomItemSelector _itemSelector;
         private SelectedItemToContainerCopier _itemCopier;
         private HandCardContainerFiller _containerFiller;
@@ -27,7 +20,6 @@ namespace CardBattle
         public void InstallBindings(ContainerBuilder builder)
         {
             _builder = builder;
-            _pointerIndicator = new PointerIndicator(_layerMask, _indicatorInstance, _indicatorCamera);
             _itemSelector = new RandomItemSelector(ContainerType.EquippedCard);
             _itemCopier = new SelectedItemToContainerCopier(
                 ContainerType.EquippedCard,
@@ -38,7 +30,6 @@ namespace CardBattle
             _builder.AddSingleton(_itemSelector);
             _builder.AddSingleton(_itemCopier);
             _builder.AddSingleton(_containerFiller);
-            _builder.AddSingleton(_pointerIndicator);
 
             _builder.OnContainerBuilt += Initialize;
         }
