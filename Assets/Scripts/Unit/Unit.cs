@@ -12,8 +12,10 @@ namespace Unit
         [SerializeField][Min(MinRadius)] private float _radius;
         
         private StateMachine _stateMachine;
+        private UnitType _type;
 
         public event Action Initialized;
+        public event Action TypeChanged;
 
         public Health Health { get; private set; }
 
@@ -24,6 +26,20 @@ namespace Unit
         }
 
         public IStateSwitcher StateSwitcher => _stateMachine;
+
+        public UnitType Type
+        {
+            get
+            {
+                return _type;
+            }
+
+            private set
+            {
+                _type = value;
+                TypeChanged?.Invoke();
+            }
+        }
 
         private void Update() =>
             _stateMachine?.Update(Time.deltaTime);
@@ -45,5 +61,8 @@ namespace Unit
             _stateMachine = stateMachine;
             Initialized?.Invoke();
         }
+
+        public void SetType(UnitType type) =>
+            Type = type;
     }
 }
