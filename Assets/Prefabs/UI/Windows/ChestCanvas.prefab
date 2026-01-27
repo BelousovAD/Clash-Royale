@@ -2169,6 +2169,7 @@ GameObject:
   - component: {fileID: 8080746722029107095}
   - component: {fileID: 1234118901314209133}
   - component: {fileID: 1469608946959660204}
+  - component: {fileID: 4170494713801356164}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -2304,6 +2305,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e96e8924e751a459eae75f86dfaa48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4170494713801356164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7622097226818947985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983575eefcc3403fb827fe02b3f66591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clipKey: 0
+  _delay: 0
 --- !u!1 &8100830736477623805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,6 +2685,7 @@ GameObject:
   - component: {fileID: 2059757463527799144}
   - component: {fileID: 822459222894494292}
   - component: {fileID: 1067770908688377198}
+  - component: {fileID: 6472237811297817447}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -2815,6 +2831,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chestScale: 1.3
   _animationDuration: 0.3
+--- !u!114 &6472237811297817447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8741481727437432528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983575eefcc3403fb827fe02b3f66591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clipKey: 1
+  _delay: 0.4
 --- !u!1 &9153970781679193414
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ namespace Item
 {
     public class Container : IDisposable
     {
+        protected const int DefaultId = -1;
         private const int MinIndex = -1;
 
         private readonly ContainerData _data;
@@ -21,6 +22,8 @@ namespace Item
 
         public event Action SelectChanged;
 
+        public int Capacity => _items.Capacity;
+        
         public ContainerType Type => _data.Type;
 
         public Item Selected => Index > MinIndex ? Items[Index] : null;
@@ -48,8 +51,6 @@ namespace Item
             }
         }
 
-        protected int Capacity => _items.Capacity;
-
         protected SavvyServicesProvider Services { get; private set; }
 
         public virtual void Dispose()
@@ -65,7 +66,7 @@ namespace Item
 
         public void Add(Item item)
         {
-            if (item.Type.Equals(_data.ItemType) == false)
+            if (item.Type != _data.ItemType)
             {
                 Debug.LogError($"Can not add item. Require type:{_data.ItemType}");
                 return;
@@ -77,10 +78,10 @@ namespace Item
                 return;
             }
             
-            item.Selected += SelectById;
             item.Initialize(Services);
-            item.UpdateId(_items.Count);
             _items.Add(item);
+            item.UpdateId(_items.Count - 1);
+            item.Selected += SelectById;
             ContentChanged?.Invoke();
         }
 
@@ -132,9 +133,9 @@ namespace Item
 
             item.Selected -= SelectById;
             _items.Remove(item);
-            newItem.Selected += SelectById;
             _items.Insert(Index, newItem);
             newItem.UpdateId(Index);
+            newItem.Selected += SelectById;
             ContentChanged?.Invoke();
         }
 
@@ -157,7 +158,7 @@ namespace Item
             ContentChanged?.Invoke();
         }
 
-        protected virtual Item CreateItem(ItemData data, int id) =>
+        public virtual Item CreateItem(ItemData data, int id = DefaultId) =>
             new (data, id);
 
         protected virtual SerializableData GetSerializableData()

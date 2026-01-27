@@ -1,0 +1,17 @@
+{
+    "name": "Animator",
+    "rootNamespace": "",
+    "references": [
+        "GUID:42743b4677aa30d4f8e97ae7ae413748",
+        "GUID:7559eac92c676674995251865b1298e9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

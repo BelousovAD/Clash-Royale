@@ -15,6 +15,6 @@ MonoBehaviour:
   _type: 0
   _subtype: Wizard
   _icon: {fileID: 21300000, guid: ca4cde75df828a5448f949eacccb7095, type: 3}
-  _rarity: 1
-  _price: 3
-  _isLocked: 1
+  _rarity: 0
+  _price: 5
+  _isLocked: 0

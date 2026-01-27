@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 2227905300368908300}
   - component: {fileID: 7647653424732101368}
   - component: {fileID: 4864567865894759747}
+  - component: {fileID: -6181912342322799455}
   m_Layer: 0
   m_Name: ProjectScope
   m_TagString: Untagged
@@ -81,8 +82,38 @@ MonoBehaviour:
   _musicGroup: {fileID: 3371282219012332893, guid: e71bed43b849646488b2b8f585380f5d, type: 2}
   _soundGroup: {fileID: 8368295926522934696, guid: e71bed43b849646488b2b8f585380f5d, type: 2}
   _prefab: {fileID: 5707472034151354401, guid: ed7b11ca23383664d9d6e2b67001b094, type: 3}
-  _musics: []
-  _sounds: []
+  _musics:
+  - Key: 2
+    Clip: {fileID: 0}
+  - Key: 3
+    Clip: {fileID: 8300000, guid: 3dbc6851e4271524ebfb696731104997, type: 3}
+  _sounds:
+  - Key: 0
+    Clip: {fileID: 8300000, guid: 96422a41f535c45459180c4b44599051, type: 3}
+  - Key: 1
+    Clip: {fileID: 8300000, guid: ed42be4ab4892c0498e3db65ba76fef5, type: 3}
+  - Key: 4
+    Clip: {fileID: 8300000, guid: eb4cef4f5f244c94782ab2718a3ad731, type: 3}
+  - Key: 5
+    Clip: {fileID: 8300000, guid: d6c8485c4af48684282b23923ddf1a37, type: 3}
+  - Key: 6
+    Clip: {fileID: 8300000, guid: 1269543760b87494980478498b09e63f, type: 3}
+  - Key: 7
+    Clip: {fileID: 8300000, guid: 984353d14afd69c4cae4458cd5a220c3, type: 3}
+  - Key: 8
+    Clip: {fileID: 8300000, guid: 3ff362768f9638e4cbfd66e34b4a4526, type: 3}
+  - Key: 9
+    Clip: {fileID: 8300000, guid: bd2438ea5baeea34c85e7150a86bddbb, type: 3}
+  - Key: 10
+    Clip: {fileID: 8300000, guid: 24892e6855c937d4d99c30a58c27f938, type: 3}
+  - Key: 11
+    Clip: {fileID: 8300000, guid: 8c356fcb5b69ab640b8f22c9d03e43db, type: 3}
+  - Key: 12
+    Clip: {fileID: 8300000, guid: 548e86b266577d74ab6bc242a89f5cd0, type: 3}
+  - Key: 13
+    Clip: {fileID: 8300000, guid: 8e4d54028594fe64bb59b9a27a92b0b7, type: 3}
+  - Key: 14
+    Clip: {fileID: 8300000, guid: 9ff4559f19e8c1343a434d690c5b59ae, type: 3}
 --- !u!114 &-6596936900237129893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardContainerData: {fileID: 11400000, guid: ac00d45824a37164d832a25b8debc15f, type: 2}
   _equippedCardContainerData: {fileID: 11400000, guid: 938928e285e3b4941abca378b3881bcd, type: 2}
+  _handCardContainerData: {fileID: 11400000, guid: 48f19594bd4677f40899d40e2cae4887, type: 2}
 --- !u!114 &2227905300368908300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,3 +205,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d0acba10904cd3a8244fe4ec3594ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6181912342322799455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245714807162874931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b75ccaaea64672abe47651e0811194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterContainerData: {fileID: 11400000, guid: 98a9cba6c6e3e6744b3186c275a374da, type: 2}

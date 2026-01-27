@@ -8,12 +8,12 @@ namespace Character
     internal class CharacterProviderSpawnCaller : MonoBehaviour
     {
         private const ContainerType CharacterContainerType = ContainerType.Character;
-        private const ContainerType EquippedCardContainerType = ContainerType.EquippedCard;
+        private const ContainerType HandCardContainerType = ContainerType.HandCard;
 
         [SerializeField] private SingleItemProviderSpawner _providerSpawner;
 
         private Container _characterContainer;
-        private Container _equippedCardContainer;
+        private Container _cardContainer;
 
         [Inject]
         private void Initialize(IEnumerable<Container> containers)
@@ -25,34 +25,23 @@ namespace Character
                     case CharacterContainerType:
                         _characterContainer = container;
                         break;
-                    case EquippedCardContainerType:
-                        _equippedCardContainer = container;
-                        _equippedCardContainer.SelectChanged += CallSpawn;
+                    case HandCardContainerType:
+                        _cardContainer = container;
                         break;
                 }
             }
+            
+            _cardContainer.SelectChanged += CallSpawn;
         }
 
         private void OnDisable() =>
-            _equippedCardContainer.SelectChanged -= CallSpawn;
-
-        //УДАЛИТЬ ПОСЛЕ ТЕСТОВ
-        public void CallSpawn(string subtype)
-        {
-            foreach (Item.Item item in _characterContainer.Items)
-            {
-                if (item.Subtype == subtype)
-                {
-                    _providerSpawner.Spawn(item);
-                }
-            }
-        }
+            _cardContainer.SelectChanged -= CallSpawn;
 
         private void CallSpawn()
         {
             foreach (Item.Item item in _characterContainer.Items)
             {
-                if (item.Subtype == _equippedCardContainer.Selected.Subtype)
+                if (item.Subtype == _cardContainer.Selected.Subtype)
                 {
                     _providerSpawner.Spawn(item);
                 }

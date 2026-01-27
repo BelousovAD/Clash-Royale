@@ -4,7 +4,7 @@ namespace Character
 {
     internal class Character : Item.Item
     {
-        public Character(CharacterData data, int id = DefaultId)
+        public Character(CharacterData data, int id)
             : base(data, id)
         { }
 

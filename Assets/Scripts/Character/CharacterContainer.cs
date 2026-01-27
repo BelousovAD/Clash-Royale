@@ -8,7 +8,7 @@ namespace Character
             : base(data)
         { }
         
-        protected override Item.Item CreateItem(ItemData data, int id) =>
+        public override Item.Item CreateItem(ItemData data, int id = DefaultId) =>
             new Character(data as CharacterData, id);
     }
 }

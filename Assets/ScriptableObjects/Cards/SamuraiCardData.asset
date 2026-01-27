@@ -15,6 +15,6 @@ MonoBehaviour:
   _type: 0
   _subtype: Samurai
   _icon: {fileID: 21300000, guid: 52ac961be51872a4e934d3d41f6c351c, type: 3}
-  _rarity: 1
-  _price: 2
+  _rarity: 0
+  _price: 5
   _isLocked: 1

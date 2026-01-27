@@ -6,9 +6,7 @@ namespace Item
 {
     public class Item : IDisposable
     {
-        protected const int DefaultId = -1;
-        
-        public Item(ItemData data, int id = DefaultId)
+        public Item(ItemData data, int id)
         {
             Data = data;
             Id = id;
@@ -34,13 +32,8 @@ namespace Item
         public virtual void Load()
         { }
 
-        public void UpdateId(int id = DefaultId)
+        public void UpdateId(int id)
         {
-            if (id < DefaultId)
-            {
-                throw new ArgumentOutOfRangeException(nameof(id), $"Can not be less than {DefaultId}");
-            }
-            
             DeleteSaves();
             Id = id;
             Save();

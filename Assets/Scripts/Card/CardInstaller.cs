@@ -9,7 +9,7 @@ namespace Card
 {
     internal class CardInstaller : MonoBehaviour, IInstaller
     {
-        private const ContainerType CardContainerType = ContainerType.Card;
+        private const ItemType CardType = ItemType.Card;
         
         [SerializeField] private ContainerData _cardContainerData;
         [SerializeField] private ContainerData _equippedCardContainerData;
@@ -51,11 +51,11 @@ namespace Card
 
         private static void ValidateField(ref ContainerData containerDataField)
         {
-            if (containerDataField is not null && containerDataField.Type != CardContainerType)
+            if (containerDataField is not null && containerDataField.ItemType != CardType)
             {
                 Debug.LogError(
                     $"Require {nameof(containerDataField)} with " +
-                    $"{nameof(containerDataField.Type)}:{CardContainerType}");
+                    $"{nameof(containerDataField.ItemType)}:{CardType}");
                 containerDataField = null;
             }
         }

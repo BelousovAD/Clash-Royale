@@ -7,7 +7,7 @@ namespace Card
     {
         private bool _isLocked = true;
         
-        public Card(CardData data, int id = DefaultId)
+        public Card(CardData data, int id)
             : base(data, id)
         { }
 

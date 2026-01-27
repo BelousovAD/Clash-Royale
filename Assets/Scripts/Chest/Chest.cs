@@ -17,7 +17,7 @@ namespace Chest
         private bool _isLocked = true;
         private bool _isUnlocking;
 
-        public Chest(ChestData data, int id = DefaultId)
+        public Chest(ChestData data, int id)
             : base(data, id)
         {
             _totalChance = Chances.Sum(chance => chance.Percent);
