@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8987768417501608621}
   - component: {fileID: 3762553348238391898}
   - component: {fileID: 7535335404078827076}
+  - component: {fileID: 944068479229622214}
   m_Layer: 5
   m_Name: UnlockButton
   m_TagString: Untagged
@@ -136,6 +137,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemProvider: {fileID: 2032259935929064569}
+--- !u!114 &944068479229622214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194287647041154951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983575eefcc3403fb827fe02b3f66591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clipKey: 0
+  _delay: 0
 --- !u!1 &549718578181263024
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +294,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0
+  m_fontSize: 56.05
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -519,7 +534,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.15
+  m_fontSize: 60
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -664,6 +679,7 @@ GameObject:
   - component: {fileID: 5902832260238848972}
   - component: {fileID: 7220336349636106155}
   - component: {fileID: 8724125844780591420}
+  - component: {fileID: 2010456682129980334}
   m_Layer: 5
   m_Name: OpenButton
   m_TagString: Untagged
@@ -801,6 +817,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _windowId: Chest
   _needCloseCurrent: 1
+--- !u!114 &2010456682129980334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274485000602386679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983575eefcc3403fb827fe02b3f66591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clipKey: 0
+  _delay: 0
 --- !u!1 &6381046409080472062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,7 +1064,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.15
+  m_fontSize: 41.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1183,7 +1213,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.15
+  m_fontSize: 41.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1386,7 +1416,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0
+  m_fontSize: 60
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

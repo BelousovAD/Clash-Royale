@@ -9,7 +9,7 @@ namespace CardBattle
     internal class CardBattleInstaller : MonoBehaviour, IInstaller
     {
         private const ItemType CardItemType = ItemType.Card;
-        
+
         [SerializeField] private ItemDataList _fullCardList;
         
         private RandomItemSelector _itemSelector;
