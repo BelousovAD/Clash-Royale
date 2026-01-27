@@ -40,6 +40,12 @@ namespace CardBattle
             _imageAspectRatioFitter.enabled = false;
             _rectTransform.SetParent(_canvas.transform);
             _rectTransform.SetAsLastSibling();
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                _rectTransform.parent as RectTransform,
+                eventData.position,
+                eventData.pressEventCamera,
+                out Vector2 pointerPosition);
+            _rectTransform.anchoredPosition = pointerPosition;
             _indicator.BeginDrag();
         }
 
