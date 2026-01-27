@@ -5,28 +5,36 @@ namespace Item
 {
     public class SingleItemProviderSpawner : SiblingsSpawner
     {
-        private readonly List<PooledComponent> _spawnedItemProviders = new ();
+        private readonly List<PooledComponent> _spawnedObjects = new ();
 
-        private void OnDisable() =>
+        private void OnEnable() =>
+            ComponentReleased += Remove;
+
+        private void OnDisable()
+        {
+            ComponentReleased -= Remove;
             ReleaseAll();
+        }
 
         public void Spawn(Item item)
         {
             PooledComponent pooledComponent = Spawn();
-            _spawnedItemProviders.Add(pooledComponent);
+            _spawnedObjects.Add(pooledComponent);
             ItemProvider itemProvider = pooledComponent.GetComponent<ItemProvider>();
             itemProvider.Initialize(item);
-
-            InitializeProvider(itemProvider);
+            Initialize(pooledComponent);
         }
-
-        private void ReleaseAll()
-        {
-            _spawnedItemProviders.ForEach(itemProvider => itemProvider.Release());
-            _spawnedItemProviders.Clear();
-        }
-
-        protected virtual void InitializeProvider(ItemProvider itemProvider)
+        
+        protected virtual void Initialize(PooledComponent pooledComponent)
         { }
+
+        protected virtual void ReleaseAll()
+        {
+            _spawnedObjects.ForEach(spawnedObject => spawnedObject.Release());
+            _spawnedObjects.Clear();
+        }
+
+        protected virtual void Remove(PooledComponent pooledComponent) =>
+            _spawnedObjects.Remove(pooledComponent);
     }
 }

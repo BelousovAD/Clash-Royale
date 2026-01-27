@@ -4,22 +4,28 @@ using UnityEngine;
 namespace Character
 {
     [CreateAssetMenu(fileName = nameof(CharacterData), menuName = nameof(Character) + "/" + nameof(CharacterData))]
-    internal class CharacterData : ItemData
+    public class CharacterData : ItemData
     {
         [SerializeField] private GameObject _prefab;
-        [SerializeField][Min(0)] private int _damage;
+        [SerializeField][Min(0f)] private float _radius = 0.5f;
         [SerializeField][Min(0)] private int _health;
-        [SerializeField][Min(0)] private int _attackSpeed;
-        [SerializeField][Min(0)] private int _moveSpeed;
+        [SerializeField][Min(0)] private int _damage;
+        [SerializeField][Min(0f)] private float _attackSpeed = 1f;
+        [SerializeField][Min(0f)] private float _moveSpeed = 1f;
+        [SerializeField][Min(0f)] private float _attackRange = 1f;
 
         public int Damage => _damage;
         
         public int Health => _health;
         
-        public int AttackSpeed => _attackSpeed;
+        public float AttackSpeed => _attackSpeed;
         
-        public int MoveSpeed => _moveSpeed;
+        public float MoveSpeed => _moveSpeed;
+
+        public float AttackRange => _attackRange;
         
         public GameObject Prefab => _prefab;
+        
+        public float Radius => _radius;
     }
 }

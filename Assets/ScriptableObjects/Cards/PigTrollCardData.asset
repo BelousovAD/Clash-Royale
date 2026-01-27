@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a60920a461d3cdf489f5f4cf34335390, type: 3}
-  m_Name: PigtrollCardData
+  m_Name: PigTrollCardData
   m_EditorClassIdentifier: 
   _type: 0
   _subtype: Pigtroll

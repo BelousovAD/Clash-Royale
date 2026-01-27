@@ -1,0 +1,22 @@
+{
+    "name": "Unit",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1099e208d164e904d8575abf34a74829",
+        "GUID:9486b756c36397c4f9f5689c48f9d195",
+        "GUID:7559eac92c676674995251865b1298e9",
+        "GUID:854002594774b9a41accbda922f671c2",
+        "GUID:f0e270abeff639143b0a59e976ae19de",
+        "GUID:4cefadf2890e8e84b8e28d80883e7dcf",
+        "GUID:008975ced862fd745991829fc3aea4ac"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Character
 {
-    internal class Character : Item.Item
+    public class Character : Item.Item
     {
         public Character(CharacterData data, int id)
             : base(data, id)
@@ -10,13 +10,17 @@ namespace Character
 
         public int Damage => Data.Damage;
         
+        public float MoveSpeed => Data.MoveSpeed;
+        
+        public float AttackSpeed => Data.AttackSpeed;
+        
         public int Health => Data.Health;
         
-        public int MoveSpeed => Data.MoveSpeed;
-        
-        public int AttackSpeed => Data.AttackSpeed;
-        
+        public float AttackRange => Data.AttackRange;
+
         public GameObject Prefab => Data.Prefab;
+
+        public float Radius => Data.Radius;
         
         private new CharacterData Data => base.Data as CharacterData;
     }

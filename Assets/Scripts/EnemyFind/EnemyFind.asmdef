@@ -1,0 +1,21 @@
+{
+    "name": "EnemyFind",
+    "rootNamespace": "",
+    "references": [
+        "GUID:854002594774b9a41accbda922f671c2",
+        "GUID:4cefadf2890e8e84b8e28d80883e7dcf",
+        "GUID:1530a967b84cfb44dbdd5e8a1989764f",
+        "GUID:2a5b0d172f81f5647a2e991883642c65",
+        "GUID:3d301e1d545029243a2a801af9e848be",
+        "GUID:e8e5a0eb57156de41a698c446c6b8450"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
