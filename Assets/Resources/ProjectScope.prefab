@@ -89,7 +89,7 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 3dbc6851e4271524ebfb696731104997, type: 3}
   _sounds:
   - Key: 0
-    Clip: {fileID: 8300000, guid: 96422a41f535c45459180c4b44599051, type: 3}
+    Clip: {fileID: 8300000, guid: ebc850e0d8c1c3e4ebcffe93b68555c5, type: 3}
   - Key: 1
     Clip: {fileID: 8300000, guid: ed42be4ab4892c0498e3db65ba76fef5, type: 3}
   - Key: 4
