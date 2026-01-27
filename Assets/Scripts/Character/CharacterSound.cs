@@ -9,12 +9,13 @@ namespace Character
     {
         [SerializeField] private List<Track> _tracks;
 
-        private readonly Dictionary<AudioClipKey, AudioClip> _audioClips = new ();  
-        private AudioSource _source;
+        private readonly Dictionary<AudioClipKey, AudioClip> _audioClips = new ();
+
+        public AudioSource Source { get; private set; }
 
         private void Awake()
         {
-            _source = GetComponent<AudioSource>();
+            Source = GetComponent<AudioSource>();
 
             foreach (Track track in _tracks)
             {
@@ -24,8 +25,8 @@ namespace Character
 
         public void PlayTrack(AudioClipKey key)
         {
-            _source.clip = _audioClips[key];
-            _source.Play();
+            Source.clip = _audioClips[key];
+            Source.Play();
         }
     }
 }
