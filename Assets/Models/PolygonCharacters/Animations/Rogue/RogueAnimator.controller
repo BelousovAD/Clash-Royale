@@ -104,10 +104,10 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: -203655887218126122, guid: aea90c9171d5485458d6b83cb0938a7c, type: 3}
   m_Tag: 
-  m_SpeedParameter: AttackFactor
+  m_SpeedParameter: AttackSpeed
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
-  m_TimeParameter: AttackFactor
+  m_TimeParameter: AttackSpeed
 --- !u!1107 &-5868696063404971553
 AnimatorStateMachine:
   serializedVersion: 6
@@ -197,7 +197,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: AttackFactor
+  - m_Name: AttackSpeed
     m_Type: 1
     m_DefaultFloat: 1
     m_DefaultInt: 0

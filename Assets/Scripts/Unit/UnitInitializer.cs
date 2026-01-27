@@ -37,7 +37,7 @@ namespace Unit
                 _agent.stoppingDistance = character.AttackRange;
                 _agent.speed = character.MoveSpeed;
                 _enemyApproachObserver.Initialize(character.AttackRange);
-                _animationCaller.Initialize(character.AttackFactor);
+                _animationCaller.Initialize(character.AttackSpeed);
                 _stateMachineBuilder = new UnitStateMachineBuilder(_unit, _enemyApproachObserver);
                 _stateMachine = _stateMachineBuilder.Build();
                 _unit.Initialize(_stateMachine);

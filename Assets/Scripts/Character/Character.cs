@@ -12,7 +12,7 @@ namespace Character
         
         public float MoveSpeed => Data.MoveSpeed;
         
-        public float AttackFactor => Data.AttackFactor;
+        public float AttackSpeed => Data.AttackSpeed;
         
         public int Health => Data.Health;
         
