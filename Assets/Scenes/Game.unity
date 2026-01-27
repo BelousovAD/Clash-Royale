@@ -13816,6 +13816,7 @@ Transform:
   - {fileID: 318805587}
   - {fileID: 596629884}
   - {fileID: 67946649}
+  - {fileID: 588038906}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1229252456
@@ -15044,6 +15045,7 @@ GameObject:
   - component: {fileID: 1357795370}
   - component: {fileID: 1357795371}
   - component: {fileID: 1357795372}
+  - component: {fileID: 1357795373}
   m_Layer: 0
   m_Name: SceneScope
   m_TagString: Untagged
@@ -15185,6 +15187,23 @@ MonoBehaviour:
   - {fileID: 1216385935}
   - {fileID: 1251171846}
   - {fileID: 1852867199}
+--- !u!114 &1357795373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357795362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d93ae850aa84e2b8742ec535b79a5ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _instance: {fileID: 1180866968}
+  _camera: {fileID: 2095101317}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &1365142462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22262,3 +22281,4 @@ SceneRoots:
   - {fileID: 1856491000}
   - {fileID: 539132955}
   - {fileID: 689005076}
+  - {fileID: 1180866967}
