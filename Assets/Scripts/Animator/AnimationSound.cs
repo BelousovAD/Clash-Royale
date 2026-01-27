@@ -48,9 +48,7 @@ namespace Animator
             }
         }
 
-        public override void OnStateExit(UnityEngine.Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
+        public override void OnStateExit(UnityEngine.Animator animator, AnimatorStateInfo stateInfo, int layerIndex) =>
             _characterSound.Source.Stop();
-        }
     }
 }
