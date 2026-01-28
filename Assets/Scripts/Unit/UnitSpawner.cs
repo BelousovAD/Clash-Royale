@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Item;
 using Spawn;
+using SpawnPointIndicator;
 using UnityEngine;
 
 namespace Unit
@@ -9,12 +10,14 @@ namespace Unit
     {
         private readonly List<Unit> _spawnedUnits = new ();
 
+        [SerializeField] private Indicator _indicator;
+
         public IReadOnlyList<Unit> SpawnedUnits => _spawnedUnits;
         
-        protected override void Initialize(PooledComponent pooledComponent, Vector3 position)
+        protected override void Initialize(PooledComponent pooledComponent)
         {
             base.Initialize(pooledComponent);
-            pooledComponent.transform.position = position;
+            pooledComponent.transform.position = _indicator.lastPosition;
             _spawnedUnits.Add(pooledComponent.GetComponent<Unit>());
         }
 

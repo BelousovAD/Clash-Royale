@@ -42,7 +42,7 @@ namespace CardBattle
                 }
             }
             
-            items[Random.Range(0, items.Count)].Select(new Vector3(0,0,0));
+            items[Random.Range(0, items.Count)].Select();
         }
     }
 }

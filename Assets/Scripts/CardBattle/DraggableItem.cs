@@ -57,6 +57,7 @@ namespace CardBattle
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            _indicator.EndDrag();
             _group.alpha = MaxAlpha;
             _rectTransform.SetParent(_defaultParent);
             _rectTransform.anchoredPosition = Vector2.zero;
@@ -64,12 +65,11 @@ namespace CardBattle
             _imageToDrag.raycastTarget = true;
             
             RaycastResult raycast = eventData.pointerCurrentRaycast;
-            Vector3 positionToSpawn = _indicator.EndDrag();
             
             if (raycast.gameObject is not null
                 && raycast.gameObject.TryGetComponent(out DropCardArea dropArea))
             {
-                _itemProvider.Item.Select(positionToSpawn);
+                _itemProvider.Item.Select();
                 dropArea.Receive();
             }
         }

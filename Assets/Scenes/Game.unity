@@ -6621,6 +6621,7 @@ MonoBehaviour:
   _prefab: {fileID: 1814409639593981456, guid: a4d13120fff4c8d4ca7bf8b76124b42a, type: 3}
   _parent: {fileID: 539132955}
   _poolSize: 20
+  _indicator: {fileID: 1180866968}
 --- !u!1001 &542459558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18996,6 +18997,7 @@ MonoBehaviour:
   _prefab: {fileID: 1814409639593981456, guid: a4d13120fff4c8d4ca7bf8b76124b42a, type: 3}
   _parent: {fileID: 1856491000}
   _poolSize: 20
+  _indicator: {fileID: 0}
 --- !u!4 &1856491000
 Transform:
   m_ObjectHideFlags: 0
