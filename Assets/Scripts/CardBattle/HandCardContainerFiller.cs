@@ -8,12 +8,10 @@ namespace CardBattle
     internal class HandCardContainerFiller : IDisposable
     {
         private const ContainerType HandCardContainerType = ContainerType.HandCard;
-        private const ContainerType EquippedCardContainerType = ContainerType.EquippedCard;
         
         private readonly RandomItemSelector _itemSelector;
         private readonly SelectedItemToContainerCopier _itemCopier;
         private Container _handCardContainer;
-        private Container _equippedCardContainer;
 
         public HandCardContainerFiller(RandomItemSelector itemSelector, SelectedItemToContainerCopier itemCopier)
         {
@@ -25,14 +23,9 @@ namespace CardBattle
         {
             foreach (Container container in containers)
             {
-                switch (container.Type)
+                if (container.Type == HandCardContainerType)
                 {
-                    case HandCardContainerType:
-                        _handCardContainer = container;
-                        break;
-                    case EquippedCardContainerType:
-                        _equippedCardContainer = container;
-                        break;
+                    _handCardContainer = container;
                 }
             }
 
