@@ -87,7 +87,7 @@ namespace Item
 
         public void Deselect() =>
             Index = MinIndex;
-        
+
         public void Load()
         {
             Dispose();
@@ -155,6 +155,7 @@ namespace Item
                 _items[i].UpdateId(i);
             }
             
+            Deselect();
             ContentChanged?.Invoke();
         }
 

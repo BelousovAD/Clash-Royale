@@ -5,11 +5,12 @@ namespace SpawnPointIndicator
 {
     internal class SpawnPointIndicatorInstaller : MonoBehaviour, IInstaller
     {
-        [SerializeField] private Indicator _instance;
         [SerializeField] private Camera _camera;
         [SerializeField] private LayerMask _layerMask;
+        [SerializeField] private SpawnIndicator _indicator;
+        [SerializeField] private AreaIdentifier _areaIdentifier;
 
         public void InstallBindings(ContainerBuilder builder) =>
-            builder.AddSingleton(new SpawnPointIndicator(_layerMask, _instance, _camera));
+            builder.AddSingleton(new RayPointer(_layerMask,  _indicator, _camera, _areaIdentifier));
     }
 }

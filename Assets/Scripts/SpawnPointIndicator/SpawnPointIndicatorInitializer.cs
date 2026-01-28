@@ -9,7 +9,7 @@ namespace SpawnPointIndicator
         [SerializeField] private RawImage _rawImage;
 
         [Inject]
-        private void Initialize(SpawnPointIndicator indicator) =>
+        private void Initialize(RayPointer indicator) =>
             indicator.Initialize(_rawImage);
     }
 }

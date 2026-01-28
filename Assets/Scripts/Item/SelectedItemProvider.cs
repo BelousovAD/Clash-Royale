@@ -35,9 +35,6 @@ namespace Item
             _container.SelectChanged -= UpdateItem;
             _container.ContentChanged -= UpdateItem;
         }
-
-        private void UpdateItem(Vector3 position) =>
-            Initialize(_container.Selected);
         
         private void UpdateItem() =>
             Initialize(_container.Selected);

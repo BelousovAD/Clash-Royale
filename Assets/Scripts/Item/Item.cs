@@ -21,9 +21,9 @@ namespace Item
         public int Id { get; private set; }
 
         public Sprite Icon => Data.Icon;
-        
+
         protected ItemData Data { get; }
-        
+
         protected SavvyServicesProvider Services { get; private set; }
 
         public virtual void Initialize(SavvyServicesProvider servicesProvider) =>
@@ -38,7 +38,7 @@ namespace Item
             Id = id;
             Save();
         }
-        
+
         public void Select() =>
             Selected?.Invoke(Id);
 

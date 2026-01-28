@@ -1,19 +1,19 @@
 using System.Collections.Generic;
+using Character;
 using Currency;
 using Item;
 using Reflex.Attributes;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace CardBattle
+namespace CardDrop
 {
-    [RequireComponent(typeof(Image))]
-    internal class DropCardArea : MonoBehaviour
+    public class DropCardArea : MonoBehaviour
     {
         private const ContainerType HandCardContainerType = ContainerType.HandCard;
-        
+
         [SerializeField] private CurrencyType _currencyType;
-        
+        [SerializeField] private CharacterProviderSpawnCaller _caller;
+
         private Container _container;
         private Currency.Currency _currency;
 
@@ -28,7 +28,7 @@ namespace CardBattle
                     break;
                 }
             }
-            
+
             foreach (Currency.Currency currency in currencies)
             {
                 if (currency.Type == _currencyType)
@@ -42,10 +42,11 @@ namespace CardBattle
         public void Receive()
         {
             Card.Card card = _container.Selected as Card.Card;
-            
+
             if (_currency.Value >= card!.Price)
             {
                 _currency.Spend(card.Price);
+                _caller.CallSpawn(card.Subtype);
                 _container.RemoveAt(_container.Index);
             }
             else
