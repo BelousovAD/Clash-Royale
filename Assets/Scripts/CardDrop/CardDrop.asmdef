@@ -1,14 +1,12 @@
 {
-    "name": "CardBattle",
+    "name": "CardDrop",
     "rootNamespace": "",
     "references": [
-        "GUID:7feba99b55daccd44956965a1df32e31",
-        "GUID:008f65d56f5918d4ca958a2f25c52a7c",
         "GUID:4cefadf2890e8e84b8e28d80883e7dcf",
+        "GUID:008f65d56f5918d4ca958a2f25c52a7c",
         "GUID:7559eac92c676674995251865b1298e9",
-        "GUID:1530a967b84cfb44dbdd5e8a1989764f",
-        "GUID:fd729f28b7e4c214d94f42da68462741",
-        "GUID:4e13ef675ed728b4892a323651ecbb14"
+        "GUID:7feba99b55daccd44956965a1df32e31",
+        "GUID:1530a967b84cfb44dbdd5e8a1989764f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

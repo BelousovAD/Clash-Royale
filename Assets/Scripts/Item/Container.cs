@@ -23,7 +23,7 @@ namespace Item
         public event Action SelectChanged;
 
         public int Capacity => _items.Capacity;
-        
+
         public ContainerType Type => _data.Type;
 
         public Item Selected => Index > MinIndex ? Items[Index] : null;
@@ -36,7 +36,7 @@ namespace Item
             {
                 return _index;
             }
-            
+
             private set
             {
                 if (_items.Count == 0)
@@ -71,13 +71,13 @@ namespace Item
                 Debug.LogError($"Can not add item. Require type:{_data.ItemType}");
                 return;
             }
-            
+
             if (_items.Count >= _items.Capacity)
             {
                 Debug.LogError($"Can not add item. Item list is full");
                 return;
             }
-            
+
             item.Initialize(Services);
             _items.Add(item);
             item.UpdateId(_items.Count - 1);
@@ -87,7 +87,7 @@ namespace Item
 
         public void Deselect() =>
             Index = MinIndex;
-        
+
         public void Load()
         {
             Dispose();
@@ -118,7 +118,7 @@ namespace Item
         public void ReplaceSelected(Item newItem)
         {
             Item item = Selected;
-            
+
             if (item is null)
             {
                 Debug.LogError($"Can not replace. Selected item is null");
@@ -154,7 +154,8 @@ namespace Item
             {
                 _items[i].UpdateId(i);
             }
-            
+
+            Deselect();
             ContentChanged?.Invoke();
         }
 

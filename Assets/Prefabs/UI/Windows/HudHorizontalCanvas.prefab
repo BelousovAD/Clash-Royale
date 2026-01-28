@@ -380,7 +380,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410569639047229027}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1946,7 +1946,6 @@ GameObject:
   - component: {fileID: 4796341710861933392}
   - component: {fileID: 2637245840632927377}
   - component: {fileID: 5482812115627680867}
-  - component: {fileID: 5489629909617027700}
   m_Layer: 5
   m_Name: VerticalContent
   m_TagString: Untagged
@@ -2026,19 +2025,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5489629909617027700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2862246296368983906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09db24689c2b418fb2325e7270859dc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currencyType: 2
 --- !u!1 &2900125855307618723
 GameObject:
   m_ObjectHideFlags: 0

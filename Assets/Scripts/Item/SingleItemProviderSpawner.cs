@@ -24,7 +24,7 @@ namespace Item
             itemProvider.Initialize(item);
             Initialize(pooledComponent);
         }
-        
+
         protected virtual void Initialize(PooledComponent pooledComponent)
         { }
 

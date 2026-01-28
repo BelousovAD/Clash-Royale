@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SpawnPointIndicator
+namespace RayPointer
 {
     internal class Ground : MonoBehaviour
     { }

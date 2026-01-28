@@ -2,31 +2,28 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace SpawnPointIndicator
+namespace RayPointer
 {
-    public class SpawnPointIndicator
+    public class RayPointer
     {
-        private static readonly Vector3 DefaultPosition = new (0, -5, 0);
-
         private readonly LayerMask _layerMask;
-        private readonly Indicator _indicatorInstance;
+        private readonly SpawnIndicator _spawnIndicator;
         private readonly Camera _camera;
+        private readonly AreaIdentifier _areaIdentifier;
 
         private RawImage _rawImage;
         private Ray _ray;
 
-        public SpawnPointIndicator(LayerMask layerMask, Indicator indicator, Camera camera)
+        public RayPointer(LayerMask layerMask, SpawnIndicator indicator, Camera camera, AreaIdentifier areaIdentifier)
         {
             _layerMask = layerMask;
-            _indicatorInstance = indicator;
+            _spawnIndicator = indicator;
             _camera = camera;
+            _areaIdentifier = areaIdentifier;
         }
 
         public void Initialize(RawImage image) =>
             _rawImage = image;
-
-        public void BeginDrag() =>
-            _indicatorInstance.gameObject.SetActive(true);
 
         public void Drag(PointerEventData eventData)
         {
@@ -35,15 +32,15 @@ namespace SpawnPointIndicator
             if (Physics.Raycast(_ray, out RaycastHit hitInfo, Mathf.Infinity, _layerMask)
                 && hitInfo.collider.TryGetComponent(out Ground _))
             {
-                _indicatorInstance.transform.position = hitInfo.point;
+                _spawnIndicator.MoveIndicator(hitInfo.point);
             }
         }
 
-        public void EndDrag()
-        {
-            _indicatorInstance.gameObject.SetActive(false);
-            _indicatorInstance.transform.position = DefaultPosition;
-        }
+        public void EndDrag() =>
+            _spawnIndicator.TurnOffIndicator();
+
+        public void SearchArea() =>
+            _areaIdentifier.FindDropCardArea(_ray);
 
         private Ray GetRayFromUI(PointerEventData eventData)
         {

@@ -2,14 +2,14 @@ using Reflex.Attributes;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace SpawnPointIndicator
+namespace RayPointer
 {
-    internal class SpawnPointIndicatorInitializer : MonoBehaviour
+    internal class RayPointerInitializer : MonoBehaviour
     {
         [SerializeField] private RawImage _rawImage;
 
         [Inject]
-        private void Initialize(SpawnPointIndicator indicator) =>
+        private void Initialize(RayPointer indicator) =>
             indicator.Initialize(_rawImage);
     }
 }

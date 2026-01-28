@@ -5,43 +5,32 @@ using UnityEngine;
 
 namespace Character
 {
-    internal class CharacterProviderSpawnCaller : MonoBehaviour
+    public class CharacterProviderSpawnCaller : MonoBehaviour
     {
         private const ContainerType CharacterContainerType = ContainerType.Character;
-        private const ContainerType HandCardContainerType = ContainerType.HandCard;
 
         [SerializeField] private SingleItemProviderSpawner _providerSpawner;
 
         private Container _characterContainer;
-        private Container _cardContainer;
 
         [Inject]
         private void Initialize(IEnumerable<Container> containers)
         {
             foreach (Container container in containers)
             {
-                switch (container.Type)
+                if (container.Type == CharacterContainerType)
                 {
-                    case CharacterContainerType:
-                        _characterContainer = container;
-                        break;
-                    case HandCardContainerType:
-                        _cardContainer = container;
-                        break;
+                    _characterContainer = container;
+                    break;
                 }
             }
-            
-            _cardContainer.SelectChanged += CallSpawn;
         }
 
-        private void OnDisable() =>
-            _cardContainer.SelectChanged -= CallSpawn;
-
-        private void CallSpawn()
+        public void CallSpawn(string subtype)
         {
             foreach (Item.Item item in _characterContainer.Items)
             {
-                if (item.Subtype == _cardContainer.Selected.Subtype)
+                if (item.Subtype == subtype)
                 {
                     _providerSpawner.Spawn(item);
                 }

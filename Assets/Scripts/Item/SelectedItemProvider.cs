@@ -7,7 +7,7 @@ namespace Item
     internal class SelectedItemProvider : ItemProvider
     {
         [SerializeField] private ContainerType _containerType;
-        
+
         private Container _container;
 
         [Inject]
