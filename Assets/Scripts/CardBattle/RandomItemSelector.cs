@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Item;
-using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace CardBattle
