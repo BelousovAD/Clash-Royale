@@ -16,7 +16,9 @@ MonoBehaviour:
   _subtype: Knight
   _icon: {fileID: 0}
   _prefab: {fileID: 4079379762127712206, guid: 0fd9d5fcbe92dbd4793aaacc1d5cfdea, type: 3}
+  _radius: 0.5
+  _health: 100
   _damage: 2
-  _health: 12
-  _attackSpeed: 21
-  _moveSpeed: 25
+  _attackSpeed: 1
+  _moveSpeed: 3
+  _attackRange: 2

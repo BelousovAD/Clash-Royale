@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 3
   _itemType: 2
-  _defaultCapacity: 3
+  _defaultCapacity: 17
   _defaultList: {fileID: 11400000, guid: ccde8f0e188f6864ba8605c1166f153e, type: 2}
   _fullList: {fileID: 11400000, guid: ccde8f0e188f6864ba8605c1166f153e, type: 2}
