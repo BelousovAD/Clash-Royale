@@ -53,13 +53,8 @@ namespace Item
 
         protected SavvyServicesProvider Services { get; private set; }
 
-        public virtual void Dispose()
-        {
-            Deselect();
-            Unsubscribe();
-            _items.ForEach(item => item.Dispose());
-            _items.Clear();
-        }
+        public virtual void Dispose() =>
+            Clear();
 
         public void Initialize(SavvyServicesProvider servicesProvider) =>
             Services = servicesProvider;
@@ -90,7 +85,7 @@ namespace Item
 
         public void Load()
         {
-            Dispose();
+            Clear();
             SerializableData serializableData = GetSerializableData();
             _items.Capacity = serializableData.Capacity;
 
@@ -169,6 +164,14 @@ namespace Item
                 Capacity = _data.DefaultCapacity,
                 ItemSubtypes = _data.DefaultDatas.Select(itemData => itemData.Subtype).ToList(),
             };
+        }
+
+        private void Clear()
+        {
+            Deselect();
+            Unsubscribe();
+            _items.ForEach(item => item.Dispose());
+            _items.Clear();
         }
 
         private void SelectById(int id)
