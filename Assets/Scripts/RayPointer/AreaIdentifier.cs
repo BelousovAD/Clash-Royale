@@ -8,7 +8,7 @@ namespace RayPointer
 {
     public class AreaIdentifier : MonoBehaviour
     {
-        private const ContainerType ContainerType = Item.ContainerType.Card;
+        private const ContainerType ContainerType = Item.ContainerType.HandCard;
 
         private Container _container;
 
@@ -30,14 +30,11 @@ namespace RayPointer
             if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity)
                 && hitInfo.collider.TryGetComponent(out DropCardArea area))
             {
-                if (area == null)
-                {
-                    _container.Deselect();
-                }
-                else
-                {
-                    area.Receive();
-                }
+                area.Receive();
+            }
+            else
+            {
+                _container.Deselect();
             }
         }
     }
