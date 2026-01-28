@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62660bb07f8f4aa3b647fbc4c6abdb3d, type: 3}
-  m_Name: KnightData
+  m_Name: PirateData
   m_EditorClassIdentifier: 
   _type: 2
-  _subtype: Knight
+  _subtype: Pirate
   _icon: {fileID: 0}
-  _prefab: {fileID: 4079379762127712206, guid: 0fd9d5fcbe92dbd4793aaacc1d5cfdea, type: 3}
+  _prefab: {fileID: 7398028648276005872, guid: eb848cd0fc5556144b180e05860adada, type: 3}
   _radius: 0.5
   _health: 100
   _damage: 2
