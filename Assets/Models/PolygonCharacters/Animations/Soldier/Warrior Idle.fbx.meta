@@ -40,8 +40,8 @@ ModelImporter:
       name: Idle
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 0
-      lastFrame: 379
+      firstFrame: 50
+      lastFrame: 350
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
