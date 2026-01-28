@@ -18,7 +18,7 @@ namespace Unit
             Value = MaxValue;
         }
 
-        private float MaxValue { get; }
+        public float MaxValue { get; }
 
         public new float Value
         {
