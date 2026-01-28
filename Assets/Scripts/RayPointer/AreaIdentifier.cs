@@ -38,7 +38,6 @@ namespace RayPointer
                 {
                     area.Receive();
                 }
-
             }
         }
     }

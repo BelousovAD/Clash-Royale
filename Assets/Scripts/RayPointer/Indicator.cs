@@ -6,9 +6,7 @@ namespace RayPointer
     {
         public Vector3 PositionToSpawn { get; private set; }
 
-        public void SetPositionToSpawn(Vector3 postion)
-        {
+        public void SetPositionToSpawn(Vector3 postion) =>
             PositionToSpawn = postion;
-        }
     }
 }

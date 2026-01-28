@@ -10,7 +10,7 @@ namespace CardReplacement
         [SerializeField] private ContainerType _containerType;
         [SerializeField] private List<GameObject> _haveSelectionObjects;
         [SerializeField] private List<GameObject> _haveNotSelectionObjects;
-        
+
         private Container _container;
 
         [Inject]
@@ -25,7 +25,7 @@ namespace CardReplacement
                 }
             }
         }
-        
+
         private void OnEnable()
         {
             _container.SelectChanged += UpdateView;
@@ -34,7 +34,7 @@ namespace CardReplacement
 
         private void OnDisable() =>
             _container.SelectChanged -= UpdateView;
-        
+
         private void UpdateView()
         {
             _haveSelectionObjects.ForEach(gameObj => gameObj.SetActive(_container.Selected is not null));

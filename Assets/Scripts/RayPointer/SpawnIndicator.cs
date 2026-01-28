@@ -10,19 +10,15 @@ namespace RayPointer
 
         private Transform _transform;
 
-        private void Awake()
-        {
+        private void Awake() =>
             _transform = transform;
-        }
 
-        public void MoveIndicator(Vector3 targetPosition)
-        {
+        public void MoveIndicator(Vector3 targetPosition) =>
             _transform.position = targetPosition;
-        }
 
         public void TurnOffIndicator()
         {
-            _indicatorInstance.SetPositionToSpawn(_transform.transform.position);
+            _indicatorInstance.SetPositionToSpawn(_transform.position);
             _transform.position = DefaultPosition;
         }
     }

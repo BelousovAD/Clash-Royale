@@ -9,7 +9,7 @@ namespace RayPointer
         [SerializeField] private RawImage _rawImage;
 
         [Inject]
-        private void Initialize(global::RayPointer.RayPointer indicator) =>
+        private void Initialize(RayPointer indicator) =>
             indicator.Initialize(_rawImage);
     }
 }

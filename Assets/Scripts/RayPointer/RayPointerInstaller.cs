@@ -11,6 +11,6 @@ namespace RayPointer
         [SerializeField] private AreaIdentifier _areaIdentifier;
 
         public void InstallBindings(ContainerBuilder builder) =>
-            builder.AddSingleton(new global::RayPointer.RayPointer(_layerMask,  _indicator, _camera, _areaIdentifier));
+            builder.AddSingleton(new RayPointer(_layerMask,  _indicator, _camera, _areaIdentifier));
     }
 }

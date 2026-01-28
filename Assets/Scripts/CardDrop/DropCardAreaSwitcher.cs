@@ -16,7 +16,7 @@ namespace CardDrop
         private Item.Item _currentSelect;
 
         [Inject]
-        private void Initialize(IEnumerable<Container> containers, IEnumerable<Currency.Currency> currencies)
+        private void Initialize(IEnumerable<Container> containers)
         {
             foreach (Container container in containers)
             {
