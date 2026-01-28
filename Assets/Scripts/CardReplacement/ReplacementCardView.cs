@@ -12,9 +12,9 @@ namespace CardReplacement
         private const float Duration = 0.5f;
         private const float AnimationAngle = 4f;
         private const int InfiniteLoops = -1;
-        
+
         [SerializeField] private ContainerType _containerTypeToObserve;
-        
+
         private CanvasGroup _canvasGroup;
         private Container _container;
         private Sequence _sequence;
@@ -65,8 +65,8 @@ namespace CardReplacement
                 _tweener = _rectTransform.DORotate(Vector3.zero, Duration);
                 _sequence = null;
             }
-            
+
             _canvasGroup.interactable = _container.Selected is not null;
-        }      
+        }
     }
 }

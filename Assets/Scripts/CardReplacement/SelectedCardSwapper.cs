@@ -9,7 +9,7 @@ namespace CardReplacement
     {
         [SerializeField] private ContainerType _firstContainerType;
         [SerializeField] private ContainerType _secondContainerType;
-        
+
         private Container _firstContainer;
         private Container _secondContainer;
 
@@ -22,7 +22,7 @@ namespace CardReplacement
                 {
                     _firstContainer = container;
                 }
-                
+
                 if (container.Type == _secondContainerType)
                 {
                     _secondContainer = container;
@@ -42,7 +42,7 @@ namespace CardReplacement
             _firstContainer.SelectChanged -= Swap;
             _secondContainer.SelectChanged -= Swap;
         }
-        
+
         private void Swap()
         {
             Item.Item firstItem = _firstContainer.Selected;
@@ -52,7 +52,7 @@ namespace CardReplacement
             {
                 return;
             }
-            
+
             _firstContainer.ReplaceSelected(secondItem);
             _firstContainer.Deselect();
             _secondContainer.ReplaceSelected(firstItem);

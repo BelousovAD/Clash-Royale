@@ -24,10 +24,10 @@ namespace Item
             ItemProvider itemProvider = pooledComponent.GetComponent<ItemProvider>();
             itemProvider.Initialize(item);
             Initialize(pooledComponent);
-        }       
-        
+        }
+
         protected virtual void Initialize(PooledComponent pooledComponent)
-        { }     
+        { }
 
         protected virtual void ReleaseAll()
         {
