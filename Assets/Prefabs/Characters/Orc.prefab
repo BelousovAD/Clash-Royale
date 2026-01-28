@@ -140,6 +140,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a3eb183b24e9d744b9afd6521d9041a7, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 4128216713560115331}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a3eb183b24e9d744b9afd6521d9041a7, type: 3}
+      insertIndex: -1
       addedObject: {fileID: -1459449404431189796}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a3eb183b24e9d744b9afd6521d9041a7, type: 3}
       insertIndex: -1
@@ -150,6 +153,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a3eb183b24e9d744b9afd6521d9041a7, type: 3}
   m_PrefabInstance: {fileID: 3090451063410869594}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4128216713560115331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2747781879541823499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f011b8ba5fd401f9e17f0b9c5127a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &-1459449404431189796
 AudioSource:
   m_ObjectHideFlags: 0
@@ -161,7 +176,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8368295926522934696, guid: e71bed43b849646488b2b8f585380f5d, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
