@@ -42,22 +42,6 @@ namespace CardReplacement
             _firstContainer.SelectChanged -= Swap;
             _secondContainer.SelectChanged -= Swap;
         }
-
-        private void Swap(Vector3 position)
-        {
-            Item.Item firstItem = _firstContainer.Selected;
-            Item.Item secondItem = _secondContainer.Selected;
-
-            if (firstItem is null || secondItem is null)
-            {
-                return;
-            }
-            
-            _firstContainer.ReplaceSelected(secondItem);
-            _firstContainer.Deselect();
-            _secondContainer.ReplaceSelected(firstItem);
-            _secondContainer.Deselect();
-        }  
         
         private void Swap()
         {
