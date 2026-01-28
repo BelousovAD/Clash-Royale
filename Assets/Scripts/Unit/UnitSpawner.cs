@@ -8,6 +8,8 @@ namespace Unit
 {
     public class UnitSpawner : SingleItemProviderSpawner
     {
+        [SerializeField] private UnitType _type;
+        
         private readonly List<Unit> _spawnedUnits = new ();
 
         [SerializeField] private Indicator _indicator;
@@ -17,8 +19,10 @@ namespace Unit
         protected override void Initialize(PooledComponent pooledComponent)
         {
             base.Initialize(pooledComponent);
-            pooledComponent.transform.position = _indicator.lastPosition;
-            _spawnedUnits.Add(pooledComponent.GetComponent<Unit>());
+            Unit unit = pooledComponent.GetComponent<Unit>();
+            unit.transform.position = _indicator.lastPosition;
+            unit.SetType(_type);
+            _spawnedUnits.Add(unit);
         }
 
         protected override void ReleaseAll()
