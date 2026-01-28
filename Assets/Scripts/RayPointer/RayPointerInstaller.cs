@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SpawnPointIndicator
 {
-    internal class SpawnPointIndicatorInstaller : MonoBehaviour, IInstaller
+    internal class RayPointerInstaller : MonoBehaviour, IInstaller
     {
         [SerializeField] private Camera _camera;
         [SerializeField] private LayerMask _layerMask;
