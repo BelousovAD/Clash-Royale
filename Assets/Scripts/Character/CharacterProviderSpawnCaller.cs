@@ -37,13 +37,13 @@ namespace Character
         private void OnDisable() =>
             _cardContainer.SelectChanged -= CallSpawn;
 
-        private void CallSpawn()
+        private void CallSpawn(Vector3 position)
         {
             foreach (Item.Item item in _characterContainer.Items)
             {
                 if (item.Subtype == _cardContainer.Selected.Subtype)
                 {
-                    _providerSpawner.Spawn(item);
+                    _providerSpawner.Spawn(item, position);
                 }
             }
         }

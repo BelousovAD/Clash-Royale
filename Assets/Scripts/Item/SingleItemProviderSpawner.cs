@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Spawn;
+using UnityEngine;
 
 namespace Item
 {
@@ -23,9 +24,21 @@ namespace Item
             ItemProvider itemProvider = pooledComponent.GetComponent<ItemProvider>();
             itemProvider.Initialize(item);
             Initialize(pooledComponent);
+        }       
+        
+        public void Spawn(Item item, Vector3 position)
+        {
+            PooledComponent pooledComponent = Spawn();
+            _spawnedObjects.Add(pooledComponent);
+            ItemProvider itemProvider = pooledComponent.GetComponent<ItemProvider>();
+            itemProvider.Initialize(item);
+            Initialize(pooledComponent, position);
         }
         
         protected virtual void Initialize(PooledComponent pooledComponent)
+        { }     
+        
+        protected virtual void Initialize(PooledComponent pooledComponent, Vector3 position)
         { }
 
         protected virtual void ReleaseAll()

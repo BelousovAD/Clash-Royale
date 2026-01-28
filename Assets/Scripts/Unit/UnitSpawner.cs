@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Item;
 using Spawn;
+using UnityEngine;
 
 namespace Unit
 {
@@ -10,9 +11,10 @@ namespace Unit
 
         public IReadOnlyList<Unit> SpawnedUnits => _spawnedUnits;
         
-        protected override void Initialize(PooledComponent pooledComponent)
+        protected override void Initialize(PooledComponent pooledComponent, Vector3 position)
         {
             base.Initialize(pooledComponent);
+            pooledComponent.transform.position = position;
             _spawnedUnits.Add(pooledComponent.GetComponent<Unit>());
         }
 

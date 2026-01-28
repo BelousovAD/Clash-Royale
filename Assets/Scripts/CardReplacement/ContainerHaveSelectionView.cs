@@ -35,6 +35,12 @@ namespace CardReplacement
         private void OnDisable() =>
             _container.SelectChanged -= UpdateView;
 
+        private void UpdateView(Vector3 position)
+        {
+            _haveSelectionObjects.ForEach(gameObj => gameObj.SetActive(_container.Selected is not null));
+            _haveNotSelectionObjects.ForEach(gameObj => gameObj.SetActive(_container.Selected is null));
+        }       
+        
         private void UpdateView()
         {
             _haveSelectionObjects.ForEach(gameObj => gameObj.SetActive(_container.Selected is not null));

@@ -12,7 +12,7 @@ namespace Item
             Id = id;
         }
 
-        public event Action<int> Selected;
+        public event Action<int, Vector3> Selected;
 
         public ItemType Type => Data.Type;
 
@@ -39,8 +39,8 @@ namespace Item
             Save();
         }
         
-        public void Select() =>
-            Selected?.Invoke(Id);
+        public void Select(Vector3 position) =>
+            Selected?.Invoke(Id, position);
 
         public virtual void Dispose()
         { }

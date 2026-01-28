@@ -64,12 +64,12 @@ namespace CardBattle
             _imageToDrag.raycastTarget = true;
             
             RaycastResult raycast = eventData.pointerCurrentRaycast;
-            _indicator.EndDrag();
+            Vector3 positionToSpawn = _indicator.EndDrag();
             
             if (raycast.gameObject is not null
                 && raycast.gameObject.TryGetComponent(out DropCardArea dropArea))
             {
-                _itemProvider.Item.Select();
+                _itemProvider.Item.Select(positionToSpawn);
                 dropArea.Receive();
             }
         }

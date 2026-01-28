@@ -14,13 +14,14 @@ namespace Item
         private readonly ContainerData _data;
         private readonly List<Item> _items = new ();
         private int _index = MinIndex;
+        private Vector3 _positionToSpawn;
 
         public Container(ContainerData data) =>
             _data = data;
 
         public event Action ContentChanged;
 
-        public event Action SelectChanged;
+        public event Action<Vector3> SelectChanged;
 
         public int Capacity => _items.Capacity;
         
@@ -42,12 +43,12 @@ namespace Item
                 if (_items.Count == 0)
                 {
                     _index = MinIndex;
-                    SelectChanged?.Invoke();
+                    SelectChanged?.Invoke(_positionToSpawn);
                     return;
                 }
 
                 _index = Mathf.Clamp(value, MinIndex, _items.Count - 1);
-                SelectChanged?.Invoke();
+                SelectChanged?.Invoke(_positionToSpawn);
             }
         }
 
@@ -175,6 +176,19 @@ namespace Item
             if (id > MinIndex)
             {
                 Index = id;
+            }
+            else
+            {
+                Debug.LogError($"Can not select item with id:{id}");
+            }
+        }       
+        
+        private void SelectById(int id, Vector3 position)
+        {
+            if (id > MinIndex)
+            {
+                Index = id;
+                _positionToSpawn = position;
             }
             else
             {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Item;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace CardBattle
@@ -41,7 +42,7 @@ namespace CardBattle
                 }
             }
             
-            items[Random.Range(0, items.Count)].Select();
+            items[Random.Range(0, items.Count)].Select(new Vector3(0,0,0));
         }
     }
 }

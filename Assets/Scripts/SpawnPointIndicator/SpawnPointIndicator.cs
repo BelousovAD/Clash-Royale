@@ -39,10 +39,13 @@ namespace SpawnPointIndicator
             }
         }
 
-        public void EndDrag()
+        public Vector3 EndDrag()
         {
+            Vector3 positionToSpawn = _indicatorInstance.transform.position;
             _indicatorInstance.gameObject.SetActive(false);
             _indicatorInstance.transform.position = DefaultPosition;
+
+            return positionToSpawn;
         }
 
         private Ray GetRayFromUI(PointerEventData eventData)
