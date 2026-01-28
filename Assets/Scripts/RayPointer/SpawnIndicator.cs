@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SpawnPointIndicator
+namespace RayPointer
 {
     public class SpawnIndicator : MonoBehaviour
     {
@@ -22,7 +22,7 @@ namespace SpawnPointIndicator
 
         public void TurnOffIndicator()
         {
-            _indicatorInstance.lastPosition = _transform.transform.position;
+            _indicatorInstance.SetPositionToSpawn(_transform.transform.position);
             _transform.position = DefaultPosition;
         }
     }

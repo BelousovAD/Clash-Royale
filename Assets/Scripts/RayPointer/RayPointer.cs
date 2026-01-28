@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace SpawnPointIndicator
+namespace RayPointer
 {
     public class RayPointer
     {

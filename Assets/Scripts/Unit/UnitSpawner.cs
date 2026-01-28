@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Item;
+using RayPointer;
 using Spawn;
-using SpawnPointIndicator;
 using UnityEngine;
 
 namespace Unit
@@ -19,7 +19,7 @@ namespace Unit
         {
             base.Initialize(pooledComponent);
             Unit unit = pooledComponent.GetComponent<Unit>();
-            unit.transform.position = _indicator.lastPosition;
+            unit.transform.position = _indicator.PositionToSpawn;
             unit.SetType(_type);
             _spawnedUnits.Add(unit);
         }

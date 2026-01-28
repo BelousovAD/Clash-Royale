@@ -15,14 +15,14 @@ namespace CardBattle
         [SerializeField] private Image _imageToDrag;
         [SerializeField] private AspectRatioFitter _imageAspectRatioFitter;
 
-        private SpawnPointIndicator.RayPointer _rayPointer;
+        private RayPointer.RayPointer _rayPointer;
         private Canvas _canvas;
         private RectTransform _rectTransform;
         private Transform _defaultParent;
         private CanvasGroup _group;
 
         [Inject]
-        private void Initialize(SpawnPointIndicator.RayPointer rayPointer) =>
+        private void Initialize(RayPointer.RayPointer rayPointer) =>
             _rayPointer = rayPointer;
 
         private void Awake()

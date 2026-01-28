@@ -4,7 +4,7 @@ using Item;
 using Reflex.Attributes;
 using UnityEngine;
 
-namespace SpawnPointIndicator
+namespace RayPointer
 {
     public class AreaIdentifier : MonoBehaviour
     {

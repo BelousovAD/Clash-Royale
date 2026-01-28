@@ -1,7 +1,7 @@
 using Reflex.Core;
 using UnityEngine;
 
-namespace SpawnPointIndicator
+namespace RayPointer
 {
     internal class RayPointerInstaller : MonoBehaviour, IInstaller
     {
@@ -11,6 +11,6 @@ namespace SpawnPointIndicator
         [SerializeField] private AreaIdentifier _areaIdentifier;
 
         public void InstallBindings(ContainerBuilder builder) =>
-            builder.AddSingleton(new RayPointer(_layerMask,  _indicator, _camera, _areaIdentifier));
+            builder.AddSingleton(new global::RayPointer.RayPointer(_layerMask,  _indicator, _camera, _areaIdentifier));
     }
 }
