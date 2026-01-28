@@ -20,6 +20,7 @@ namespace CardBattle
         private RectTransform _rectTransform;
         private Transform _defaultParent;
         private CanvasGroup _group;
+        private CardIdentifier _identifier;
 
         [Inject]
         private void Initialize(SpawnPointIndicator.SpawnPointIndicator indicator) =>
@@ -30,6 +31,7 @@ namespace CardBattle
             _canvas = GetComponentInParent<Canvas>();
             _rectTransform = _imageToDrag.GetComponent<RectTransform>();
             _group = _imageToDrag.GetComponent<CanvasGroup>();
+            _identifier = _canvas.GetComponentInChildren<CardIdentifier>();
             _defaultParent = _rectTransform.parent;
         }
 
@@ -47,6 +49,7 @@ namespace CardBattle
                 out Vector2 pointerPosition);
             _rectTransform.anchoredPosition = pointerPosition;
             _indicator.BeginDrag();
+            _identifier.CardPicked();
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -58,6 +61,7 @@ namespace CardBattle
         public void OnEndDrag(PointerEventData eventData)
         {
             _indicator.EndDrag();
+            _identifier.CardDroped();
             _group.alpha = MaxAlpha;
             _rectTransform.SetParent(_defaultParent);
             _rectTransform.anchoredPosition = Vector2.zero;
