@@ -7,7 +7,7 @@ namespace Item
     internal class SelectedItemProvider : ItemProvider
     {
         [SerializeField] private ContainerType _containerType;
-        
+
         private Container _container;
 
         [Inject]
@@ -35,7 +35,7 @@ namespace Item
             _container.SelectChanged -= UpdateItem;
             _container.ContentChanged -= UpdateItem;
         }
-        
+
         private void UpdateItem() =>
             Initialize(_container.Selected);
     }
