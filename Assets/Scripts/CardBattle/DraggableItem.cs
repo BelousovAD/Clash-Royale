@@ -1,3 +1,4 @@
+using Audio;
 using Item;
 using Reflex.Attributes;
 using UnityEngine;
@@ -15,30 +16,32 @@ namespace CardBattle
         [SerializeField] private ItemProvider _itemProvider;
         [SerializeField] private Image _imageToDrag;
         [SerializeField] private AspectRatioFitter _imageAspectRatioFitter;
+        [SerializeField] private AudioClipKey _key = AudioClipKey.CardClick;
 
         private RayPointer.RayPointer _rayPointer;
         private Canvas _canvas;
         private RectTransform _rectTransform;
         private Transform _defaultParent;
         private CanvasGroup _group;
-        private AudioSource _source;
+        private Audio.Audio _audio;
 
         [Inject]
-        private void Initialize(RayPointer.RayPointer rayPointer) =>
+        private void Initialize(RayPointer.RayPointer rayPointer, Audio.Audio audio)
+        {
             _rayPointer = rayPointer;
+            _audio = audio;
+        }
 
         private void Awake()
         {
             _canvas = GetComponentInParent<Canvas>();
             _rectTransform = _imageToDrag.GetComponent<RectTransform>();
             _group = _imageToDrag.GetComponent<CanvasGroup>();
-            _source = GetComponent<AudioSource>();
             _defaultParent = _rectTransform.parent;
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            _source.Play();
             _group.alpha = MinAlpha;
             _imageToDrag.raycastTarget = false;
             _imageAspectRatioFitter.enabled = false;
@@ -51,6 +54,7 @@ namespace CardBattle
                 out Vector2 pointerPosition);
             _rectTransform.anchoredPosition = pointerPosition;
             _itemProvider.Item.Select();
+            _audio.Play(_key);
         }
 
         public void OnDrag(PointerEventData eventData)
