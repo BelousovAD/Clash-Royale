@@ -140,6 +140,8 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: b4b4434c15a62f74c884917c02d644c4, type: 3}
   - Key: 27
     Clip: {fileID: 8300000, guid: dfc311e0f0655bf42861e6f6d8000cc0, type: 3}
+  - Key: 28
+    Clip: {fileID: 8300000, guid: 8cbe97f54b3603e498f7955e75aab592, type: 3}
 --- !u!114 &-6596936900237129893
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,5 +30,6 @@ namespace Audio
         PirateDie = 25,
         SamuraiDie = 26,
         WizardAttack = 27,
+        CardClick = 28,
     }
 }
