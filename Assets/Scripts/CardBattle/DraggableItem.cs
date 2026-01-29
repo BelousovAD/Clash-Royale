@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using Audio;
 using Item;
 using Reflex.Attributes;
@@ -11,6 +13,7 @@ namespace CardBattle
     {
         private const float MinAlpha = 0.1f;
         private const float MaxAlpha = 1f;
+        private const Audio.AudioType SoundType = Audio.AudioType.Sound;
 
         [SerializeField] private ItemProvider _itemProvider;
         [SerializeField] private Image _imageToDrag;
@@ -25,10 +28,10 @@ namespace CardBattle
         private Audio.Audio _audio;
 
         [Inject]
-        private void Initialize(RayPointer.RayPointer rayPointer, Audio.Audio audio)
+        private void Initialize(RayPointer.RayPointer rayPointer, IEnumerable<Audio.Audio> audios)
         {
             _rayPointer = rayPointer;
-            _audio = audio;
+            _audio = audios.FirstOrDefault(audioObject => audioObject.Type == SoundType);
         }
 
         private void Awake()
