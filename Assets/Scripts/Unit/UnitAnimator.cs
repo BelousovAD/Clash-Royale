@@ -8,19 +8,17 @@ namespace Unit
     {
         private static readonly int AttackSpeed = Animator.StringToHash(nameof(AttackSpeed));
 
-        private Animator _animator;
-        private Dictionary<AnimationKey, int> _parameters;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private List<AnimationKey> _keys;
+        
+        private readonly Dictionary<AnimationKey, int> _parameters = new ();
 
         private void Awake()
         {
-            _animator = GetComponent<Animator>();
-            _parameters = new Dictionary<AnimationKey, int>
+            foreach (AnimationKey key in _keys)
             {
-                [AnimationKey.Idle] = Animator.StringToHash(nameof(AnimationKey.Idle)),
-                [AnimationKey.Attack] = Animator.StringToHash(nameof(AnimationKey.Attack)),
-                [AnimationKey.Die] = Animator.StringToHash(nameof(AnimationKey.Die)),
-                [AnimationKey.Run] = Animator.StringToHash(nameof(AnimationKey.Run)),
-            };
+                _parameters.Add(key, Animator.StringToHash(key.ToString()));
+            }
         }
 
         private void OnDestroy() =>
@@ -33,15 +31,18 @@ namespace Unit
                 return;
             }
 
+            if (_parameters.TryGetValue(animationKey, out int parameterId) == false)
+            {
+                Debug.Log($"{animationKey} is not declared in field {nameof(_keys)} and can not be played");
+                return;
+            }
+            
             foreach (int parameter in _parameters.Values)
             {
                 _animator.SetBool(parameter, false);
             }
-
-            if (_parameters.TryGetValue(animationKey, out int parameterId))
-            {
-                _animator.SetBool(parameterId, true);
-            }
+                
+            _animator.SetBool(parameterId, true);
         }
 
         public void SetAttackSpeed(float speed) =>

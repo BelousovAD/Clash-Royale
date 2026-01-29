@@ -8,9 +8,7 @@ namespace Unit
     {
         public const float MinRadius = 0f;
         
-        [Header("Only for towers")]
-        [SerializeField][Min(MinRadius)] private float _radius;
-        
+        private float _radius;
         private StateMachine _stateMachine;
         private UnitType _type;
 
