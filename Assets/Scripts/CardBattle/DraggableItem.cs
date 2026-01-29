@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 namespace CardBattle
 {
+    [RequireComponent(typeof(AudioSource))]
     internal class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         private const float MinAlpha = 0.1f;
@@ -20,6 +21,7 @@ namespace CardBattle
         private RectTransform _rectTransform;
         private Transform _defaultParent;
         private CanvasGroup _group;
+        private AudioSource _source;
 
         [Inject]
         private void Initialize(RayPointer.RayPointer rayPointer) =>
@@ -30,11 +32,13 @@ namespace CardBattle
             _canvas = GetComponentInParent<Canvas>();
             _rectTransform = _imageToDrag.GetComponent<RectTransform>();
             _group = _imageToDrag.GetComponent<CanvasGroup>();
+            _source = GetComponent<AudioSource>();
             _defaultParent = _rectTransform.parent;
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            _source.Play();
             _group.alpha = MinAlpha;
             _imageToDrag.raycastTarget = false;
             _imageAspectRatioFitter.enabled = false;
