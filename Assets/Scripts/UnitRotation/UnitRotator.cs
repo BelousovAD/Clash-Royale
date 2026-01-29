@@ -8,14 +8,11 @@ namespace UnitRotation
         private const StateType ActivityState = StateType.Attack;
         
         [SerializeField] private Unit.Unit _unit;
+        [SerializeField] private Transform _transformToRotate;
         
         private Transform _enemy;
-        private Transform _unitTransform;
         private bool _isActive;
         private IStateSwitcher _unitStateSwitcher;
-
-        private void Awake() =>
-            _unitTransform = _unit.GetComponent<Transform>();
 
         private void OnEnable()
         {
@@ -37,7 +34,8 @@ namespace UnitRotation
         {
             if (_isActive && _enemy is not null)
             {
-                _unitTransform.LookAt(_enemy);
+                Vector3 lookDirection = Vector3.Normalize(_enemy.position - _transformToRotate.position);
+                _transformToRotate.forward = new Vector3(lookDirection.x, 0f, lookDirection.z);
             }
         }
 

@@ -171,6 +171,7 @@ MonoBehaviour:
   _itemProvider: {fileID: 1632015073684970110}
   _imageToDrag: {fileID: 6333082904471588666}
   _imageAspectRatioFitter: {fileID: 4552658209942176637}
+  _key: 28
 --- !u!1 &8082931747076213832 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4613219112532243541, guid: de7b4c81764da9a47898b4465a10664b, type: 3}
