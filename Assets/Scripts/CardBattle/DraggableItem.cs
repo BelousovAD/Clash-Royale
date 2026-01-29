@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 namespace CardBattle
 {
-    [RequireComponent(typeof(AudioSource))]
     internal class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         private const float MinAlpha = 0.1f;
