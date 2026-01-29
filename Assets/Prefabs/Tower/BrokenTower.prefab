@@ -168,6 +168,18 @@ PrefabInstance:
       value: MegaExplosionYellow
       objectReference: {fileID: 0}
     - target: {fileID: 4359575009076920, guid: 23ffe291646e5a24cb5322ad0784de8c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359575009076920, guid: 23ffe291646e5a24cb5322ad0784de8c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359575009076920, guid: 23ffe291646e5a24cb5322ad0784de8c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359575009076920, guid: 23ffe291646e5a24cb5322ad0784de8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -206,6 +218,10 @@ PrefabInstance:
     - target: {fileID: 4359575009076920, guid: 23ffe291646e5a24cb5322ad0784de8c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359575009076920, guid: 23ffe291646e5a24cb5322ad0784de8c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1734419180689449558, guid: 23ffe291646e5a24cb5322ad0784de8c, type: 3}
       propertyPath: m_Volume
