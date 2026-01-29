@@ -12,6 +12,7 @@ namespace Unit
         [SerializeField] private UnitAnimationCaller _animationCaller;
         [SerializeField] private UnitAnimator _animator;
         [SerializeField] private CharacterData _data;
+        [SerializeField] private UnitType _type;
         
         private TowerStateMachineBuilder _stateMachineBuilder;
         private StateMachine _stateMachine;
@@ -28,6 +29,7 @@ namespace Unit
             _stateMachine = _stateMachineBuilder.Build();
             _unit.Initialize(_stateMachine);
             _animationCaller.Initialize(_animator);
+            _unit.SetType(_type);
         }
     }
 }

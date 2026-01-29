@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f011b8ba5fd401f9e17f0b9c5127a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 6417134849774972304}
   _keys: 00000000010000000200000003000000
 --- !u!82 &7886727710639636905
 AudioSource:
@@ -228,6 +229,11 @@ MonoBehaviour:
 --- !u!4 &3641229508428009046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4245932919867629143, guid: c304954bfaba96a479aec7910489c8e8, type: 3}
+  m_PrefabInstance: {fileID: 604796870029299713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6417134849774972304 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: c304954bfaba96a479aec7910489c8e8, type: 3}
   m_PrefabInstance: {fileID: 604796870029299713}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8139022289423170578 stripped

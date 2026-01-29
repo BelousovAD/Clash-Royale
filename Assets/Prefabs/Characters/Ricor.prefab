@@ -148,6 +148,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 7100098375535768684}
   m_SourcePrefab: {fileID: 100100000, guid: 78592c2dd9880204a9c26eb70e15bbc3, type: 3}
+--- !u!95 &616488098389806797 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 78592c2dd9880204a9c26eb70e15bbc3, type: 3}
+  m_PrefabInstance: {fileID: 6477479190722999132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3585151509343592068 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7504586103130041816, guid: 78592c2dd9880204a9c26eb70e15bbc3, type: 3}
@@ -170,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f011b8ba5fd401f9e17f0b9c5127a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 616488098389806797}
   _keys: 00000000010000000200000003000000
 --- !u!82 &-4615727537828916891
 AudioSource:

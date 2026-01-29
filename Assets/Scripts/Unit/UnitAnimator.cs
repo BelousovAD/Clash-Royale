@@ -8,15 +8,13 @@ namespace Unit
     {
         private static readonly int AttackSpeed = Animator.StringToHash(nameof(AttackSpeed));
 
+        [SerializeField] private Animator _animator;
         [SerializeField] private List<AnimationKey> _keys;
-
-        private Animator _animator;
+        
         private readonly Dictionary<AnimationKey, int> _parameters = new ();
 
         private void Awake()
         {
-            _animator = GetComponent<Animator>();
-
             foreach (AnimationKey key in _keys)
             {
                 _parameters.Add(key, Animator.StringToHash(key.ToString()));

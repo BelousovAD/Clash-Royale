@@ -157,6 +157,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8689473563730684947, guid: 2a8a2223d75984842b008aae16acfb01, type: 3}
   m_PrefabInstance: {fileID: 7212617548966494103}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &3851361476982194694 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 2a8a2223d75984842b008aae16acfb01, type: 3}
+  m_PrefabInstance: {fileID: 7212617548966494103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7555127727777923782 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a8a2223d75984842b008aae16acfb01, type: 3}
@@ -174,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f011b8ba5fd401f9e17f0b9c5127a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 3851361476982194694}
   _keys: 00000000010000000200000003000000
 --- !u!82 &-5036776431711030048
 AudioSource:

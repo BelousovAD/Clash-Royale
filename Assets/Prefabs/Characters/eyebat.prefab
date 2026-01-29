@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f011b8ba5fd401f9e17f0b9c5127a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 3724386961560923472}
   _keys: 00000000010000000200000003000000
 --- !u!82 &7949802393694891813
 AudioSource:
@@ -201,3 +202,8 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 984353d14afd69c4cae4458cd5a220c3, type: 3}
   - Key: 20
     Clip: {fileID: 8300000, guid: 392eec36a652eac41844eca4a319e6fb, type: 3}
+--- !u!95 &3724386961560923472 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 4a74a3203f7ab31458afac5699e0f033, type: 3}
+  m_PrefabInstance: {fileID: 3724386961553594416}
+  m_PrefabAsset: {fileID: 0}
