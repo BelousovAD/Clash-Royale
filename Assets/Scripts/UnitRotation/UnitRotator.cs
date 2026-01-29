@@ -34,7 +34,8 @@ namespace UnitRotation
         {
             if (_isActive && _enemy is not null)
             {
-                _transformToRotate.LookAt(_enemy);
+                Vector3 lookDirection = Vector3.Normalize(_enemy.position - _transformToRotate.position);
+                _transformToRotate.forward = new Vector3(lookDirection.x, 0f, lookDirection.z);
             }
         }
 
