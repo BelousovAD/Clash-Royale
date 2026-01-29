@@ -69,7 +69,7 @@ MonoBehaviour:
   _main: {fileID: 2559037202506892822}
   _children: []
   _space: 0
-  _timeScale: 1
+  _timeScale: 0
   _emitterConstraintEnabled:
     enabled: 0
   _emitterConstraintTransform: {fileID: 0}
@@ -1249,7 +1249,7 @@ MonoBehaviour:
   _bursts:
   - time: 0
     count: 100
-    used: 1
+    used: 0
   _particleTrailRenderer: {fileID: 9141640328788218967}
   _trailModule:
     enabled: 1
@@ -1519,7 +1519,7 @@ MonoBehaviour:
   _main: {fileID: 2559037202506892822}
   _children: []
   _space: 0
-  _timeScale: 1
+  _timeScale: 0
   _emitterConstraintEnabled:
     enabled: 0
   _emitterConstraintTransform: {fileID: 0}
@@ -2972,7 +2972,7 @@ MonoBehaviour:
   - {fileID: 2559037201267623759}
   - {fileID: 2559037201541945336}
   _space: 0
-  _timeScale: 1
+  _timeScale: 0
   _emitterConstraintEnabled:
     enabled: 0
   _emitterConstraintTransform: {fileID: 0}

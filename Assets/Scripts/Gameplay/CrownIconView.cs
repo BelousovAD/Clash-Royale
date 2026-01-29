@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using Reflex.Attributes;
@@ -57,11 +56,7 @@ namespace Gameplay
             _sequence.SetUpdate(UpdateType.Normal, true);
             _sequence.SetEase(Ease.InOutQuad);
             _sequence.Append(_rectTransform.DORotate(new Vector3(0, 0, AnimationAngle), Duration));
-            _sequence.Join(_rectTransform.DOScale(
-                new Vector3(_rectTransform.localScale.x + 0.1f
-                    , _rectTransform.localScale.y + 0.1f
-                    , _rectTransform.localScale.z + 0.1f)
-                , Duration));
+            _sequence.Join(_rectTransform.DOScale(Vector3.one * 0.1f, Duration).SetRelative(true));
             _sequence.SetLoops(InfiniteLoops, LoopType.Yoyo);
         }
     }
