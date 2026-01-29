@@ -45,15 +45,15 @@ namespace EnemyFind
             
             if (closest is not null)
             {
-                _enemyApproachObserver.SetEnemy(closest.transform, closest.Radius);
-                _mover.SetEnemy(closest.transform, closest.Radius);
-                _rotator.SetEnemy(closest.transform);
+                _enemyApproachObserver?.SetEnemy(closest.transform, closest.Radius);
+                _mover?.SetEnemy(closest.transform, closest.Radius);
+                _rotator?.SetEnemy(closest.transform);
             }
             else
             {
-                _enemyApproachObserver.SetEnemy(null, Unit.Unit.MinRadius);
-                _mover.SetEnemy(null, Unit.Unit.MinRadius);
-                _rotator.SetEnemy(null);
+                _enemyApproachObserver?.SetEnemy(null, Unit.Unit.MinRadius);
+                _mover?.SetEnemy(null, Unit.Unit.MinRadius);
+                _rotator?.SetEnemy(null);
             }
         }
     }

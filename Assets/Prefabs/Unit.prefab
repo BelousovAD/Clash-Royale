@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unit: {fileID: 8705153733819637257}
+  _transformToRotate: {fileID: 7691014875186428266}
 --- !u!1 &3216819698591428241
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59ca1ec05c049068ba302a806fe891c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0
 --- !u!114 &6259286500928002049
 MonoBehaviour:
   m_ObjectHideFlags: 0
