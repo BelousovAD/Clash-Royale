@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4785153101518900401}
   - component: {fileID: 4823637871989737886}
   - component: {fileID: 9062071753743558706}
+  - component: {fileID: 3462461497062239489}
   m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2839469361617490714}
@@ -83,6 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3462461497062239489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4439592698632292185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7415b6b040334684934536be792a47df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7754094231333535075
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2839469361617490714}
-  - component: {fileID: 6113910035567327733}
+  - component: {fileID: 4521889688536856144}
   m_Layer: 2
   m_Name: Indicator
   m_TagString: Untagged
@@ -110,13 +123,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4785153101518900401}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6113910035567327733
+--- !u!114 &4521889688536856144
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,6 +138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7754094231333535075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7415b6b040334684934536be792a47df, type: 3}
+  m_Script: {fileID: 11500000, guid: a6c80c22c48a4cbfbab0872bc7a54aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _indicatorInstance: {fileID: 3462461497062239489}
