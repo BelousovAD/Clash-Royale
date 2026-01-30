@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Unit
+namespace UnitHealth
 {
     [RequireComponent(typeof(TMP_Text))]
     internal class HealthTextView : HealthView

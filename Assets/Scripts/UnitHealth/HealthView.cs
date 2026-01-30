@@ -1,10 +1,11 @@
+using Unit;
 using UnityEngine;
 
-namespace Unit
+namespace UnitHealth
 {
     internal abstract class HealthView : MonoBehaviour
     {
-        [SerializeField] private Unit _unit;
+        [SerializeField] private Unit.Unit _unit;
 
         protected Health Health;
         

@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Unit
+namespace UnitHealth
 {
     [RequireComponent(typeof(Slider))]
     internal class HealthSmoothSliderView : HealthView
