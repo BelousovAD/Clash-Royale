@@ -68,6 +68,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7410772688288151855, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410772688288151855, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8434097448426733127, guid: c79c0982562143e459e5b64dc6678692, type: 3}
       propertyPath: m_Name
       value: PlayerSoldierTower
