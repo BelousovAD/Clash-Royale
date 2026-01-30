@@ -662,6 +662,10 @@ PrefabInstance:
       propertyPath: _unit
       value: 
       objectReference: {fileID: 8705153733819637257}
+    - target: {fileID: 6943908337072364065, guid: ad3958595ccd7e2419f3c9c80f5237c5, type: 3}
+      propertyPath: _unit
+      value: 
+      objectReference: {fileID: 8705153733819637257}
     - target: {fileID: 7086219420198344581, guid: ad3958595ccd7e2419f3c9c80f5237c5, type: 3}
       propertyPath: m_Name
       value: HealthCanvas
