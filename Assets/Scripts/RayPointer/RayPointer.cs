@@ -9,17 +9,17 @@ namespace RayPointer
         private readonly LayerMask _layerMask;
         private readonly SpawnIndicator _spawnIndicator;
         private readonly Camera _camera;
-        private readonly AreaIdentifier _areaIdentifier;
+        private readonly AreaDetector _areaDetector;
 
         private RawImage _rawImage;
         private Ray _ray;
 
-        public RayPointer(LayerMask layerMask, SpawnIndicator indicator, Camera camera, AreaIdentifier areaIdentifier)
+        public RayPointer(LayerMask layerMask, SpawnIndicator indicator, Camera camera, AreaDetector areaDetector)
         {
             _layerMask = layerMask;
             _spawnIndicator = indicator;
             _camera = camera;
-            _areaIdentifier = areaIdentifier;
+            _areaDetector = areaDetector;
         }
 
         public void Initialize(RawImage image) =>
@@ -40,7 +40,7 @@ namespace RayPointer
             _spawnIndicator.TurnOffIndicator();
 
         public void SearchArea() =>
-            _areaIdentifier.FindDropCardArea(_ray);
+            _areaDetector.FindDropCardArea(_ray);
 
         private Ray GetRayFromUI(PointerEventData eventData)
         {
