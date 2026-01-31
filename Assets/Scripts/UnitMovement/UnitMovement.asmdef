@@ -2,9 +2,8 @@
     "name": "UnitMovement",
     "rootNamespace": "",
     "references": [
-        "GUID:7559eac92c676674995251865b1298e9",
+        "GUID:15e5c11efa7b5a64ab79e8e177bbe5ab",
         "GUID:f0e270abeff639143b0a59e976ae19de",
-        "GUID:4cefadf2890e8e84b8e28d80883e7dcf",
         "GUID:2a5b0d172f81f5647a2e991883642c65"
     ],
     "includePlatforms": [],
