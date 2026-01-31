@@ -1,11 +1,10 @@
 using System;
-using Behaviour;
 using UnityEngine;
 
 namespace Damage
 {
     [RequireComponent(typeof(Collider))]
-    public class AttackTrigger : MonoBehaviour, IChangeable
+    internal class UnitTrigger : MonoBehaviour
     {
         private Unit.Unit _value;
         
@@ -38,7 +37,8 @@ namespace Damage
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.TryGetComponent(out Unit.Unit _))
+            if (other.TryGetComponent(out Unit.Unit unit)
+                && unit == Value)
             {
                 Value = null;
             }
