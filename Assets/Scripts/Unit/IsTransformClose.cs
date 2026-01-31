@@ -2,25 +2,21 @@ using Behaviour;
 using ChangeableValue;
 using UnityEngine;
 
-namespace EnemyObserve
+namespace Unit
 {
-    internal class IsTransformClose : ChangeableValue<bool?>, IEnable, IDisable, IUpdatable
+    public class IsTransformClose : ChangeableValue<bool?>, IEnable, IDisable, IUpdatable
     {
         private Transform _transformFrom;
         private Transform _transformTarget;
         private float _targetRadius;
         private float _closeDistance;
-        private bool _isInitialized;
         private bool _isActive;
 
         public void Initialize(Transform from) =>
             _transformFrom = from;
 
-        public void Initialize(float closeDistance)
-        {
+        public void Initialize(float closeDistance) =>
             _closeDistance = closeDistance;
-            _isInitialized = true;
-        }
 
         public void SetTarget(Transform target, float targetRadius)
         {
@@ -42,7 +38,7 @@ namespace EnemyObserve
 
         public void Update(float deltaTime)
         {
-            if (!_isInitialized || !_isActive)
+            if (_isActive == false)
             {
                 return;
             }

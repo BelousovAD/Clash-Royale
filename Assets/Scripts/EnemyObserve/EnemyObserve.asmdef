@@ -2,7 +2,8 @@
     "name": "EnemyObserve",
     "rootNamespace": "",
     "references": [
-        "GUID:1099e208d164e904d8575abf34a74829",
+        "GUID:15e5c11efa7b5a64ab79e8e177bbe5ab",
+        "GUID:2a5b0d172f81f5647a2e991883642c65",
         "GUID:9486b756c36397c4f9f5689c48f9d195"
     ],
     "includePlatforms": [],

@@ -1,32 +1,54 @@
-using ChangeableValue;
+using EnemyFind;
+using Unit;
 using UnityEngine;
 
 namespace EnemyObserve
 {
     public class EnemyApproachObserver : MonoBehaviour
     {
+        [SerializeField] private Unit.Unit _unit;
         [SerializeField] private Transform _transformFrom;
+        [SerializeField] private EnemyFindCaller _enemyFindCaller;
 
-        private readonly IsTransformClose _isClose = new();
-
-        public ChangeableValue<bool?> IsClose => _isClose;
+        private IsTransformClose _isClose;
 
         public void Initialize(float closeDistance) =>
             _isClose.Initialize(closeDistance);
 
-        public void SetEnemy(Transform enemy, float enemyRadius) =>
-            _isClose.SetTarget(enemy, enemyRadius);
-
-        private void Awake() =>
+        private void Awake()
+        {
+            _isClose = _unit.IsEnemyClose;
             _isClose.Initialize(_transformFrom);
+        }
 
-        private void OnEnable() =>
+        private void OnEnable()
+        {
+            _enemyFindCaller.EnemyFound += UpdateEnemy;
             _isClose.Enable();
+            UpdateEnemy();
+        }
 
-        private void OnDisable() =>
+        private void OnDisable()
+        {
             _isClose.Disable();
+            _enemyFindCaller.EnemyFound -= UpdateEnemy;
+        }
 
         private void Update() =>
             _isClose.Update(Time.deltaTime);
+
+        private void UpdateEnemy()
+        {
+            Unit.Unit enemy = _enemyFindCaller.Enemy;
+            
+            if (enemy is null)
+            {
+                _isClose.SetTarget(null, 0f);
+            }
+            else
+            {
+                _isClose.SetTarget(enemy.transform, enemy.Radius);
+            }
+        }
     }
 }
