@@ -13,9 +13,6 @@ namespace Damage
         private Unit.Unit _unit;
         private Unit.Unit _enemy;
 
-        public void SetDamage(float damage) =>
-            _damage = damage;
-
         public void Initialize(Unit.Unit unit)
         {
             if (_unit is not null)
@@ -32,6 +29,9 @@ namespace Damage
 
             ChangeTriggerActivity();
         }
+
+        public void SetDamage(float damage) =>
+            _damage = damage;
 
         public void SetEnemy(Unit.Unit enemy) =>
             _enemy = enemy;
