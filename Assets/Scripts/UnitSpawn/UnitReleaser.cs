@@ -2,17 +2,18 @@ using System.Collections;
 using Spawn;
 using UnityEngine;
 
-namespace Unit
+namespace UnitSpawn
 {
     internal class UnitReleaser : MonoBehaviour
     {
-        [SerializeField] private Unit _unit;
+        [SerializeField] private Unit.Unit _unit;
         [SerializeField] private PooledComponent _pooledComponent;
+        [SerializeField][Min(0f)] private float _deathAnimationDuration;
         
         private WaitForSeconds _wait;
 
-        public void Initialize(float releaseDelay) =>
-            _wait = new WaitForSeconds(releaseDelay);
+        private void Awake() =>
+            _wait = new WaitForSeconds(_deathAnimationDuration);
 
         private void OnEnable()
         {
