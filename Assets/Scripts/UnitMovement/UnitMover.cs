@@ -76,13 +76,13 @@ namespace UnitMovement
             UpdateActivity();
         }
 
+        private void UpdateActivity() =>
+            _isActive = _stateSwitcher?.CurrentState.Type == ActivityState;
+
         private void UpdateEnemy()
         {
             _enemy = _enemyFindCaller.Enemy;
             _agent.stoppingDistance = _radius + (_enemy?.Radius ?? 0f);
         }
-
-        private void UpdateActivity() =>
-            _isActive = _stateSwitcher?.CurrentState.Type == ActivityState;
     }
 }
