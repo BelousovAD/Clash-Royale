@@ -1,39 +1,50 @@
+using System;
 using System.Collections.Generic;
-using EnemyObserve;
 using Reflex.Attributes;
-using Unit;
-using UnitMovement;
-using UnitRotation;
 using UnityEngine;
 
 namespace EnemyFind
 {
-    internal class EnemyFindCaller : MonoBehaviour
+    public class EnemyFindCaller : MonoBehaviour
     {
         [SerializeField] private Unit.Unit _root;
-        [SerializeField] private EnemyApproachObserver _enemyApproachObserver;
-        [SerializeField] private UnitMover _mover;
-        [SerializeField] private UnitRotator _rotator;
 
         private List<ClosestUnitFinder> _unitFinders;
         private ClosestUnitFinder _unitFinder;
+        private Unit.Unit _enemy;
+
+        public event Action EnemyFound;
+
+        public Unit.Unit Enemy
+        {
+            get
+            {
+                return _enemy;
+            }
+
+            private set
+            {
+                if (value != _enemy)
+                {
+                    _enemy = value;
+                    EnemyFound?.Invoke();
+                }
+            }
+        }
 
         [Inject]
         private void Initialize(IEnumerable<ClosestUnitFinder> closestUnitFinders) =>
             _unitFinders = new List<ClosestUnitFinder>(closestUnitFinders);
 
-        public void Initialize(UnitType typeToFind)
+        private void OnEnable()
         {
-            foreach (ClosestUnitFinder unitFinder in _unitFinders)
-            {
-                if (unitFinder.TypeToFind == typeToFind)
-                {
-                    _unitFinder = unitFinder;
-                    break;
-                }
-            }
+            _root.TypeChanged += UpdateTypeToFind;
+            UpdateTypeToFind();
         }
-        
+
+        private void OnDisable() =>
+            _root.TypeChanged -= UpdateTypeToFind;
+
         private void Update()
         {
             if (_unitFinder is null)
@@ -41,19 +52,18 @@ namespace EnemyFind
                 return;
             }
             
-            Unit.Unit closest = _unitFinder.FindClosest(_root);
-            
-            if (closest is not null)
+            Enemy = _unitFinder.FindClosest(_root);
+        }
+
+        private void UpdateTypeToFind()
+        {
+            foreach (ClosestUnitFinder unitFinder in _unitFinders)
             {
-                _enemyApproachObserver?.SetEnemy(closest.transform, closest.Radius);
-                _mover?.SetEnemy(closest.transform, closest.Radius);
-                _rotator?.SetEnemy(closest.transform);
-            }
-            else
-            {
-                _enemyApproachObserver?.SetEnemy(null, Unit.Unit.MinRadius);
-                _mover?.SetEnemy(null, Unit.Unit.MinRadius);
-                _rotator?.SetEnemy(null);
+                if (unitFinder.TypeToFind != _root.Type)
+                {
+                    _unitFinder = unitFinder;
+                    break;
+                }
             }
         }
     }
