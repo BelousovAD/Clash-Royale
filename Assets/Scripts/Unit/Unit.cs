@@ -15,6 +15,8 @@ namespace Unit
         public event Action Initialized;
         public event Action TypeChanged;
 
+        public IsTransformClose IsEnemyClose { get; } = new ();
+
         public Health Health { get; private set; }
 
         public float Radius

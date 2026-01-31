@@ -1,8 +1,6 @@
-using EnemyObserve;
 using FSM;
 using Item;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Unit
 {
@@ -10,11 +8,6 @@ namespace Unit
     {
         [SerializeField] private ItemProvider _itemProvider;
         [SerializeField] private Unit _unit;
-        [SerializeField] private NavMeshAgent _agent;
-        [SerializeField] private UnitReleaser _releaser;
-        [SerializeField] private EnemyApproachObserver _enemyApproachObserver;
-        [SerializeField] private UnitAnimationCaller _animationCaller;
-        [SerializeField][Min(0f)] private float _deathAnimationDuration;
         
         private UnitStateMachineBuilder _stateMachineBuilder;
         private StateMachine _stateMachine;
@@ -33,15 +26,9 @@ namespace Unit
             if (_itemProvider.Item is Character.Character character)
             {
                 _unit.Initialize(character.Health, character.Radius);
-                _agent.radius = character.Radius;
-                _agent.stoppingDistance = character.AttackRange;
-                _agent.speed = character.MoveSpeed;
-                _enemyApproachObserver.Initialize(character.AttackRange);
-                _animationCaller.Initialize(character.AttackSpeed);
-                _stateMachineBuilder = new UnitStateMachineBuilder(_unit, _enemyApproachObserver);
+                _stateMachineBuilder = new UnitStateMachineBuilder(_unit, _unit.IsEnemyClose);
                 _stateMachine = _stateMachineBuilder.Build();
                 _unit.Initialize(_stateMachine);
-                _releaser.Initialize(_deathAnimationDuration);
             }
         }
     }

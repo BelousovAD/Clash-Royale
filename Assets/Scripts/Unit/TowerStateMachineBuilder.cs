@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using EnemyObserve;
+using ChangeableValue;
 using FSM;
 
 namespace Unit
@@ -7,12 +7,12 @@ namespace Unit
     internal class TowerStateMachineBuilder : AbstractStateMachineBuilder
     {
         private readonly Unit _unit;
-        private readonly EnemyApproachObserver _enemyApproachObserver;
+        private readonly ChangeableValue<bool?> _isEnemyClose;
 
-        public TowerStateMachineBuilder(Unit unit, EnemyApproachObserver enemyApproachObserver)
+        public TowerStateMachineBuilder(Unit unit, ChangeableValue<bool?> isEnemyClose)
         {
             _unit = unit;
-            _enemyApproachObserver = enemyApproachObserver;
+            _isEnemyClose = isEnemyClose;
         }
 
         public override StateMachine Build()
@@ -38,8 +38,8 @@ namespace Unit
             States[StateType.Idle].AddTransitionRange(new []
             {
                 new Transition(
-                    _enemyApproachObserver.IsClose,
-                    () => _enemyApproachObserver.IsClose.Value == true,
+                    _isEnemyClose,
+                    () => _isEnemyClose.Value == true,
                     States[StateType.Attack]),
                 new Transition(
                     _unit.Health,
@@ -49,8 +49,8 @@ namespace Unit
             States[StateType.Attack].AddTransitionRange(new []
             {
                 new Transition(
-                    _enemyApproachObserver.IsClose,
-                    () => _enemyApproachObserver.IsClose.Value == null,
+                    _isEnemyClose,
+                    () => _isEnemyClose.Value == null,
                     States[StateType.Idle]),
                 new Transition(
                     _unit.Health,

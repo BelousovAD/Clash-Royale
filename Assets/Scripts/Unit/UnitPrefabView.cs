@@ -1,27 +1,43 @@
+using System;
 using Item;
 using UnityEngine;
 
 namespace Unit
 {
-    internal class UnitPrefabView : ItemView<Character.Character>
+    public class UnitPrefabView : ItemView<Character.Character>
     {
         [SerializeField] private Transform _parent;
-        [SerializeField] private UnitAnimationCaller _animationCaller;
 
-        private GameObject _prefabInstance;
+        private GameObject _instance;
+
+        public event Action InstanceChanged;
+
+        public GameObject Instance
+        {
+            get
+            {
+                return _instance;
+            }
+
+            private set
+            {
+                if (value != _instance)
+                {
+                    _instance = value;
+                    InstanceChanged?.Invoke();
+                }
+            }
+        }
 
         protected override void UpdateView()
         {
-            if (Item is null)
+            if (Item is not null)
             {
-                return;
+                Destroy(Instance);
+                Instance = Instantiate(Item.Prefab, _parent);
+                Instance.transform.localPosition = Vector3.zero;
+                Instance.transform.localRotation = Quaternion.identity;
             }
-
-            Destroy(_prefabInstance);
-            _prefabInstance = Instantiate(Item.Prefab, _parent);
-            _prefabInstance.transform.localPosition = Vector3.zero;
-            _prefabInstance.transform.localRotation = Quaternion.identity;
-            _animationCaller.Initialize(_prefabInstance.GetComponent<UnitAnimator>());
         }
     }
 }
