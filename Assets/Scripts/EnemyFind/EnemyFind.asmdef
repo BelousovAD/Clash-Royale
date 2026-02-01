@@ -2,6 +2,7 @@
     "name": "EnemyFind",
     "rootNamespace": "",
     "references": [
+        "GUID:f0e270abeff639143b0a59e976ae19de",
         "GUID:1530a967b84cfb44dbdd5e8a1989764f",
         "GUID:2a5b0d172f81f5647a2e991883642c65",
         "GUID:a5b3f51a24b3eef42bd091bdd994612e"
