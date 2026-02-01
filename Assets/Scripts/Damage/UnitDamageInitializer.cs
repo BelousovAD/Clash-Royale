@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Damage
 {
-    public class DamageInitializer : MonoBehaviour
+    public class UnitDamageInitializer : MonoBehaviour
     {
         [SerializeField] private Unit.Unit _unit;
         [SerializeField] private EnemyFindCaller _enemyFindCaller;

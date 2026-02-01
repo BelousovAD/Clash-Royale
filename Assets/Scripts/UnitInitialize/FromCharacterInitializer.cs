@@ -11,7 +11,7 @@ namespace UnitInitialize
     internal class FromCharacterInitializer : MonoBehaviour
     {
         [SerializeField] private ItemProvider _itemProvider;
-        [SerializeField] private DamageInitializer _damageInitializer;
+        [SerializeField] private UnitDamageInitializer _damageInitializer;
         [SerializeField] private EnemyApproachObserver _approachObserver;
         [SerializeField] private UnitAnimationInitializer _animationInitializer;
         [SerializeField] private NavMeshAgent _agent;
