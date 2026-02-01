@@ -1,3 +1,4 @@
+using System.Collections;
 using FSM;
 using UnityEngine;
 
@@ -6,60 +7,68 @@ namespace Damage
     internal class Damager : MonoBehaviour
     {
         private const StateType AttackState = StateType.Attack;
-        
-        [SerializeField] private UnitTrigger _unitTrigger;
+
+        [SerializeField] private Unit.Unit _unit;
 
         private float _damage;
-        private Unit.Unit _unit;
         private Unit.Unit _enemy;
+        private IStateSwitcher _stateSwitcher;
+        private WaitForSeconds _wait;
 
-        public void Initialize(Unit.Unit unit)
+        private void OnEnable()
         {
-            if (_unit is not null)
+            _unit.Initialized += Initialize;
+            Initialize();
+        }
+
+        private void OnDisable() =>
+            _unit.Initialized -= Initialize;
+
+        public void Initialize()
+        {
+            if (_stateSwitcher is not null)
             {
                 Unsubscribe();
             }
 
-            _unit = unit;
+            _stateSwitcher = _unit.StateSwitcher;
 
-            if (_unit is not null)
+            if (_stateSwitcher is not null)
             {
                 Subscribe();
             }
 
-            ChangeTriggerActivity();
+            Damage();
         }
 
         public void SetDamage(float damage) =>
             _damage = damage;
 
+        public void SetDelay(float delay) =>
+            _wait = new WaitForSeconds(delay);
+
         public void SetEnemy(Unit.Unit enemy) =>
             _enemy = enemy;
 
-        private void Subscribe()
-        {
-            _unitTrigger.Changed += Damage;
-            _unit.StateSwitcher.StateSwitched += ChangeTriggerActivity;
-        }
+        private void Subscribe() =>
+            _stateSwitcher.StateSwitched += Damage;
 
-        private void Unsubscribe()
-        {
-            _unitTrigger.Changed -= Damage;
-            _unit.StateSwitcher.StateSwitched -= ChangeTriggerActivity;
-        }
-
-        private void ChangeTriggerActivity() =>
-            _unitTrigger.enabled = _unit.StateSwitcher.CurrentState.Type is AttackState;
-
+        private void Unsubscribe() =>
+            _stateSwitcher.StateSwitched -= Damage;
+        
         private void Damage()
         {
-            Unit.Unit detectedEnemy = _unitTrigger.Value;
-
-            if (detectedEnemy is not null && detectedEnemy != _unit && detectedEnemy == _enemy)
+            if (_stateSwitcher is not null && _stateSwitcher.CurrentState.Type == AttackState)
             {
-                detectedEnemy.Health.TakeDamage(_damage);
-                _unitTrigger.enabled = false;
+                StartCoroutine(DamageAfterDelay());
             }
+        }
+
+        private IEnumerator DamageAfterDelay()
+        {
+            yield return _wait;
+            
+            _enemy.Health.TakeDamage(_damage);
         }
     }
 }

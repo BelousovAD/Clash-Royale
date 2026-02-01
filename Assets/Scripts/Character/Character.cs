@@ -21,6 +21,8 @@ namespace Character
         public GameObject Prefab => Data.Prefab;
 
         public float Radius => Data.Radius;
+
+        public float DamageDelay => Data.DamageDelay;
         
         private new CharacterData Data => base.Data as CharacterData;
     }

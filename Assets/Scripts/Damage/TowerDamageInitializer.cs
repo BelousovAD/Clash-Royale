@@ -11,7 +11,6 @@ namespace Damage
         [SerializeField] private CharacterData _data;
         [SerializeField] private Damager _damager;
 
-        private float _damage;
         private Unit.Unit _enemy;
 
         private void OnEnable()
@@ -27,14 +26,14 @@ namespace Damage
         private void UpdateEnemy()
         {
             _enemy = _enemyFindCaller.Enemy;
-            _damager?.SetEnemy(_enemy);
+            _damager.SetEnemy(_enemy);
         }
 
         private void Initialize()
         {
-            _damager.SetDamage(_damage);
+            _damager.SetDamage(_data.Damage);
+            _damager.SetDelay(_data.DamageDelay);
             _damager.SetEnemy(_enemy);
-            _damager.Initialize(_unit);
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Character
         [SerializeField][Min(0f)] private float _radius = 0.5f;
         [SerializeField][Min(0)] private int _health;
         [SerializeField][Min(0)] private int _damage;
+        [SerializeField][Min(0f)] private float _damageDelay; 
         [SerializeField][Min(0f)] private float _attackSpeed = 1f;
         [SerializeField][Min(0f)] private float _moveSpeed = 1f;
         [SerializeField][Min(0f)] private float _attackRange = 1f;
@@ -27,5 +28,7 @@ namespace Character
         public GameObject Prefab => _prefab;
         
         public float Radius => _radius;
+        
+        public float DamageDelay => _damageDelay;
     }
 }

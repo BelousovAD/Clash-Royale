@@ -31,6 +31,7 @@ namespace UnitInitialize
             if (_itemProvider.Item is Character.Character character)
             {
                 _damageInitializer.UpdateDamage(character.Damage);
+                _damageInitializer.UpdateDamageDelay(character.DamageDelay);
                 _approachObserver.Initialize(character.AttackRange);
                 _animationInitializer.UpdateAttackSpeed(character.AttackSpeed);
                 _agent.radius = character.Radius;

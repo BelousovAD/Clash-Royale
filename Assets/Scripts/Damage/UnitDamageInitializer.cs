@@ -9,10 +9,11 @@ namespace Damage
         [SerializeField] private Unit.Unit _unit;
         [SerializeField] private EnemyFindCaller _enemyFindCaller;
         [SerializeField] private UnitPrefabView _unitPrefabView;
+        [SerializeField] private Damager _damager;
 
         private float _damage;
+        private float _delay;
         private Unit.Unit _enemy;
-        private Damager _damager;
 
         private void OnEnable()
         {
@@ -31,23 +32,28 @@ namespace Damage
         public void UpdateDamage(float damage)
         {
             _damage = damage;
-            _damager?.SetDamage(_damage);
+            _damager.SetDamage(_damage);
+        }
+
+        public void UpdateDamageDelay(float delay)
+        {
+            _delay = delay;
+            _damager.SetDelay(_delay);
         }
 
         private void UpdateEnemy()
         {
             _enemy = _enemyFindCaller.Enemy;
-            _damager?.SetEnemy(_enemy);
+            _damager.SetEnemy(_enemy);
         }
 
         private void Initialize()
         {
             if (_unitPrefabView.Instance is not null)
             {
-                _damager = _unitPrefabView.Instance.GetComponent<Damager>();
                 _damager.SetDamage(_damage);
+                _damager.SetDelay(_delay);
                 _damager.SetEnemy(_enemy);
-                _damager.Initialize(_unit);
             }
         }
     }
