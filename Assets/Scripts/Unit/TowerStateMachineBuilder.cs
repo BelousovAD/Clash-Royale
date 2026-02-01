@@ -42,13 +42,13 @@ namespace Unit
             States[StateType.Idle].AddTransitionRange(new []
             {
                 new Transition(
-                    _isEnemyClose,
-                    () => _isEnemyClose.Value == true,
-                    States[StateType.Attack]),
-                new Transition(
                     _unit.Health,
                     () => _unit.Health.IsDead,
                     States[StateType.Die]),
+                new Transition(
+                    _isEnemyClose,
+                    () => _isEnemyClose.Value == true,
+                    States[StateType.Attack]),
             });
             States[StateType.Attack].AddTransitionRange(new []
             {

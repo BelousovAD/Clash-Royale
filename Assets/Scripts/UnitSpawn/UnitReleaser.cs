@@ -1,4 +1,5 @@
 using System.Collections;
+using FSM;
 using Spawn;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ namespace UnitSpawn
 {
     internal class UnitReleaser : MonoBehaviour
     {
+        private const StateType DieState = StateType.Die;
+        
         [SerializeField] private Unit.Unit _unit;
         [SerializeField] private PooledComponent _pooledComponent;
         [SerializeField][Min(0f)] private float _deathAnimationDuration;
@@ -26,10 +29,10 @@ namespace UnitSpawn
         
         private void Subscribe()
         {
-            if (_unit.Health is not null)
+            if (_unit.StateSwitcher is not null)
             {
                 _unit.Initialized -= Subscribe;
-                _unit.Health.Changed += Die;
+                _unit.StateSwitcher.StateSwitched += Die;
                 Die();
             }
         }
@@ -38,15 +41,15 @@ namespace UnitSpawn
         {
             _unit.Initialized -= Subscribe;
 
-            if (_unit.Health is not null)
+            if (_unit.StateSwitcher is not null)
             {
-                _unit.Health.Changed -= Die;
+                _unit.StateSwitcher.StateSwitched -= Die;
             }
         }
         
         private void Die()
         {
-            if (_unit.Health.IsDead)
+            if (_unit.StateSwitcher.CurrentState.Type == DieState)
             {
                 StartCoroutine(DieAfterDelay());
             }

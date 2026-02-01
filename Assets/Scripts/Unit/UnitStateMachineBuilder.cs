@@ -42,6 +42,10 @@ namespace Unit
             States[StateType.Idle].AddTransitionRange(new []
             {
                 new Transition(
+                    _unit.Health,
+                    () => _unit.Health.IsDead,
+                    States[StateType.Die]),
+                new Transition(
                     _isEnemyClose,
                     () => _isEnemyClose.Value == false,
                     States[StateType.Move]),
@@ -49,10 +53,6 @@ namespace Unit
                     _isEnemyClose,
                     () => _isEnemyClose.Value == true,
                     States[StateType.Attack]),
-                new Transition(
-                    _unit.Health,
-                    () => _unit.Health.IsDead,
-                    States[StateType.Die]),
             });
             States[StateType.Attack].AddTransitionRange(new []
             {
@@ -64,6 +64,10 @@ namespace Unit
             States[StateType.Move].AddTransitionRange(new []
             {
                 new Transition(
+                    _unit.Health,
+                    () => _unit.Health.IsDead,
+                    States[StateType.Die]),
+                new Transition(
                     _isEnemyClose,
                     () => _isEnemyClose.Value == true,
                     States[StateType.Attack]),
@@ -71,10 +75,6 @@ namespace Unit
                     _isEnemyClose,
                     () => _isEnemyClose.Value == null,
                     States[StateType.Idle]),
-                new Transition(
-                    _unit.Health,
-                    () => _unit.Health.IsDead,
-                    States[StateType.Die]),
             });
         }
     }
