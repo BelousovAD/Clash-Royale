@@ -68,6 +68,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4b67b1dfdfc8e6749a6342b04a0141d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4585274252859373723}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4b67b1dfdfc8e6749a6342b04a0141d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2768028334039829626}
   m_SourcePrefab: {fileID: 100100000, guid: 4b67b1dfdfc8e6749a6342b04a0141d2, type: 3}
 --- !u!1 &3169998795248817703 stripped
 GameObject:
@@ -224,3 +227,16 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 9ff4559f19e8c1343a434d690c5b59ae, type: 3}
   - Key: 16
     Clip: {fileID: 8300000, guid: e72e8ae1c8ce80248bda19c41e672673, type: 3}
+--- !u!114 &2768028334039829626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169998795248817703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75a5e1e6e8a4bd297f64e238544b247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unitTrigger: {fileID: 0}

@@ -12,7 +12,7 @@ namespace Damage
 
         private float _damage;
         private Unit.Unit _enemy;
-        private MeleeDamager _damager;
+        private Damager _damager;
 
         private void OnEnable()
         {
@@ -44,7 +44,7 @@ namespace Damage
         {
             if (_unitPrefabView.Instance is not null)
             {
-                _damager = _unitPrefabView.Instance.GetComponent<MeleeDamager>();
+                _damager = _unitPrefabView.Instance.GetComponent<Damager>();
                 _damager.SetDamage(_damage);
                 _damager.SetEnemy(_enemy);
                 _damager.Initialize(_unit);

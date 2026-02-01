@@ -302,11 +302,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4079379762127712206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 234fb3b57c7047feb3588c34eebffbb9, type: 3}
+  m_Script: {fileID: 11500000, guid: f75a5e1e6e8a4bd297f64e238544b247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 30
-  _playerTrigger: {fileID: 551537075143993351}
+  _unitTrigger: {fileID: 551537075143993351}
 --- !u!4 &5533377738894196364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8689473563730684947, guid: 73c67b433e5335742b561663583c9beb, type: 3}

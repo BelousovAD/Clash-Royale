@@ -9,7 +9,7 @@ namespace Damage
         [SerializeField] private Unit.Unit _unit;
         [SerializeField] private EnemyFindCaller _enemyFindCaller;
         [SerializeField] private CharacterData _data;
-        [SerializeField] private MeleeDamager _damager;
+        [SerializeField] private Damager _damager;
 
         private float _damage;
         private Unit.Unit _enemy;

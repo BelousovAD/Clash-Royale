@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Damage
 {
-    internal class MeleeDamager : MonoBehaviour
+    internal class Damager : MonoBehaviour
     {
         private const StateType AttackState = StateType.Attack;
         
