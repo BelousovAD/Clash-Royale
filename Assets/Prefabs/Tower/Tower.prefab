@@ -64,6 +64,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4641921192881626040}
+  - {fileID: 4653801771723642198}
   - {fileID: 2141944550661460750}
   - {fileID: 7763402248736724179}
   - {fileID: 8484848741417495593}
@@ -73,6 +74,51 @@ Transform:
   - {fileID: 1466689734340838353}
   m_Father: {fileID: 6385766777773750107}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2307098205887162351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4653801771723642198}
+  - component: {fileID: 8142743619562582270}
+  m_Layer: 0
+  m_Name: Damager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4653801771723642198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2307098205887162351}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8769503628437004826}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8142743619562582270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2307098205887162351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75a5e1e6e8a4bd297f64e238544b247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unit: {fileID: 1892665422366850576}
 --- !u!1 &2445058738239116404
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +351,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data: {fileID: 0}
   _approachObserver: {fileID: 9178673441194706742}
-  _animationInitializer: {fileID: 0}
 --- !u!1 &7499190118259187465
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +490,7 @@ MonoBehaviour:
   _unit: {fileID: 1892665422366850576}
   _enemyFindCaller: {fileID: 3432630376559732559}
   _data: {fileID: 0}
-  _damager: {fileID: 0}
+  _damager: {fileID: 8142743619562582270}
 --- !u!1 &8434097448426733127
 GameObject:
   m_ObjectHideFlags: 0
