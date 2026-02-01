@@ -9,7 +9,7 @@ namespace UnitAnimation
         [SerializeField] private CharacterData _data;
         [SerializeField] private UnitAnimator _unitAnimator;
         
-        private void OnEnable() =>
+        private void Start() =>
             Initialize();
 
         private void Initialize()

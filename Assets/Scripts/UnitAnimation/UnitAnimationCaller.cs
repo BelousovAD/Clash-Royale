@@ -51,7 +51,7 @@ namespace UnitAnimation
 
         private void CallAnimation()
         {
-            if (_unitAnimator is null)
+            if (_unitAnimator is null || _stateSwitcher is null)
             {
                 return;
             }

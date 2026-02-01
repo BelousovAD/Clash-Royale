@@ -9,7 +9,7 @@ namespace UnitInitialize
         [SerializeField] private CharacterData _data;
         [SerializeField] private EnemyApproachObserver _approachObserver;
 
-        private void OnEnable() =>
+        private void Start() =>
             Initialize();
 
         private void Initialize() =>
