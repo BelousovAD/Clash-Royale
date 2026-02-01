@@ -13,15 +13,24 @@ namespace FSM
             _parameterToCheck = parameterToCheck;
             _condition = condition;
             NextState = nextState;
-            _parameterToCheck.Changed += CheckCondition;
+
+            if (_parameterToCheck is not null)
+            {
+                _parameterToCheck.Changed += CheckCondition;
+            }
         }
 
         public event Action<Transition> ConditionMet;
         
         public State NextState { get; }
 
-        public void Dispose() =>
-            _parameterToCheck.Changed -= CheckCondition;
+        public void Dispose()
+        {
+            if (_parameterToCheck is not null)
+            {
+                _parameterToCheck.Changed -= CheckCondition;
+            }
+        }
 
         public void CheckCondition()
         {

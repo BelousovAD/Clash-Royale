@@ -20,7 +20,7 @@ namespace Unit
         {
             _unit.Initialize(_data.Health, _data.Radius);
             _unit.SetType(_type);
-            _stateMachineBuilder = new TowerStateMachineBuilder(_unit, _unit.IsEnemyClose);
+            _stateMachineBuilder = new TowerStateMachineBuilder(_unit, _unit.IsEnemyClose, _data.AttackSpeed);
             _stateMachine = _stateMachineBuilder.Build();
             _unit.Initialize(_stateMachine);
         }

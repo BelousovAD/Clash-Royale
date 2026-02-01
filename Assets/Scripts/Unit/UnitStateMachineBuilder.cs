@@ -7,11 +7,15 @@ namespace Unit
     {
         private readonly Unit _unit;
         private readonly ChangeableValue.ChangeableValue<bool?> _isEnemyClose;
+        private readonly float _attackSpeed;
 
-        public UnitStateMachineBuilder(Unit unit, ChangeableValue.ChangeableValue<bool?> isEnemyClose)
+        public UnitStateMachineBuilder(Unit unit,
+            ChangeableValue.ChangeableValue<bool?> isEnemyClose,
+            float attackSpeed)
         {
             _unit = unit;
             _isEnemyClose = isEnemyClose;
+            _attackSpeed = attackSpeed;
         }
 
         public override StateMachine Build()
@@ -27,7 +31,7 @@ namespace Unit
             States = new Dictionary<StateType, State>
             {
                 [StateType.Idle] = new (StateType.Idle),
-                [StateType.Attack] = new (StateType.Attack),
+                [StateType.Attack] = new (StateType.Attack, 1f / _attackSpeed),
                 [StateType.Move] = new (StateType.Move),
                 [StateType.Die] = new (StateType.Die),
             };
@@ -53,17 +57,9 @@ namespace Unit
             States[StateType.Attack].AddTransitionRange(new []
             {
                 new Transition(
-                    _isEnemyClose,
-                    () => _isEnemyClose.Value == false,
-                    States[StateType.Move]),
-                new Transition(
-                    _isEnemyClose,
-                    () => _isEnemyClose.Value == null,
+                    null,
+                    () => true,
                     States[StateType.Idle]),
-                new Transition(
-                    _unit.Health,
-                    () => _unit.Health.IsDead,
-                    States[StateType.Die]),
             });
             States[StateType.Move].AddTransitionRange(new []
             {

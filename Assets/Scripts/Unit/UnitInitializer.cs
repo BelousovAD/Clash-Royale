@@ -26,7 +26,7 @@ namespace Unit
             if (_itemProvider.Item is Character.Character character)
             {
                 _unit.Initialize(character.Health, character.Radius);
-                _stateMachineBuilder = new UnitStateMachineBuilder(_unit, _unit.IsEnemyClose);
+                _stateMachineBuilder = new UnitStateMachineBuilder(_unit, _unit.IsEnemyClose, character.AttackSpeed);
                 _stateMachine = _stateMachineBuilder.Build();
                 _unit.Initialize(_stateMachine);
             }
