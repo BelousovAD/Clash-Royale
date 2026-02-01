@@ -1,0 +1,44 @@
+using Damage;
+using EnemyObserve;
+using Item;
+using UnitAnimation;
+using UnitMovement;
+using UnityEngine;
+using UnityEngine.AI;
+
+namespace UnitInitialize
+{
+    internal class FromCharacterInitializer : MonoBehaviour
+    {
+        [SerializeField] private ItemProvider _itemProvider;
+        [SerializeField] private UnitDamageInitializer _damageInitializer;
+        [SerializeField] private EnemyApproachObserver _approachObserver;
+        [SerializeField] private UnitAnimationInitializer _animationInitializer;
+        [SerializeField] private NavMeshAgent _agent;
+        [SerializeField] private UnitMover _mover;
+
+        private void OnEnable()
+        {
+            _itemProvider.Changed += Initialize;
+            Initialize();
+        }
+
+        private void OnDisable() =>
+            _itemProvider.Changed -= Initialize;
+
+        private void Initialize()
+        {
+            if (_itemProvider.Item is Character.Character character)
+            {
+                _damageInitializer.UpdateDamage(character.Damage);
+                _damageInitializer.UpdateDamageDelay(character.DamageDelay);
+                _approachObserver.Initialize(character.AttackRange);
+                _animationInitializer.UpdateAttackSpeed(character.AttackSpeed);
+                _agent.radius = character.Radius;
+                _agent.stoppingDistance = character.AttackRange;
+                _agent.speed = character.MoveSpeed;
+                _mover.UpdateRadius(character.Radius);
+            }
+        }
+    }
+}

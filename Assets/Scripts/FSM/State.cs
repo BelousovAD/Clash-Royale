@@ -10,10 +10,10 @@ namespace FSM
         private const float MinBusyTime = 0f;
         
         private readonly List<Transition> _transitions = new ();
+        private readonly float _busyTime;
         private IStateSwitcher _stateSwitcher;
         private bool _isBusy;
-        private bool _isFirstUpdate;
-        private float _busyTime;
+        private float _countdown;
 
         public State(StateType type, float busyTime = MinBusyTime)
         {
@@ -50,39 +50,28 @@ namespace FSM
 
         public virtual void Enter()
         {
-            if (Mathf.Approximately(_busyTime, MinBusyTime) == false)
-            {
-                IsBusy = true;
-            }
-            
+            IsBusy = true;
+            _countdown = _busyTime;
             SubscribeToTransitions();
             BusynessChanged += CheckTransitions;
-            _isFirstUpdate = true;
         }
 
         public virtual void Exit()
         {
-            _isFirstUpdate = true;
             BusynessChanged -= CheckTransitions;
             UnsubscribeFromTransitions();
         }
 
         public virtual void Update(float deltaTime)
         {
-            if (_isFirstUpdate)
+            if (_countdown > MinBusyTime)
             {
-                CheckTransitions();
-                _isFirstUpdate = false;
+                _countdown -= deltaTime;
             }
             
-            if (_busyTime > MinBusyTime)
+            if (_countdown <= MinBusyTime)
             {
-                _busyTime -= deltaTime;
-                
-                if (_busyTime <= MinBusyTime)
-                {
-                    IsBusy = false;
-                }
+                IsBusy = false;
             }
         }
 

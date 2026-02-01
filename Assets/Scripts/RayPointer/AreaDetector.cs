@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace RayPointer
 {
-    public class AreaIdentifier : MonoBehaviour
+    public class AreaDetector : MonoBehaviour
     {
         private const ContainerType ContainerType = Item.ContainerType.HandCard;
 

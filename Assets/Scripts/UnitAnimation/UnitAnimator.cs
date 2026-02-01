@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Unit
+namespace UnitAnimation
 {
     [RequireComponent(typeof(Animator))]
     internal class UnitAnimator : MonoBehaviour

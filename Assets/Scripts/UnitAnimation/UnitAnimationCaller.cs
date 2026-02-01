@@ -2,65 +2,61 @@ using System;
 using FSM;
 using UnityEngine;
 
-namespace Unit
+namespace UnitAnimation
 {
     internal class UnitAnimationCaller : MonoBehaviour
     {
-        [SerializeField] private Unit _unit;
+        [SerializeField] private Unit.Unit _unit;
         
         private UnitAnimator _unitAnimator;
-        private float _attackSpeed = 1f;
+        private IStateSwitcher _stateSwitcher;
 
         public void Initialize(UnitAnimator unitAnimator)
         {
             _unitAnimator = unitAnimator;
-            _unitAnimator.SetAttackSpeed(_attackSpeed);
             CallAnimation();
-        }
-
-        public void Initialize(float attackSpeed)
-        {
-            _attackSpeed = attackSpeed;
-            _unitAnimator?.SetAttackSpeed(_attackSpeed);
         }
 
         private void OnEnable()
         {
-            _unit.Initialized += Subscribe;
-            Subscribe();
+            _unit.Initialized += UpdateSubscriptions;
+            UpdateSubscriptions();
         }
 
         private void OnDisable() =>
-            Unsubscribe();
-        
-        private void Subscribe()
-        {
-            if (_unit.StateSwitcher is not null)
-            {
-                _unit.Initialized -= Subscribe;
-                _unit.StateSwitcher.StateSwitched += CallAnimation;
-                CallAnimation();
-            }
-        }
+            _unit.Initialized -= UpdateSubscriptions;
 
-        private void Unsubscribe()
-        {
-            _unit.Initialized -= Subscribe;
+        private void Subscribe() =>
+            _unit.StateSwitcher.StateSwitched += CallAnimation;
 
-            if (_unit.StateSwitcher is not null)
+        private void Unsubscribe() =>
+            _unit.StateSwitcher.StateSwitched -= CallAnimation;
+
+        private void UpdateSubscriptions()
+        {
+            if (_stateSwitcher is not null)
             {
-                _unit.StateSwitcher.StateSwitched -= CallAnimation;
+                Unsubscribe();
             }
+
+            _stateSwitcher = _unit.StateSwitcher;
+
+            if (_stateSwitcher is not null)
+            {
+                Subscribe();
+            }
+            
+            CallAnimation();
         }
 
         private void CallAnimation()
         {
-            if (_unitAnimator is null)
+            if (_unitAnimator is null || _stateSwitcher is null)
             {
                 return;
             }
             
-            switch (_unit.StateSwitcher.CurrentState.Type)
+            switch (_stateSwitcher.CurrentState.Type)
             {
                 case StateType.Idle:
                     _unitAnimator.Play(AnimationKey.Idle);

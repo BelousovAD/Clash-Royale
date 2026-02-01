@@ -1,18 +1,22 @@
 using System.Collections;
+using FSM;
 using Spawn;
 using UnityEngine;
 
-namespace Unit
+namespace UnitSpawn
 {
     internal class UnitReleaser : MonoBehaviour
     {
-        [SerializeField] private Unit _unit;
+        private const StateType DieState = StateType.Die;
+        
+        [SerializeField] private Unit.Unit _unit;
         [SerializeField] private PooledComponent _pooledComponent;
+        [SerializeField][Min(0f)] private float _deathAnimationDuration;
         
         private WaitForSeconds _wait;
 
-        public void Initialize(float releaseDelay) =>
-            _wait = new WaitForSeconds(releaseDelay);
+        private void Awake() =>
+            _wait = new WaitForSeconds(_deathAnimationDuration);
 
         private void OnEnable()
         {
@@ -25,10 +29,10 @@ namespace Unit
         
         private void Subscribe()
         {
-            if (_unit.Health is not null)
+            if (_unit.StateSwitcher is not null)
             {
                 _unit.Initialized -= Subscribe;
-                _unit.Health.Changed += Die;
+                _unit.StateSwitcher.StateSwitched += Die;
                 Die();
             }
         }
@@ -37,15 +41,15 @@ namespace Unit
         {
             _unit.Initialized -= Subscribe;
 
-            if (_unit.Health is not null)
+            if (_unit.StateSwitcher is not null)
             {
-                _unit.Health.Changed -= Die;
+                _unit.StateSwitcher.StateSwitched -= Die;
             }
         }
         
         private void Die()
         {
-            if (_unit.Health.IsDead)
+            if (_unit.StateSwitcher.CurrentState.Type == DieState)
             {
                 StartCoroutine(DieAfterDelay());
             }

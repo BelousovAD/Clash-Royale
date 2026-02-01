@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using EnemyObserve;
 using FSM;
 
 namespace Unit
@@ -7,12 +6,16 @@ namespace Unit
     internal class UnitStateMachineBuilder : AbstractStateMachineBuilder
     {
         private readonly Unit _unit;
-        private readonly EnemyApproachObserver _enemyApproachObserver;
+        private readonly ChangeableValue.ChangeableValue<bool?> _isEnemyClose;
+        private readonly float _attackSpeed;
 
-        public UnitStateMachineBuilder(Unit unit, EnemyApproachObserver enemyApproachObserver)
+        public UnitStateMachineBuilder(Unit unit,
+            ChangeableValue.ChangeableValue<bool?> isEnemyClose,
+            float attackSpeed)
         {
             _unit = unit;
-            _enemyApproachObserver = enemyApproachObserver;
+            _isEnemyClose = isEnemyClose;
+            _attackSpeed = attackSpeed;
         }
 
         public override StateMachine Build()
@@ -28,7 +31,7 @@ namespace Unit
             States = new Dictionary<StateType, State>
             {
                 [StateType.Idle] = new (StateType.Idle),
-                [StateType.Attack] = new (StateType.Attack),
+                [StateType.Attack] = new (StateType.Attack, 1f / _attackSpeed),
                 [StateType.Move] = new (StateType.Move),
                 [StateType.Die] = new (StateType.Die),
             };
@@ -39,47 +42,39 @@ namespace Unit
             States[StateType.Idle].AddTransitionRange(new []
             {
                 new Transition(
-                    _enemyApproachObserver.IsClose,
-                    () => _enemyApproachObserver.IsClose.Value == false,
-                    States[StateType.Move]),
-                new Transition(
-                    _enemyApproachObserver.IsClose,
-                    () => _enemyApproachObserver.IsClose.Value == true,
-                    States[StateType.Attack]),
-                new Transition(
                     _unit.Health,
                     () => _unit.Health.IsDead,
                     States[StateType.Die]),
+                new Transition(
+                    _isEnemyClose,
+                    () => _isEnemyClose.Value == false,
+                    States[StateType.Move]),
+                new Transition(
+                    _isEnemyClose,
+                    () => _isEnemyClose.Value == true,
+                    States[StateType.Attack]),
             });
             States[StateType.Attack].AddTransitionRange(new []
             {
                 new Transition(
-                    _enemyApproachObserver.IsClose,
-                    () => _enemyApproachObserver.IsClose.Value == false,
-                    States[StateType.Move]),
-                new Transition(
-                    _enemyApproachObserver.IsClose,
-                    () => _enemyApproachObserver.IsClose.Value == null,
+                    null,
+                    () => true,
                     States[StateType.Idle]),
-                new Transition(
-                    _unit.Health,
-                    () => _unit.Health.IsDead,
-                    States[StateType.Die]),
             });
             States[StateType.Move].AddTransitionRange(new []
             {
                 new Transition(
-                    _enemyApproachObserver.IsClose,
-                    () => _enemyApproachObserver.IsClose.Value == true,
-                    States[StateType.Attack]),
-                new Transition(
-                    _enemyApproachObserver.IsClose,
-                    () => _enemyApproachObserver.IsClose.Value == null,
-                    States[StateType.Idle]),
-                new Transition(
                     _unit.Health,
                     () => _unit.Health.IsDead,
                     States[StateType.Die]),
+                new Transition(
+                    _isEnemyClose,
+                    () => _isEnemyClose.Value == true,
+                    States[StateType.Attack]),
+                new Transition(
+                    _isEnemyClose,
+                    () => _isEnemyClose.Value == null,
+                    States[StateType.Idle]),
             });
         }
     }

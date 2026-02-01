@@ -1,4 +1,4 @@
-namespace Unit
+namespace UnitAnimation
 {
     internal enum AnimationKey
     {

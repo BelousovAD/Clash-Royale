@@ -86,6 +86,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1875510420390500010, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875510420390500010, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999609537417632348, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: _data
+      value: 
+      objectReference: {fileID: 11400000, guid: f03d24dfdaa8d7a45b17eba58899c2e0, type: 2}
     - target: {fileID: 3352505941113776179, guid: c79c0982562143e459e5b64dc6678692, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.6
@@ -170,6 +182,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6441105254411325174, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: _data
+      value: 
+      objectReference: {fileID: 11400000, guid: f03d24dfdaa8d7a45b17eba58899c2e0, type: 2}
+    - target: {fileID: 6441105254411325174, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: _unitAnimator
+      value: 
+      objectReference: {fileID: 7857045167439575921}
     - target: {fileID: 6816685067778185671, guid: c79c0982562143e459e5b64dc6678692, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -178,6 +198,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6980660163648359257, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: _data
+      value: 
+      objectReference: {fileID: 11400000, guid: f03d24dfdaa8d7a45b17eba58899c2e0, type: 2}
     - target: {fileID: 7410772688288151855, guid: c79c0982562143e459e5b64dc6678692, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.1

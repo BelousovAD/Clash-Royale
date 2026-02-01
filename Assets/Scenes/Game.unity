@@ -11888,6 +11888,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4114268852526130, guid: 8c92b343afee97e42b3af77116a91ed2, type: 3}
   m_PrefabInstance: {fileID: 1029205562}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1035964445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1035964447}
+  - component: {fileID: 1035964446}
+  m_Layer: 0
+  m_Name: AreaDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1035964446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035964445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e800ac864b4474b8731e095a86a4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1035964447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035964445}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1036023507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12969,6 +13013,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2839469361617490714, guid: 72d4eda60125d4c40aedca968065f50f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785153101518900401, guid: 72d4eda60125d4c40aedca968065f50f, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7754094231333535075, guid: 72d4eda60125d4c40aedca968065f50f, type: 3}
@@ -14351,7 +14399,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _indicator: {fileID: 1180866970}
-  _areaIdentifier: {fileID: 1702417879}
+  _areaDetector: {fileID: 1035964446}
 --- !u!1001 &1371138552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16348,7 +16396,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1702417877}
   - component: {fileID: 1702417878}
-  - component: {fileID: 1702417879}
   m_Layer: 0
   m_Name: DropCardAreaSwitcher
   m_TagString: Untagged
@@ -16387,18 +16434,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bottomArea: {fileID: 714628936}
   _topArea: {fileID: 1309151961}
---- !u!114 &1702417879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702417876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85e800ac864b4474b8731e095a86a4c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1703568766
 GameObject:
   m_ObjectHideFlags: 0
@@ -21063,3 +21098,4 @@ SceneRoots:
   - {fileID: 539132955}
   - {fileID: 689005076}
   - {fileID: 1180866967}
+  - {fileID: 1035964447}
