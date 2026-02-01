@@ -502,6 +502,7 @@ GameObject:
   - component: {fileID: 6385766777773750107}
   - component: {fileID: 4424768192184601623}
   - component: {fileID: 1892665422366850576}
+  - component: {fileID: 8114401188269079798}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -562,6 +563,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59ca1ec05c049068ba302a806fe891c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!208 &8114401188269079798
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434097448426733127}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.8, y: 0.00001, z: 0.8}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.05, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1537519439564161848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -708,32 +725,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2310191530833710877, guid: 1330c399cb30d9f40828677280df442f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8887770711737452520}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1330c399cb30d9f40828677280df442f, type: 3}
---- !u!1 &329608729090913764 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2310191530833710877, guid: 1330c399cb30d9f40828677280df442f, type: 3}
-  m_PrefabInstance: {fileID: 2638110550925605625}
-  m_PrefabAsset: {fileID: 0}
---- !u!208 &8887770711737452520
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329608729090913764}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 1.4, y: 0.00001, z: 1.4}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!4 &6816685067778185671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8792655272142283582, guid: 1330c399cb30d9f40828677280df442f, type: 3}
