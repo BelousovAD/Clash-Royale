@@ -11,11 +11,11 @@ namespace Animator
 
         public void SendProjectile()
         {
-            GameObject projectile = Instantiate(_projectile, _spawnPosition.position, Quaternion.identity) as GameObject;
+            GameObject projectile = Instantiate(_projectile, _spawnPosition.position, Quaternion.identity);
             
-            if (projectile.TryGetComponent<Rigidbody>(out Rigidbody rigidbody))
+            if (projectile.TryGetComponent(out Rigidbody body))
             {
-                rigidbody.AddForce(projectile.transform.forward * Speed);
+                body.AddForce(projectile.transform.forward * Speed);
             }
         }
     }
