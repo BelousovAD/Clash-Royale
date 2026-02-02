@@ -36,6 +36,10 @@ PrefabInstance:
       propertyPath: _animator
       value: 
       objectReference: {fileID: 8043588654323946035}
+    - target: {fileID: 3811951686479117953, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: _type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5144053244172510011, guid: c79c0982562143e459e5b64dc6678692, type: 3}
       propertyPath: _transformToRotate
       value: 

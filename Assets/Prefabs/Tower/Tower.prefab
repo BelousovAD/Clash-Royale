@@ -73,6 +73,7 @@ Transform:
   - {fileID: 7258106793977907294}
   - {fileID: 1922871620532849393}
   - {fileID: 6817273035082744125}
+  - {fileID: 498069114985830865}
   m_Father: {fileID: 6385766777773750107}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2307098205887162351
@@ -259,6 +260,52 @@ MonoBehaviour:
   _unit: {fileID: 1892665422366850576}
   _transformFrom: {fileID: 6385766777773750107}
   _enemyFindCaller: {fileID: 3432630376559732559}
+--- !u!1 &4189984482028821386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 498069114985830865}
+  - component: {fileID: 3811951686479117953}
+  m_Layer: 0
+  m_Name: CrownCatcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &498069114985830865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189984482028821386}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8769503628437004826}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3811951686479117953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189984482028821386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd430241481e44c78cfb6d5079b22ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tower: {fileID: 1892665422366850576}
+  _type: 0
 --- !u!1 &5791224505392571367
 GameObject:
   m_ObjectHideFlags: 0
