@@ -5,6 +5,8 @@ namespace Unit
 {
     internal class UnitStateMachineBuilder : AbstractStateMachineBuilder
     {
+        private const float Second = 1f;
+        
         private readonly Unit _unit;
         private readonly ChangeableValue.ChangeableValue<bool?> _isEnemyClose;
         private readonly float _attackSpeed;
@@ -31,7 +33,7 @@ namespace Unit
             States = new Dictionary<StateType, State>
             {
                 [StateType.Idle] = new (StateType.Idle),
-                [StateType.Attack] = new (StateType.Attack, 1f / _attackSpeed),
+                [StateType.Attack] = new (StateType.Attack, Second / _attackSpeed),
                 [StateType.Move] = new (StateType.Move),
                 [StateType.Die] = new (StateType.Die),
             };

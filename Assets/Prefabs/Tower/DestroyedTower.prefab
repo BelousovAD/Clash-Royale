@@ -194,9 +194,45 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 8368295926522934696, guid: e71bed43b849646488b2b8f585380f5d, type: 2}
+    - target: {fileID: 198024622174194030, guid: 9eb3b1a11c610cd418079f132e291197, type: 3}
+      propertyPath: useUnscaledTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198041362228347862, guid: 9eb3b1a11c610cd418079f132e291197, type: 3}
+      propertyPath: useUnscaledTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198045293674691134, guid: 9eb3b1a11c610cd418079f132e291197, type: 3}
+      propertyPath: useUnscaledTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198490895825381100, guid: 9eb3b1a11c610cd418079f132e291197, type: 3}
+      propertyPath: useUnscaledTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198527703373257454, guid: 9eb3b1a11c610cd418079f132e291197, type: 3}
+      propertyPath: useUnscaledTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198717222519016466, guid: 9eb3b1a11c610cd418079f132e291197, type: 3}
+      propertyPath: useUnscaledTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 198717222519016466, guid: 9eb3b1a11c610cd418079f132e291197, type: 3}
       propertyPath: ClampVelocityModule.magnitude.scalar
       value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198819241141198832, guid: 9eb3b1a11c610cd418079f132e291197, type: 3}
+      propertyPath: useUnscaledTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198959708612696512, guid: 9eb3b1a11c610cd418079f132e291197, type: 3}
+      propertyPath: useUnscaledTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198967514394309966, guid: 9eb3b1a11c610cd418079f132e291197, type: 3}
+      propertyPath: useUnscaledTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 108282213168382370, guid: 9eb3b1a11c610cd418079f132e291197, type: 3}

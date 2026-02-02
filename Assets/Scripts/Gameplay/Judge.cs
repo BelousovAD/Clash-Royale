@@ -11,14 +11,20 @@ namespace Gameplay
         private const CrownType PlayerCrown = CrownType.Player;
         
         private readonly string _endgameWindowId;
+        private readonly IsMainTowerAlive _isEnemyMainTowerAlive;
+        private readonly IsMainTowerAlive _isPlayerMainTowerAlive;
         private CoroutineTimer _timer;
         private IWindowService _windowService;
         private CrownCounter _enemyCrownCounter;
         private CrownCounter _playerCrownCounter;
         private bool? _isVictory;
 
-        public Judge(string endgameWindowId) =>
+        public Judge(string endgameWindowId, Unit.Unit enemyMainTower, Unit.Unit playerMainTower)
+        {
             _endgameWindowId = endgameWindowId;
+            _isEnemyMainTowerAlive = new IsMainTowerAlive(enemyMainTower);
+            _isPlayerMainTowerAlive = new IsMainTowerAlive(playerMainTower);
+        }
 
         public event Action VictoryStatusChanged;
 
@@ -62,29 +68,47 @@ namespace Gameplay
                 }
             }
 
-            _enemyCrownCounter.CountChanged += FinishGame;
-            _playerCrownCounter.CountChanged += FinishGame;
-            _timer.TimeIsUp += FinishGame;
+            Subscribe();
         }
 
         public void Dispose()
         {
-            _enemyCrownCounter.CountChanged -= FinishGame;
-            _playerCrownCounter.CountChanged -= FinishGame;
-            _timer.TimeIsUp -= FinishGame;
+            Unsubscribe();
+            _isEnemyMainTowerAlive.Dispose();
+            _isPlayerMainTowerAlive.Dispose();
         }
 
-        public void FinishGame()
+        private void FinishGame()
         {
-            if (IsAnyCounterFull() || _timer.IsTimeUp)
+            if (_isEnemyMainTowerAlive.Value == false)
+            {
+                IsVictory = true;
+            }
+            else if (_isPlayerMainTowerAlive.Value == false)
+            {
+                IsVictory = false;
+            }
+            else
             {
                 IsVictory = _playerCrownCounter.Count > _enemyCrownCounter.Count;
-                _windowService.Open(_endgameWindowId, false);
-                Dispose();
             }
+            
+            _windowService.Open(_endgameWindowId, false);
+            Unsubscribe();
         }
 
-        private bool IsAnyCounterFull() =>
-            _enemyCrownCounter.Count == CrownCounter.Max || _playerCrownCounter.Count == CrownCounter.Max;
+        private void Subscribe()
+        {
+            _timer.TimeIsUp += FinishGame;
+            _isEnemyMainTowerAlive.Changed += FinishGame;
+            _isPlayerMainTowerAlive.Changed += FinishGame;
+        }
+
+        private void Unsubscribe()
+        {
+            _timer.TimeIsUp -= FinishGame;
+            _isEnemyMainTowerAlive.Changed -= FinishGame;
+            _isPlayerMainTowerAlive.Changed -= FinishGame;
+        }
     }
 }

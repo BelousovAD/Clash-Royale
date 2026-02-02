@@ -210,6 +210,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 3.2
       objectReference: {fileID: 0}
+    - target: {fileID: 8114401188269079798, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: m_Shape
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8114401188269079798, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: m_Center.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8114401188269079798, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: m_Extents.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8114401188269079798, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: m_Extents.y
+      value: 0.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8114401188269079798, guid: c79c0982562143e459e5b64dc6678692, type: 3}
+      propertyPath: m_Extents.z
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8434097448426733127, guid: c79c0982562143e459e5b64dc6678692, type: 3}
       propertyPath: m_Name
       value: PlayerMainTower
