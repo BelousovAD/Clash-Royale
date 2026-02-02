@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace ChestUnlockAcceleration
 {
-    public class ChestAccelerationButton : AbstractButton
+    internal class ChestAccelerationButton : AbstractButton
     {
         private const CurrencyType MoneyCurrency = CurrencyType.Money;
         private const ContainerType ChestContainer = ContainerType.Chest;
