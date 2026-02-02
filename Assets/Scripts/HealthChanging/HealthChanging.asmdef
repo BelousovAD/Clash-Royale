@@ -1,5 +1,5 @@
 {
-    "name": "Damage",
+    "name": "HealthChanging",
     "rootNamespace": "",
     "references": [
         "GUID:7559eac92c676674995251865b1298e9",

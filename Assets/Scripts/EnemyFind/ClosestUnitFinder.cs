@@ -39,7 +39,7 @@ namespace EnemyFind
             
             foreach (Unit.Unit unit in units)
             {
-                if (unit.StateSwitcher.CurrentState.Type == DieState)
+                if (unit == from || unit.StateSwitcher.CurrentState.Type == DieState)
                 {
                     continue;
                 }

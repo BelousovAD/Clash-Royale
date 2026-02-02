@@ -2,14 +2,14 @@ using Character;
 using EnemyFind;
 using UnityEngine;
 
-namespace Damage
+namespace HealthChanging
 {
-    internal class TowerDamageInitializer : MonoBehaviour
+    internal class TowerHealthChangeInitializer : MonoBehaviour
     {
         [SerializeField] private Unit.Unit _unit;
         [SerializeField] private EnemyFindCaller _enemyFindCaller;
         [SerializeField] private CharacterData _data;
-        [SerializeField] private Damager _damager;
+        [SerializeField] private HealthChanger _healthChanger;
 
         private Unit.Unit _enemy;
 
@@ -26,14 +26,14 @@ namespace Damage
         private void UpdateEnemy()
         {
             _enemy = _enemyFindCaller.Enemy;
-            _damager.SetEnemy(_enemy);
+            _healthChanger.SetEnemy(_enemy);
         }
 
         private void Initialize()
         {
-            _damager.SetDamage(_data.Damage);
-            _damager.SetDelay(_data.DamageDelay);
-            _damager.SetEnemy(_enemy);
+            _healthChanger.SetAmount(_data.HealthChangeAmount);
+            _healthChanger.SetDelay(_data.HealthChangeDelay);
+            _healthChanger.SetEnemy(_enemy);
         }
     }
 }

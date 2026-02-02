@@ -383,6 +383,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _root: {fileID: 8705153733819637257}
+  _excludes:
+  - Healer
 --- !u!1 &6870786355172430826
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +430,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemProvider: {fileID: 6259286500928002049}
-  _damageInitializer: {fileID: 3382841572844267410}
+  _healthChangeInitializer: {fileID: 3382841572844267410}
+  _findCaller: {fileID: 8982637919796265581}
   _approachObserver: {fileID: 3321928578019469276}
   _animationInitializer: {fileID: 5587881523562854342}
   _agent: {fileID: 8480114400005859288}
@@ -537,7 +540,7 @@ GameObject:
   - component: {fileID: 5884720080650101471}
   - component: {fileID: 3382841572844267410}
   m_Layer: 0
-  m_Name: UnitDamageInitializer
+  m_Name: UnitHealthChangeInitializer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -573,7 +576,7 @@ MonoBehaviour:
   _unit: {fileID: 8705153733819637257}
   _enemyFindCaller: {fileID: 8982637919796265581}
   _unitPrefabView: {fileID: 1514922414292531789}
-  _damager: {fileID: 6438863054239058069}
+  _healthChanger: {fileID: 6438863054239058069}
 --- !u!1 &8701029750816796128
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +680,7 @@ GameObject:
   - component: {fileID: 1558844948790839800}
   - component: {fileID: 6438863054239058069}
   m_Layer: 0
-  m_Name: Damager
+  m_Name: HealthChanger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

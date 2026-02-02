@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4653801771723642198}
   - component: {fileID: 8142743619562582270}
   m_Layer: 0
-  m_Name: Damager
+  m_Name: HealthChanger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _root: {fileID: 1892665422366850576}
+  _excludes: []
 --- !u!1 &3911841390788998713
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +553,7 @@ GameObject:
   - component: {fileID: 4641921192881626040}
   - component: {fileID: 1999609537417632348}
   m_Layer: 0
-  m_Name: TowerDamageInitializer
+  m_Name: TowerHealthChangeInitializer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -588,7 +589,7 @@ MonoBehaviour:
   _unit: {fileID: 1892665422366850576}
   _enemyFindCaller: {fileID: 3432630376559732559}
   _data: {fileID: 0}
-  _damager: {fileID: 8142743619562582270}
+  _healthChanger: {fileID: 8142743619562582270}
 --- !u!1 &8434097448426733127
 GameObject:
   m_ObjectHideFlags: 0

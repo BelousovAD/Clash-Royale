@@ -1,5 +1,6 @@
-using Damage;
+using EnemyFind;
 using EnemyObserve;
+using HealthChanging;
 using Item;
 using UnitAnimation;
 using UnitMovement;
@@ -11,7 +12,8 @@ namespace UnitInitialize
     internal class FromCharacterInitializer : MonoBehaviour
     {
         [SerializeField] private ItemProvider _itemProvider;
-        [SerializeField] private UnitDamageInitializer _damageInitializer;
+        [SerializeField] private UnitHealthChangeInitializer _healthChangeInitializer;
+        [SerializeField] private EnemyFindCaller _findCaller;
         [SerializeField] private EnemyApproachObserver _approachObserver;
         [SerializeField] private UnitAnimationInitializer _animationInitializer;
         [SerializeField] private NavMeshAgent _agent;
@@ -30,8 +32,9 @@ namespace UnitInitialize
         {
             if (_itemProvider.Item is Character.Character character)
             {
-                _damageInitializer.UpdateDamage(character.Damage);
-                _damageInitializer.UpdateDamageDelay(character.DamageDelay);
+                _healthChangeInitializer.UpdateHealthChangeAmount(character.HealthChangeAmount);
+                _healthChangeInitializer.UpdateDamageDelay(character.HealthChangeDelay);
+                _findCaller.UpdateSubtype(character.Subtype);
                 _approachObserver.Initialize(character.AttackRange);
                 _animationInitializer.UpdateAttackSpeed(character.AttackSpeed);
                 _agent.radius = character.Radius;

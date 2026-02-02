@@ -2,16 +2,16 @@ using EnemyFind;
 using Unit;
 using UnityEngine;
 
-namespace Damage
+namespace HealthChanging
 {
-    public class UnitDamageInitializer : MonoBehaviour
+    public class UnitHealthChangeInitializer : MonoBehaviour
     {
         [SerializeField] private Unit.Unit _unit;
         [SerializeField] private EnemyFindCaller _enemyFindCaller;
         [SerializeField] private UnitPrefabView _unitPrefabView;
-        [SerializeField] private Damager _damager;
+        [SerializeField] private HealthChanger _healthChanger;
 
-        private float _damage;
+        private float _amount;
         private float _delay;
         private Unit.Unit _enemy;
 
@@ -29,31 +29,31 @@ namespace Damage
             _unitPrefabView.InstanceChanged -= Initialize;
         }
 
-        public void UpdateDamage(float damage)
+        public void UpdateHealthChangeAmount(float amount)
         {
-            _damage = damage;
-            _damager.SetDamage(_damage);
+            _amount = amount;
+            _healthChanger.SetAmount(_amount);
         }
 
         public void UpdateDamageDelay(float delay)
         {
             _delay = delay;
-            _damager.SetDelay(_delay);
+            _healthChanger.SetDelay(_delay);
         }
 
         private void UpdateEnemy()
         {
             _enemy = _enemyFindCaller.Enemy;
-            _damager.SetEnemy(_enemy);
+            _healthChanger.SetEnemy(_enemy);
         }
 
         private void Initialize()
         {
             if (_unitPrefabView.Instance is not null)
             {
-                _damager.SetDamage(_damage);
-                _damager.SetDelay(_delay);
-                _damager.SetEnemy(_enemy);
+                _healthChanger.SetAmount(_amount);
+                _healthChanger.SetDelay(_delay);
+                _healthChanger.SetEnemy(_enemy);
             }
         }
     }
