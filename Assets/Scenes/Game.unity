@@ -14302,6 +14302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _endgameWindowId: Endgame
+  _enemyMainTower: {fileID: 4001074699162367817}
+  _playerMainTower: {fileID: 1313497898846852256}
 --- !u!114 &1357795367
 MonoBehaviour:
   m_ObjectHideFlags: 0
