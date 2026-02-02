@@ -32,7 +32,7 @@ namespace Unit
         {
             States = new Dictionary<StateType, State>
             {
-                [StateType.Idle] = new (StateType.Idle, Second),
+                [StateType.Idle] = new (StateType.Idle),
                 [StateType.Attack] = new (StateType.Attack, Second / _attackSpeed),
                 [StateType.Move] = new (StateType.Move),
                 [StateType.Die] = new (StateType.Die),
