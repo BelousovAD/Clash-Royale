@@ -39,6 +39,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundMark: 0
   _key: 13
+  _isRangeChar: 0
 --- !u!1101 &-2237777785452651759
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -219,7 +220,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: d0ec192908a4bb04abbc36c4446bc495, type: 3}
+  m_Motion: {fileID: 7400000, guid: 2a8cd7df0a13d7248b9d4f132764738c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -237,8 +238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fffe14307132d4d9c7bf707d54401b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundMark: 0.627
+  _soundMark: 0.5
   _key: 27
+  _isRangeChar: 1
 --- !u!1101 &1493911119390893403
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -416,6 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundMark: 0
   _key: 14
+  _isRangeChar: 0
 --- !u!1101 &7432279613683355685
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

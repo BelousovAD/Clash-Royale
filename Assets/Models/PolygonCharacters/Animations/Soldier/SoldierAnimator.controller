@@ -139,7 +139,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: f55cba650c4d0bc489b445e74c47f06d, type: 3}
+  m_Motion: {fileID: 7400000, guid: b729ec6c9fbb8a346967ab5f42a7ca10, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundMark: 0.5
   _key: 4
+  _isRangeChar: 0
 --- !u!1101 &6803977877142292960
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
