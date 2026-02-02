@@ -9,13 +9,13 @@ namespace Character
         [SerializeField] private GameObject _prefab;
         [SerializeField][Min(0f)] private float _radius = 0.5f;
         [SerializeField][Min(0)] private int _health;
-        [SerializeField][Min(0)] private int _damage;
-        [SerializeField][Min(0f)] private float _damageDelay; 
+        [SerializeField] private int _healthChangeAmount;
+        [SerializeField][Min(0f)] private float _healthChangeDelay; 
         [SerializeField][Min(0f)] private float _attackSpeed = 1f;
         [SerializeField][Min(0f)] private float _moveSpeed = 1f;
         [SerializeField][Min(0f)] private float _attackRange = 1f;
 
-        public int Damage => _damage;
+        public int HealthChangeAmount => _healthChangeAmount;
         
         public int Health => _health;
         
@@ -29,6 +29,6 @@ namespace Character
         
         public float Radius => _radius;
         
-        public float DamageDelay => _damageDelay;
+        public float HealthChangeDelay => _healthChangeDelay;
     }
 }

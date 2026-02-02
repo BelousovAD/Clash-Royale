@@ -28,24 +28,12 @@ namespace Unit
 
         public bool IsDead => Value <= MinValue;
 
-        public void TakeDamage(float damage)
+        public void Take(float amount)
         {
-            if (damage < 0)
+            if (IsDead == false)
             {
-                throw new ArgumentOutOfRangeException(nameof(damage), "Can not be negative");
+                Value += amount;
             }
-
-            Value -= damage;
-        }
-
-        public void TakeHealing(float healing)
-        {
-            if (healing < 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(healing), "Can not be negative");
-            }
-
-            Value += healing;
         }
     }
 }

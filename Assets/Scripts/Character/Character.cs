@@ -8,7 +8,7 @@ namespace Character
             : base(data, id)
         { }
 
-        public int Damage => Data.Damage;
+        public int HealthChangeAmount => Data.HealthChangeAmount;
         
         public float MoveSpeed => Data.MoveSpeed;
         
@@ -22,7 +22,7 @@ namespace Character
 
         public float Radius => Data.Radius;
 
-        public float DamageDelay => Data.DamageDelay;
+        public float HealthChangeDelay => Data.HealthChangeDelay;
         
         private new CharacterData Data => base.Data as CharacterData;
     }
