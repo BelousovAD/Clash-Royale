@@ -27,13 +27,18 @@ namespace Chest
         }
 
         public event Action LockStatusChanged;
+        
         public event Action UnlockingStatusChanged;
+
+        public event Action Unlocked;
 
         public IReadOnlyList<Chance> Chances => Data.Chances;
 
         public GameObject Prefab => Data.Prefab;
 
         public int UnlockTime => Data.UnlockTime;
+
+        public int Price => Data.Price;
 
         public bool IsLocked
         {
@@ -160,6 +165,7 @@ namespace Chest
         {
             IsLocked = false;
             IsUnlocking = false;
+            Unlocked?.Invoke();
         }
         
         [Serializable]

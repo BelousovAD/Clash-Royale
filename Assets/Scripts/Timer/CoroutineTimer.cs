@@ -47,15 +47,34 @@ namespace Timer
 
         public void Add(int seconds)
         {
-            _services.CoroutineRunner.StopCoroutine(_coroutine);
+            if (_coroutine != null)
+            {
+                _services.CoroutineRunner.StopCoroutine(_coroutine);
+            }
+            
             Time += seconds;
             _coroutine = _services.CoroutineRunner.StartCoroutine(Countdown());
         }
 
-        public void Stop()
+        public void Remove(int seconds)
+        {
+            if (Time > seconds)
+            {
+                _services.CoroutineRunner.StopCoroutine(_coroutine);
+                Time -= seconds;
+                _coroutine = _services.CoroutineRunner.StartCoroutine(Countdown());
+            }
+            else
+            {
+                Stop();
+            }
+        }
+
+        private void Stop()
         {
             _services.CoroutineRunner.StopCoroutine(_coroutine);
             Time = Min;
+            TimeIsUp?.Invoke();
         }
 
         private IEnumerator Countdown()
