@@ -5,7 +5,7 @@ namespace Gameplay
 {
     public class CrownCounter
     {
-        public const int Max = 3;
+        private const int Max = 3;
         private const int Min = 0;
         
         private int _count;

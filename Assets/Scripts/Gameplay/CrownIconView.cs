@@ -42,22 +42,26 @@ namespace Gameplay
             _rectTransform = GetComponent<RectTransform>();
         }
 
-        private void OnEnable() =>
-            UpdateView();
-
-        private void OnDisable() =>
-            _sequence?.Kill();
-
-        private void UpdateView()
+        private void OnEnable()
         {
-            _image.sprite = _counter.Count >= _number ? _activeIcon : _defaultIcon;
-
             _sequence = DOTween.Sequence();
             _sequence.SetUpdate(UpdateType.Normal, true);
             _sequence.SetEase(Ease.InOutQuad);
             _sequence.Append(_rectTransform.DORotate(new Vector3(0, 0, AnimationAngle), Duration));
             _sequence.Join(_rectTransform.DOScale(Vector3.one * 0.1f, Duration).SetRelative(true));
             _sequence.SetLoops(InfiniteLoops, LoopType.Yoyo);
+
+            _counter.CountChanged += UpdateView;
+            UpdateView();
         }
+
+        private void OnDisable()
+        {
+            _sequence?.Kill();
+            _counter.CountChanged -= UpdateView;
+        }
+
+        private void UpdateView() =>
+            _image.sprite = _counter.Count >= _number ? _activeIcon : _defaultIcon;
     }
 }
