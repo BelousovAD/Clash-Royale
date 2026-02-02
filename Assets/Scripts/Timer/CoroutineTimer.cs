@@ -47,7 +47,7 @@ namespace Timer
 
         public void Add(int seconds)
         {
-            if (_coroutine != null)
+            if (_coroutine is not null)
             {
                 _services.CoroutineRunner.StopCoroutine(_coroutine);
             }
@@ -60,13 +60,12 @@ namespace Timer
         {
             if (Time > seconds)
             {
-                _services.CoroutineRunner.StopCoroutine(_coroutine);
                 Time -= seconds;
-                _coroutine = _services.CoroutineRunner.StartCoroutine(Countdown());
             }
             else
             {
                 Stop();
+                TimeIsUp?.Invoke();
             }
         }
 
@@ -74,7 +73,6 @@ namespace Timer
         {
             _services.CoroutineRunner.StopCoroutine(_coroutine);
             Time = Min;
-            TimeIsUp?.Invoke();
         }
 
         private IEnumerator Countdown()
