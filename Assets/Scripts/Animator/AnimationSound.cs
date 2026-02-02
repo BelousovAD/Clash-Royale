@@ -8,7 +8,9 @@ namespace Animator
     {
         [SerializeField][Range(0f, 1f)] private float _soundMark;
         [SerializeField] private AudioClipKey _key;
+        [SerializeField] private bool _isRangeChar;
 
+        private ProjectileAnimation _projectileAnimation;
         private CharacterSound _characterSound;
         private float _delay;
         private float _timeToEnd;
@@ -18,7 +20,8 @@ namespace Animator
         public override void OnStateEnter(UnityEngine.Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             _characterSound ??= animator.GetComponent<CharacterSound>();
-
+            _projectileAnimation ??= animator.GetComponent<ProjectileAnimation>();
+            
             _time = 0;
             _isAudioPlayed = false;
             _delay = stateInfo.length * _soundMark;
@@ -41,6 +44,11 @@ namespace Animator
             {
                 if (_time >= _delay && _characterSound.Source.isPlaying == false)
                 {
+                    if (_isRangeChar)
+                    {
+                        _projectileAnimation.SendProjectile();
+                    }
+                    
                     _characterSound.PlayTrack(_key);
                     _time = 0;
                     _isAudioPlayed = true;
