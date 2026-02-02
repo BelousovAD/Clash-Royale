@@ -17,8 +17,8 @@ namespace HealthChanging
 
         private void OnEnable()
         {
-            _enemyFindCaller.EnemyFound += UpdateEnemy;
             _unitPrefabView.InstanceChanged += Initialize;
+            _enemyFindCaller.EnemyFound += UpdateEnemy;
             UpdateEnemy();
             Initialize();
         }

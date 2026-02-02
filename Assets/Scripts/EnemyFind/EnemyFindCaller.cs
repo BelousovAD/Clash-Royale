@@ -7,7 +7,7 @@ namespace EnemyFind
 {
     public class EnemyFindCaller : MonoBehaviour
     {
-        [SerializeField] private Unit.Unit _root;
+        [SerializeField] private Unit.Unit _unit;
         [SerializeField] private List<string> _excludes;
         
         private List<ClosestUnitFinder> _unitFinders;
@@ -40,12 +40,12 @@ namespace EnemyFind
 
         private void OnEnable()
         {
-            _root.TypeChanged += UpdateTypeToFind;
+            _unit.TypeChanged += UpdateTypeToFind;
             UpdateTypeToFind();
         }
 
         private void OnDisable() =>
-            _root.TypeChanged -= UpdateTypeToFind;
+            _unit.TypeChanged -= UpdateTypeToFind;
 
         private void Update()
         {
@@ -54,7 +54,7 @@ namespace EnemyFind
                 return;
             }
             
-            Enemy = _unitFinder.FindClosest(_root);
+            Enemy = _unitFinder.FindClosest(_unit);
         }
 
         public void UpdateSubtype(string subtype)
@@ -69,7 +69,7 @@ namespace EnemyFind
             
             foreach (ClosestUnitFinder unitFinder in _unitFinders)
             {
-                if ((isExcludeSubtype ^ unitFinder.TypeToFind == _root.Type) == false)
+                if ((isExcludeSubtype ^ unitFinder.TypeToFind == _unit.Type) == false)
                 {
                     _unitFinder = unitFinder;
                     break;

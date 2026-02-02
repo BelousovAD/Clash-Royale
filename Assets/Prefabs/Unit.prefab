@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85b29c6d9454493a56b4da71d507416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _root: {fileID: 8705153733819637257}
+  _unit: {fileID: 8705153733819637257}
   _excludes:
   - Healer
 --- !u!1 &6870786355172430826

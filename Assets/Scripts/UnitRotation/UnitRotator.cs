@@ -14,12 +14,12 @@ namespace UnitRotation
         
         private Unit.Unit _enemy;
         private bool _isActive;
-        private IStateSwitcher _unitStateSwitcher;
+        private IStateSwitcher _stateSwitcher;
 
         private void OnEnable()
         {
-            _enemyFindCaller.EnemyFound += UpdateEnemy;
             _unit.Initialized += UpdateSubscriptions;
+            _enemyFindCaller.EnemyFound += UpdateEnemy;
             UpdateEnemy();
             UpdateSubscriptions();
         }
@@ -29,7 +29,7 @@ namespace UnitRotation
             _unit.Initialized -= UpdateSubscriptions;
             _enemyFindCaller.EnemyFound -= UpdateEnemy;
 
-            if (_unitStateSwitcher is not null)
+            if (_stateSwitcher is not null)
             {
                 Unsubscribe();
             }
@@ -45,21 +45,21 @@ namespace UnitRotation
         }
 
         private void Subscribe() =>
-            _unitStateSwitcher.StateSwitched += UpdateActivity;
+            _stateSwitcher.StateSwitched += UpdateActivity;
 
         private void Unsubscribe() =>
-            _unitStateSwitcher.StateSwitched -= UpdateActivity;
+            _stateSwitcher.StateSwitched -= UpdateActivity;
 
         private void UpdateSubscriptions()
         {
-            if (_unitStateSwitcher is not null)
+            if (_stateSwitcher is not null)
             {
                 Unsubscribe();
             }
             
-            _unitStateSwitcher = _unit.StateSwitcher;
+            _stateSwitcher = _unit.StateSwitcher;
 
-            if (_unitStateSwitcher is not null)
+            if (_stateSwitcher is not null)
             {
                 Subscribe();
             }
@@ -68,7 +68,7 @@ namespace UnitRotation
         }
 
         private void UpdateActivity() =>
-            _isActive = _unitStateSwitcher?.CurrentState.Type == ActivityState;
+            _isActive = _stateSwitcher?.CurrentState.Type == ActivityState;
 
         private void UpdateEnemy() =>
             _enemy = _enemyFindCaller.Enemy;
