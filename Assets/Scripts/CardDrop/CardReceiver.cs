@@ -7,11 +7,10 @@ using UnityEngine;
 
 namespace CardDrop
 {
-    public class DropCardArea : MonoBehaviour
+    public class CardReceiver : MonoBehaviour
     {
-        private const ContainerType HandCardContainerType = ContainerType.HandCard;
-
         [SerializeField] private CurrencyType _currencyType;
+        [SerializeField] private ContainerType _cardContainerType;
         [SerializeField] private CharacterProviderSpawnCaller _caller;
 
         private Container _container;
@@ -22,7 +21,7 @@ namespace CardDrop
         {
             foreach (Container container in containers)
             {
-                if (container.Type == HandCardContainerType)
+                if (container.Type == _cardContainerType)
                 {
                     _container = container;
                     break;
@@ -45,9 +44,9 @@ namespace CardDrop
 
             if (_currency.Value >= card!.Price)
             {
-                _currency.Spend(card.Price);
-                _caller.CallSpawn(card.Subtype);
                 _container.RemoveAt(_container.Index);
+                _caller.CallSpawn(card.Subtype);
+                _currency.Spend(card.Price);
             }
             else
             {

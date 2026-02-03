@@ -36,9 +36,9 @@ namespace CardDrop
         private void FindDropCardArea()
         {
             if (Physics.Raycast(_rayPointer.Ray, out RaycastHit hitInfo, Mathf.Infinity)
-                && hitInfo.collider.TryGetComponent(out DropCardArea area))
+                && hitInfo.collider.TryGetComponent(out CardReceiver receiver))
             {
-                area.Receive();
+                receiver.Receive();
             }
             else
             {

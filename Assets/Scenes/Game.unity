@@ -6601,6 +6601,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 478270, guid: 289536fb3806f9447a117b250647974d, type: 3}
   m_PrefabInstance: {fileID: 602520968}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &603605453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603605455}
+  - component: {fileID: 603605454}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &603605454
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603605453}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &603605455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603605453}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 9.5}
+  m_LocalScale: {x: 1.8, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &604424395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7735,7 +7789,7 @@ GameObject:
   - component: {fileID: 714628936}
   - component: {fileID: 714628940}
   m_Layer: 0
-  m_Name: BottomDropCardArea
+  m_Name: BottomCardReceiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7765,10 +7819,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 714628934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09db24689c2b418fb2325e7270859dc9, type: 3}
+  m_Script: {fileID: 11500000, guid: 820848f8c09c4d688f174080713fff93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _currencyType: 2
+  _cardContainerType: 4
   _caller: {fileID: 689005077}
 --- !u!222 &714628937
 CanvasRenderer:
@@ -13028,17 +13083,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72d4eda60125d4c40aedca968065f50f, type: 3}
---- !u!114 &1180866970 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4521889688536856144, guid: 72d4eda60125d4c40aedca968065f50f, type: 3}
-  m_PrefabInstance: {fileID: 1180866967}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6c80c22c48a4cbfbab0872bc7a54aa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1180866971 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3462461497062239489, guid: 72d4eda60125d4c40aedca968065f50f, type: 3}
@@ -13716,7 +13760,7 @@ GameObject:
   - component: {fileID: 1309151961}
   - component: {fileID: 1309151965}
   m_Layer: 0
-  m_Name: TopDropCardArea
+  m_Name: TopCardReceiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13746,10 +13790,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1309151959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09db24689c2b418fb2325e7270859dc9, type: 3}
+  m_Script: {fileID: 11500000, guid: 820848f8c09c4d688f174080713fff93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _currencyType: 2
+  _cardContainerType: 4
   _caller: {fileID: 689005077}
 --- !u!222 &1309151962
 CanvasRenderer:
@@ -14401,7 +14446,6 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
-  _indicator: {fileID: 1180866970}
 --- !u!114 &1357795374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16414,7 +16458,7 @@ GameObject:
   - component: {fileID: 1702417877}
   - component: {fileID: 1702417878}
   m_Layer: 0
-  m_Name: DropCardAreaSwitcher
+  m_Name: CardReceiverSwitcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21116,3 +21160,4 @@ SceneRoots:
   - {fileID: 689005076}
   - {fileID: 1180866967}
   - {fileID: 1035964447}
+  - {fileID: 603605455}
