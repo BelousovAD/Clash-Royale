@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RayPointer
+namespace UnitSpawn
 {
     public class Indicator : MonoBehaviour
     {

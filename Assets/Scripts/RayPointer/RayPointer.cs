@@ -8,19 +8,20 @@ namespace RayPointer
     public class RayPointer
     {
         private readonly LayerMask _layerMask;
-        private readonly SpawnIndicator _spawnIndicator;
         private readonly Camera _camera;
 
         private RawImage _rawImage;
 
-        public RayPointer(LayerMask layerMask, SpawnIndicator indicator, Camera camera)
+        public RayPointer(LayerMask layerMask, Camera camera)
         {
             _layerMask = layerMask;
-            _spawnIndicator = indicator;
             _camera = camera;
         }
 
+        public event Action Dragging;
         public event Action DragEnded;
+        
+        public Vector3 Position { get; private set; }
         
         public Ray Ray { get; private set; }
 
@@ -34,15 +35,13 @@ namespace RayPointer
             if (Physics.Raycast(Ray, out RaycastHit hitInfo, Mathf.Infinity, _layerMask)
                 && hitInfo.collider.TryGetComponent(out Ground _))
             {
-                _spawnIndicator.MoveIndicator(hitInfo.point);
+                Position = hitInfo.point;
+                Dragging?.Invoke();
             }
         }
 
-        public void EndDrag()
-        {
-            _spawnIndicator.TurnOffIndicator();
+        public void EndDrag() =>
             DragEnded?.Invoke();
-        }
 
         private Ray GetRayFromUI(PointerEventData eventData)
         {
