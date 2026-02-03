@@ -15,6 +15,6 @@ MonoBehaviour:
   _type: 0
   _subtype: Healer
   _icon: {fileID: 21300000, guid: 2892eb40ca399a848a82c305adc0d007, type: 3}
-  _rarity: 1
+  _rarity: 2
   _price: 6
   _isLocked: 1

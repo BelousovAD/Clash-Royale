@@ -17,10 +17,10 @@ MonoBehaviour:
   _icon: {fileID: 0}
   _prefab: {fileID: 5816594180767396946, guid: a23a5ccc2488a9544a64a264e203730b, type: 3}
   _radius: 0.5
-  _health: 100
-  _healthChangeAmount: -5
+  _health: 200
+  _healthChangeAmount: -30
   _healthChangeDelay: 0
-  _attackSpeed: 1
-  _moveSpeed: 3
+  _attackSpeed: 4
+  _moveSpeed: 2
   _attackRange: 2
   _isTargetOnlyTower: 1

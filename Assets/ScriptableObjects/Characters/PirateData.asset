@@ -17,9 +17,9 @@ MonoBehaviour:
   _icon: {fileID: 0}
   _prefab: {fileID: 7398028648276005872, guid: eb848cd0fc5556144b180e05860adada, type: 3}
   _radius: 0.5
-  _health: 100
-  _healthChangeAmount: -5
+  _health: 60
+  _healthChangeAmount: -30
   _healthChangeDelay: 0
-  _attackSpeed: 1
-  _moveSpeed: 3
+  _attackSpeed: 3
+  _moveSpeed: 1.5
   _attackRange: 2

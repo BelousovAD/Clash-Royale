@@ -6,11 +6,15 @@ namespace UnitAnimation
     [RequireComponent(typeof(Animator))]
     internal class UnitAnimator : MonoBehaviour
     {
+        private const float AttackSpeedDenominatorMultiplier = 2f;
+        private const float AttackSpeedBaseShift = 5f;
+        private const float AttackSpeedNumerator = 25f;
+
         private static readonly int AttackSpeed = Animator.StringToHash(nameof(AttackSpeed));
 
         [SerializeField] private Animator _animator;
         [SerializeField] private List<AnimationKey> _keys;
-        
+
         private readonly Dictionary<AnimationKey, int> _parameters = new ();
 
         private void Awake()
@@ -36,16 +40,20 @@ namespace UnitAnimation
                 Debug.Log($"{animationKey} is not declared in field {nameof(_keys)} and can not be played");
                 return;
             }
-            
+
             foreach (int parameter in _parameters.Values)
             {
                 _animator.SetBool(parameter, false);
             }
-                
+
             _animator.SetBool(parameterId, true);
         }
 
-        public void SetAttackSpeed(float speed) =>
-            _animator.SetFloat(AttackSpeed, speed);
+        public void SetAttackSpeed(float speed)
+        {
+            float animationSpeed = (AttackSpeedDenominatorMultiplier * (speed + AttackSpeedBaseShift)) 
+                                   / (AttackSpeedNumerator - speed);
+            _animator.SetFloat(AttackSpeed, animationSpeed);
+        }
     }
 }
