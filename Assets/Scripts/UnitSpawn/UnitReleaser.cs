@@ -14,42 +14,53 @@ namespace UnitSpawn
         [SerializeField][Min(0f)] private float _deathAnimationDuration;
         
         private WaitForSeconds _wait;
+        private IStateSwitcher _stateSwitcher;
 
         private void Awake() =>
             _wait = new WaitForSeconds(_deathAnimationDuration);
 
         private void OnEnable()
         {
-            _unit.Initialized += Subscribe;
-            Subscribe();
+            _unit.Initialized += UpdateSubscriptions;
+            UpdateSubscriptions();
         }
 
-        private void OnDisable() =>
-            Unsubscribe();
-        
-        private void Subscribe()
+        private void OnDisable()
         {
-            if (_unit.StateSwitcher is not null)
+            _unit.Initialized -= UpdateSubscriptions;
+
+            if (_stateSwitcher is not null)
             {
-                _unit.Initialized -= Subscribe;
-                _unit.StateSwitcher.StateSwitched += Die;
-                Die();
+                Unsubscribe();
             }
         }
 
-        private void Unsubscribe()
-        {
-            _unit.Initialized -= Subscribe;
+        private void Subscribe() =>
+            _stateSwitcher.StateSwitched += Die;
 
-            if (_unit.StateSwitcher is not null)
+        private void Unsubscribe() =>
+            _stateSwitcher.StateSwitched -= Die;
+
+        private void UpdateSubscriptions()
+        {
+            if (_stateSwitcher is not null)
             {
-                _unit.StateSwitcher.StateSwitched -= Die;
+                Unsubscribe();
             }
+
+            _stateSwitcher = _unit.StateSwitcher;
+
+            if (_stateSwitcher is not null)
+            {
+                Subscribe();
+            }
+            
+            Die();
         }
         
         private void Die()
         {
-            if (_unit.StateSwitcher.CurrentState.Type == DieState)
+            if (_stateSwitcher?.CurrentState.Type == DieState)
             {
                 StartCoroutine(DieAfterDelay());
             }

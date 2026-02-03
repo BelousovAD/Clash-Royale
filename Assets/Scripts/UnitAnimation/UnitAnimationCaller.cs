@@ -23,14 +23,21 @@ namespace UnitAnimation
             UpdateSubscriptions();
         }
 
-        private void OnDisable() =>
+        private void OnDisable()
+        {
             _unit.Initialized -= UpdateSubscriptions;
 
+            if (_stateSwitcher is not null)
+            {
+                Unsubscribe();
+            }
+        }
+
         private void Subscribe() =>
-            _unit.StateSwitcher.StateSwitched += CallAnimation;
+            _stateSwitcher.StateSwitched += CallAnimation;
 
         private void Unsubscribe() =>
-            _unit.StateSwitcher.StateSwitched -= CallAnimation;
+            _stateSwitcher.StateSwitched -= CallAnimation;
 
         private void UpdateSubscriptions()
         {
