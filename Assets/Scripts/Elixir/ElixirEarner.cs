@@ -8,12 +8,14 @@ namespace Elixir
 {
     internal class ElixirEarner : MonoBehaviour
     {
-        private const CurrencyType CurrencyType = Currency.CurrencyType.Elixir;
+        private const CurrencyType ElixirCurrency = CurrencyType.Elixir;
+        private const CurrencyType EnemyElixirCurrency = CurrencyType.EnemyElixir;
         private const int EarnAmount = 1;
         private const float MinValue = 0f;
         private const float MaxValue = 1f;
 
         [SerializeField] private float _delay = 2f;
+        [SerializeField] private bool _isForEnemy;
 
         private Currency.Currency _currency;
         private float _progress;
@@ -40,7 +42,8 @@ namespace Elixir
         {
             foreach (Currency.Currency currency in currencies)
             {
-                if (currency.Type == CurrencyType)
+                if (_isForEnemy == false && currency.Type == ElixirCurrency
+                    || _isForEnemy && currency.Type == EnemyElixirCurrency)
                 {
                     _currency = currency;
                     break;
