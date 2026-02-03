@@ -2551,8 +2551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _localizationKey: Max
-  _format: '{0}'
-  _nextText: ': 10'
+  _format: '{0}: 10'
 --- !u!1 &5440030864265188440
 GameObject:
   m_ObjectHideFlags: 0

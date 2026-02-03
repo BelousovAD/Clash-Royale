@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Localization
 {
-    internal class LocalizeFormatedText : MonoBehaviour
+    [RequireComponent(typeof(TMP_Text))]
+    internal class LocalizedFormatedText : MonoBehaviour
     {
         [SerializeField] private string _localizationKey = "Max";
         [SerializeField] private string _format = "{0}";
-        [SerializeField] private string _nextText;
         
         private TMP_Text _textField;
         private SavvyServicesProvider _services;
@@ -31,6 +31,6 @@ namespace Localization
             _services.Localisation.LocalizationUpdated -= UpdateView;
 
         private void UpdateView() =>
-            _textField.text = string.Format(_format, _services.Localisation.GetTranslation(_localizationKey)) + _nextText;
+            _textField.text = string.Format(_format, _services.Localisation.GetTranslation(_localizationKey));
     }
 }
