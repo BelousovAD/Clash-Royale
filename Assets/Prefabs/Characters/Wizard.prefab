@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6277bf36b1c4f5aac2abba361233252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectile: {fileID: 128572, guid: dc6c518404a31f046b8883c33c0c10e7, type: 3}
+  _projectile: {fileID: 128572, guid: ee4ac199ca47caa4dbfbb72ad7447f4a, type: 3}
   _spawnPosition: {fileID: 5853392231688834229}
 --- !u!82 &-630478740376979128
 AudioSource:
