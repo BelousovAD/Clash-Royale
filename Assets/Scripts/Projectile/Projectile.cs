@@ -4,10 +4,10 @@ namespace Projectile
 {
     internal class Projectile : MonoBehaviour
     {
-        private const float Time = 4;
-        private const float MuzzleDestroy = 1.5f;
-        private const float ProjectileDestroy = 3f;
-        private const float ImpactDestroy = 3.5f;
+        private const float Time = 2;
+        private const float MuzzleDestroy = 0.5f;
+        private const float ProjectileDestroy = 1f;
+        private const float ImpactDestroy = 1.5f;
 
         [SerializeField] private GameObject _impactParticle;
         [SerializeField] private GameObject _projectileParticle;

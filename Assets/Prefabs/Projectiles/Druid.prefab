@@ -94,8 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1327a837e8ca540806c4c99a070ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactParticle: {fileID: 182876, guid: 8f58150d197b8634c88f94fbbd1ddad3, type: 3}
-  projectileParticle: {fileID: 176456, guid: 459379d483c725544b7a05e075fdc490, type: 3}
-  muzzleParticle: {fileID: 119382, guid: bd896e9191f86274395e0b8d11d6111e, type: 3}
-  colliderRadius: 0.1
-  collideOffset: 0.1
+  _impactParticle: {fileID: 182876, guid: 8f58150d197b8634c88f94fbbd1ddad3, type: 3}
+  _projectileParticle: {fileID: 176456, guid: 459379d483c725544b7a05e075fdc490, type: 3}
+  _muzzleParticle: {fileID: 119382, guid: bd896e9191f86274395e0b8d11d6111e, type: 3}
+  _colliderRadius: 0.1
+  _collideOffset: 0.1

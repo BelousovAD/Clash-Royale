@@ -22,4 +22,4 @@ MonoBehaviour:
   _healthChangeDelay: 0
   _attackSpeed: 6
   _moveSpeed: 3
-  _attackRange: 2
+  _attackRange: 5
