@@ -16,5 +16,23 @@ MonoBehaviour:
   _prefsKey: LocalizationSettings
   _defaultSystemLanguage: 10
   _defaultTextAsset: {fileID: 4900000, guid: 833f85beec864544f9b4b939f292318c, type: 3}
-  _translationsData: []
+  _translationsData:
+  - SystemLanguage: 10
+    TextAsset: {fileID: 4900000, guid: 833f85beec864544f9b4b939f292318c, type: 3}
+  - SystemLanguage: 14
+    TextAsset: {fileID: 4900000, guid: 72e6a77f9dd032949a39c5819a08fb73, type: 3}
+  - SystemLanguage: 15
+    TextAsset: {fileID: 4900000, guid: 9e7fdf0e359a9504ab28f334f1b2bb8d, type: 3}
+  - SystemLanguage: 21
+    TextAsset: {fileID: 4900000, guid: 90f1ad7d47d18ef4b9affbceca0e2fb5, type: 3}
+  - SystemLanguage: 27
+    TextAsset: {fileID: 4900000, guid: 196663e97bec3ae4989d93315bb91032, type: 3}
+  - SystemLanguage: 30
+    TextAsset: {fileID: 4900000, guid: 2e27bdbce77c0504fa89987028c8bb99, type: 3}
+  - SystemLanguage: 34
+    TextAsset: {fileID: 4900000, guid: c158caccabc32404293d1eadcc22402d, type: 3}
+  - SystemLanguage: 37
+    TextAsset: {fileID: 4900000, guid: 0fd604d0d4314d146a64c44ccf5e52d4, type: 3}
+  - SystemLanguage: 38
+    TextAsset: {fileID: 4900000, guid: 18aa64c47c0c83b48819832276f0fac8, type: 3}
   _sheetId: 1ia45H4f4MwiF8bR23p52eoRq7oL0LbRLfdZpyLg7r7g
