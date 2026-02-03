@@ -40,7 +40,7 @@ namespace Projectile
         private void FixedUpdate()
         {
             Vector3 direction = _rigidbody.velocity;
-            
+
             if (_rigidbody.velocity.sqrMagnitude != 0)
             {
                 _transform.rotation = Quaternion.LookRotation(direction);
@@ -48,6 +48,7 @@ namespace Projectile
 
             RaycastHit hit;
             float radius;
+            float detectionDistance = _rigidbody.velocity.magnitude * UnityEngine.Time.deltaTime;
 
             if (_transform.TryGetComponent(out SphereCollider sphereCollider))
             {
@@ -61,12 +62,9 @@ namespace Projectile
             if (_rigidbody.useGravity)
             {
                 direction += Physics.gravity * UnityEngine.Time.deltaTime;
+                direction = direction.normalized;
             }
-
-            direction = direction.normalized;
-
-            float detectionDistance = _rigidbody.velocity.magnitude * UnityEngine.Time.deltaTime;
-
+            
             if (Physics.SphereCast(_transform.position, radius, direction, out hit, detectionDistance))
             {
                 _transform.position = hit.point + (hit.normal * _collideOffset);
