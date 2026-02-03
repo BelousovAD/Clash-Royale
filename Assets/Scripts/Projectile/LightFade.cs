@@ -2,7 +2,7 @@
 
 namespace Projectile
 {
-    public class LightFade : MonoBehaviour
+    internal class LightFade : MonoBehaviour
     {
         [Header("Seconds to dim the light")]
         [SerializeField] private float _lifeTime = 0.2f;
@@ -13,23 +13,20 @@ namespace Projectile
 
         private void Start()
         {
-            if (gameObject.TryGetComponent<Light>(out Light _))
+            if (gameObject.TryGetComponent(out Light light))
             {
-                _light = gameObject.GetComponent<Light>();
+                _light = light;
                 _intensity = _light.intensity;
             }
         }
 
         private void Update()
         {
-            if (gameObject.TryGetComponent<Light>(out Light _))
-            {
-                _light.intensity -= _intensity * (Time.deltaTime / _lifeTime);
+            _light.intensity -= _intensity * (Time.deltaTime / _lifeTime);
 
-                if (_killAfterLife && _light.intensity <= 0)
-                {
-                    Destroy(gameObject.GetComponent<Light>());
-                }
+            if (_killAfterLife && _light.intensity <= 0)
+            {
+                Destroy(_light);
             }
         }
     }
