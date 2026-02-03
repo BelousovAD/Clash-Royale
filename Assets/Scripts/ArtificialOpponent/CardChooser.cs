@@ -34,15 +34,11 @@ namespace ArtificialOpponent
                 }
             }
 
-            _container.ContentChanged += ChooseCard;
             _currency.Changed += ChooseCard;
         }
 
-        public void Dispose()
-        {
+        public void Dispose() =>
             _currency.Changed -= ChooseCard;
-            _container.ContentChanged -= ChooseCard;
-        }
 
         private void ChooseCard()
         {
