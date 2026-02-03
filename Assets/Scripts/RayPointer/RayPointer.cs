@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,38 +10,39 @@ namespace RayPointer
         private readonly LayerMask _layerMask;
         private readonly SpawnIndicator _spawnIndicator;
         private readonly Camera _camera;
-        private readonly AreaDetector _areaDetector;
 
         private RawImage _rawImage;
-        private Ray _ray;
 
-        public RayPointer(LayerMask layerMask, SpawnIndicator indicator, Camera camera, AreaDetector areaDetector)
+        public RayPointer(LayerMask layerMask, SpawnIndicator indicator, Camera camera)
         {
             _layerMask = layerMask;
             _spawnIndicator = indicator;
             _camera = camera;
-            _areaDetector = areaDetector;
         }
+
+        public event Action DragEnded;
+        
+        public Ray Ray { get; private set; }
 
         public void Initialize(RawImage image) =>
             _rawImage = image;
 
         public void Drag(PointerEventData eventData)
         {
-            _ray = GetRayFromUI(eventData);
+            Ray = GetRayFromUI(eventData);
 
-            if (Physics.Raycast(_ray, out RaycastHit hitInfo, Mathf.Infinity, _layerMask)
+            if (Physics.Raycast(Ray, out RaycastHit hitInfo, Mathf.Infinity, _layerMask)
                 && hitInfo.collider.TryGetComponent(out Ground _))
             {
                 _spawnIndicator.MoveIndicator(hitInfo.point);
             }
         }
 
-        public void EndDrag() =>
+        public void EndDrag()
+        {
             _spawnIndicator.TurnOffIndicator();
-
-        public void SearchArea() =>
-            _areaDetector.FindDropCardArea(_ray);
+            DragEnded?.Invoke();
+        }
 
         private Ray GetRayFromUI(PointerEventData eventData)
         {

@@ -2,9 +2,7 @@
     "name": "RayPointer",
     "rootNamespace": "",
     "references": [
-        "GUID:1530a967b84cfb44dbdd5e8a1989764f",
-        "GUID:4e13ef675ed728b4892a323651ecbb14",
-        "GUID:4cefadf2890e8e84b8e28d80883e7dcf"
+        "GUID:1530a967b84cfb44dbdd5e8a1989764f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

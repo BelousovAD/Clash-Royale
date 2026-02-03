@@ -8,9 +8,8 @@ namespace RayPointer
         [SerializeField] private Camera _camera;
         [SerializeField] private LayerMask _layerMask;
         [SerializeField] private SpawnIndicator _indicator;
-        [SerializeField] private AreaDetector _areaDetector;
 
         public void InstallBindings(ContainerBuilder builder) =>
-            builder.AddSingleton(new RayPointer(_layerMask,  _indicator, _camera, _areaDetector));
+            builder.AddSingleton(new RayPointer(_layerMask,  _indicator, _camera));
     }
 }
