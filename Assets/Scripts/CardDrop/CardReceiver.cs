@@ -40,9 +40,7 @@ namespace CardDrop
 
         public void Receive()
         {
-            Card.Card card = _container.Selected as Card.Card;
-
-            if (_currency.Value >= card!.Price)
+            if (_container.Selected is Card.Card card && _currency.Value >= card.Price)
             {
                 _container.RemoveAt(_container.Index);
                 _caller.CallSpawn(card.Subtype);
