@@ -41,12 +41,12 @@ namespace UnitMovement
         {
             if (_isActive && _enemy is not null)
             {
+                _agent.enabled = true;
                 _agent.SetDestination(_enemy.transform.position);
-                _agent.isStopped = false;
             }
             else
             {
-                _agent.isStopped = true;
+                _agent.enabled = false;
             }
         }
 
