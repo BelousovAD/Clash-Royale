@@ -8,6 +8,11 @@ namespace CardFilling
     {
         public static void Select(Container container, IEnumerable<string> excludeSubtypes = null)
         {
+            if (container.Items.Count == 0)
+            {
+                return;
+            }
+            
             List<Item.Item> items = new (container.Items);
             List<string> excludes = excludeSubtypes != null ? new List<string>(excludeSubtypes) : new List<string>();
 

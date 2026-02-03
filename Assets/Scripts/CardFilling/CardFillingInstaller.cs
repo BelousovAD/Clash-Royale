@@ -9,6 +9,7 @@ namespace CardFilling
     internal class CardFillingInstaller : MonoBehaviour, IInstaller
     {
         private const ItemType CardItemType = ItemType.Card;
+        private const ContainerType AllCardContainer = ContainerType.AllCard;
         private const ContainerType EquippedCardContainer = ContainerType.EquippedCard;
         private const ContainerType HandCardContainer = ContainerType.HandCard;
         private const ContainerType EnemyEquippedCardContainer = ContainerType.EnemyEquippedCard;
@@ -31,6 +32,7 @@ namespace CardFilling
         {
             _builder.OnContainerBuilt -= Initialize;
 
+            Container allCardContainer = null;
             Container equippedCardContainer = null;
             Container handCardContainer = null;
             Container enemyEquippedCardContainer = null;
@@ -52,9 +54,13 @@ namespace CardFilling
                     case EnemyHandCardContainer:
                         enemyHandCardContainer = itemContainer;
                         break;
+                    case AllCardContainer:
+                        allCardContainer = itemContainer;
+                        break;
                 }
             }
             
+            container.Resolve<ContainerFiller>().Initialize(allCardContainer, enemyEquippedCardContainer);
             container.Resolve<ContainerFiller>().Initialize(equippedCardContainer, handCardContainer);
             container.Resolve<ContainerFiller>().Initialize(enemyEquippedCardContainer, enemyHandCardContainer);
         }

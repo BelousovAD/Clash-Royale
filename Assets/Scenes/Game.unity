@@ -14238,6 +14238,7 @@ GameObject:
   - component: {fileID: 1357795367}
   - component: {fileID: 1357795369}
   - component: {fileID: 1357795370}
+  - component: {fileID: 1357795374}
   - component: {fileID: 1357795371}
   - component: {fileID: 1357795372}
   - component: {fileID: 1357795373}
@@ -14401,7 +14402,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _indicator: {fileID: 1180866970}
-  _areaDetector: {fileID: 1035964446}
+--- !u!114 &1357795374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357795362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f37ca20e6e844f083dcc38ad984096f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _handCardContainerData: {fileID: 11400000, guid: 48f19594bd4677f40899d40e2cae4887, type: 2}
+  _enemyHandCardContainerData: {fileID: 11400000, guid: c9eadf90af510ee459e1a91090333b66, type: 2}
+  _enemyEquippedCardContainerData: {fileID: 11400000, guid: 29e45d3e1da6a054d844f716aa2fd60f, type: 2}
 --- !u!1001 &1371138552
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,5 +9,6 @@ namespace Item
         HandCard = 4,
         EnemyEquippedCard = 5,
         EnemyHandCard = 6,
+        AllCard = 7,
     }
 }
