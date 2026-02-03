@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1543124929530413302, guid: 7e68e738e50d6fd46bef8a40ce5b2c35, type: 3}
+      propertyPath: _projectile
+      value: 
+      objectReference: {fileID: 128572, guid: de3d8c3312e880148aa4ea43d661f6ae, type: 3}
     - target: {fileID: 5114927608805506727, guid: 7e68e738e50d6fd46bef8a40ce5b2c35, type: 3}
       propertyPath: m_Name
       value: SoldierEnemy Variant

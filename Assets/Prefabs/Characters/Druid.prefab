@@ -4830,6 +4830,37 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &8156439128716157715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7402525548216486188}
+  m_Layer: 0
+  m_Name: ProjectilePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7402525548216486188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8156439128716157715}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 170964964121844320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9006349561392005650
 GameObject:
   m_ObjectHideFlags: 0
@@ -9725,10 +9756,16 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8689473563730684947, guid: b7e008ac238cf804a891b9f3217fad64, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2876868979316166495}
+    - targetCorrespondingSourceObject: {fileID: 8689473563730684947, guid: b7e008ac238cf804a891b9f3217fad64, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7402525548216486188}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b7e008ac238cf804a891b9f3217fad64, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4600475358272479223}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b7e008ac238cf804a891b9f3217fad64, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5695650044302385579}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b7e008ac238cf804a891b9f3217fad64, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3847934655010589400}
@@ -9770,6 +9807,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 3144286843102890978}
   _keys: 00000000010000000200000003000000
+--- !u!114 &5695650044302385579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8505395623767870242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6277bf36b1c4f5aac2abba361233252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 128572, guid: 209978bac77b2934ab311a1f0e3e6a22, type: 3}
+  _spawnPosition: {fileID: 7402525548216486188}
 --- !u!82 &3847934655010589400
 AudioSource:
   m_ObjectHideFlags: 0

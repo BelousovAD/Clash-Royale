@@ -4,15 +4,19 @@ namespace Animator
 {
     internal class ProjectileAnimation : MonoBehaviour
     {
-        private const float Speed = 500;
-        
+        private const float Speed = 1500;
+
         [SerializeField] private GameObject _projectile;
         [SerializeField] private Transform _spawnPosition;
 
         public void SendProjectile()
         {
-            GameObject projectile = Instantiate(_projectile, _spawnPosition.position, Quaternion.identity) as GameObject;
-            projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * Speed);
+            GameObject projectile = Instantiate(_projectile, _spawnPosition.position, Quaternion.identity);
+            
+            if (projectile.TryGetComponent(out Rigidbody body))
+            {
+                body.AddForce(projectile.transform.forward * Speed);
+            }
         }
     }
 }

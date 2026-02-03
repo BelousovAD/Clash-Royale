@@ -18,6 +18,7 @@ MonoBehaviour:
   _rarity: 0
   _prefab: {fileID: 2808426909849180058, guid: b3f8ebf7b088fe54cbde6e53078723ef, type: 3}
   _unlockTime: 10
+  _price: 100
   _chances:
   - Percent: 95
     Rarity: 0

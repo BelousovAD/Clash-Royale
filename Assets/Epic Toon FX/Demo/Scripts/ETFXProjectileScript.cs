@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace EpicToonFX
 {
@@ -12,6 +11,9 @@ namespace EpicToonFX
         public float colliderRadius = 1f;
         [Range(0f, 1f)] // This is an offset that moves the impact effect slightly away from the point of impact to reduce clipping of the impact effect
         public float collideOffset = 0.15f;
+
+        private float _timer;
+        private float _time = 4;
 
         void Start()
         {
@@ -68,6 +70,16 @@ namespace EpicToonFX
                 Destroy(projectileParticle, 3f); // Removes particle effect after delay
                 Destroy(impactP, 3.5f); // Removes impact effect after delay
                 Destroy(gameObject); // Removes the projectile
+            }
+            else
+            {
+                _timer += Time.deltaTime;
+
+                if (Mathf.Approximately(_timer, _time))
+                {
+                    Destroy(projectileParticle);
+                    Destroy(gameObject);
+                }
             }
         }
     }
