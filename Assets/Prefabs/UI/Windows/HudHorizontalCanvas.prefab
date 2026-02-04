@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4831251942186930821}
   - component: {fileID: 2394352571585523262}
   - component: {fileID: 4844404731063163255}
+  - component: {fileID: 2761266876489193163}
   m_Layer: 5
   m_Name: Title (TMP)
   m_TagString: Untagged
@@ -134,6 +135,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2761266876489193163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26877753075285749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf54b7a5708eafb42b1b4b8994a96486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: Remain
 --- !u!1 &342879358391316263
 GameObject:
   m_ObjectHideFlags: 0
@@ -2781,6 +2795,7 @@ GameObject:
   - component: {fileID: 2323872298575778435}
   - component: {fileID: 1347351772529481368}
   - component: {fileID: 5589146242268733214}
+  - component: {fileID: 5956550940748088308}
   m_Layer: 5
   m_Name: MaxElixir (TMP)
   m_TagString: Untagged
@@ -2904,6 +2919,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5956550940748088308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407234853172667606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f1eb29fae2ed944aec9b3e73d40c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _localizationKey: Max
+  _format: '{0}: 10'
 --- !u!1 &5440030864265188440
 GameObject:
   m_ObjectHideFlags: 0
