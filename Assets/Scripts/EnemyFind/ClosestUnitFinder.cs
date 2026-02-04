@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using FSM;
 using Unit;
 using UnitSpawn;
@@ -25,12 +26,8 @@ namespace EnemyFind
             _towers = new List<Unit.Unit>(towers);
         }
 
-        public Unit.Unit FindClosest(Unit.Unit from)
-        {
-            _closest = FindClosest(from, _spawner.SpawnedUnits);
-
-            return _closest ?? FindClosest(from, _towers);
-        }
+        public Unit.Unit FindClosest(Unit.Unit from, bool isTargetOnlyTower) =>
+            FindClosest(from, isTargetOnlyTower ? _towers : _towers.Concat(_spawner.SpawnedUnits));
 
         private static Unit.Unit FindClosest(Unit.Unit from, IEnumerable<Unit.Unit> units)
         {

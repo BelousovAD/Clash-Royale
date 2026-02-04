@@ -14,6 +14,7 @@ namespace EnemyFind
         private ClosestUnitFinder _unitFinder;
         private Unit.Unit _enemy;
         private string _subtype;
+        private bool _isTargetOnlyTower;
 
         public event Action EnemyFound;
 
@@ -54,7 +55,7 @@ namespace EnemyFind
                 return;
             }
             
-            Enemy = _unitFinder.FindClosest(_unit);
+            Enemy = _unitFinder.FindClosest(_unit, _isTargetOnlyTower);
         }
 
         public void UpdateSubtype(string subtype)
@@ -62,6 +63,9 @@ namespace EnemyFind
             _subtype = subtype;
             UpdateTypeToFind();
         }
+
+        public void UpdateTarget(bool towerOnly) =>
+            _isTargetOnlyTower = towerOnly;
 
         private void UpdateTypeToFind()
         {
