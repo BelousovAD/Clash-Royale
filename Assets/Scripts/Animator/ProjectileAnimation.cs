@@ -15,7 +15,7 @@ namespace Animator
             
             if (projectile.TryGetComponent(out Rigidbody body))
             {
-                body.AddForce(projectile.transform.forward * Speed);
+                body.AddForce(transform.forward * Speed);
             }
         }
     }

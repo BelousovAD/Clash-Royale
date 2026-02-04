@@ -1426,9 +1426,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1461060967313697505}
     m_Modifications:
     - target: {fileID: 864767162970228926, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: _timeToRemove
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 864767162970228926, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
       propertyPath: _priceCalculator
       value: 
       objectReference: {fileID: 9121025125608529736}
+    - target: {fileID: 1549099745474339829, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_text
+      value: -02:00
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549099745474339829, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_fontSize
+      value: 86.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4653614745044023300, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
