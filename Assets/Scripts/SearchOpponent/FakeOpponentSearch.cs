@@ -1,15 +1,15 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace SearchOpponent
 {
     internal class FakeOpponentSearch : MonoBehaviour
     {
-        [SerializeField][Min(0f)] private float _minTime = 2f;
-        [SerializeField][Min(0f)] private float _maxTime = 8f;
-        [SerializeField] private string _sceneToLoad;
+        [SerializeField] private SceneLoader _sceneLoader;
+        [SerializeField][Min(0f)] private float _minTime = 3f;
+        [SerializeField][Min(0f)] private float _maxTime = 6f;
+        [SerializeField] private GameObject _cancelButton;
 
         private Coroutine _searchCoroutine;
 
@@ -21,14 +21,13 @@ namespace SearchOpponent
 
         private IEnumerator SearchingOpponent()
         {
+            _cancelButton.SetActive(true);
             float randomTime = Random.Range(_minTime, _maxTime);
 
             yield return new WaitForSecondsRealtime(randomTime);
 
-            LoadTargetScene();
+            _cancelButton.SetActive(false);
+            _sceneLoader.Load();
         }
-
-        private void LoadTargetScene() =>
-            SceneManager.LoadScene(_sceneToLoad);
     }
 }

@@ -40,7 +40,7 @@ MonoBehaviour:
   _quality: 0
   _random: 0
   _saveLoad: 0
-  _sceneLoader: 0
+  _sceneLoader: 1
   _social: 0
   _time: 0
   _unityGaming: 0
