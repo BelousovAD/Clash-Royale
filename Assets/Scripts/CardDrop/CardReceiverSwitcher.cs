@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace CardDrop
 {
-    internal class DropCardAreaSwitcher : MonoBehaviour
+    internal class CardReceiverSwitcher : MonoBehaviour
     {
         private const ContainerType HandCardContainerType = ContainerType.HandCard;
 
-        [SerializeField] private DropCardArea _bottomArea;
-        [SerializeField] private DropCardArea _topArea;
+        [SerializeField] private CardReceiver _bottomArea;
+        [SerializeField] private CardReceiver _topArea;
 
         private Container _container;
         private Item.Item _currentSelect;

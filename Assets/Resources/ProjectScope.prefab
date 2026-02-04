@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6596936900237129893}
   - component: {fileID: -1652261113401643482}
   - component: {fileID: -4686413813558934109}
-  - component: {fileID: 3721230923250366916}
+  - component: {fileID: -9089131317529165910}
   - component: {fileID: 2227905300368908300}
   - component: {fileID: 7647653424732101368}
   - component: {fileID: 4864567865894759747}
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxTime: 180
---- !u!114 &3721230923250366916
+--- !u!114 &-9089131317529165910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,12 +189,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2245714807162874931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f37ca20e6e844f083dcc38ad984096f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2167f3b1ee954accb23353340be23886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _allCardContainerData: {fileID: 11400000, guid: 9190f791f3519864eb43bcf9baf36046, type: 2}
   _cardContainerData: {fileID: 11400000, guid: ac00d45824a37164d832a25b8debc15f, type: 2}
   _equippedCardContainerData: {fileID: 11400000, guid: 938928e285e3b4941abca378b3881bcd, type: 2}
-  _handCardContainerData: {fileID: 11400000, guid: 48f19594bd4677f40899d40e2cae4887, type: 2}
 --- !u!114 &2227905300368908300
 MonoBehaviour:
   m_ObjectHideFlags: 0

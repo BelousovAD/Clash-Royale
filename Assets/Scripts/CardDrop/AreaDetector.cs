@@ -1,19 +1,19 @@
 using System.Collections.Generic;
-using CardDrop;
 using Item;
 using Reflex.Attributes;
 using UnityEngine;
 
-namespace RayPointer
+namespace CardDrop
 {
     public class AreaDetector : MonoBehaviour
     {
         private const ContainerType ContainerType = Item.ContainerType.HandCard;
 
         private Container _container;
+        private RayPointer.RayPointer _rayPointer;
 
         [Inject]
-        private void Initialize(IEnumerable<Container> containers)
+        private void Initialize(IEnumerable<Container> containers, RayPointer.RayPointer rayPointer)
         {
             foreach (Container container in containers)
             {
@@ -23,14 +23,22 @@ namespace RayPointer
                     break;
                 }
             }
+
+            _rayPointer = rayPointer;
         }
 
-        public void FindDropCardArea(Ray ray)
+        private void OnEnable() =>
+            _rayPointer.DragEnded += FindDropCardArea;
+
+        private void OnDisable() =>
+            _rayPointer.DragEnded -= FindDropCardArea;
+
+        private void FindDropCardArea()
         {
-            if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity)
-                && hitInfo.collider.TryGetComponent(out DropCardArea area))
+            if (Physics.Raycast(_rayPointer.Ray, out RaycastHit hitInfo, Mathf.Infinity)
+                && hitInfo.collider.TryGetComponent(out CardReceiver receiver))
             {
-                area.Receive();
+                receiver.Receive();
             }
             else
             {

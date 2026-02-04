@@ -2,10 +2,10 @@
     "name": "UnitSpawn",
     "rootNamespace": "",
     "references": [
-        "GUID:9486b756c36397c4f9f5689c48f9d195",
         "GUID:f0e270abeff639143b0a59e976ae19de",
         "GUID:4cefadf2890e8e84b8e28d80883e7dcf",
         "GUID:fd729f28b7e4c214d94f42da68462741",
+        "GUID:1530a967b84cfb44dbdd5e8a1989764f",
         "GUID:008975ced862fd745991829fc3aea4ac",
         "GUID:2a5b0d172f81f5647a2e991883642c65"
     ],

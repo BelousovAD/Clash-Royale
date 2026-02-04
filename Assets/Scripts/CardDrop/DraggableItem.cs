@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace CardBattle
+namespace CardDrop
 {
     internal class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
@@ -73,7 +73,6 @@ namespace CardBattle
             _rectTransform.anchoredPosition = Vector2.zero;
             _imageAspectRatioFitter.enabled = true;
             _imageToDrag.raycastTarget = true;
-            _rayPointer.SearchArea();
         }
     }
 }

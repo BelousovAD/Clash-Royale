@@ -9,13 +9,10 @@ namespace Elixir
         [SerializeField][Min(0)] private int _defaultValue = 5;
         [SerializeField][Min(0)] private int _maxValue = 10;
         
-        private Currency.Currency _currency;
-        
         public void InstallBindings(ContainerBuilder builder)
         {
-            _currency = new Currency.Currency(CurrencyType.Elixir, _defaultValue, _maxValue);
-
-            builder.AddSingleton(_currency);
+            builder.AddSingleton(new Currency.Currency(CurrencyType.Elixir, _defaultValue, _maxValue));
+            builder.AddSingleton(new Currency.Currency(CurrencyType.EnemyElixir, _defaultValue, _maxValue));
         }
     }
 }

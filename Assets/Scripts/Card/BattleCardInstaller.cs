@@ -7,13 +7,13 @@ using Container = Item.Container;
 
 namespace Card
 {
-    internal class CardInstaller : MonoBehaviour, IInstaller
+    internal class BattleCardInstaller : MonoBehaviour, IInstaller
     {
         private const ItemType CardType = ItemType.Card;
-
-        [SerializeField] private ContainerData _allCardContainerData;
-        [SerializeField] private ContainerData _cardContainerData;
-        [SerializeField] private ContainerData _equippedCardContainerData;
+        
+        [SerializeField] private ContainerData _handCardContainerData;
+        [SerializeField] private ContainerData _enemyHandCardContainerData;
+        [SerializeField] private ContainerData _enemyEquippedCardContainerData;
 
         private List<Container> _cardContainers;
         private ContainerBuilder _builder;
@@ -23,9 +23,9 @@ namespace Card
             _builder = builder;
             _cardContainers = new List<Container>
             {
-                new CardContainer(_allCardContainerData),
-                new SaveableCardContainer(_cardContainerData),
-                new SaveableCardContainer(_equippedCardContainerData),
+                new CardContainer(_handCardContainerData),
+                new CardContainer(_enemyHandCardContainerData),
+                new CardContainer(_enemyEquippedCardContainerData),
             };
 
             _cardContainers.ForEach(cardContainer => _builder.AddSingleton(cardContainer, typeof(Container)));
@@ -38,15 +38,18 @@ namespace Card
             _builder.OnContainerBuilt -= Initialize;
 
             _cardContainers.ForEach(cardContainer =>
-                cardContainer.Initialize(container.Resolve<SavvyServicesProvider>()));
+            {
+                cardContainer.Initialize(container.Resolve<SavvyServicesProvider>());
+                cardContainer.Load();
+            });
         }
         
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            ValidateField(ref _allCardContainerData);
-            ValidateField(ref _cardContainerData);
-            ValidateField(ref _equippedCardContainerData);
+            ValidateField(ref _handCardContainerData);
+            ValidateField(ref _enemyHandCardContainerData);
+            ValidateField(ref _enemyEquippedCardContainerData);
         }
 
         private static void ValidateField(ref ContainerData containerDataField)
