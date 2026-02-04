@@ -23,6 +23,8 @@ namespace Character
         public float Radius => Data.Radius;
 
         public float HealthChangeDelay => Data.HealthChangeDelay;
+
+        public bool IsTargetOnlyTower => Data.IsTargetOnlyTower;
         
         private new CharacterData Data => base.Data as CharacterData;
     }

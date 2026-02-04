@@ -23,3 +23,4 @@ MonoBehaviour:
   _attackSpeed: 1
   _moveSpeed: 3
   _attackRange: 2
+  _isTargetOnlyTower: 1

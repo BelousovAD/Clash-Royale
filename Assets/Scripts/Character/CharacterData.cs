@@ -14,6 +14,7 @@ namespace Character
         [SerializeField][Min(0f)] private float _attackSpeed = 1f;
         [SerializeField][Min(0f)] private float _moveSpeed = 1f;
         [SerializeField][Min(0f)] private float _attackRange = 1f;
+        [SerializeField] private bool _isTargetOnlyTower;
 
         public int HealthChangeAmount => _healthChangeAmount;
         
@@ -30,5 +31,7 @@ namespace Character
         public float Radius => _radius;
         
         public float HealthChangeDelay => _healthChangeDelay;
+
+        public bool IsTargetOnlyTower => _isTargetOnlyTower;
     }
 }
