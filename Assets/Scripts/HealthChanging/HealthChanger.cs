@@ -21,8 +21,15 @@ namespace HealthChanging
             UpdateSubscriptions();
         }
 
-        private void OnDisable() =>
+        private void OnDisable()
+        {
             _unit.Initialized -= UpdateSubscriptions;
+
+            if (_stateSwitcher is not null)
+            {
+                Unsubscribe();
+            }
+        }
 
         public void SetAmount(float amount) =>
             _amount = amount;
@@ -68,7 +75,7 @@ namespace HealthChanging
         {
             yield return _wait;
             
-            _target.Health.Take(_amount);
+            _target?.Health.Take(_amount);
         }
     }
 }

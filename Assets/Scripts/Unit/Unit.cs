@@ -41,6 +41,9 @@ namespace Unit
             }
         }
 
+        private void OnDisable() =>
+            Initialize(null);
+
         private void Update() =>
             _stateMachine?.Update(Time.deltaTime);
 
