@@ -17,7 +17,7 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 9337ea7e96058c347bb94ffae1ad4f46, type: 3}
   _rarity: 0
   _prefab: {fileID: 2808426909849180058, guid: b3f8ebf7b088fe54cbde6e53078723ef, type: 3}
-  _unlockTime: 10
+  _unlockTime: 180
   _price: 100
   _chances:
   - Percent: 95

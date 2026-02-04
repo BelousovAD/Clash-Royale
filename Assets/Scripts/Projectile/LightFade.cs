@@ -22,11 +22,14 @@ namespace Projectile
 
         private void Update()
         {
-            _light.intensity -= _intensity * (Time.deltaTime / _lifeTime);
-
-            if (_killAfterLife && _light.intensity <= 0)
+            if (_light)
             {
-                Destroy(_light);
+                _light.intensity -= _intensity * (Time.deltaTime / _lifeTime);
+
+                if (_killAfterLife && _light.intensity <= 0)
+                {
+                    Destroy(_light);
+                }
             }
         }
     }

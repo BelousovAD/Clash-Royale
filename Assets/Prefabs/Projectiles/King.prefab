@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &128572
+--- !u!1 &5600079926234123466
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 450904}
-  - component: {fileID: 13576440}
-  - component: {fileID: 5479992}
-  - component: {fileID: -571525623725320505}
+  - component: {fileID: 1155329967975000209}
+  - component: {fileID: -3941298102673543238}
+  - component: {fileID: -9032711424378183700}
+  - component: {fileID: -3252428510730668318}
   m_Layer: 0
-  m_Name: Druid
-  m_TagString: Missile
+  m_Name: King
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &450904
+--- !u!4 &1155329967975000209
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128572}
+  m_GameObject: {fileID: 5600079926234123466}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.313633, y: 5.892903, z: -13.319157}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &13576440
+--- !u!135 &-3941298102673543238
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128572}
+  m_GameObject: {fileID: 5600079926234123466}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -53,15 +53,15 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.15
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5479992
+--- !u!54 &-9032711424378183700
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128572}
+  m_GameObject: {fileID: 5600079926234123466}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -82,20 +82,17 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-571525623725320505
+--- !u!114 &-3252428510730668318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128572}
+  m_GameObject: {fileID: 5600079926234123466}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f1327a837e8ca540806c4c99a070ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _impactParticle: {fileID: 182876, guid: 8f58150d197b8634c88f94fbbd1ddad3, type: 3}
-  _projectileParticle: {fileID: 176456, guid: 459379d483c725544b7a05e075fdc490, type: 3}
-  _muzzleParticle: {fileID: 119382, guid: bd896e9191f86274395e0b8d11d6111e, type: 3}
-  _colliderRadius: 0.1
-  _collideOffset: 0.1
+  _projectileParticle: {fileID: 1573430751113452, guid: eff5319e47918a04e8e75bcbdc09aab9, type: 3}
+  _muzzleParticle: {fileID: 0}

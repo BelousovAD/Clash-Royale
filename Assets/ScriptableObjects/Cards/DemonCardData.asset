@@ -16,5 +16,5 @@ MonoBehaviour:
   _subtype: Demon
   _icon: {fileID: 21300000, guid: 8e2ed29f2f8420b46bfd246c148a63a5, type: 3}
   _rarity: 2
-  _price: 8
+  _price: 10
   _isLocked: 1

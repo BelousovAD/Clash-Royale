@@ -6,8 +6,10 @@ namespace Unit
 {
     internal class TowerStateMachineBuilder : AbstractStateMachineBuilder
     {
-        private const float Second = 1f;
-        
+        private const float AttackSpeedDenominatorMultiplier = 2f;
+        private const float AttackSpeedBaseShift = 5f;
+        private const float AttackSpeedNumerator = 25f;
+
         private readonly Unit _unit;
         private readonly ChangeableValue<bool?> _isEnemyClose;
         private readonly float _attackSpeed;
@@ -34,14 +36,16 @@ namespace Unit
             States = new Dictionary<StateType, State>
             {
                 [StateType.Idle] = new (StateType.Idle),
-                [StateType.Attack] = new (StateType.Attack, Second / _attackSpeed),
+                [StateType.Attack] = new (StateType.Attack, ((AttackSpeedNumerator - _attackSpeed) 
+                                                             / (AttackSpeedDenominatorMultiplier * 
+                                                                (_attackSpeed + AttackSpeedBaseShift)))),
                 [StateType.Die] = new (StateType.Die),
             };
         }
 
         protected override void BuildTransitions()
         {
-            States[StateType.Idle].AddTransitionRange(new []
+            States[StateType.Idle].AddTransitionRange(new[]
             {
                 new Transition(
                     _unit.Health,
@@ -52,7 +56,7 @@ namespace Unit
                     () => _isEnemyClose.Value == true,
                     States[StateType.Attack]),
             });
-            States[StateType.Attack].AddTransitionRange(new []
+            States[StateType.Attack].AddTransitionRange(new[]
             {
                 new Transition(
                     null,

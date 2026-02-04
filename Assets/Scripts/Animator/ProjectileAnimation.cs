@@ -4,7 +4,7 @@ namespace Animator
 {
     internal class ProjectileAnimation : MonoBehaviour
     {
-        private const float Speed = 1500;
+        private const float Speed = 1000;
 
         [SerializeField] private GameObject _projectile;
         [SerializeField] private Transform _spawnPosition;
@@ -15,7 +15,7 @@ namespace Animator
             
             if (projectile.TryGetComponent(out Rigidbody body))
             {
-                body.AddForce(projectile.transform.forward * Speed);
+                body.AddForce(transform.forward * Speed);
             }
         }
     }

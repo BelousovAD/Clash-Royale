@@ -16,5 +16,5 @@ MonoBehaviour:
   _subtype: Golem
   _icon: {fileID: 21300000, guid: 1ec8b921c9ae7974c8307d6e389af24c, type: 3}
   _rarity: 0
-  _price: 6
+  _price: 4
   _isLocked: 0
