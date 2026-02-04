@@ -32,7 +32,7 @@ namespace Animator
         {
             _time += Time.deltaTime;
 
-            if (_isAudioPlayed == true)
+            if (_isAudioPlayed)
             {
                 if (_time >= _timeToEnd)
                 {

@@ -219,7 +219,7 @@ MonoBehaviour:
   _tracks:
   - Key: 10
     Clip: {fileID: 8300000, guid: 24892e6855c937d4d99c30a58c27f938, type: 3}
-  - Key: 13
+  - Key: 24
     Clip: {fileID: 8300000, guid: 8e4d54028594fe64bb59b9a27a92b0b7, type: 3}
   - Key: 14
     Clip: {fileID: 8300000, guid: 9ff4559f19e8c1343a434d690c5b59ae, type: 3}

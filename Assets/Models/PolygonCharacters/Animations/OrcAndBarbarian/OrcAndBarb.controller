@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundMark: 0
   _key: 24
+  _isRangeChar: 0
 --- !u!1101 &-994721769737018794
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -189,6 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundMark: 0.5
   _key: 10
+  _isRangeChar: 0
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -310,6 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundMark: 0
   _key: 14
+  _isRangeChar: 0
 --- !u!1102 &4812972163759810872
 AnimatorState:
   serializedVersion: 6
