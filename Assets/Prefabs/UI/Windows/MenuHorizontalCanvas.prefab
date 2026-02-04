@@ -798,7 +798,7 @@ MonoBehaviour:
   _priceCalculator: {fileID: 9121025125608529736}
   _priceAdView: {fileID: 4920175947658905752}
   _textField: {fileID: 4461129310730963801}
-  _format: '{0}'
+  _format: -{0}
 --- !u!1 &5522772324125082605
 GameObject:
   m_ObjectHideFlags: 0
