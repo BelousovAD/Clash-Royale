@@ -66,7 +66,7 @@ namespace CardFilling
         }
 
         private ContainerFiller Create(Reflex.Core.Container _) =>
-            new (CardItemType, _fullCardList.ItemDatas);
+            new (_fullCardList.ItemDatas);
 
         private void OnValidate()
         {

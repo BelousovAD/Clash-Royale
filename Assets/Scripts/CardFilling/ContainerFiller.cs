@@ -11,13 +11,8 @@ namespace CardFilling
         private Container _from;
         private Container _to;
 
-        public ContainerFiller(ItemType itemType, IEnumerable<ItemData> fullItemDatas)
-        {
-            ItemType = itemType;
+        public ContainerFiller(IEnumerable<ItemData> fullItemDatas) =>
             _itemDatas = new List<ItemData>(fullItemDatas);
-        }
-        
-        public ItemType ItemType { get; }
 
         public void Initialize(Container from, Container to)
         {
