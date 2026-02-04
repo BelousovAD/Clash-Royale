@@ -18,9 +18,9 @@ namespace Currency
             _services = servicesProvider;
 
         public void Load() =>
-            Earn(_services.Preferences.LoadInt(nameof(Type), Value));
+            Earn(_services.Preferences.LoadInt(Type.ToString(), Value));
 
         private void Save() =>
-            _services.Preferences.SaveInt(nameof(Type), Value);
+            _services.Preferences.SaveInt(Type.ToString(), Value);
     }
 }
