@@ -795,9 +795,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f9e9c22ad84e7f9035219df4c99ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _priceCalculator: {fileID: 0}
-  _priceAdView: {fileID: 0}
-  _textField: {fileID: 0}
+  _priceCalculator: {fileID: 9121025125608529736}
+  _priceAdView: {fileID: 4920175947658905752}
+  _textField: {fileID: 4461129310730963801}
   _format: '{0}'
 --- !u!1 &5522772324125082605
 GameObject:
@@ -1577,6 +1577,22 @@ PrefabInstance:
 --- !u!224 &2260952199686096793 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6509171429146153020, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+  m_PrefabInstance: {fileID: 4987099860224006053}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4461129310730963801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8709013482546044156, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+  m_PrefabInstance: {fileID: 4987099860224006053}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &4920175947658905752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 104221687757414205, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
   m_PrefabInstance: {fileID: 4987099860224006053}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &5275397147037933339 stripped
