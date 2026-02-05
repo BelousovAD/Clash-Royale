@@ -893,6 +893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _item: {fileID: 8178620738992635401}
+  _format: '{0}'
 --- !u!1 &3572475215265275346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,8 +1285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _item: {fileID: 8178620738992635401}
-  _topPlayer: {fileID: 0}
-  _ordinaryPlayer: {fileID: 0}
+  _topPlayer: {fileID: 8224896479112724527}
+  _ordinaryPlayer: {fileID: 3390664617354463013}
   _currentPlayer: {fileID: 5307087791812464737}
 --- !u!1 &7935221850467452384
 GameObject:
