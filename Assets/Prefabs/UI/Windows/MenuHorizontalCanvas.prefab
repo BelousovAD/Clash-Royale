@@ -1942,14 +1942,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChestSlot (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 714913815892798032, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1544584663964344993, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1960,10 +1952,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
@@ -2045,10 +2033,6 @@ PrefabInstance:
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998833528893973092, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2083,14 +2067,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChestSlot (0)
       objectReference: {fileID: 0}
-    - target: {fileID: 714913815892798032, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1544584663964344993, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2101,10 +2077,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
@@ -2186,10 +2158,6 @@ PrefabInstance:
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998833528893973092, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2382,14 +2350,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChestSlot (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 714913815892798032, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1544584663964344993, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2400,10 +2360,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
@@ -2485,10 +2441,6 @@ PrefabInstance:
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998833528893973092, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2523,14 +2475,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChestSlot (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 714913815892798032, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1544584663964344993, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2541,10 +2485,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
@@ -2626,10 +2566,6 @@ PrefabInstance:
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998833528893973092, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
