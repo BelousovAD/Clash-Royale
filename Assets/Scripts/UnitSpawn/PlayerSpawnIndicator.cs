@@ -31,13 +31,13 @@ namespace UnitSpawn
             _rayPointer.DragEnded -= TurnOffIndicator;
         }
 
-        private void MoveIndicator() =>
-            _transform.position = _rayPointer.Position;
-
-        private void TurnOffIndicator()
+        private void MoveIndicator()
         {
-            _indicatorInstance.SetPositionToSpawn(_transform.position);
-            _transform.position = DefaultPosition;
+            _transform.position = _rayPointer.Position;
+            _indicatorInstance.SetPositionToSpawn(_rayPointer.Position);
         }
+
+        private void TurnOffIndicator() =>
+            _transform.position = DefaultPosition;
     }
 }
