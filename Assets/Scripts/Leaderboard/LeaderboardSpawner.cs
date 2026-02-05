@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using MirraGames.SDK;
@@ -56,13 +55,11 @@ namespace Leaderboard
 
             for (int i = 0; i < leaderboard.players.Length; i++)
             {
-                if (leaderboard.players[i].displayName != displayName)
+                if (leaderboard.players[i].displayName == displayName)
                 {
-                    continue;
+                    currentPlayerIndex = i;
+                    break;
                 }
-
-                currentPlayerIndex = i;
-                break;
             }
 
             if (currentPlayerIndex >= _maxCount)
