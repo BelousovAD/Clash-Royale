@@ -1979,10 +1979,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChestSlot (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 714913815892798032, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 1544584663964344993, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_fontSize
       value: 60
@@ -1997,10 +1993,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
@@ -2082,18 +2074,6 @@ PrefabInstance:
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4937193367898801768, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998833528893973092, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493857549562526011, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2128,10 +2108,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChestSlot (0)
       objectReference: {fileID: 0}
-    - target: {fileID: 714913815892798032, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 1544584663964344993, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_fontSize
       value: 60
@@ -2146,10 +2122,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
@@ -2231,18 +2203,6 @@ PrefabInstance:
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4937193367898801768, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998833528893973092, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493857549562526011, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2277,10 +2237,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChestSlot (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 714913815892798032, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 1544584663964344993, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_fontSize
       value: 60
@@ -2295,10 +2251,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
@@ -2380,18 +2332,6 @@ PrefabInstance:
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4937193367898801768, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998833528893973092, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493857549562526011, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2426,10 +2366,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChestSlot (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 714913815892798032, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 1544584663964344993, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_fontSize
       value: 60
@@ -2444,10 +2380,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3280552681387074471, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4514134068610685757, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
@@ -2530,18 +2462,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4937193367898801768, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998833528893973092, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493857549562526011, guid: 45627b4f0eccee14a93f8fe9d0fda0b6, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2571,9 +2491,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1461060967313697505}
     m_Modifications:
+    - target: {fileID: 677988905498156330, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 677988905498156330, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 677988905498156330, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 677988905498156330, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 677988905498156330, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 677988905498156330, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2700604984898932171, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
       propertyPath: m_Name
       value: TopPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978928480791345510, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978928480791345510, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978928480791345510, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978928480791345510, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978928480791345510, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978928480791345510, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3214698214132397590, guid: ef3ab71da9de23243ab84ad07b979fea, type: 3}
       propertyPath: m_SizeDelta.x
