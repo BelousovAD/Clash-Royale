@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _priceCalculator: {fileID: 0}
-  _timeToRemove: 60
+  _timeToRemove: 120
 --- !u!1 &5386715159085205223
 GameObject:
   m_ObjectHideFlags: 0

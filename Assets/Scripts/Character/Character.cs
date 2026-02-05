@@ -24,7 +24,7 @@ namespace Character
 
         public float HealthChangeDelay => Data.HealthChangeDelay;
 
-        public bool IsTargetOnlyTower => Data.IsTargetOnlyTower;
+        public Priority Priority => Data.Priority;
         
         private new CharacterData Data => base.Data as CharacterData;
     }

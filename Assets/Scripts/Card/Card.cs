@@ -43,13 +43,13 @@ namespace Card
         public override void Load()
         {
             base.Load();
-            _isLocked = Services.Preferences.LoadBool(Type + Subtype + Id, Data.IsLocked);
+            _isLocked = Services.Preferences.LoadBool(Type + Subtype, Data.IsLocked);
         }
 
         protected override void DeleteSaves()
         {
             base.DeleteSaves();
-            Services.Preferences.DeleteKey(Type + Subtype + Id);
+            Services.Preferences.DeleteKey(Type + Subtype);
         }
 
         protected override void Save()
