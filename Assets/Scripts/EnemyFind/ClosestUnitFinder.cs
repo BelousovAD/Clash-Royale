@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Character;
 using FSM;
 using Unit;
 using UnitSpawn;
@@ -26,8 +28,16 @@ namespace EnemyFind
             _towers = new List<Unit.Unit>(towers);
         }
 
-        public Unit.Unit FindClosest(Unit.Unit from, bool isTargetOnlyTower) =>
-            FindClosest(from, isTargetOnlyTower ? _towers : _towers.Concat(_spawner.SpawnedUnits));
+        public Unit.Unit FindClosest(Unit.Unit from, Priority priority)
+        {
+            return priority switch
+            {
+                Priority.Tower => FindClosest(from, _towers.Concat(_spawner.SpawnedUnits)),
+                Priority.TowerOnly => FindClosest(from, _towers),
+                Priority.Unit => FindClosest(from, _spawner.SpawnedUnits) ?? FindClosest(from, _towers),
+                _ => throw new ArgumentOutOfRangeException(nameof(priority), priority, null)
+            };
+        }
 
         private static Unit.Unit FindClosest(Unit.Unit from, IEnumerable<Unit.Unit> units)
         {

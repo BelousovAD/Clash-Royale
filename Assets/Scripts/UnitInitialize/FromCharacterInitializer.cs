@@ -34,7 +34,7 @@ namespace UnitInitialize
             {
                 _healthChangeInitializer.UpdateHealthChangeAmount(character.HealthChangeAmount);
                 _healthChangeInitializer.UpdateDamageDelay(character.HealthChangeDelay);
-                _findCaller.UpdateTarget(character.IsTargetOnlyTower);
+                _findCaller.UpdatePriority(character.Priority);
                 _findCaller.UpdateSubtype(character.Subtype);
                 _approachObserver.Initialize(character.AttackRange);
                 _animationInitializer.UpdateAttackSpeed(character.AttackSpeed);

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Character;
 using Reflex.Attributes;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ namespace EnemyFind
         private ClosestUnitFinder _unitFinder;
         private Unit.Unit _enemy;
         private string _subtype;
-        private bool _isTargetOnlyTower;
+        private Priority _priority;
 
         public event Action EnemyFound;
 
@@ -55,7 +56,7 @@ namespace EnemyFind
                 return;
             }
             
-            Enemy = _unitFinder.FindClosest(_unit, _isTargetOnlyTower);
+            Enemy = _unitFinder.FindClosest(_unit, _priority);
         }
 
         public void UpdateSubtype(string subtype)
@@ -64,8 +65,8 @@ namespace EnemyFind
             UpdateTypeToFind();
         }
 
-        public void UpdateTarget(bool towerOnly) =>
-            _isTargetOnlyTower = towerOnly;
+        public void UpdatePriority(Priority priority) =>
+            _priority = priority;
 
         private void UpdateTypeToFind()
         {
