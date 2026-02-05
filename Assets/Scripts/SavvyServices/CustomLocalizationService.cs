@@ -16,6 +16,7 @@ namespace SavvyServices
         private readonly Dictionary<string, string> _dictionary = new ();
         private LocalizationSettings _settings;
         private IPreferencesService _preferences;
+        private SystemLanguage? _current;
 
         public event Action LocalizationUpdated;
 
@@ -34,13 +35,20 @@ namespace SavvyServices
 
         public SystemLanguage GetLanguage()
         {
-            LanguageType language = MirraSDK.Language.Current;
+            if (_current is null)
+            {
+                LanguageType language = MirraSDK.Language.Current;
+                _current = language.ToEnumOrDefault(SystemLanguage.English);
+            }
 
-            return language.ToEnumOrDefault(SystemLanguage.English);
+            return (SystemLanguage)_current;
         }
 
-        public void SetLanguage(SystemLanguage language) =>
+        public void SetLanguage(SystemLanguage language)
+        {
+            _current = language;
             LoadTextAsset(GetTextAsset(language));
+        }
 
         public string GetTranslation(string key) =>
             _dictionary.ContainsKey(key) ? _dictionary[key] : $"{{{key}}}";

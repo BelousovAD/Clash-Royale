@@ -1333,7 +1333,7 @@ MonoBehaviour:
     m_CornerRadius: {x: 0, y: 0, z: 0}
     m_UniformCornerRadius: 0
   m_Rectangle:
-    m_CornerRadius: {x: 27, y: 27, z: 27, w: 27}
+    m_CornerRadius: {x: 17, y: 17, z: 17, w: 17}
     m_UniformCornerRadius: 1
   m_Circle:
     m_Radius: 0
