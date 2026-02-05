@@ -22,5 +22,5 @@ MonoBehaviour:
   _healthChangeDelay: 0
   _attackSpeed: 4
   _moveSpeed: 2
-  _attackRange: 1
-  _isTargetOnlyTower: 1
+  _attackRange: 2
+  _priority: 1

@@ -23,7 +23,7 @@ namespace Projectile
             _particle = Instantiate(_projectileParticle, _transform.position, _transform.rotation);
             _particle.transform.parent = _transform;
 
-            if (_muzzleParticle is not null)
+            if (_muzzleParticle)
             {
                 GameObject muzzle = Instantiate(_muzzleParticle, _transform.position, _transform.rotation);
                 Destroy(muzzle, MuzzleDestroy);
