@@ -1263,6 +1263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _priceCalculator: {fileID: 6704127639875615610}
   _priceAdView: {fileID: 3890665909850963542}
+  _priceView: {fileID: 3871445814743361146}
   _textField: {fileID: 5499045245938171287}
   _format: -{0}
 --- !u!1 &8057788733347798823
@@ -1786,17 +1787,33 @@ PrefabInstance:
       propertyPath: _priceCalculator
       value: 
       objectReference: {fileID: 6704127639875615610}
-    - target: {fileID: 1549099745474339829, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
-      propertyPath: m_text
-      value: -02:00
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549099745474339829, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
-      propertyPath: m_fontSize
-      value: 84.8
-      objectReference: {fileID: 0}
     - target: {fileID: 4653614745044023300, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865248855823991867, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865248855823991867, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865248855823991867, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 436
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865248855823991867, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865248855823991867, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 218
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865248855823991867, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -157.5
       objectReference: {fileID: 0}
     - target: {fileID: 5386715159085205223, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
       propertyPath: m_Name
@@ -1910,6 +1927,30 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7285702953590648296, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285702953590648296, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285702953590648296, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 436
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285702953590648296, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285702953590648296, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 218
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285702953590648296, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -52.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9029983361732886877, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1939,6 +1980,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+--- !u!1 &3871445814743361146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 87268711521322769, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
+  m_PrefabInstance: {fileID: 3786446581256905067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3890665909850963542 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 104221687757414205, guid: 997734d0134f9704c8545394c8bbb9cd, type: 3}
