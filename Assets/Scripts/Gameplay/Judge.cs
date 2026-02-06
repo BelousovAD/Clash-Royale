@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using ChangeableValue;
 using Timer;
 using Window;
 
@@ -13,17 +15,26 @@ namespace Gameplay
         private readonly string _endgameWindowId;
         private readonly IsMainTowerAlive _isEnemyMainTowerAlive;
         private readonly IsMainTowerAlive _isPlayerMainTowerAlive;
+        private readonly List<Unit.Unit> _enemyTowers;
+        private readonly List<Unit.Unit> _playerTowers;
         private CoroutineTimer _timer;
         private IWindowService _windowService;
         private CrownCounter _enemyCrownCounter;
         private CrownCounter _playerCrownCounter;
         private bool? _isVictory;
 
-        public Judge(string endgameWindowId, Unit.Unit enemyMainTower, Unit.Unit playerMainTower)
+        public Judge(
+            string endgameWindowId,
+            Unit.Unit enemyMainTower,
+            Unit.Unit playerMainTower,
+            IEnumerable<Unit.Unit> enemyTowers,
+            IEnumerable<Unit.Unit> playerTowers)
         {
             _endgameWindowId = endgameWindowId;
             _isEnemyMainTowerAlive = new IsMainTowerAlive(enemyMainTower);
             _isPlayerMainTowerAlive = new IsMainTowerAlive(playerMainTower);
+            _enemyTowers = new List<Unit.Unit>(enemyTowers);
+            _playerTowers = new List<Unit.Unit>(playerTowers);
         }
 
         public event Action VictoryStatusChanged;
@@ -88,9 +99,14 @@ namespace Gameplay
             {
                 IsVictory = false;
             }
-            else
+            else if (_playerCrownCounter.Count != _enemyCrownCounter.Count)
             {
                 IsVictory = _playerCrownCounter.Count > _enemyCrownCounter.Count;
+            }
+            else
+            {
+                IsVictory = _playerTowers.Sum(tower => tower.Health.Value) >
+                            _enemyTowers.Sum(tower => tower.Health.Value);
             }
             
             _windowService.Open(_endgameWindowId, false);
