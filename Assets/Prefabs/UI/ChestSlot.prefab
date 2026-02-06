@@ -589,7 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemProvider: {fileID: 2032259935929064569}
-  _format: '{0:D2}:{1:D2}'
+  _format: '{0:D1}:{1:D2}'
 --- !u!1 &5763500666707799494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textField: {fileID: 714913815892798032}
-  _format: '{0:D2}:{1:D2}'
+  _format: '{0:D1}:{1:D2}'
 --- !u!1 &7267980430664353809
 GameObject:
   m_ObjectHideFlags: 0

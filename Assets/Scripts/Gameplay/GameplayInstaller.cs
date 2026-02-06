@@ -11,6 +11,8 @@ namespace Gameplay
         [SerializeField] private string _endgameWindowId;
         [SerializeField] private Unit.Unit _enemyMainTower;
         [SerializeField] private Unit.Unit _playerMainTower;
+        [SerializeField] private List<Unit.Unit> _enemyTowers;
+        [SerializeField] private List<Unit.Unit> _playerTowers;
 
         private ContainerBuilder _builder;
         private Judge _judge;
@@ -18,7 +20,7 @@ namespace Gameplay
         public void InstallBindings(ContainerBuilder builder)
         {
             _builder = builder;
-            _judge = new Judge(_endgameWindowId, _enemyMainTower, _playerMainTower);
+            _judge = new Judge(_endgameWindowId, _enemyMainTower, _playerMainTower, _enemyTowers, _playerTowers);
 
             _builder.AddSingleton(_judge);
             _builder.AddSingleton(new CrownCounter(CrownType.Enemy));
