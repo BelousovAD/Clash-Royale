@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using CardDrop;
 using Item;
@@ -11,8 +12,11 @@ namespace ArtificialOpponent
         private const ContainerType EnemyHandCardContainer = ContainerType.EnemyHandCard;
         
         [SerializeField] private CardReceiver _cardReceiver;
+        [SerializeField][Min(0f)] private float _delay;
 
         private Container _container;
+        private WaitForSeconds _wait;
+        private Coroutine _waitRoutine;
 
         [Inject]
         private void Initialize(IEnumerable<Container> containers)
@@ -27,21 +31,31 @@ namespace ArtificialOpponent
             }
         }
 
+        private void Awake() =>
+            _wait = new WaitForSeconds(_delay);
+
         private void OnEnable()
         {
-            _container.SelectChanged += CallReceive;
-            CallReceive();
+            _container.SelectChanged += Receive;
+            Receive();
         }
 
         private void OnDisable() =>
-            _container.SelectChanged -= CallReceive;
+            _container.SelectChanged -= Receive;
 
-        private void CallReceive()
+        private void Receive() =>
+            _waitRoutine ??= StartCoroutine(ReceiveAfterDelay());
+
+        private IEnumerator ReceiveAfterDelay()
         {
+            yield return _wait;
+            
             if (_container.Selected is not null)
             {
                 _cardReceiver.Receive();
             }
+
+            _waitRoutine = null;
         }
     }
 }
