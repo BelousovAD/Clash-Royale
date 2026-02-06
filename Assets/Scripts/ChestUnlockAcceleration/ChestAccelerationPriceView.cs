@@ -9,11 +9,10 @@ namespace ChestUnlockAcceleration
     internal class ChestAccelerationPriceView : MonoBehaviour
     {
         private const CurrencyType MoneyCurrency = CurrencyType.Money;
-        private static readonly Color AvailableColor = Color.white;
-        private static readonly Color UnavailableColor = Color.red;
         
         [SerializeField] private ChestAccelerationPriceCalculator _priceCalculator;
         [SerializeField] private GameObject _priceAdView;
+        [SerializeField] private GameObject _priceView;
         [SerializeField] private TMP_Text _textField;
         [SerializeField] private string _format = "{0}";
 
@@ -48,12 +47,12 @@ namespace ChestUnlockAcceleration
             if (_currency.Value < _priceCalculator.Price)
             {
                 _priceAdView.SetActive(true);
-                _textField.color = UnavailableColor;
+                _priceView.SetActive(false);
             }
             else
             {
                 _priceAdView.SetActive(false);
-                _textField.color = AvailableColor;
+                _priceView.SetActive(true);
             }
         }
     }
