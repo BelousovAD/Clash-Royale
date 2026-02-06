@@ -1741,6 +1741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardReceiver: {fileID: 645218524}
+  _delay: 10
 --- !u!1 &645218522
 GameObject:
   m_ObjectHideFlags: 0
