@@ -240,15 +240,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2825828490648885687, guid: 43b28037509a26c41ab2e03806dee8ad, type: 3}
       propertyPath: _id
-      value: Tutorial_Horizontal_3-0
+      value: Tutorial_Battle-6
       objectReference: {fileID: 0}
     - target: {fileID: 5325723934174603084, guid: 43b28037509a26c41ab2e03806dee8ad, type: 3}
       propertyPath: _key
-      value: TutorialDescription_3-0
+      value: Battle-ChestButton-2
       objectReference: {fileID: 0}
     - target: {fileID: 5350418685063979447, guid: 43b28037509a26c41ab2e03806dee8ad, type: 3}
       propertyPath: m_Name
-      value: TutorialCanvas_Horizontal_3-0
+      value: TutorialCanvas_Horizontal_Battle-6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512105614620896611, guid: 43b28037509a26c41ab2e03806dee8ad, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
