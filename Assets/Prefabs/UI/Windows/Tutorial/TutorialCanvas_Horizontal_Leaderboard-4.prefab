@@ -279,6 +279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 464390003581902426, guid: 1794d3751915fe74ebad43e0e96980dd, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 480624974136260367, guid: 1794d3751915fe74ebad43e0e96980dd, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -329,6 +333,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1486576261473811358, guid: 1794d3751915fe74ebad43e0e96980dd, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261253130890254210, guid: 1794d3751915fe74ebad43e0e96980dd, type: 3}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2398772839961508896, guid: 1794d3751915fe74ebad43e0e96980dd, type: 3}
