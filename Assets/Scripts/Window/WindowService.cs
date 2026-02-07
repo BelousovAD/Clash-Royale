@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ namespace Window
 {
     internal class WindowService : IWindowService
     {
+        private const int MinCountToClose = 0;
+        
         private readonly IWindowSpawner _spawner;
         private readonly Stack<Window> _windowsHistory = new ();
         private readonly Dictionary<string, Window> _spawnedWindows = new ();
@@ -29,21 +32,26 @@ namespace Window
             }
         }
 
-        public RectTransform Open(string id, bool needCloseCurrent = false)
+        public RectTransform Open(string id, int countToClose)
         {
+            if (countToClose < MinCountToClose)
+            {
+                throw new ArgumentOutOfRangeException(nameof(countToClose), countToClose, null);
+            }
+
+            Window lastWindow;
+            
             if (_windowsHistory.Count > 0)
             {
-                Window lastWindow = _windowsHistory.Peek();
-
-                if (lastWindow.Id == id)
-                {
-                    return lastWindow.transform as RectTransform;
-                }
-
+                lastWindow = _windowsHistory.Peek();
                 lastWindow.SetInteractable(false);
+            }
 
-                if (needCloseCurrent)
+            for (int i = 0; i < countToClose; i++)
+            {
+                if (_windowsHistory.Count > 0)
                 {
+                    lastWindow = _windowsHistory.Pop();
                     lastWindow.SetActive(false);
                 }
             }

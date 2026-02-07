@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _windowId: 
-  _needCloseCurrent: 1
+  _countToClose: 1
 --- !u!1 &6729902155489899289
 GameObject:
   m_ObjectHideFlags: 0

@@ -523,6 +523,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6072004276228830859, guid: 1794d3751915fe74ebad43e0e96980dd, type: 3}
+      propertyPath: _countToClose
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6488642051722487511, guid: 1794d3751915fe74ebad43e0e96980dd, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -593,9 +597,6 @@ PrefabInstance:
       addedObject: {fileID: 4397215628875356788}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6756301912348478803, guid: 1794d3751915fe74ebad43e0e96980dd, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 9076355497284641848}
-    - targetCorrespondingSourceObject: {fileID: 6756301912348478803, guid: 1794d3751915fe74ebad43e0e96980dd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7774183551177692800}
   m_SourcePrefab: {fileID: 100100000, guid: 1794d3751915fe74ebad43e0e96980dd, type: 3}
@@ -604,18 +605,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6756301912348478803, guid: 1794d3751915fe74ebad43e0e96980dd, type: 3}
   m_PrefabInstance: {fileID: 8100198808798549766}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9076355497284641848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3290613093589588565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61e96e8924e751a459eae75f86dfaa48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7774183551177692800
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,6 @@ namespace Window
     {
         public void CloseCurrent();
 
-        public RectTransform Open(string id, bool needCloseCurrent);
+        public RectTransform Open(string id, int countToClose);
     }
 }

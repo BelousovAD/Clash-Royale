@@ -9,6 +9,8 @@ namespace Tutorial
 {
     internal class TutorialOpener : MonoBehaviour
     {
+        private const int CountToClose = 0;
+        
         [SerializeField] private float _delay = 0.1f;
         [SerializeField] private List<StageWindow> _stages;
         
@@ -47,7 +49,7 @@ namespace Tutorial
         {
             yield return _wait;
 
-            _windowService.Open(windowId, false);
+            _windowService.Open(windowId, CountToClose);
         }
         
         [Serializable]
