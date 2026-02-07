@@ -853,6 +853,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7959592253491531295}
     m_Modifications:
+    - target: {fileID: 1678100819815869524, guid: 58172b5944a0cb94ab08450b9c7a81d1, type: 3}
+      propertyPath: _stage
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1715183285272575035, guid: 58172b5944a0cb94ab08450b9c7a81d1, type: 3}
       propertyPath: _windowId
       value: Tutorial_Battle-4
