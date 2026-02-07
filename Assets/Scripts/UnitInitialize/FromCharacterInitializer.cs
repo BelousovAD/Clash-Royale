@@ -39,7 +39,6 @@ namespace UnitInitialize
                 _approachObserver.Initialize(character.AttackRange);
                 _animationInitializer.UpdateAttackSpeed(character.AttackSpeed);
                 _agent.radius = character.Radius;
-                _agent.stoppingDistance = character.AttackRange;
                 _agent.speed = character.MoveSpeed;
                 _mover.UpdateRadius(character.Radius);
             }
