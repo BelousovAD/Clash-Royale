@@ -201,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5325723934174603084, guid: 43b28037509a26c41ab2e03806dee8ad, type: 3}
       propertyPath: _key
-      value: Leaderboard-4
+      value: Leaderboard-3
       objectReference: {fileID: 0}
     - target: {fileID: 5350418685063979447, guid: 43b28037509a26c41ab2e03806dee8ad, type: 3}
       propertyPath: m_Name
@@ -463,7 +463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1715183285272575035, guid: 58172b5944a0cb94ab08450b9c7a81d1, type: 3}
       propertyPath: _windowId
-      value: Tutorial_Leaderboard-3
+      value: Tutorial_Leaderboard-4
       objectReference: {fileID: 0}
     - target: {fileID: 2032657781833314525, guid: 58172b5944a0cb94ab08450b9c7a81d1, type: 3}
       propertyPath: m_Name
