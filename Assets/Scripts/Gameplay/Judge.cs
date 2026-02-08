@@ -9,6 +9,7 @@ namespace Gameplay
 {
     public class Judge : IDisposable
     {
+        private const int CountToClose = 0;
         private const CrownType EnemyCrown = CrownType.Enemy;
         private const CrownType PlayerCrown = CrownType.Player;
         
@@ -109,7 +110,7 @@ namespace Gameplay
                             _enemyTowers.Sum(tower => tower.Health.Value);
             }
             
-            _windowService.Open(_endgameWindowId, false);
+            _windowService.Open(_endgameWindowId, CountToClose);
             Unsubscribe();
         }
 

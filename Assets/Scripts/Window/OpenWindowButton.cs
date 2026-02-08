@@ -7,7 +7,7 @@ namespace Window
     internal class OpenWindowButton : AbstractButton
     {
         [SerializeField] private string _windowId;
-        [SerializeField] private bool _needCloseCurrent;
+        [SerializeField][Min(0)] private int _countToClose;
 
         private IWindowService _windowService;
 
@@ -16,6 +16,6 @@ namespace Window
             _windowService = windowService;
 
         protected override void HandleClick() =>
-            _windowService.Open(_windowId, _needCloseCurrent);
+            _windowService.Open(_windowId, _countToClose);
     }
 }

@@ -1388,6 +1388,16 @@ MonoBehaviour:
   _windowPrefabs:
   - {fileID: 3077419580505200742, guid: 23bd69b6dd4f1b040b01b3668c8de605, type: 3}
   - {fileID: 3077419580505200742, guid: 664670379c1cf6b49b65368a0aa1fe0a, type: 3}
+  - {fileID: 2518675500493443436, guid: 035e9692fa9e49a4cb3f5cf370f51cdd, type: 3}
+  - {fileID: 2518675500493443436, guid: 4402847625cd70147993ca371eaab783, type: 3}
+  - {fileID: 2518675500493443436, guid: e8b2081d8ecb8924c94bcf0a4c4c35bf, type: 3}
+  - {fileID: 2518675500493443436, guid: bfbed28e105fe4f40b40da51889a8415, type: 3}
+  - {fileID: 2518675500493443436, guid: eca2bfc79c8375d4083ca9997d656765, type: 3}
+  - {fileID: 2518675500493443436, guid: 216ae42859be41242b5da55251f2f1cc, type: 3}
+  - {fileID: 2518675500493443436, guid: 1676c3cf668666141886344257b72972, type: 3}
+  - {fileID: 2518675500493443436, guid: f59a5e62ef2dee843b7600e64ed9bdaf, type: 3}
+  - {fileID: 2518675500493443436, guid: b34bc85c0d120804e922f6167371f164, type: 3}
+  - {fileID: 2518675500493443436, guid: 93f90a277f6a31b40b2fe7a4bd7a9955, type: 3}
 --- !u!4 &464003978
 Transform:
   m_ObjectHideFlags: 0
@@ -2910,6 +2920,16 @@ MonoBehaviour:
   _windowPrefabs:
   - {fileID: 3077419580505200742, guid: 9b1edbdb8729dfc49aa396fc6ca7cb14, type: 3}
   - {fileID: 3077419580505200742, guid: ad6eabb29a293f84bb92bd70a38bc19b, type: 3}
+  - {fileID: 2518675500493443436, guid: 39b26d367eb9ca544b277ec2b78f46fa, type: 3}
+  - {fileID: 2518675500493443436, guid: 4975474adb398284092014dc3d21c52b, type: 3}
+  - {fileID: 2518675500493443436, guid: bb063039e21243b419ef57d689bca7b9, type: 3}
+  - {fileID: 2518675500493443436, guid: 5a99fb8b5720f11479f57ac8fe045cef, type: 3}
+  - {fileID: 2518675500493443436, guid: 047da6f28150fef4ba6105d6a89368e5, type: 3}
+  - {fileID: 2518675500493443436, guid: 9639c73d5793d0344b2cc170d7ca3d15, type: 3}
+  - {fileID: 2518675500493443436, guid: 2bb9421dbafb3ef4facd3e5b009b6591, type: 3}
+  - {fileID: 2518675500493443436, guid: 2e1c361af13b9954584eda4691c7579f, type: 3}
+  - {fileID: 2518675500493443436, guid: 47f5239908c802a45851750f4a12edb0, type: 3}
+  - {fileID: 2518675500493443436, guid: 86324f94708cf7d4f81fa496dd93a288, type: 3}
 --- !u!4 &912067482
 Transform:
   m_ObjectHideFlags: 0
@@ -4139,6 +4159,7 @@ GameObject:
   - component: {fileID: 1357795372}
   - component: {fileID: 1357795373}
   - component: {fileID: 1357795375}
+  - component: {fileID: 1357795376}
   m_Layer: 0
   m_Name: SceneScope
   m_TagString: Untagged
@@ -4333,6 +4354,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5441555b3ead4acdbe8897b3cc769f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1357795376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357795362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20352d16e00b401992687c0fa41a881a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _saveKey: TutorialGame
+  _maxStage: 10
 --- !u!1001 &1441263288
 PrefabInstance:
   m_ObjectHideFlags: 0
