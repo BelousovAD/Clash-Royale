@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _windowId: Chest
-  _countToClose: 1
+  _countToClose: 0
 --- !u!114 &2010456682129980334
 MonoBehaviour:
   m_ObjectHideFlags: 0
