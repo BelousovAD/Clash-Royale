@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _windowId: Searching
-  _countToClose: 1
+  _countToClose: 0
 --- !u!114 &2234820207095171406
 MonoBehaviour:
   m_ObjectHideFlags: 0
