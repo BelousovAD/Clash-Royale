@@ -80,8 +80,8 @@ namespace Chest
 
         public override void Initialize(SavvyServicesProvider servicesProvider)
         {
-            base.Initialize(servicesProvider);
             Timer.Initialize(servicesProvider);
+            base.Initialize(servicesProvider);
         }
 
         public override void Dispose()
@@ -109,7 +109,7 @@ namespace Chest
             return RarityType.Legendary;
         }
 
-        public override void Load()
+        protected override void Load()
         {
             base.Load();
             SaveData saveData = Services.Preferences.LoadJson(Type + Subtype + Id, new SaveData()

@@ -26,11 +26,11 @@ namespace Item
 
         protected SavvyServicesProvider Services { get; private set; }
 
-        public virtual void Initialize(SavvyServicesProvider servicesProvider) =>
+        public virtual void Initialize(SavvyServicesProvider servicesProvider)
+        {
             Services = servicesProvider;
-
-        public virtual void Load()
-        { }
+            Load();
+        }
 
         public void UpdateId(int id)
         {
@@ -46,6 +46,9 @@ namespace Item
         { }
 
         protected virtual void DeleteSaves()
+        { }
+
+        protected virtual void Load()
         { }
 
         protected virtual void Save()
