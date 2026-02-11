@@ -104,7 +104,6 @@ namespace Item
                 Item item = CreateItem(data, i);
                 item.Initialize(Services);
                 _items.Add(item);
-                item.Load();
             }
 
             Subscribe();
