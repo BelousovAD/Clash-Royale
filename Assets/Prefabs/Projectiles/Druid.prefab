@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 128572}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.313633, y: 5.892903, z: -13.319157}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -94,8 +94,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1327a837e8ca540806c4c99a070ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _impactParticle: {fileID: 182876, guid: 8f58150d197b8634c88f94fbbd1ddad3, type: 3}
   _projectileParticle: {fileID: 176456, guid: 459379d483c725544b7a05e075fdc490, type: 3}
   _muzzleParticle: {fileID: 119382, guid: bd896e9191f86274395e0b8d11d6111e, type: 3}
-  _colliderRadius: 0.1
-  _collideOffset: 0.1

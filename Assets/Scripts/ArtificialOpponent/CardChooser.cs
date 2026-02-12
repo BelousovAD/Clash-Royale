@@ -49,6 +49,7 @@ namespace ArtificialOpponent
                 if (card!.Price <= _currency.Value)
                 {
                     cardToSelect = card;
+                    break;
                 }
             }
             

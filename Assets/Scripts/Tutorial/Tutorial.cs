@@ -1,16 +1,42 @@
-using UnityEngine;
+using System;
+using Bootstrap;
 
 namespace Tutorial
 {
-    internal class Tutorial : MonoBehaviour
+    internal class Tutorial
     {
-        private TutorialData _data;
+        private const int Min = 0;
+        
+        private readonly int _maxStage;
+        private readonly string _saveKey;
+        private SavvyServicesProvider _services;
 
-        public Sprite Icon => _data.Icon;
+        public Tutorial(string saveKey, int maxStage)
+        {
+            if (maxStage <= Min)
+            {
+                throw new ArgumentOutOfRangeException(nameof(maxStage), maxStage, null);
+            }
+            
+            _saveKey = saveKey;
+            _maxStage = maxStage;
+        }
 
-        public string DescriptionKey => _data.DescriptionKey;
+        public bool IsCompleted => _services.Preferences.LoadBool(_saveKey);
 
-        public void Initialize(TutorialData data) =>
-            _data = data;
+        public int LastStage { get; private set; }
+
+        public void Initialize(SavvyServicesProvider servicesProvider) =>
+            _services = servicesProvider;
+
+        public void Complete(int stage)
+        {
+            LastStage = stage;
+
+            if (LastStage == _maxStage)
+            {
+                _services.Preferences.SaveBool(_saveKey, true);
+            }
+        }
     }
 }

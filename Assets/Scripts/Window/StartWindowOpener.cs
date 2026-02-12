@@ -5,6 +5,8 @@ namespace Window
 {
     internal class StartWindowOpener : MonoBehaviour
     {
+        private const int CountToClose = 0;
+        
         [SerializeField] private string _windowId;
 
         private IWindowService _windowService;
@@ -14,6 +16,6 @@ namespace Window
             _windowService = windowService;
 
         private void Start() =>
-            _windowService.Open(_windowId, false);
+            _windowService.Open(_windowId, CountToClose);
     }
 }
