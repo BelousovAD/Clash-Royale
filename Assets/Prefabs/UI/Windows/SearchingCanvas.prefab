@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8dfa59ff2b141f2884f260e44ad791c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: Game
+  _opponentSearch: {fileID: 1733511118989369620}
 --- !u!1 &2993064905484107365
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,7 +604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda8ac27ea902e340b8a78873d36c060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneLoader: {fileID: 2973315816042701853}
   _minTime: 3
   _maxTime: 6
 --- !u!1 &5157330998442297597

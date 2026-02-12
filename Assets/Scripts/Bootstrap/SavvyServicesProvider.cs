@@ -9,7 +9,6 @@ namespace Bootstrap
         private ILocalizationService _localization;
         private IMediationService _mediation;
         private IPreferencesService _preferences;
-        private ISceneLoaderService _sceneLoader;
 
         public ICoroutineRunnerService CoroutineRunner =>
             _coroutineRunner ??= GetService<ICoroutineRunnerService>();
@@ -22,8 +21,5 @@ namespace Bootstrap
 
         public IPreferencesService Preferences =>
             _preferences ??= GetService<IPreferencesService>();
-
-        public ISceneLoaderService SceneLoader =>
-            _sceneLoader ??= GetService<ISceneLoaderService>();
     }
 }
