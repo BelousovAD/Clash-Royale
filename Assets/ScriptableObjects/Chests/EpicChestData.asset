@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28883ab46929470495b8427c52ccfb2d, type: 3}
+  m_Name: EpicChestData
+  m_EditorClassIdentifier: 
+  _type: 1
+  _subtype: Epic
+  _icon: {fileID: 21300000, guid: 7a966e322e891f24daa4b8eeb5dff574, type: 3}
+  _rarity: 1
+  _prefab: {fileID: 841463170486696803, guid: c9f70c99c592799489be0620f9d468bd, type: 3}
+  _unlockTime: 600
+  _price: 500
+  _chances:
+  - Percent: 69
+    Rarity: 0
+  - Percent: 30
+    Rarity: 1
+  - Percent: 1
+    Rarity: 2

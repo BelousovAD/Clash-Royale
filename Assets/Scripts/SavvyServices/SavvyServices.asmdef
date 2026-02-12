@@ -1,0 +1,21 @@
+{
+    "name": "SavvyServices",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ed9b69885c6c1724396119d27d2a2b5d",
+        "GUID:7d650c7cbce55a7438c84139fa01d492",
+        "GUID:a850bd9eb7e58e24689bf135b1ab9c11",
+        "GUID:3bf09073f32d10944a5fcdbae8761f4d",
+        "GUID:4989e407f1624a44488699be48021839",
+        "GUID:5bdc465b4c3e7c0489d610a51cdf5e51"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

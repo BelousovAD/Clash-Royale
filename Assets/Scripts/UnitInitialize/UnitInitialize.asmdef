@@ -1,0 +1,23 @@
+{
+    "name": "UnitInitialize",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7559eac92c676674995251865b1298e9",
+        "GUID:bc85b5c4fcff1b3428e3e2571818f6a8",
+        "GUID:15e5c11efa7b5a64ab79e8e177bbe5ab",
+        "GUID:854002594774b9a41accbda922f671c2",
+        "GUID:4cefadf2890e8e84b8e28d80883e7dcf",
+        "GUID:2a5b0d172f81f5647a2e991883642c65",
+        "GUID:3f8ae3d99f2a494a9f4c51de07bf0476",
+        "GUID:3d301e1d545029243a2a801af9e848be"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

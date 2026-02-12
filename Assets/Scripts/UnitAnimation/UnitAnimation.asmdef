@@ -1,0 +1,18 @@
+{
+    "name": "UnitAnimation",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7559eac92c676674995251865b1298e9",
+        "GUID:f0e270abeff639143b0a59e976ae19de",
+        "GUID:2a5b0d172f81f5647a2e991883642c65"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

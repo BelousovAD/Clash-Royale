@@ -1,0 +1,67 @@
+using System.Collections.Generic;
+using Bootstrap;
+using Item;
+using Reflex.Core;
+using UnityEngine;
+using Container = Item.Container;
+
+namespace Card
+{
+    internal class BattleCardInstaller : MonoBehaviour, IInstaller
+    {
+        private const ItemType CardType = ItemType.Card;
+        
+        [SerializeField] private ContainerData _handCardContainerData;
+        [SerializeField] private ContainerData _enemyHandCardContainerData;
+        [SerializeField] private ContainerData _enemyEquippedCardContainerData;
+
+        private List<Container> _cardContainers;
+        private ContainerBuilder _builder;
+
+        public void InstallBindings(ContainerBuilder builder)
+        {
+            _builder = builder;
+            _cardContainers = new List<Container>
+            {
+                new CardContainer(_handCardContainerData),
+                new CardContainer(_enemyHandCardContainerData),
+                new CardContainer(_enemyEquippedCardContainerData),
+            };
+
+            _cardContainers.ForEach(cardContainer => _builder.AddSingleton(cardContainer, typeof(Container)));
+
+            _builder.OnContainerBuilt += Initialize;
+        }
+
+        private void Initialize(Reflex.Core.Container container)
+        {
+            _builder.OnContainerBuilt -= Initialize;
+
+            _cardContainers.ForEach(cardContainer =>
+            {
+                cardContainer.Initialize(container.Resolve<SavvyServicesProvider>());
+                cardContainer.Load();
+            });
+        }
+        
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            ValidateField(ref _handCardContainerData);
+            ValidateField(ref _enemyHandCardContainerData);
+            ValidateField(ref _enemyEquippedCardContainerData);
+        }
+
+        private static void ValidateField(ref ContainerData containerDataField)
+        {
+            if (containerDataField is not null && containerDataField.ItemType != CardType)
+            {
+                Debug.LogError(
+                    $"Require {nameof(containerDataField)} with " +
+                    $"{nameof(containerDataField.ItemType)}:{CardType}");
+                containerDataField = null;
+            }
+        }
+#endif
+    }
+}

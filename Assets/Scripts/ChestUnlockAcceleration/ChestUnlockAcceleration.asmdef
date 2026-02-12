@@ -1,0 +1,24 @@
+{
+    "name": "ChestUnlockAcceleration",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d5ff5e78780277246aa32f920c0a35ef",
+        "GUID:4371f117467566f4ca79fbe86265e10c",
+        "GUID:1c364b3336ff58842b4ae7b0404ebff2",
+        "GUID:008f65d56f5918d4ca958a2f25c52a7c",
+        "GUID:4cefadf2890e8e84b8e28d80883e7dcf",
+        "GUID:1530a967b84cfb44dbdd5e8a1989764f",
+        "GUID:3bf09073f32d10944a5fcdbae8761f4d",
+        "GUID:4e0502a85406ffc45b65af8e7decfc4a",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

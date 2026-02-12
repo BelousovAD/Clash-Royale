@@ -1,0 +1,23 @@
+{
+    "name": "ArtificialOpponent",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7feba99b55daccd44956965a1df32e31",
+        "GUID:4e13ef675ed728b4892a323651ecbb14",
+        "GUID:008f65d56f5918d4ca958a2f25c52a7c",
+        "GUID:15e5c11efa7b5a64ab79e8e177bbe5ab",
+        "GUID:4cefadf2890e8e84b8e28d80883e7dcf",
+        "GUID:1530a967b84cfb44dbdd5e8a1989764f",
+        "GUID:2a5b0d172f81f5647a2e991883642c65",
+        "GUID:a5b3f51a24b3eef42bd091bdd994612e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

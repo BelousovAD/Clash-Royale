@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056532581e3fe7346b9878b87e8b9973, type: 3}
+  m_Name: SavvyServicesSettings
+  m_EditorClassIdentifier: 
+  _debug: 0
+  _coroutineRunner: 1
+  _eventBus: 1
+  _gameObjectFactory: 1
+  _preferences: 1
+  _analytics: 0
+  _assetProvider: 0
+  _audio: 0
+  _countryChecker: 0
+  _curtain: 0
+  _firebaseApp: 0
+  _firebaseAuth: 0
+  _firebaseCrashlytics: 0
+  _firebaseFirestore: 0
+  _firebaseRemoteConfig: 0
+  _firebaseStorage: 0
+  _gameAnalytics: 0
+  _gameStateMachine: 0
+  _identifier: 0
+  _inAppPurchasing: 0
+  _instanceFactory: 0
+  _localization: 1
+  _mediation: 1
+  _notification: 0
+  _numberFormat: 1
+  _quality: 0
+  _random: 0
+  _saveLoad: 0
+  _sceneLoader: 1
+  _social: 0
+  _time: 0
+  _unityGaming: 0
+  _vibration: 0
