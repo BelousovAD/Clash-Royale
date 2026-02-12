@@ -7,7 +7,6 @@ namespace SearchOpponent
 {
     internal class FakeOpponentSearch : MonoBehaviour
     {
-        [SerializeField] private SceneLoader _sceneLoader;
         [SerializeField][Min(0f)] private float _minTime = 3f;
         [SerializeField][Min(0f)] private float _maxTime = 6f;
         
@@ -56,7 +55,6 @@ namespace SearchOpponent
             yield return new WaitForSecondsRealtime(randomTime);
 
             IsFound = true;
-            _sceneLoader.Load();
         }
     }
 }
