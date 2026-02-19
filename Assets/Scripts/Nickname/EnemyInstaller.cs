@@ -6,7 +6,7 @@ namespace Nickname
     internal class EnemyInstaller : MonoBehaviour, IInstaller
     {
         [SerializeField] private NicknameList _nicknameList;
-        
+
         public void InstallBindings(ContainerBuilder builder)
         {
             Opponent enemy = new (OpponentType.Enemy);

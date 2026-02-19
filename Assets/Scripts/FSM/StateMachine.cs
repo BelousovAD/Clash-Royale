@@ -12,6 +12,7 @@ namespace FSM
             _states = new List<State>(states);
 
         public event Action StateSwitching;
+
         public event Action StateSwitched;
 
         public State CurrentState { get; private set; }

@@ -22,7 +22,7 @@ namespace CardFilling
         public void InstallBindings(ContainerBuilder builder)
         {
             _builder = builder;
-            
+
             _builder.AddTransient(Create);
 
             _builder.OnContainerBuilt += Initialize;
@@ -59,13 +59,13 @@ namespace CardFilling
                         break;
                 }
             }
-            
+
             container.Resolve<ContainerFiller>().Initialize(allCardContainer, enemyEquippedCardContainer);
             container.Resolve<ContainerFiller>().Initialize(equippedCardContainer, handCardContainer);
             container.Resolve<ContainerFiller>().Initialize(enemyEquippedCardContainer, enemyHandCardContainer);
         }
 
-        private ContainerFiller Create(Reflex.Core.Container _) =>
+        private ContainerFiller Create(Reflex.Core.Container container) =>
             new (_fullCardList.ItemDatas);
 
         private void OnValidate()

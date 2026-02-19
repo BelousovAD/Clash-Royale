@@ -7,7 +7,7 @@ namespace UnitAnimation
     internal class UnitAnimationCaller : MonoBehaviour
     {
         [SerializeField] private Unit.Unit _unit;
-        
+
         private UnitAnimator _unitAnimator;
         private IStateSwitcher _stateSwitcher;
 
@@ -52,7 +52,7 @@ namespace UnitAnimation
             {
                 Subscribe();
             }
-            
+
             CallAnimation();
         }
 
@@ -62,7 +62,7 @@ namespace UnitAnimation
             {
                 return;
             }
-            
+
             switch (_stateSwitcher.CurrentState.Type)
             {
                 case StateType.Idle:

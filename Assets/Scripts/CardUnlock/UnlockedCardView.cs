@@ -8,12 +8,12 @@ namespace CardUnlock
     {
         private readonly Vector3 _minScale = Vector3.zero;
         private readonly Vector3 _maxScale = Vector3.one;
-        
+
         [SerializeField] private CanvasGroup _windowCanvasGroup;
         [SerializeField] private CanvasGroup _cardCanvasGroup;
         [SerializeField][Min(0f)] private float _animationDelay;
         [SerializeField][Min(0f)] private float _animationDuration;
-        
+
         private CardUnlocker _cardUnlocker;
 
         [Inject]

@@ -25,11 +25,11 @@ namespace Reward
             _chestDatas = new List<ChestData>(chestDatas);
             _totalChance = _chestChances.Sum(chance => chance.Percent);
         }
-        
+
         public void Initialize(Judge judge, IEnumerable<Container> containers)
         {
             Initialize(judge);
-            
+
             foreach (Container container in containers)
             {
                 if (container.Type == ChestContainer)
@@ -41,7 +41,8 @@ namespace Reward
         }
 
         protected override void ApplyPenalty()
-        { }
+        {
+        }
 
         protected override void ApplyReward()
         {

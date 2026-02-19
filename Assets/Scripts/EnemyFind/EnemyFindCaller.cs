@@ -10,7 +10,7 @@ namespace EnemyFind
     {
         [SerializeField] private Unit.Unit _unit;
         [SerializeField] private List<string> _excludes;
-        
+
         private List<ClosestUnitFinder> _unitFinders;
         private ClosestUnitFinder _unitFinder;
         private Unit.Unit _enemy;
@@ -21,10 +21,7 @@ namespace EnemyFind
 
         public Unit.Unit Enemy
         {
-            get
-            {
-                return _enemy;
-            }
+            get => _enemy;
 
             private set
             {
@@ -55,7 +52,7 @@ namespace EnemyFind
             {
                 return;
             }
-            
+
             Enemy = _unitFinder.FindClosest(_unit, _priority);
         }
 
@@ -71,7 +68,7 @@ namespace EnemyFind
         private void UpdateTypeToFind()
         {
             bool isExcludeSubtype = _excludes.Contains(_subtype);
-            
+
             foreach (ClosestUnitFinder unitFinder in _unitFinders)
             {
                 if ((isExcludeSubtype ^ unitFinder.TypeToFind == _unit.Type) == false)

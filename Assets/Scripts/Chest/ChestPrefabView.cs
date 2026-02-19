@@ -15,11 +15,10 @@ namespace Chest
             {
                 return;
             }
-            
+
             Destroy(_prefabInstance);
             _prefabInstance = Instantiate(Item.Prefab, _parent);
-            _prefabInstance.transform.localPosition = Vector3.zero;
-            _prefabInstance.transform.localRotation = Quaternion.identity;
+            _prefabInstance.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         }
     }
 }

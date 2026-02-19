@@ -25,10 +25,7 @@ namespace Elixir
 
         public float Progress
         {
-            get
-            {
-                return _progress;
-            }
+            get => _progress;
 
             private set
             {
@@ -42,8 +39,8 @@ namespace Elixir
         {
             foreach (Currency.Currency currency in currencies)
             {
-                if (_isForEnemy == false && currency.Type == ElixirCurrency
-                    || _isForEnemy && currency.Type == EnemyElixirCurrency)
+                if ((_isForEnemy == false && currency.Type == ElixirCurrency)
+                    || (_isForEnemy && currency.Type == EnemyElixirCurrency))
                 {
                     _currency = currency;
                     break;

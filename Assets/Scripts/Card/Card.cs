@@ -6,19 +6,17 @@ namespace Card
     public class Card : Item.Item
     {
         private bool _isLocked = true;
-        
+
         public Card(CardData data, int id)
             : base(data, id)
-        { }
+        {
+        }
 
         public event Action LockStatusChanged;
 
         public bool IsLocked
         {
-            get
-            {
-                return _isLocked;
-            }
+            get => _isLocked;
 
             private set
             {

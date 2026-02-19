@@ -10,7 +10,7 @@ namespace Item
         [SerializeField] private List<ItemData> _itemDatas = new ();
 
         public ItemType Type => _type;
-        
+
         public IReadOnlyList<ItemData> ItemDatas => _itemDatas;
 
         private void OnValidate()
@@ -18,7 +18,7 @@ namespace Item
             for (int i = 0; i < ItemDatas.Count; i++)
             {
                 ItemType itemType = ItemDatas[i].Type;
-                
+
                 if (itemType != Type)
                 {
                     Debug.LogError($"Element at:{i} have type:{itemType}. Require type:{Type}");

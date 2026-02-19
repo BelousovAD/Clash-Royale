@@ -15,7 +15,7 @@ namespace Reward
         public void Initialize(Gameplay.Judge judge, IEnumerable<Currency.Currency> currencies)
         {
             Initialize(judge);
-            
+
             foreach (Currency.Currency currency in currencies)
             {
                 if (currency.Type == _currencyType)

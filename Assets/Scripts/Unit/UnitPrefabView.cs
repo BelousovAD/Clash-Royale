@@ -14,10 +14,7 @@ namespace Unit
 
         public GameObject Instance
         {
-            get
-            {
-                return _instance;
-            }
+            get => _instance;
 
             private set
             {
@@ -35,8 +32,7 @@ namespace Unit
             {
                 Destroy(Instance);
                 Instance = Instantiate(Item.Prefab, _parent);
-                Instance.transform.localPosition = Vector3.zero;
-                Instance.transform.localRotation = Quaternion.identity;
+                Instance.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
             }
         }
     }

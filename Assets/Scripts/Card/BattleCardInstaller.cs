@@ -10,7 +10,7 @@ namespace Card
     internal class BattleCardInstaller : MonoBehaviour, IInstaller
     {
         private const ItemType CardType = ItemType.Card;
-        
+
         [SerializeField] private ContainerData _handCardContainerData;
         [SerializeField] private ContainerData _enemyHandCardContainerData;
         [SerializeField] private ContainerData _enemyEquippedCardContainerData;
@@ -43,7 +43,7 @@ namespace Card
                 cardContainer.Load();
             });
         }
-        
+
 #if UNITY_EDITOR
         private void OnValidate()
         {
@@ -52,7 +52,7 @@ namespace Card
             ValidateField(ref _enemyEquippedCardContainerData);
         }
 
-        private static void ValidateField(ref ContainerData containerDataField)
+        private void ValidateField(ref ContainerData containerDataField)
         {
             if (containerDataField is not null && containerDataField.ItemType != CardType)
             {

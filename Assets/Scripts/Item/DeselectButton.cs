@@ -8,7 +8,7 @@ namespace Item
     internal class DeselectButton : AbstractButton
     {
         [SerializeField] private ContainerType _containerType;
-        
+
         private Container _container;
 
         [Inject]
@@ -23,7 +23,7 @@ namespace Item
                 }
             }
         }
-        
+
         protected override void HandleClick() =>
             _container.Deselect();
     }

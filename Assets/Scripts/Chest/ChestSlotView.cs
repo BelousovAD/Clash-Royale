@@ -7,7 +7,7 @@ namespace Chest
     {
         [SerializeField] private GameObject _icon;
         [SerializeField] private GameObject _description;
-        
+
         protected override void UpdateView()
         {
             _icon.SetActive(Item is not null);

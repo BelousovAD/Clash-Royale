@@ -40,7 +40,7 @@ namespace Card
             _cardContainers.ForEach(cardContainer =>
                 cardContainer.Initialize(container.Resolve<SavvyServicesProvider>()));
         }
-        
+
 #if UNITY_EDITOR
         private void OnValidate()
         {
@@ -49,7 +49,7 @@ namespace Card
             ValidateField(ref _equippedCardContainerData);
         }
 
-        private static void ValidateField(ref ContainerData containerDataField)
+        private void ValidateField(ref ContainerData containerDataField)
         {
             if (containerDataField is not null && containerDataField.ItemType != CardType)
             {

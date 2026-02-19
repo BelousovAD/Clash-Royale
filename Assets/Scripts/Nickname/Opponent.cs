@@ -13,10 +13,7 @@ namespace Nickname
 
         public string Name
         {
-            get
-            {
-                return _name;
-            }
+            get => _name;
 
             private set
             {

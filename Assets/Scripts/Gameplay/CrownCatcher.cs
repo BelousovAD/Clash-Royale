@@ -8,7 +8,7 @@ namespace Gameplay
     internal class CrownCatcher : MonoBehaviour
     {
         private const StateType DieState = StateType.Die;
-        
+
         [SerializeField] private Unit.Unit _tower;
         [SerializeField] private CrownType _type;
 

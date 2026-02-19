@@ -21,7 +21,8 @@ namespace ChestUnlockAcceleration
         private SavvyServicesProvider _services;
 
         [Inject]
-        private void Initialize(IEnumerable<Currency.Currency> currencies,
+        private void Initialize(
+            IEnumerable<Currency.Currency> currencies,
             IEnumerable<Container> containers,
             SavvyServicesProvider servicesProvider)
         {
@@ -33,7 +34,7 @@ namespace ChestUnlockAcceleration
                     break;
                 }
             }
-            
+
             foreach (Container container in containers)
             {
                 if (container.Type == ChestContainer)
@@ -42,7 +43,7 @@ namespace ChestUnlockAcceleration
                     break;
                 }
             }
-            
+
             _services = servicesProvider;
         }
 
@@ -64,7 +65,7 @@ namespace ChestUnlockAcceleration
             foreach (Item.Item item in _container.Items)
             {
                 Chest.Chest chest = item as Chest.Chest;
-                
+
                 if (chest!.IsUnlocking)
                 {
                     chest.Timer.Remove(_timeToRemove);

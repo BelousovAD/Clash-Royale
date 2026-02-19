@@ -40,7 +40,7 @@ namespace EnemyObserve
         private void UpdateEnemy()
         {
             Unit.Unit enemy = _enemyFindCaller.Enemy;
-            
+
             if (enemy is null)
             {
                 _isClose.SetTarget(null, 0f);

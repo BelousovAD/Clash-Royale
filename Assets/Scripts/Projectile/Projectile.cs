@@ -6,7 +6,7 @@ namespace Projectile
     {
         private const float Time = 0.3f;
         private const float MuzzleDestroy = 0.1f;
-        
+
         [SerializeField] private GameObject _projectileParticle;
         [SerializeField] private GameObject _muzzleParticle;
 
@@ -38,7 +38,7 @@ namespace Projectile
             {
                 _transform.rotation = Quaternion.LookRotation(direction);
             }
-            
+
             _timer += UnityEngine.Time.deltaTime;
 
             if (_timer > Time)

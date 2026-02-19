@@ -6,7 +6,8 @@ namespace Card
     {
         public SaveableCardContainer(ContainerData data)
             : base(data)
-        { }
+        {
+        }
 
         public override Item.Item CreateItem(ItemData data, int id = DefaultId) =>
             new Card(data as CardData, id);
