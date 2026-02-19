@@ -12,7 +12,7 @@ namespace Elixir
         private const CurrencyType ElixirCurrencyType = CurrencyType.Elixir;
 
         [SerializeField] private ElixirEarner _elixirEarner;
-        
+
         private Currency.Currency _currency;
         private Slider _slider;
 

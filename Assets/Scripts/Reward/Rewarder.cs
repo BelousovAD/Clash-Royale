@@ -23,7 +23,7 @@ namespace Reward
         public int LoseAmount => _data.LoseAmount;
 
         public RewardType Type => _data.Type;
-        
+
         public int WinAmount => _data.WinAmount;
 
         public void Initialize(Gameplay.Judge judge)
@@ -41,7 +41,7 @@ namespace Reward
         private void StartRewarding()
         {
             _judge.VictoryStatusChanged -= StartRewarding;
-            
+
             if (IsVictory)
             {
                 ApplyReward();
@@ -50,7 +50,7 @@ namespace Reward
             {
                 ApplyPenalty();
             }
-            
+
             Rewarded?.Invoke();
         }
 

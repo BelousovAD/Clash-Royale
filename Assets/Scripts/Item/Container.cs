@@ -32,10 +32,7 @@ namespace Item
 
         public int Index
         {
-            get
-            {
-                return _index;
-            }
+            get => _index;
 
             private set
             {

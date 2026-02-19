@@ -18,11 +18,11 @@ namespace Gameplay
             _tower.Initialized += UpdateSubscriptions;
             UpdateSubscriptions();
         }
-        
+
         public void Dispose()
         {
             _tower.Initialized -= UpdateSubscriptions;
-            
+
             if (_stateSwitcher is not null)
             {
                 Unsubscribe();

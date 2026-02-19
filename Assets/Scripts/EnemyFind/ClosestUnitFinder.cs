@@ -12,7 +12,7 @@ namespace EnemyFind
     internal class ClosestUnitFinder
     {
         private const StateType DieState = StateType.Die;
-        
+
         private UnitSpawner _spawner;
         private List<Unit.Unit> _towers;
         private Unit.Unit _closest;
@@ -43,14 +43,14 @@ namespace EnemyFind
         {
             float distance = float.MaxValue;
             Unit.Unit closest = null;
-            
+
             foreach (Unit.Unit unit in units)
             {
                 if (unit == from || unit.StateSwitcher.CurrentState.Type == DieState)
                 {
                     continue;
                 }
-                
+
                 float distanceTemporary = Vector3.Magnitude(unit.transform.position - from.transform.position)
                                           - unit.Radius;
 

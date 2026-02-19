@@ -8,7 +8,7 @@ namespace Item
         where T : Item
     {
         [SerializeField] private Sprite _defaultSprite;
-        
+
         protected Image Image { get; private set; }
 
         protected Sprite DefaultSprite => _defaultSprite;

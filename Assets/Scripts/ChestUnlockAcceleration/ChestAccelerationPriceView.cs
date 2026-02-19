@@ -9,7 +9,7 @@ namespace ChestUnlockAcceleration
     internal class ChestAccelerationPriceView : MonoBehaviour
     {
         private const CurrencyType MoneyCurrency = CurrencyType.Money;
-        
+
         [SerializeField] private ChestAccelerationPriceCalculator _priceCalculator;
         [SerializeField] private GameObject _priceAdView;
         [SerializeField] private GameObject _priceView;

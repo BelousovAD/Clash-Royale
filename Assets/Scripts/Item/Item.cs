@@ -43,15 +43,19 @@ namespace Item
             Selected?.Invoke(Id);
 
         public virtual void Dispose()
-        { }
+        {
+        }
 
         protected virtual void DeleteSaves()
-        { }
+        {
+        }
 
         protected virtual void Load()
-        { }
+        {
+        }
 
         protected virtual void Save()
-        { }
+        {
+        }
     }
 }

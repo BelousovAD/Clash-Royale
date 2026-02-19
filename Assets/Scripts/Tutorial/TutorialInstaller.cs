@@ -8,7 +8,7 @@ namespace Tutorial
     {
         [SerializeField] private string _saveKey = "Tutorial";
         [SerializeField][Min(1)] private int _maxStage = 1;
-        
+
         private ContainerBuilder _builder;
         private Tutorial _tutorial;
 

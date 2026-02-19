@@ -6,7 +6,7 @@ namespace Window
     internal class StartWindowOpener : MonoBehaviour
     {
         private const int CountToClose = 0;
-        
+
         [SerializeField] private string _windowId;
 
         private IWindowService _windowService;

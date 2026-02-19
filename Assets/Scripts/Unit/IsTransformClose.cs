@@ -42,7 +42,7 @@ namespace Unit
             {
                 return;
             }
-            
+
             if (_transformTarget is null)
             {
                 Value = null;
@@ -50,7 +50,7 @@ namespace Unit
             else
             {
                 Value = Vector3.Magnitude(_transformTarget.position - _transformFrom.position)
-                        - _targetRadius <= _closeDistance;
+                    - _targetRadius <= _closeDistance;
             }
         }
     }

@@ -30,8 +30,11 @@ namespace SavvyServices
         private GameObject _interstitialAdCountdown;
 
         public event Action BannerAdLoaded;
+
         public event Action<bool> InterstitialAdLoaded;
+
         public event Action<bool> RewardedAdLoaded;
+
         public event Action<int> InterstitialAdTimerUpdate;
 
         public bool BannerAdIsReady => _mediationNetwork.BannerAdIsReady;

@@ -51,7 +51,7 @@ namespace Unit
             {
                 return;
             }
-            
+
             if (_stateSwitcher.CurrentState.Type == _stateType)
             {
                 _disableObjects.ForEach(obj => obj.SetActive(false));

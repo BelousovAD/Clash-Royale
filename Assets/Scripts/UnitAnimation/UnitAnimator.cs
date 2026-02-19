@@ -6,16 +6,15 @@ namespace UnitAnimation
     [RequireComponent(typeof(Animator))]
     internal class UnitAnimator : MonoBehaviour
     {
-        private const float AttackSpeedDenominatorMultiplier = 2f;
-        private const float AttackSpeedBaseShift = 5f;
-        private const float AttackSpeedNumerator = 25f;
+        private const float Denominator = 2f;
+        private const float Shift = 5f;
+        private const float Numerator = 25f;
 
         private static readonly int AttackSpeed = Animator.StringToHash(nameof(AttackSpeed));
+        private readonly Dictionary<AnimationKey, int> _parameters = new ();
 
         [SerializeField] private Animator _animator;
         [SerializeField] private List<AnimationKey> _keys;
-
-        private readonly Dictionary<AnimationKey, int> _parameters = new ();
 
         private void Awake()
         {
@@ -51,8 +50,7 @@ namespace UnitAnimation
 
         public void SetAttackSpeed(float speed)
         {
-            float animationSpeed = (AttackSpeedDenominatorMultiplier * (speed + AttackSpeedBaseShift)) 
-                                   / (AttackSpeedNumerator - speed);
+            float animationSpeed = Denominator * (speed + Shift) / (Numerator - speed);
             _animator.SetFloat(AttackSpeed, animationSpeed);
         }
     }

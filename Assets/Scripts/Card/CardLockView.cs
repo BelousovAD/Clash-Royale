@@ -11,7 +11,7 @@ namespace Card
         private const float MaxAlpha = 1f;
 
         [SerializeField] private Toggle _toggle;
-        
+
         private CanvasGroup _canvasGroup;
 
         private void Awake() =>

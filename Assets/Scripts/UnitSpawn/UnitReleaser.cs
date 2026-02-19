@@ -8,11 +8,11 @@ namespace UnitSpawn
     internal class UnitReleaser : MonoBehaviour
     {
         private const StateType DieState = StateType.Die;
-        
+
         [SerializeField] private Unit.Unit _unit;
         [SerializeField] private PooledComponent _pooledComponent;
         [SerializeField][Min(0f)] private float _deathAnimationDuration;
-        
+
         private WaitForSeconds _wait;
         private IStateSwitcher _stateSwitcher;
 
@@ -54,10 +54,10 @@ namespace UnitSpawn
             {
                 Subscribe();
             }
-            
+
             Die();
         }
-        
+
         private void Die()
         {
             if (_stateSwitcher?.CurrentState.Type == DieState)
@@ -69,7 +69,7 @@ namespace UnitSpawn
         private IEnumerator DieAfterDelay()
         {
             yield return _wait;
-            
+
             _pooledComponent.Release();
         }
     }

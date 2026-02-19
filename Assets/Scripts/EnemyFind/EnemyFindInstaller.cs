@@ -12,7 +12,7 @@ namespace EnemyFind
         [SerializeField] private UnitSpawner _playerUnitSpawner;
         [SerializeField] private List<Unit.Unit> _enemyTowers;
         [SerializeField] private List<Unit.Unit> _playerTowers;
-        
+
         private ClosestUnitFinder _enemyUnitFinder;
         private ClosestUnitFinder _playerUnitFinder;
         private ContainerBuilder _builder;

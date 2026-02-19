@@ -8,7 +8,7 @@ namespace UnitHealth
         [SerializeField] private Unit.Unit _unit;
 
         protected Health Health;
-        
+
         private void OnEnable()
         {
             _unit.Initialized += UpdateSubscriptions;

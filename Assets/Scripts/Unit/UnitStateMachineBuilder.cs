@@ -5,15 +5,16 @@ namespace Unit
 {
     internal class UnitStateMachineBuilder : AbstractStateMachineBuilder
     {
-        private const float AttackSpeedDenominatorMultiplier = 2f;
-        private const float AttackSpeedBaseShift = 5f;
-        private const float AttackSpeedNumerator = 25f;
-        
+        private const float Denominator = 2f;
+        private const float Shift = 5f;
+        private const float Numerator = 25f;
+
         private readonly Unit _unit;
         private readonly ChangeableValue.ChangeableValue<bool?> _isEnemyClose;
         private readonly float _attackSpeed;
 
-        public UnitStateMachineBuilder(Unit unit,
+        public UnitStateMachineBuilder(
+            Unit unit,
             ChangeableValue.ChangeableValue<bool?> isEnemyClose,
             float attackSpeed)
         {
@@ -32,12 +33,11 @@ namespace Unit
 
         protected override void BuildStates()
         {
+            float attackBusyTime = (Numerator - _attackSpeed) / (Denominator * (_attackSpeed + Shift));
             States = new Dictionary<StateType, State>
             {
                 [StateType.Idle] = new (StateType.Idle),
-                [StateType.Attack] = new (StateType.Attack,((AttackSpeedNumerator - _attackSpeed) 
-                                                            / (AttackSpeedDenominatorMultiplier * 
-                                                               (_attackSpeed + AttackSpeedBaseShift)))),
+                [StateType.Attack] = new (StateType.Attack, attackBusyTime),
                 [StateType.Move] = new (StateType.Move),
                 [StateType.Die] = new (StateType.Die),
             };
@@ -45,7 +45,7 @@ namespace Unit
 
         protected override void BuildTransitions()
         {
-            States[StateType.Idle].AddTransitionRange(new []
+            States[StateType.Idle].AddTransitionRange(new[]
             {
                 new Transition(
                     _unit.Health,
@@ -60,14 +60,14 @@ namespace Unit
                     () => _isEnemyClose.Value == true,
                     States[StateType.Attack]),
             });
-            States[StateType.Attack].AddTransitionRange(new []
+            States[StateType.Attack].AddTransitionRange(new[]
             {
                 new Transition(
                     null,
                     () => true,
                     States[StateType.Idle]),
             });
-            States[StateType.Move].AddTransitionRange(new []
+            States[StateType.Move].AddTransitionRange(new[]
             {
                 new Transition(
                     _unit.Health,

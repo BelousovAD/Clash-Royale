@@ -5,7 +5,7 @@ namespace ChestUnlockAcceleration
     internal class ChestAccelerationButtonView : MonoBehaviour
     {
         private const int Min = 0;
-        
+
         [SerializeField] private ChestAccelerationButton _button;
         [SerializeField] private ChestAccelerationPriceCalculator _priceCalculator;
 

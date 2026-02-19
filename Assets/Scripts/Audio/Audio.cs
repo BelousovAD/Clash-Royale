@@ -32,16 +32,14 @@ namespace Audio
         }
 
         public event Action ActivityChanged;
+
         public event Action VolumeChanged;
 
         public AudioType Type { get; }
 
         public bool IsActive
         {
-            get
-            {
-                return _isActive;
-            }
+            get => _isActive;
 
             private set
             {
@@ -52,10 +50,7 @@ namespace Audio
 
         public float Volume
         {
-            get
-            {
-                return _volume;
-            }
+            get => _volume;
 
             private set
             {

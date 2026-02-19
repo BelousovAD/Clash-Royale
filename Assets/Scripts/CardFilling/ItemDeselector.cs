@@ -23,7 +23,7 @@ namespace CardFilling
                 }
             }
         }
-        
+
         private void OnDisable() =>
             _container.Deselect();
     }

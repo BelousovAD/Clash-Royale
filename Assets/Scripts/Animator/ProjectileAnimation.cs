@@ -12,7 +12,7 @@ namespace Animator
         public void SendProjectile()
         {
             GameObject projectile = Instantiate(_projectile, _spawnPosition.position, Quaternion.identity);
-            
+
             if (projectile.TryGetComponent(out Rigidbody body))
             {
                 body.AddForce(transform.forward * Speed);

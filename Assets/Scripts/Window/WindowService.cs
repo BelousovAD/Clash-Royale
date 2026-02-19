@@ -7,7 +7,7 @@ namespace Window
     internal class WindowService : IWindowService
     {
         private const int MinCountToClose = 0;
-        
+
         private readonly IWindowSpawner _spawner;
         private readonly Stack<Window> _windowsHistory = new ();
         private readonly Dictionary<string, Window> _spawnedWindows = new ();
@@ -40,7 +40,7 @@ namespace Window
             }
 
             Window lastWindow;
-            
+
             if (_windowsHistory.Count > 0)
             {
                 lastWindow = _windowsHistory.Peek();

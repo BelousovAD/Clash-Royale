@@ -16,7 +16,7 @@ namespace Reward
         [SerializeField] private ChestChanceData _chestChanceData;
         [SerializeField] private ItemDataList _fullChestList;
         [SerializeField] private List<RewardData> _rewardDatas = new ();
-        
+
         private ContainerBuilder _builder;
         private ChestRewarder _chestRewarder;
         private List<CurrencyRewarder> _currencyRewarders;
@@ -33,7 +33,7 @@ namespace Reward
                 new (_rewardDatas.Find(data => data.Type == RewardType.Money), CurrencyType.Money),
                 new (_rewardDatas.Find(data => data.Type == RewardType.Trophy), CurrencyType.Trophy),
             };
-            
+
             _builder.AddSingleton(_chestRewarder, typeof(Rewarder));
             _currencyRewarders.ForEach(rewarder => _builder.AddSingleton(rewarder, typeof(Rewarder)));
 
@@ -51,7 +51,7 @@ namespace Reward
                 container.Resolve<Gameplay.Judge>(),
                 container.Resolve<IEnumerable<Currency.Currency>>()));
         }
-        
+
         private void OnValidate()
         {
             if (_fullChestList is not null && _fullChestList.Type != ChestItem)

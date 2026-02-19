@@ -20,10 +20,10 @@ namespace CardFilling
             {
                 _to.ContentChanged -= FillUp;
             }
-            
+
             _from = from;
             _to = to;
-            
+
             _to.ContentChanged += FillUp;
             RandomItemSelector.Select(_from, _to.Items.Select(item => item.Subtype));
             FillUp();
@@ -40,13 +40,13 @@ namespace CardFilling
         private void FillUp()
         {
             _to.ContentChanged -= FillUp;
-            
+
             while (_to.Items.Count < _to.Capacity)
             {
                 SelectedItemToContainerCopier.Copy(_from, _to, _itemDatas);
                 RandomItemSelector.Select(_from, _to.Items.Select(item => item.Subtype));
             }
-            
+
             _to.ContentChanged += FillUp;
         }
     }

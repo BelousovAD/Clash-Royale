@@ -10,7 +10,7 @@ namespace Nickname
     {
         [SerializeField] private string _format = "{0}";
         [SerializeField] private OpponentType _type;
-        
+
         private TMP_Text _textField;
         private Opponent _opponent;
 

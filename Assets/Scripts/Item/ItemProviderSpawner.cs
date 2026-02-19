@@ -7,11 +7,12 @@ namespace Item
 {
     public class ItemProviderSpawner : SiblingsSpawner
     {
+        private readonly List<PooledComponent> _spawnedItemProviders = new ();
+
         [SerializeField] private ContainerType _containerType;
-        
-        private readonly List<PooledComponent> _spawnedItemProviders = new();
+
         private Container _container;
-        
+
         [Inject]
         private void Initialize(IEnumerable<Container> containers)
         {
@@ -46,7 +47,7 @@ namespace Item
         private void Respawn()
         {
             ReleaseAll();
-            
+
             foreach (Item item in _container.Items)
             {
                 InitializeProvider(Spawn(item));
@@ -64,6 +65,7 @@ namespace Item
         }
 
         protected virtual void InitializeProvider(ItemProvider itemProvider)
-        { }
+        {
+        }
     }
 }

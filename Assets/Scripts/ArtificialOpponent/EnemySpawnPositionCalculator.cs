@@ -10,7 +10,7 @@ namespace ArtificialOpponent
     internal class EnemySpawnPositionCalculator : MonoBehaviour
     {
         private const CurrencyType EnemyElixirCurrency = CurrencyType.EnemyElixir;
-        
+
         [SerializeField] private Indicator _indicator;
         [SerializeField] private Collider _spawnField;
         [SerializeField] private EnemyFindCaller _enemyFindCaller;

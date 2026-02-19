@@ -10,7 +10,7 @@ namespace UnitAnimation
 
         private UnitAnimator _unitAnimator;
         private float _attackSpeed;
-        
+
         private void OnEnable()
         {
             _unitPrefabView.InstanceChanged += Initialize;

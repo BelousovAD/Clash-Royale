@@ -12,7 +12,7 @@ namespace Gameplay
         private const int CountToClose = 0;
         private const CrownType EnemyCrown = CrownType.Enemy;
         private const CrownType PlayerCrown = CrownType.Player;
-        
+
         private readonly string _endgameWindowId;
         private readonly IsMainTowerAlive _isEnemyMainTowerAlive;
         private readonly IsMainTowerAlive _isPlayerMainTowerAlive;
@@ -42,10 +42,7 @@ namespace Gameplay
 
         public bool? IsVictory
         {
-            get
-            {
-                return _isVictory;
-            }
+            get { return _isVictory; }
 
             private set
             {
@@ -109,7 +106,7 @@ namespace Gameplay
                 IsVictory = _playerTowers.Sum(tower => tower.Health.Value) >
                             _enemyTowers.Sum(tower => tower.Health.Value);
             }
-            
+
             _windowService.Open(_endgameWindowId, CountToClose);
             Unsubscribe();
         }

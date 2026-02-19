@@ -10,7 +10,7 @@ namespace ArtificialOpponent
     {
         private const ContainerType EnemyHandCardContainer = ContainerType.EnemyHandCard;
         private const CurrencyType EnemyElixirCurrency = CurrencyType.EnemyElixir;
-        
+
         private Container _container;
         private Currency.Currency _currency;
 
@@ -43,7 +43,7 @@ namespace ArtificialOpponent
         private void ChooseCard()
         {
             Card.Card cardToSelect = null;
-            
+
             foreach (Card.Card card in _container.Items.Select(item => item as Card.Card))
             {
                 if (card!.Price <= _currency.Value)
@@ -52,7 +52,7 @@ namespace ArtificialOpponent
                     break;
                 }
             }
-            
+
             cardToSelect?.Select();
         }
     }

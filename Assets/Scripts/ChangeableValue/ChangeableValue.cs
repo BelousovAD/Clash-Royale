@@ -6,15 +6,12 @@ namespace ChangeableValue
     public class ChangeableValue<T> : IChangeable
     {
         private T _value;
-        
+
         public event Action Changed;
 
         public T Value
         {
-            get
-            {
-                return _value;
-            }
+            get => _value;
 
             protected set
             {

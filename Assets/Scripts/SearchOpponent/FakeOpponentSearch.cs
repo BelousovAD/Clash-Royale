@@ -9,7 +9,7 @@ namespace SearchOpponent
     {
         [SerializeField][Min(0f)] private float _minTime = 3f;
         [SerializeField][Min(0f)] private float _maxTime = 6f;
-        
+
         private Coroutine _searchCoroutine;
         private bool _isFound;
 
@@ -17,10 +17,7 @@ namespace SearchOpponent
 
         public bool IsFound
         {
-            get
-            {
-                return _isFound;
-            }
+            get => _isFound;
 
             private set
             {

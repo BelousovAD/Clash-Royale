@@ -9,9 +9,9 @@ namespace Chest
     internal class ChestInstaller : MonoBehaviour, IInstaller
     {
         private const ContainerType ChestContainerType = ContainerType.Chest;
-        
+
         [SerializeField] private ContainerData _chestContainerData;
-        
+
         private ContainerBuilder _builder;
         private Container _chestContainer;
 

@@ -11,16 +11,14 @@ namespace Window
         private bool _isInteractable;
 
         public event Action ActivityChanged;
+
         public event Action InteractableChanged;
 
         public string Id => _id;
 
         public bool IsActive
         {
-            get
-            {
-                return _isActive;
-            }
+            get => _isActive;
 
             private set
             {
@@ -34,10 +32,7 @@ namespace Window
 
         public bool IsInteractable
         {
-            get
-            {
-                return _isInteractable;
-            }
+            get => _isInteractable;
 
             private set
             {

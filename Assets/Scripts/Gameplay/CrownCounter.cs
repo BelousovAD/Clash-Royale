@@ -7,7 +7,7 @@ namespace Gameplay
     {
         private const int Max = 3;
         private const int Min = 0;
-        
+
         private int _count;
 
         public CrownCounter(CrownType type) =>
@@ -17,10 +17,7 @@ namespace Gameplay
 
         public int Count
         {
-            get
-            {
-                return _count;
-            }
+            get => _count;
 
             private set
             {
@@ -31,7 +28,7 @@ namespace Gameplay
                 }
             }
         }
-        
+
         public CrownType Type { get; }
 
         public void CountUp() =>

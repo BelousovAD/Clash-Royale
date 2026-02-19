@@ -14,15 +14,12 @@ namespace ChestUnlockAcceleration
         private Container _container;
         private List<Chest.Chest> _chests = new ();
         private int _price;
-        
+
         public event Action PriceChanged;
 
         public int Price
         {
-            get
-            {
-                return _price;
-            }
+            get => _price;
 
             private set
             {

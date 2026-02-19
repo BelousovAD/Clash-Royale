@@ -6,15 +6,16 @@ namespace Unit
 {
     internal class TowerStateMachineBuilder : AbstractStateMachineBuilder
     {
-        private const float AttackSpeedDenominatorMultiplier = 2f;
-        private const float AttackSpeedBaseShift = 5f;
-        private const float AttackSpeedNumerator = 25f;
+        private const float Denominator = 2f;
+        private const float Shift = 5f;
+        private const float Numerator = 25f;
 
         private readonly Unit _unit;
         private readonly ChangeableValue<bool?> _isEnemyClose;
         private readonly float _attackSpeed;
 
-        public TowerStateMachineBuilder(Unit unit,
+        public TowerStateMachineBuilder(
+            Unit unit,
             ChangeableValue<bool?> isEnemyClose,
             float attackSpeed)
         {
@@ -33,12 +34,11 @@ namespace Unit
 
         protected override void BuildStates()
         {
+            float attackBusyTime = (Numerator - _attackSpeed) / (Denominator * (_attackSpeed + Shift));
             States = new Dictionary<StateType, State>
             {
                 [StateType.Idle] = new (StateType.Idle),
-                [StateType.Attack] = new (StateType.Attack, ((AttackSpeedNumerator - _attackSpeed) 
-                                                             / (AttackSpeedDenominatorMultiplier * 
-                                                                (_attackSpeed + AttackSpeedBaseShift)))),
+                [StateType.Attack] = new (StateType.Attack, attackBusyTime),
                 [StateType.Die] = new (StateType.Die),
             };
         }

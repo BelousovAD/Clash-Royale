@@ -8,7 +8,7 @@ namespace Unit
     {
         [SerializeField] private ItemProvider _itemProvider;
         [SerializeField] private Unit _unit;
-        
+
         private UnitStateMachineBuilder _stateMachineBuilder;
         private StateMachine _stateMachine;
 

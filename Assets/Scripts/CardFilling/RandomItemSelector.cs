@@ -12,7 +12,7 @@ namespace CardFilling
             {
                 return;
             }
-            
+
             List<Item.Item> items = new (container.Items);
             List<string> excludes = excludeSubtypes != null ? new List<string>(excludeSubtypes) : new List<string>();
 
@@ -23,7 +23,7 @@ namespace CardFilling
                     items.RemoveAt(i);
                 }
             }
-            
+
             items[Random.Range(0, items.Count)].Select();
         }
     }

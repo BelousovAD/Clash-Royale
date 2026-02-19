@@ -6,15 +6,12 @@ namespace Item
     public class ItemProvider : MonoBehaviour
     {
         private Item _item;
-        
+
         public event Action Changed;
 
         public Item Item
         {
-            get
-            {
-                return _item;
-            }
+            get => _item;
 
             private set
             {

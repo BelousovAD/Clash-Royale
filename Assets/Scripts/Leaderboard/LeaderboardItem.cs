@@ -9,6 +9,7 @@ namespace Leaderboard
         private const int MinPosition = 1;
 
         public event Action Initialized;
+
         public event Action IconChanged;
 
         public int Position { get; private set; } = MinPosition;

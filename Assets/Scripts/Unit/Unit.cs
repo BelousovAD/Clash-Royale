@@ -7,12 +7,13 @@ namespace Unit
     public class Unit : MonoBehaviour
     {
         public const float MinRadius = 0f;
-        
+
         private float _radius;
         private StateMachine _stateMachine;
         private UnitType _type;
 
         public event Action Initialized;
+
         public event Action TypeChanged;
 
         public IsTransformClose IsEnemyClose { get; } = new ();
@@ -29,10 +30,7 @@ namespace Unit
 
         public UnitType Type
         {
-            get
-            {
-                return _type;
-            }
+            get => _type;
 
             private set
             {

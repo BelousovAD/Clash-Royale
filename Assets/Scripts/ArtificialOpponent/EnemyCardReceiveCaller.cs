@@ -10,7 +10,7 @@ namespace ArtificialOpponent
     internal class EnemyCardReceiveCaller : MonoBehaviour
     {
         private const ContainerType EnemyHandCardContainer = ContainerType.EnemyHandCard;
-        
+
         [SerializeField] private CardReceiver _cardReceiver;
         [SerializeField][Min(0f)] private float _delay;
 
@@ -49,7 +49,7 @@ namespace ArtificialOpponent
         private IEnumerator ReceiveAfterDelay()
         {
             yield return _wait;
-            
+
             if (_container.Selected is not null)
             {
                 _cardReceiver.Receive();

@@ -6,6 +6,10 @@ namespace Utilities
 {
     internal class CustomGridLayoutGroup : LayoutGroup
     {
+        private const DrivenTransformProperties DrivenProperties = DrivenTransformProperties.Anchors |
+                                                             DrivenTransformProperties.AnchoredPosition |
+                                                             DrivenTransformProperties.SizeDelta;
+
         [SerializeField] private CornerType _startCorner = CornerType.UpperLeft;
         [SerializeField] private AxisType _startAxis = AxisType.Horizontal;
         [SerializeField] private Vector2 _spacing = Vector2.zero;
@@ -39,7 +43,7 @@ namespace Utilities
             get => _startCorner;
             set => SetProperty(ref _startCorner, value);
         }
-        
+
         public AxisType StartAxis
         {
             get => _startAxis;
@@ -69,13 +73,13 @@ namespace Utilities
             get => _constraintCount;
             set => SetProperty(ref _constraintCount, Mathf.Max(1, value));
         }
-        
+
         public override void CalculateLayoutInputHorizontal()
         {
             base.CalculateLayoutInputHorizontal();
             SetLayoutInputForAxis(0, rectTransform.rect.size.x, -1, (int)AxisType.Horizontal);
         }
-        
+
         public override void CalculateLayoutInputVertical() =>
             SetLayoutInputForAxis(0, rectTransform.rect.size.y, -1, (int)AxisType.Vertical);
 
@@ -90,7 +94,7 @@ namespace Utilities
             int childrenCount = rectChildren.Count;
             float width = rectTransform.rect.size.x;
             float height = rectTransform.rect.size.y;
-            
+
             Vector2Int cellCount = Constraint switch
             {
                 ConstraintType.FixedColumnCount =>
@@ -103,44 +107,39 @@ namespace Utilities
                         Mathf.Clamp(childrenCount, 1, ConstraintCount)),
                 _ => throw new ArgumentOutOfRangeException(),
             };
-            
+
             CellSize = new Vector2
             {
                 x = (width - padding.horizontal - Spacing.x * (cellCount.x - 1)) / cellCount.x,
                 y = (height - padding.vertical - Spacing.y * (cellCount.y - 1)) / cellCount.y,
             };
-            
+
             if (axis == AxisType.Horizontal)
             {
                 for (int i = 0; i < childrenCount; i++)
                 {
                     RectTransform rect = rectChildren[i];
 
-                    m_Tracker.Add(this, rect,
-                        DrivenTransformProperties.Anchors |
-                        DrivenTransformProperties.AnchoredPosition |
-                        DrivenTransformProperties.SizeDelta);
+                    m_Tracker.Add(this, rect, DrivenProperties);
 
                     rect.anchorMin = Vector2.up;
                     rect.anchorMax = Vector2.up;
                     rect.sizeDelta = CellSize;
                 }
-                
+
                 return;
             }
 
             Vector2 requiredSpace = new (
                 cellCount.x * (CellSize.x + Spacing.x) - Spacing.x,
-                cellCount.y * (CellSize.y + Spacing.y) - Spacing.y
-            );
+                cellCount.y * (CellSize.y + Spacing.y) - Spacing.y);
             Vector2 startOffset = new (
                 GetStartOffset((int)AxisType.Horizontal, requiredSpace.x),
-                GetStartOffset((int)AxisType.Vertical, requiredSpace.y)
-            );
+                GetStartOffset((int)AxisType.Vertical, requiredSpace.y));
 
             int cellsPerMainAxis = StartAxis == AxisType.Horizontal ? cellCount.x : cellCount.y;
             int childrenToMove = 0;
-            
+
             if (childrenCount > ConstraintCount &&
                 Mathf.CeilToInt((float)childrenCount / cellsPerMainAxis) < ConstraintCount)
             {
@@ -157,7 +156,7 @@ namespace Utilities
             {
                 int positionX;
                 int positionY;
-                
+
                 if (StartAxis == AxisType.Horizontal)
                 {
                     if (_constraint == ConstraintType.FixedRowCount && childrenCount - i <= childrenToMove)

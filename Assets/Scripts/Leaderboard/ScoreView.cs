@@ -1,6 +1,6 @@
+using Savvy.Extensions;
 using TMPro;
 using UnityEngine;
-using Savvy.Extensions;
 
 namespace Leaderboard
 {

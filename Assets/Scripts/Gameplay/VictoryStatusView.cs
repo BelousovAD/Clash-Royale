@@ -6,7 +6,7 @@ namespace Gameplay
     internal class VictoryStatusView : MonoBehaviour
     {
         [SerializeField] private bool _isPlayer;
-        
+
         private Judge _judge;
 
         [Inject]
