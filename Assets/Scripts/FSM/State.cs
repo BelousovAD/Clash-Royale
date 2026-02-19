@@ -4,7 +4,7 @@ using Behaviour;
 
 namespace FSM
 {
-    public class State : IEnterable, IExitable, IDisposable, IUpdatable
+    public class State : IDisposable, IUpdatable
     {
         private const float MinBusyTime = 0f;
 
@@ -37,9 +37,6 @@ namespace FSM
                 }
             }
         }
-
-        public void AddTransition(Transition transition) =>
-            _transitions.Add(transition);
 
         public void AddTransitionRange(IEnumerable<Transition> transitions) =>
             _transitions.AddRange(transitions);

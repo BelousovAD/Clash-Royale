@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Unit
 {
-    public class IsTransformClose : ChangeableValue<bool?>, IEnable, IDisable, IUpdatable
+    public class IsTransformClose : ChangeableValue<bool?>, IUpdatable
     {
         private Transform _transformFrom;
         private Transform _transformTarget;
