@@ -41,7 +41,7 @@ namespace FSM
         public void AddTransitionRange(IEnumerable<Transition> transitions) =>
             _transitions.AddRange(transitions);
 
-        public virtual void Enter()
+        public void Enter()
         {
             IsBusy = true;
             _countdown = _busyTime;
@@ -49,13 +49,13 @@ namespace FSM
             BusynessChanged += CheckTransitions;
         }
 
-        public virtual void Exit()
+        public void Exit()
         {
             BusynessChanged -= CheckTransitions;
             UnsubscribeFromTransitions();
         }
 
-        public virtual void Update(float deltaTime)
+        public void Update(float deltaTime)
         {
             if (_countdown > MinBusyTime)
             {
