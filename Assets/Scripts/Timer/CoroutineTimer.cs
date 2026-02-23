@@ -38,8 +38,6 @@ namespace Timer
             }
         }
 
-        public bool IsTimeUp => Time == Min;
-
         public void Initialize(SavvyServicesProvider servicesProvider) =>
             _services = servicesProvider;
 
