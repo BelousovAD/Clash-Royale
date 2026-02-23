@@ -74,7 +74,7 @@ namespace HealthChanging
         private IEnumerator ChangeHealthAfterDelay()
         {
             yield return _wait;
-            
+
             _target?.Health.Take(_amount);
         }
     }

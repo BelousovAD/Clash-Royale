@@ -7,7 +7,7 @@ namespace UnitHealth
     internal class HealthTextView : HealthView
     {
         [SerializeField] private string _format = "{0}";
-        
+
         private TMP_Text _textField;
 
         private void Awake() =>

@@ -8,7 +8,7 @@ namespace Item
         where T : Item
     {
         [SerializeField] private string _format = "{0}";
-        
+
         protected TMP_Text TextField { get; private set; }
 
         protected string Format => _format;

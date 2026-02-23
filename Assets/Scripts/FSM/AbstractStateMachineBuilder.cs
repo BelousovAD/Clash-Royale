@@ -13,7 +13,7 @@ namespace FSM
             BuildTransitions();
             _stateMachine = new StateMachine(States.Values);
             InitializeStates();
-            
+
             return _stateMachine;
         }
 

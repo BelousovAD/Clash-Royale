@@ -21,7 +21,7 @@ namespace Animator
         {
             _characterSound ??= animator.GetComponent<CharacterSound>();
             _projectileAnimation ??= animator.GetComponent<ProjectileAnimation>();
-            
+
             _time = 0;
             _isAudioPlayed = false;
             _delay = stateInfo.length * _soundMark;
@@ -48,7 +48,7 @@ namespace Animator
                     {
                         _projectileAnimation.SendProjectile();
                     }
-                    
+
                     _characterSound.PlayTrack(_key);
                     _time = 0;
                     _isAudioPlayed = true;

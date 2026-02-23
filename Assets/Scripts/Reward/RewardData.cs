@@ -15,7 +15,7 @@ namespace Reward
         public int LoseAmount => _winAmount;
 
         public RewardType Type => _type;
-        
+
         public int WinAmount => _winAmount;
     }
 }

@@ -25,7 +25,7 @@ namespace Leaderboard
                     break;
                 }
             }
-            
+
             _currency.Changed += SaveScore;
         }
 

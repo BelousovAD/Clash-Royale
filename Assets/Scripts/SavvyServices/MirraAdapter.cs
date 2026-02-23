@@ -21,7 +21,8 @@ namespace SavvyServices
         public bool RewardedAdIsReady => MirraSDK.Ads.IsRewardedReady;
 
         public void Dispose()
-        { }
+        {
+        }
 
         public void ShowBannerAd() =>
             MirraSDK.Ads.InvokeBanner();

@@ -19,10 +19,11 @@ namespace RayPointer
         }
 
         public event Action Dragging;
+
         public event Action DragEnded;
-        
+
         public Vector3 Position { get; private set; }
-        
+
         public Ray Ray { get; private set; }
 
         public void Initialize(RawImage image) =>

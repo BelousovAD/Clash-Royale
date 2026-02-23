@@ -6,7 +6,7 @@ namespace Tutorial
     internal class Tutorial
     {
         private const int Min = 0;
-        
+
         private readonly int _maxStage;
         private readonly string _saveKey;
         private SavvyServicesProvider _services;
@@ -17,7 +17,7 @@ namespace Tutorial
             {
                 throw new ArgumentOutOfRangeException(nameof(maxStage), maxStage, null);
             }
-            
+
             _saveKey = saveKey;
             _maxStage = maxStage;
         }

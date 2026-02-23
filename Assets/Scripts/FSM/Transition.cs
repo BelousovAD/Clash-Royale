@@ -21,7 +21,7 @@ namespace FSM
         }
 
         public event Action<Transition> ConditionMet;
-        
+
         public State NextState { get; }
 
         public void Dispose()

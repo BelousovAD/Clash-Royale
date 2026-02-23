@@ -11,7 +11,7 @@ namespace Chest
         [SerializeField] private List<ItemProvider> _itemProviders;
 
         private Container _container;
-        
+
         [Inject]
         private void Initialize(IEnumerable<Container> containers)
         {

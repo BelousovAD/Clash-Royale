@@ -12,7 +12,6 @@ namespace Audio
         private readonly AudioSourceSpawner _spawner;
         private readonly Dictionary<AudioClipKey, AudioClip> _tracks = new ();
         private SavvyServicesProvider _services;
-        private bool _isActive = true;
         private float _volume = 1f;
 
         public Audio(
@@ -31,31 +30,13 @@ namespace Audio
             }
         }
 
-        public event Action ActivityChanged;
         public event Action VolumeChanged;
 
         public AudioType Type { get; }
 
-        public bool IsActive
-        {
-            get
-            {
-                return _isActive;
-            }
-
-            private set
-            {
-                _isActive = value;
-                ActivityChanged?.Invoke();
-            }
-        }
-
         public float Volume
         {
-            get
-            {
-                return _volume;
-            }
+            get => _volume;
 
             private set
             {
@@ -64,16 +45,8 @@ namespace Audio
             }
         }
 
-        public IReadOnlyCollection<AudioClipKey> TrackKeys => _tracks.Keys;
-
         public void Initialize(SavvyServicesProvider servicesProvider) =>
             _services = servicesProvider;
-
-        public void SetActive(bool value)
-        {
-            IsActive = value;
-            Save();
-        }
 
         public void SetVolume(float value)
         {
@@ -81,25 +54,17 @@ namespace Audio
             Save();
         }
 
-        public void Load()
-        {
-            IsActive = _services.Preferences.LoadBool(Type + nameof(IsActive), true);
+        public void Load() =>
             Volume = Mathf.Clamp01(_services.Preferences.LoadFloat(Type + nameof(Volume), 0.5f));
-        }
 
-        public float Play(AudioClipKey key)
+        public void Play(AudioClipKey key)
         {
             PooledAudioSource audioSource = _spawner.Spawn();
             audioSource.Initialize(_group, _tracks[key]);
             audioSource.Play();
-
-            return _tracks[key].length;
         }
 
-        private void Save()
-        {
-            _services.Preferences.SaveBool(Type + nameof(IsActive), IsActive);
+        private void Save() =>
             _services.Preferences.SaveFloat(Type + nameof(Volume), Volume);
-        }
     }
 }

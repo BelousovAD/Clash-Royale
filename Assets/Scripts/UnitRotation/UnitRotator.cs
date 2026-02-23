@@ -7,11 +7,11 @@ namespace UnitRotation
     public class UnitRotator : MonoBehaviour
     {
         private const StateType ActivityState = StateType.Attack;
-        
+
         [SerializeField] private Unit.Unit _unit;
         [SerializeField] private Transform _transformToRotate;
         [SerializeField] private EnemyFindCaller _enemyFindCaller;
-        
+
         private Unit.Unit _enemy;
         private bool _isActive;
         private IStateSwitcher _stateSwitcher;
@@ -56,14 +56,14 @@ namespace UnitRotation
             {
                 Unsubscribe();
             }
-            
+
             _stateSwitcher = _unit.StateSwitcher;
 
             if (_stateSwitcher is not null)
             {
                 Subscribe();
             }
-            
+
             UpdateActivity();
         }
 

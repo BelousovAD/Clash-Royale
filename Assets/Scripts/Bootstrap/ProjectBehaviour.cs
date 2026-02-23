@@ -7,7 +7,8 @@ namespace Bootstrap
     internal class ProjectBehaviour : ProjectBehaviourBase
     {
         protected override void OnProjectBehaviourInitialized()
-        { }
+        {
+        }
 
         protected override void RegisterLocalizationService() =>
             RegisterService<ILocalizationService>(new CustomLocalizationService());

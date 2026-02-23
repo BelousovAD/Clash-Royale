@@ -41,7 +41,7 @@ namespace Bootstrap
         {
             foreach (MonoBehaviour monoBehaviour in _loaders)
             {
-                if (monoBehaviour is not null && monoBehaviour is not ILoadable)
+                if (monoBehaviour is not null and not ILoadable)
                 {
                     Error($"Elements in {nameof(_loaders)} must inherit {nameof(ILoadable)}");
                 }

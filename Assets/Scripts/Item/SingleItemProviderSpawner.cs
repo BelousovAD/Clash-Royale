@@ -26,7 +26,8 @@ namespace Item
         }
 
         protected virtual void Initialize(PooledComponent pooledComponent)
-        { }
+        {
+        }
 
         protected virtual void ReleaseAll()
         {

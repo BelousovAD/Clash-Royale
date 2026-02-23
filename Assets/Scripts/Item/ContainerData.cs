@@ -30,14 +30,14 @@ namespace Item
                 _defaultList = null;
                 return;
             }
-            
+
             if (_fullList is not null && _fullList.Type != ItemType)
             {
                 Debug.LogError($"Require {nameof(_fullList)} with type:{ItemType}");
                 _fullList = null;
                 return;
             }
-            
+
             if (_defaultList is not null && _defaultCapacity < _defaultList.ItemDatas.Count)
             {
                 _defaultCapacity = _defaultList.ItemDatas.Count;

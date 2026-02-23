@@ -12,7 +12,7 @@ namespace Item
         public ItemType Type => _type;
 
         public string Subtype => _subtype;
-        
+
         public Sprite Icon => _icon;
     }
 }

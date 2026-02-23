@@ -9,9 +9,9 @@ namespace CardUnlock
     internal class CardUnlockInstaller : MonoBehaviour, IInstaller
     {
         private const ItemType CardItemType = ItemType.Card;
-        
+
         [SerializeField] private ItemDataList _fullCardList;
-        
+
         private ContainerBuilder _builder;
         private CardUnlocker _cardUnlocker;
 

@@ -19,16 +19,14 @@ namespace Timer
             Max = max;
 
         public event Action TimeChanged;
+
         public event Action TimeIsUp;
 
         public int Max { get; }
 
         public int Time
         {
-            get
-            {
-                return _time;
-            }
+            get => _time;
 
             private set
             {
@@ -40,8 +38,6 @@ namespace Timer
             }
         }
 
-        public bool IsTimeUp => Time == Min;
-
         public void Initialize(SavvyServicesProvider servicesProvider) =>
             _services = servicesProvider;
 
@@ -51,7 +47,7 @@ namespace Timer
             {
                 _services.CoroutineRunner.StopCoroutine(_coroutine);
             }
-            
+
             Time += seconds;
             _coroutine = _services.CoroutineRunner.StartCoroutine(Countdown());
         }

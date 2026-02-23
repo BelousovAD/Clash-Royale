@@ -19,7 +19,6 @@ namespace CardReplacement
         private Container _container;
         private Sequence _sequence;
         private RectTransform _rectTransform;
-        private Tweener _tweener;
 
         [Inject]
         private void Initialize(IEnumerable<Container> containers)
@@ -62,7 +61,7 @@ namespace CardReplacement
             else if (_container.Selected is null && _sequence != null)
             {
                 _sequence.Kill();
-                _tweener = _rectTransform.DORotate(Vector3.zero, Duration);
+                _rectTransform.DORotate(Vector3.zero, Duration);
                 _sequence = null;
             }
 

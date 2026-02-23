@@ -4,10 +4,10 @@ using Behaviour;
 
 namespace FSM
 {
-    public class State : IEnterable, IExitable, IDisposable, IUpdatable
+    public class State : IDisposable, IUpdatable
     {
         private const float MinBusyTime = 0f;
-        
+
         private readonly List<Transition> _transitions = new ();
         private readonly float _busyTime;
         private IStateSwitcher _stateSwitcher;
@@ -26,10 +26,7 @@ namespace FSM
 
         private bool IsBusy
         {
-            get
-            {
-                return _isBusy;
-            }
+            get => _isBusy;
 
             set
             {
@@ -41,13 +38,10 @@ namespace FSM
             }
         }
 
-        public void AddTransition(Transition transition) =>
-            _transitions.Add(transition);
-
         public void AddTransitionRange(IEnumerable<Transition> transitions) =>
             _transitions.AddRange(transitions);
 
-        public virtual void Enter()
+        public void Enter()
         {
             IsBusy = true;
             _countdown = _busyTime;
@@ -55,19 +49,19 @@ namespace FSM
             BusynessChanged += CheckTransitions;
         }
 
-        public virtual void Exit()
+        public void Exit()
         {
             BusynessChanged -= CheckTransitions;
             UnsubscribeFromTransitions();
         }
 
-        public virtual void Update(float deltaTime)
+        public void Update(float deltaTime)
         {
             if (_countdown > MinBusyTime)
             {
                 _countdown -= deltaTime;
             }
-            
+
             if (_countdown <= MinBusyTime)
             {
                 IsBusy = false;
@@ -77,7 +71,7 @@ namespace FSM
         public void Dispose()
         {
             BusynessChanged -= CheckTransitions;
-            
+
             _transitions.ForEach(transition =>
             {
                 transition.ConditionMet -= SwitchState;

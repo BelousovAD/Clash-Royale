@@ -7,7 +7,7 @@ namespace Chest
     public class ChestChanceData : ScriptableObject
     {
         [SerializeField] private List<Chance> _chances;
-        
+
         public IReadOnlyList<Chance> Chances => _chances;
     }
 }

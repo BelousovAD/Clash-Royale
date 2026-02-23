@@ -9,7 +9,7 @@ namespace Unit
         [SerializeField] private Unit _unit;
         [SerializeField] private CharacterData _data;
         [SerializeField] private UnitType _type;
-        
+
         private TowerStateMachineBuilder _stateMachineBuilder;
         private StateMachine _stateMachine;
 

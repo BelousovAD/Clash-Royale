@@ -12,7 +12,7 @@ namespace UnitMovement
         [SerializeField] private Unit.Unit _unit;
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private EnemyFindCaller _enemyFindCaller;
-        
+
         private float _radius;
         private Unit.Unit _enemy;
         private bool _isActive;
@@ -30,7 +30,7 @@ namespace UnitMovement
         {
             _unit.Initialized -= UpdateSubscriptions;
             _enemyFindCaller.EnemyFound -= UpdateEnemy;
-            
+
             if (_stateSwitcher is not null)
             {
                 Unsubscribe();
@@ -65,14 +65,14 @@ namespace UnitMovement
             {
                 Unsubscribe();
             }
-            
+
             _stateSwitcher = _unit.StateSwitcher;
 
             if (_stateSwitcher is not null)
             {
                 Subscribe();
             }
-            
+
             UpdateActivity();
         }
 

@@ -13,11 +13,11 @@ namespace Chest
         [SerializeField][Min(0)] private int _unlockTime;
         [SerializeField][Min(0)] private int _price;
         [SerializeField] private List<Chance> _chances;
-        
+
         public IReadOnlyList<Chance> Chances => _chances;
 
         public GameObject Prefab => _prefab;
-        
+
         public RarityType Rarity => _rarity;
 
         public int UnlockTime => _unlockTime;

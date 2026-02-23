@@ -18,13 +18,13 @@ namespace Window
 
         private void OnValidate()
         {
-            if (_horizontalSpawner is not null && _horizontalSpawner is not IWindowSpawner)
+            if (_horizontalSpawner is not null and not IWindowSpawner)
             {
                 Debug.LogError($"{nameof(_horizontalSpawner)} must inherited {nameof(IWindowSpawner)}");
                 _horizontalSpawner = null;
             }
 
-            if (_verticalSpawner is not null && _verticalSpawner is not IWindowSpawner)
+            if (_verticalSpawner is not null and not IWindowSpawner)
             {
                 Debug.LogError($"{nameof(_verticalSpawner)} must inherited {nameof(IWindowSpawner)}");
                 _verticalSpawner = null;

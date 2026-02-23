@@ -7,7 +7,7 @@ namespace Card
     internal class CardProviderSpawner : ItemProviderSpawner
     {
         [SerializeField] private ToggleGroup _group;
-        
+
         protected override void InitializeProvider(ItemProvider itemProvider)
         {
             base.InitializeProvider(itemProvider);

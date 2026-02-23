@@ -8,7 +8,7 @@ namespace Rarity
     public class RarityData : ScriptableObject
     {
         public static readonly Color DefaultColor = Color.white;
-        
+
         [SerializeField] private List<RarityColorPair> _rarities;
 
         public Color GetColor(RarityType rarityType)
@@ -23,7 +23,7 @@ namespace Rarity
 
             return result;
         }
-        
+
         [Serializable]
         private struct RarityColorPair
         {

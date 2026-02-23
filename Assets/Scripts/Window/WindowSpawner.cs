@@ -11,14 +11,7 @@ namespace Window
         public Window Spawn(string id)
         {
             Window window = _windowPrefabs.Find(window => window.Id == id);
-
-            if (window is null)
-            {
-                throw new InvalidOperationException(
-                    $"Can't open window with ID:{id}. It's not founded in prefabs list");
-            }
-
-            window = Instantiate(window, transform);
+            window = Instantiate(window ?? throw new InvalidOperationException($"Can't open window {id}"), transform);
 
             return window;
         }

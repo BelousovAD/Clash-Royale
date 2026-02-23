@@ -18,7 +18,7 @@ namespace SearchOpponent
         [SerializeField] private float _animationDuration = 0.5f;
         [SerializeField] private string _localizationKey = "Searching";
         [SerializeField] private string _format = "{0}";
-        
+
         private TMP_Text _textField;
         private Sequence _sequence;
         private SavvyServicesProvider _services;

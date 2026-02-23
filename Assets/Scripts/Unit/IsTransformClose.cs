@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Unit
 {
-    public class IsTransformClose : ChangeableValue<bool?>, IEnable, IDisable, IUpdatable
+    public class IsTransformClose : ChangeableValue<bool?>, IUpdatable
     {
         private Transform _transformFrom;
         private Transform _transformTarget;
@@ -42,7 +42,7 @@ namespace Unit
             {
                 return;
             }
-            
+
             if (_transformTarget is null)
             {
                 Value = null;
@@ -50,7 +50,7 @@ namespace Unit
             else
             {
                 Value = Vector3.Magnitude(_transformTarget.position - _transformFrom.position)
-                        - _targetRadius <= _closeDistance;
+                    - _targetRadius <= _closeDistance;
             }
         }
     }

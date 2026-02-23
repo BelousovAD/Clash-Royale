@@ -10,11 +10,11 @@ namespace Card
     internal class CardCountPerRarityTextView : MonoBehaviour
     {
         private const ItemType CardType = ItemType.Card;
-        
+
         [SerializeField] private string _format = "{0}";
         [SerializeField] private ItemDataList _fullCardList;
         [SerializeField] private RarityType _rarityType;
-        
+
         private TMP_Text _textField;
 
         private void Awake() =>
@@ -22,7 +22,12 @@ namespace Card
 
         private void Start()
         {
-            int cardCount = _fullCardList.ItemDatas.Count(item => (item as CardData)!.Rarity == _rarityType);
+            int cardCount = _fullCardList.ItemDatas.Count(item =>
+            {
+                CardData cardData = item as CardData;
+
+                return cardData!.Rarity == _rarityType;
+            });
             _textField.text = string.Format(_format, cardCount);
         }
 

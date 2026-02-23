@@ -24,7 +24,7 @@ namespace Item
                 Capacity = Capacity,
                 ItemSubtypes = Items.Select(item => item.Subtype).ToList(),
             };
-            
+
             Services.Preferences.SaveJson(Type.ToString(), saveData);
         }
     }

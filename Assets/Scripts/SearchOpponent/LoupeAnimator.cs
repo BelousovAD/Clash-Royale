@@ -8,10 +8,10 @@ namespace SearchOpponent
         private const float Degrees = 360f;
         private const Ease Ease = DG.Tweening.Ease.Linear;
         private const int InfiniteLoops = -1;
-        
+
         [SerializeField][Min(0f)] private float _radius = 30;
         [SerializeField][Min(0f)] private float _circleDuration = 2;
-        
+
         private RectTransform _rectTransform;
         private Tweener _tweener;
 

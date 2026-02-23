@@ -12,7 +12,7 @@ namespace Chest
     public class Chest : Item.Item
     {
         private const float MinRandomValue = 0f;
-        
+
         private readonly float _totalChance;
         private bool _isLocked = true;
         private bool _isUnlocking;
@@ -27,7 +27,7 @@ namespace Chest
         }
 
         public event Action LockStatusChanged;
-        
+
         public event Action UnlockingStatusChanged;
 
         public IReadOnlyList<Chance> Chances => Data.Chances;
@@ -40,10 +40,7 @@ namespace Chest
 
         public bool IsLocked
         {
-            get
-            {
-                return _isLocked;
-            }
+            get => _isLocked;
 
             private set
             {
@@ -58,11 +55,8 @@ namespace Chest
 
         public bool IsUnlocking
         {
-            get
-            {
-                return _isUnlocking;
-            }
-            
+            get => _isUnlocking;
+
             private set
             {
                 if (value != _isUnlocking)
@@ -154,7 +148,7 @@ namespace Chest
                 IsUnlocking = IsUnlocking,
                 Remain = Timer.Time,
             };
-            
+
             Services.Preferences.SaveJson(Type + Subtype + Id, saveData);
             base.Save();
         }
@@ -164,7 +158,7 @@ namespace Chest
             IsLocked = false;
             IsUnlocking = false;
         }
-        
+
         [Serializable]
         private struct SaveData
         {

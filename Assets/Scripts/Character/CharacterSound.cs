@@ -7,9 +7,9 @@ namespace Character
     [RequireComponent(typeof(AudioSource))]
     public class CharacterSound : MonoBehaviour
     {
-        [SerializeField] private List<Track> _tracks;
-
         private readonly Dictionary<AudioClipKey, AudioClip> _audioClips = new ();
+
+        [SerializeField] private List<Track> _tracks;
 
         public AudioSource Source { get; private set; }
 

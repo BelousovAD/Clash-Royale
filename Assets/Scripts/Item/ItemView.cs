@@ -24,12 +24,14 @@ namespace Item
                 Unsubscribe();
             }
         }
-        
+
         protected virtual void Subscribe()
-        { }
-        
+        {
+        }
+
         protected virtual void Unsubscribe()
-        { }
+        {
+        }
 
         protected abstract void UpdateView();
 
@@ -39,14 +41,14 @@ namespace Item
             {
                 Unsubscribe();
             }
-            
+
             Item = _itemProvider.Item as T;
 
             if (Item is not null)
             {
                 Subscribe();
             }
-            
+
             UpdateView();
         }
     }

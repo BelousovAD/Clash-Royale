@@ -24,10 +24,7 @@ namespace Currency
 
         public int Value
         {
-            get
-            {
-                return _value;
-            }
+            get => _value;
 
             private set
             {
@@ -38,7 +35,7 @@ namespace Currency
                 }
             }
         }
-        
+
         public void Earn(int amount)
         {
             if (amount < 0)

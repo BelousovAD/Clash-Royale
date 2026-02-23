@@ -9,7 +9,7 @@ namespace Chest
     internal class ChanceTextView : ItemTextView<Chest>
     {
         private const string FloatFormat = "F0";
-        
+
         [SerializeField] private RarityType _rarityType;
 
         protected override void UpdateView()
